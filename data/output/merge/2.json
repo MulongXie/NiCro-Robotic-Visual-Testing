@@ -1,0 +1,97 @@
+{
+    "compos": [
+        {
+            "id": 0,
+            "class": "Compo",
+            "height": 507,
+            "width": 978,
+            "position": {
+                "column_min": 14,
+                "row_min": 75,
+                "column_max": 992,
+                "row_max": 582
+            },
+            "children": [
+                1,
+                2,
+                3,
+                4,
+                5
+            ]
+        },
+        {
+            "id": 1,
+            "class": "Compo",
+            "height": 266,
+            "width": 586,
+            "position": {
+                "column_min": 371,
+                "row_min": 283,
+                "column_max": 957,
+                "row_max": 549
+            },
+            "children": [
+                2,
+                5
+            ],
+            "parent": 0
+        },
+        {
+            "id": 2,
+            "class": "Compo",
+            "height": 37,
+            "width": 21,
+            "position": {
+                "column_min": 576,
+                "row_min": 315,
+                "column_max": 597,
+                "row_max": 352
+            },
+            "parent": 1
+        },
+        {
+            "id": 3,
+            "class": "Compo",
+            "height": 55,
+            "width": 5,
+            "position": {
+                "column_min": 33,
+                "row_min": 375,
+                "column_max": 38,
+                "row_max": 430
+            },
+            "parent": 0
+        },
+        {
+            "id": 4,
+            "class": "Compo",
+            "height": 17,
+            "width": 21,
+            "position": {
+                "column_min": 107,
+                "row_min": 510,
+                "column_max": 128,
+                "row_max": 527
+            },
+            "parent": 0
+        },
+        {
+            "id": 5,
+            "class": "Compo",
+            "height": 25,
+            "width": 94,
+            "position": {
+                "column_min": 550,
+                "row_min": 521,
+                "column_max": 644,
+                "row_max": 546
+            },
+            "parent": 1
+        }
+    ],
+    "img_shape": [
+        900,
+        1350,
+        3
+    ]
+}
