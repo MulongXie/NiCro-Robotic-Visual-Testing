@@ -1,0 +1,19 @@
+{
+    "img_shape": [
+        540,
+        960,
+        3
+    ],
+    "texts": [
+        {
+            "id": 0,
+            "content": "O",
+            "column_min": 430,
+            "row_min": 306,
+            "column_max": 447,
+            "row_max": 331,
+            "width": 17,
+            "height": 25
+        }
+    ]
+}
