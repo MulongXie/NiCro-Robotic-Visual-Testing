@@ -2,14 +2,9 @@ import cv2
 import json
 import os
 import numpy as np
-import time
-import shutil
 from os.path import join as pjoin
-from random import randint as rint
-from glob import glob
 
-from match_elements.Element import Element
-import match_elements.matching as match
+from Element import Element
 from sklearn.metrics.pairwise import cosine_similarity
 
 
