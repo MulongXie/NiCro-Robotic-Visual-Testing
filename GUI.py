@@ -140,6 +140,40 @@ class GUI:
             name = pjoin(clip_dir, element.id + '.jpg')
             cv2.imwrite(name, element.clip)
 
+    def match_elements(self, target_ele_img, resnet_model, matched_shape_thresh=1.5, min_similarity=0.75):
+        '''
+        :param min_similarity: minimum similarity for two elements to match
+        :param matched_shape_thresh: the maximum ratio for the shape difference of matched pair
+        :param resnet_model: resnet model for encoding image
+        :param target_ele_img: img clip of target element
+        :return: matched Element objects
+        '''
+        clips = [target_ele_img]
+        for ele in self.elements:
+            clips.append(ele.clip)
+        encodings = resnet_model.predict(np.array(clips))
+        encodings = encodings.reshape((encodings.shape[0], -1))
+        encoding_targe = encodings[0]
+        encoding_eles = encodings[1:]
+
+        t_height, t_width = target_ele_img.shape[:2]
+        t_aspect_ratio = round(t_width / t_height, 3)
+        matched_ele = None
+        matched_sim = None
+        for i, ele in enumerate(self.elements):
+            # check the shape of the two elements first
+            if max(ele.height, t_height) / min(ele.height, t_height) > matched_shape_thresh or\
+                    max(ele.width, t_width) / min(ele.width, t_width) > matched_shape_thresh or\
+                    max(t_aspect_ratio, ele.aspect_ratio) / min(t_aspect_ratio, ele.aspect_ratio) > matched_shape_thresh:
+                continue
+            if ele.category == 'Compo':
+                compo_similarity = cosine_similarity([encoding_targe], [encoding_eles[i]])[0][0]
+                if compo_similarity > min_similarity:
+                    if matched_sim is None or compo_similarity > matched_sim:
+                        matched_ele = ele
+                        matched_sim = compo_similarity
+        return matched_ele
+
     '''
     *********************
     *** Visualization ***
