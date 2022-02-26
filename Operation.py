@@ -24,12 +24,12 @@ class Operation:
         self.target_element_bounds[1][1] = int(self.target_element_bounds[1][1] * height_resize_ratio)
 
         self.ui_img = cv2.resize(self.ui_img, (width_resize, height_resize))
-
         self.clip_target_element_img()
 
     def show_target_ele(self):
         board = self.ui_img.copy()
         cv2.rectangle(board, self.target_element_bounds[0], self.target_element_bounds[1], (255,0,0), 2)
         cv2.imshow('target element', board)
+        cv2.imshow('clip', self.target_element_img)
         cv2.waitKey()
         cv2.destroyAllWindows()

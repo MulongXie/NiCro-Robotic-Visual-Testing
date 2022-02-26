@@ -3,109 +3,311 @@
         {
             "id": 0,
             "class": "Compo",
-            "height": 503,
-            "width": 974,
+            "height": 15,
+            "width": 21,
             "position": {
-                "column_min": 27,
-                "row_min": 89,
-                "column_max": 1001,
-                "row_max": 592
-            },
-            "children": [
-                1,
-                2,
-                3,
-                4,
-                5,
-                6
-            ]
+                "column_min": 18,
+                "row_min": 87,
+                "column_max": 39,
+                "row_max": 102
+            }
         },
         {
             "id": 1,
             "class": "Compo",
-            "height": 277,
-            "width": 487,
+            "height": 18,
+            "width": 24,
             "position": {
-                "column_min": 369,
-                "row_min": 280,
-                "column_max": 856,
-                "row_max": 557
-            },
-            "children": [
-                2,
-                6
-            ],
-            "parent": 0
+                "column_min": 378,
+                "row_min": 87,
+                "column_max": 402,
+                "row_max": 105
+            }
         },
         {
             "id": 2,
             "class": "Compo",
-            "height": 41,
-            "width": 25,
+            "height": 58,
+            "width": 92,
             "position": {
-                "column_min": 571,
-                "row_min": 309,
-                "column_max": 596,
-                "row_max": 350
+                "column_min": 158,
+                "row_min": 275,
+                "column_max": 250,
+                "row_max": 333
             },
-            "parent": 1
+            "children": [
+                3
+            ]
         },
         {
             "id": 3,
             "class": "Compo",
-            "height": 40,
-            "width": 4,
+            "height": 21,
+            "width": 21,
             "position": {
-                "column_min": 47,
-                "row_min": 427,
-                "column_max": 51,
-                "row_max": 467
+                "column_min": 176,
+                "row_min": 293,
+                "column_max": 197,
+                "row_max": 314
             },
-            "parent": 0
+            "parent": 2
         },
         {
             "id": 4,
             "class": "Compo",
-            "height": 49,
-            "width": 112,
+            "height": 22,
+            "width": 22,
             "position": {
-                "column_min": 856,
-                "row_min": 430,
-                "column_max": 968,
-                "row_max": 479
-            },
-            "parent": 0
+                "column_min": 18,
+                "row_min": 584,
+                "column_max": 40,
+                "row_max": 606
+            }
         },
         {
             "id": 5,
             "class": "Compo",
-            "height": 51,
-            "width": 28,
+            "height": 14,
+            "width": 10,
             "position": {
-                "column_min": 100,
-                "row_min": 475,
-                "column_max": 128,
-                "row_max": 526
-            },
-            "parent": 0
+                "column_min": 354,
+                "row_min": 589,
+                "column_max": 364,
+                "row_max": 603
+            }
         },
         {
             "id": 6,
             "class": "Compo",
-            "height": 41,
-            "width": 39,
+            "height": 24,
+            "width": 22,
             "position": {
-                "column_min": 629,
-                "row_min": 515,
-                "column_max": 668,
-                "row_max": 556
+                "column_min": 18,
+                "row_min": 644,
+                "column_max": 40,
+                "row_max": 668
+            }
+        },
+        {
+            "id": 7,
+            "class": "Compo",
+            "height": 15,
+            "width": 10,
+            "position": {
+                "column_min": 354,
+                "row_min": 649,
+                "column_max": 364,
+                "row_max": 664
+            }
+        },
+        {
+            "id": 8,
+            "class": "Compo",
+            "height": 23,
+            "width": 22,
+            "position": {
+                "column_min": 18,
+                "row_min": 705,
+                "column_max": 40,
+                "row_max": 728
+            }
+        },
+        {
+            "id": 9,
+            "class": "Compo",
+            "height": 14,
+            "width": 10,
+            "position": {
+                "column_min": 354,
+                "row_min": 709,
+                "column_max": 364,
+                "row_max": 723
+            }
+        },
+        {
+            "id": 10,
+            "class": "Compo",
+            "height": 21,
+            "width": 21,
+            "position": {
+                "column_min": 18,
+                "row_min": 766,
+                "column_max": 39,
+                "row_max": 787
+            }
+        },
+        {
+            "id": 11,
+            "class": "Compo",
+            "height": 26,
+            "width": 27,
+            "position": {
+                "column_min": 15,
+                "row_min": 809,
+                "column_max": 42,
+                "row_max": 835
+            }
+        },
+        {
+            "id": 12,
+            "class": "Text",
+            "height": 16,
+            "width": 57,
+            "position": {
+                "column_min": 8,
+                "row_min": 17,
+                "column_max": 65,
+                "row_max": 33
             },
-            "parent": 1
+            "text_content": "4:12"
+        },
+        {
+            "id": 13,
+            "class": "Text",
+            "height": 18,
+            "width": 76,
+            "position": {
+                "column_min": 334,
+                "row_min": 16,
+                "column_max": 410,
+                "row_max": 34
+            },
+            "text_content": "\"O\" LTE _& C"
+        },
+        {
+            "id": 14,
+            "class": "Text",
+            "height": 21,
+            "width": 88,
+            "position": {
+                "column_min": 53,
+                "row_min": 85,
+                "column_max": 141,
+                "row_max": 106
+            },
+            "text_content": "AdGuard"
+        },
+        {
+            "id": 15,
+            "class": "Text",
+            "height": 21,
+            "width": 214,
+            "position": {
+                "column_min": 99,
+                "row_min": 362,
+                "column_max": 313,
+                "row_max": 383
+            },
+            "text_content": "Protection is disabled"
+        },
+        {
+            "id": 16,
+            "class": "Text",
+            "height": 13,
+            "width": 240,
+            "position": {
+                "column_min": 84,
+                "row_min": 532,
+                "column_max": 324,
+                "row_max": 545
+            },
+            "text_content": "Since February 14,2022 12:00 AM>"
+        },
+        {
+            "id": 17,
+            "class": "Text",
+            "height": 13,
+            "width": 104,
+            "position": {
+                "column_min": 40,
+                "row_min": 588,
+                "column_max": 144,
+                "row_max": 601
+            },
+            "text_content": "Adsblocked"
+        },
+        {
+            "id": 18,
+            "class": "Text",
+            "height": 16,
+            "width": 121,
+            "position": {
+                "column_min": 57,
+                "row_min": 647,
+                "column_max": 178,
+                "row_max": 663
+            },
+            "text_content": "Trackersblocked"
+        },
+        {
+            "id": 19,
+            "class": "Text",
+            "height": 16,
+            "width": 115,
+            "position": {
+                "column_min": 55,
+                "row_min": 707,
+                "column_max": 170,
+                "row_max": 723
+            },
+            "text_content": "Threats blocked"
+        },
+        {
+            "id": 20,
+            "class": "Text",
+            "height": 16,
+            "width": 82,
+            "position": {
+                "column_min": 55,
+                "row_min": 768,
+                "column_max": 137,
+                "row_max": 784
+            },
+            "text_content": "Data saved"
+        },
+        {
+            "id": 21,
+            "class": "Text",
+            "height": 14,
+            "width": 40,
+            "position": {
+                "column_min": 326,
+                "row_min": 768,
+                "column_max": 366,
+                "row_max": 782
+            },
+            "text_content": "0 KB"
+        },
+        {
+            "id": 22,
+            "class": "Text",
+            "height": 18,
+            "width": 160,
+            "position": {
+                "column_min": 42,
+                "row_min": 812,
+                "column_max": 202,
+                "row_max": 830
+            },
+            "text_content": "HTTPS Filtering is off"
+        },
+        {
+            "id": 23,
+            "class": "Text",
+            "height": 17,
+            "width": 65,
+            "position": {
+                "column_min": 325,
+                "row_min": 813,
+                "column_max": 390,
+                "row_max": 830
+            },
+            "text_content": "TURN ON"
         }
     ],
     "img_shape": [
         900,
-        1350,
+        415,
         3
     ]
 }

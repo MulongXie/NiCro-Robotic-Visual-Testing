@@ -143,9 +143,9 @@ class GUI:
         :param target_ele_img: img clip of target element
         :return: matched Element objects
         '''
-        clips = [target_ele_img]
+        clips = [cv2.resize(target_ele_img, (32, 32))]
         for ele in self.elements:
-            clips.append(ele.clip)
+            clips.append(cv2.resize(ele.clip, (32, 32)))
         encodings = resnet_model.predict(np.array(clips))
         encodings = encodings.reshape((encodings.shape[0], -1))
         encoding_targe = encodings[0]

@@ -1,8 +1,149 @@
 {
     "img_shape": [
-        960,
-        1440,
+        2340,
+        1080,
         3
     ],
-    "texts": []
+    "texts": [
+        {
+            "id": 0,
+            "content": "4:14.",
+            "column_min": 19,
+            "row_min": 41,
+            "column_max": 222,
+            "row_max": 88,
+            "width": 203,
+            "height": 47
+        },
+        {
+            "id": 1,
+            "content": "LTEA",
+            "column_min": 879,
+            "row_min": 43,
+            "column_max": 1064,
+            "row_max": 91,
+            "width": 185,
+            "height": 48
+        },
+        {
+            "id": 2,
+            "content": "Updates",
+            "column_min": 147,
+            "row_min": 224,
+            "column_max": 357,
+            "row_max": 278,
+            "width": 210,
+            "height": 54
+        },
+        {
+            "id": 3,
+            "content": "Update settings",
+            "column_min": 544,
+            "row_min": 224,
+            "column_max": 859,
+            "row_max": 276,
+            "width": 315,
+            "height": 52
+        },
+        {
+            "id": 4,
+            "content": "Check for updates again",
+            "column_min": 547,
+            "row_min": 358,
+            "column_max": 1022,
+            "row_max": 405,
+            "width": 475,
+            "height": 47
+        },
+        {
+            "id": 5,
+            "content": "AdGuard3.3 beta3",
+            "column_min": 154,
+            "row_min": 392,
+            "column_max": 499,
+            "row_max": 427,
+            "width": 345,
+            "height": 35
+        },
+        {
+            "id": 6,
+            "content": "Checking for updates",
+            "column_min": 152,
+            "row_min": 448,
+            "column_max": 492,
+            "row_max": 485,
+            "width": 340,
+            "height": 37
+        },
+        {
+            "id": 7,
+            "content": "Content blocking filters",
+            "column_min": 154,
+            "row_min": 614,
+            "column_max": 571,
+            "row_max": 648,
+            "width": 417,
+            "height": 34
+        },
+        {
+            "id": 8,
+            "content": "Checking for updates",
+            "column_min": 152,
+            "row_min": 668,
+            "column_max": 492,
+            "row_max": 714,
+            "width": 340,
+            "height": 46
+        },
+        {
+            "id": 9,
+            "content": "O",
+            "column_min": 51,
+            "row_min": 834,
+            "column_max": 113,
+            "row_max": 882,
+            "width": 62,
+            "height": 48
+        },
+        {
+            "id": 10,
+            "content": "DNS filters",
+            "column_min": 144,
+            "row_min": 833,
+            "column_max": 345,
+            "row_max": 875,
+            "width": 201,
+            "height": 42
+        },
+        {
+            "id": 11,
+            "content": "DNS filtering is disabled",
+            "column_min": 147,
+            "row_min": 892,
+            "column_max": 538,
+            "row_max": 936,
+            "width": 391,
+            "height": 44
+        },
+        {
+            "id": 12,
+            "content": "Extensions",
+            "column_min": 145,
+            "row_min": 1060,
+            "column_max": 354,
+            "row_max": 1102,
+            "width": 209,
+            "height": 42
+        },
+        {
+            "id": 13,
+            "content": "Extensions are disabled",
+            "column_min": 154,
+            "row_min": 1124,
+            "column_max": 533,
+            "row_max": 1158,
+            "width": 379,
+            "height": 34
+        }
+    ]
 }
