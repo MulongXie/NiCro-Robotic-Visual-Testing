@@ -82,7 +82,7 @@ class GUI:
             if not paddle_cor:
                 from paddleocr import PaddleOCR
                 paddle_cor = PaddleOCR(use_angle_cls=True, lang="ch")
-            self.det_result_imgs['text'] = text.text_detection_paddle(self.img_path, pjoin(self.output_dir, 'ocr'), paddle_cor=paddle_cor)
+            self.det_result_imgs['text'], _ = text.text_detection_paddle(self.img_path, pjoin(self.output_dir, 'ocr'), paddle_cor=paddle_cor)
         if is_nontext:
             os.makedirs(pjoin(self.output_dir, 'ip'), exist_ok=True)
             import detect_compo.ip_region_proposal as ip
@@ -167,6 +167,13 @@ class GUI:
                     if matched_sim is None or compo_similarity > matched_sim:
                         matched_ele = ele
                         matched_sim = compo_similarity
+                # print(compo_similarity)
+                # cv2.imshow('ele', ele.clip)
+                # cv2.imshow('target', target_ele_img)
+                # cv2.waitKey()
+        # cv2.destroyAllWindows()
+        if not matched_ele:
+            print('No matched element found')
         return matched_ele
 
     '''

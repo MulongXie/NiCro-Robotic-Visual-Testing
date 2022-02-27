@@ -1,5 +1,7 @@
-import cv2
 import detect_compo.lib_ip.ip_preprocessing as pre
+import detect_text.text_detection as text
+
+import cv2
 import numpy as np
 
 
@@ -12,11 +14,12 @@ class Operation:
         self.action = action
         self.target_element_bounds = target_element_bounds  # [[left, top],[right, bottom]]
         self.target_element_img = None
+        self.target_element_text = None
+
         self.clip_target_element_img()
 
     def clip_target_element_img(self):
         self.target_element_img = self.ui_img[self.target_element_bounds[0][1]: self.target_element_bounds[1][1], self.target_element_bounds[0][0]: self.target_element_bounds[1][0]]
-        self.shrink_target_element_img()
 
     def resize(self, width_resize, height_resize):
         width_resize_ratio = width_resize / self.ui_img_width
@@ -27,7 +30,7 @@ class Operation:
         self.target_element_bounds[1][1] = int(self.target_element_bounds[1][1] * height_resize_ratio)
 
         self.ui_img = cv2.resize(self.ui_img, (width_resize, height_resize))
-        self.target_element_img = self.ui_img[self.target_element_bounds[0][1]: self.target_element_bounds[1][1], self.target_element_bounds[0][0]: self.target_element_bounds[1][0]]
+        self.clip_target_element_img()
 
     def shrink_target_element_img(self, min_grad=6):
         '''
@@ -96,6 +99,10 @@ class Operation:
         # cv2.imshow('e', self.target_element_img)
         # cv2.waitKey()
         # cv2.destroyAllWindows()
+
+    def detect_text(self, paddle_ocr):
+        cv2.imwrite('data/operation/target.png', self.target_element_img)
+        _, self.target_element_text = text.text_detection_paddle('data/operation/target.png', 'data/operation', paddle_cor=paddle_ocr)
 
     def show_target_ele(self):
         board = self.ui_img.copy()
