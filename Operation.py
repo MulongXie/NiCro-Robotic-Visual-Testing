@@ -104,6 +104,9 @@ class Operation:
         cv2.imwrite('data/operation/target.png', self.target_element_img)
         _, self.target_element_text = text.text_detection_paddle('data/operation/target.png', 'data/operation', paddle_cor=paddle_ocr)
 
+    def get_text_content(self):
+        return [t.content for t in self.target_element_text]
+
     def show_target_ele(self):
         board = self.ui_img.copy()
         cv2.rectangle(board, self.target_element_bounds[0], self.target_element_bounds[1], (255,0,0), 2)

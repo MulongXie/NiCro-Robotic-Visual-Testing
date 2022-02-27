@@ -3,95 +3,437 @@
         {
             "id": 0,
             "class": "Compo",
-            "height": 507,
-            "width": 978,
+            "height": 17,
+            "width": 23,
             "position": {
-                "column_min": 14,
-                "row_min": 75,
-                "column_max": 992,
-                "row_max": 582
-            },
-            "children": [
-                1,
-                2,
-                3,
-                4,
-                5
-            ]
+                "column_min": 378,
+                "row_min": 87,
+                "column_max": 401,
+                "row_max": 104
+            }
         },
         {
             "id": 1,
             "class": "Compo",
-            "height": 266,
-            "width": 586,
+            "height": 34,
+            "width": 33,
             "position": {
-                "column_min": 371,
-                "row_min": 283,
-                "column_max": 957,
-                "row_max": 549
+                "column_min": 15,
+                "row_min": 108,
+                "column_max": 48,
+                "row_max": 142
             },
             "children": [
-                2,
-                5
-            ],
-            "parent": 0
+                2
+            ]
         },
         {
             "id": 2,
             "class": "Compo",
-            "height": 37,
-            "width": 21,
+            "height": 16,
+            "width": 18,
             "position": {
-                "column_min": 576,
-                "row_min": 315,
-                "column_max": 597,
-                "row_max": 352
+                "column_min": 24,
+                "row_min": 116,
+                "column_max": 42,
+                "row_max": 132
             },
             "parent": 1
         },
         {
             "id": 3,
             "class": "Compo",
-            "height": 55,
-            "width": 5,
+            "height": 18,
+            "width": 21,
             "position": {
-                "column_min": 33,
-                "row_min": 375,
-                "column_max": 38,
-                "row_max": 430
-            },
-            "parent": 0
+                "column_min": 18,
+                "row_min": 241,
+                "column_max": 39,
+                "row_max": 259
+            }
         },
         {
             "id": 4,
             "class": "Compo",
-            "height": 17,
-            "width": 21,
+            "height": 20,
+            "width": 19,
             "position": {
-                "column_min": 107,
-                "row_min": 510,
-                "column_max": 128,
-                "row_max": 527
-            },
-            "parent": 0
+                "column_min": 19,
+                "row_min": 292,
+                "column_max": 38,
+                "row_max": 312
+            }
         },
         {
             "id": 5,
             "class": "Compo",
-            "height": 25,
-            "width": 94,
+            "height": 15,
+            "width": 20,
             "position": {
-                "column_min": 550,
-                "row_min": 521,
-                "column_max": 644,
-                "row_max": 546
+                "column_min": 19,
+                "row_min": 345,
+                "column_max": 39,
+                "row_max": 360
+            }
+        },
+        {
+            "id": 6,
+            "class": "Compo",
+            "height": 24,
+            "width": 23,
+            "position": {
+                "column_min": 17,
+                "row_min": 392,
+                "column_max": 40,
+                "row_max": 416
+            }
+        },
+        {
+            "id": 7,
+            "class": "Compo",
+            "height": 23,
+            "width": 22,
+            "position": {
+                "column_min": 18,
+                "row_min": 444,
+                "column_max": 40,
+                "row_max": 467
+            }
+        },
+        {
+            "id": 8,
+            "class": "Compo",
+            "height": 22,
+            "width": 22,
+            "position": {
+                "column_min": 18,
+                "row_min": 495,
+                "column_max": 40,
+                "row_max": 517
+            }
+        },
+        {
+            "id": 9,
+            "class": "Compo",
+            "height": 14,
+            "width": 21,
+            "position": {
+                "column_min": 18,
+                "row_min": 551,
+                "column_max": 39,
+                "row_max": 565
+            }
+        },
+        {
+            "id": 10,
+            "class": "Compo",
+            "height": 14,
+            "width": 11,
+            "position": {
+                "column_min": 353,
+                "row_min": 589,
+                "column_max": 364,
+                "row_max": 603
+            }
+        },
+        {
+            "id": 11,
+            "class": "Compo",
+            "height": 23,
+            "width": 23,
+            "position": {
+                "column_min": 17,
+                "row_min": 597,
+                "column_max": 40,
+                "row_max": 620
+            }
+        },
+        {
+            "id": 12,
+            "class": "Compo",
+            "height": 15,
+            "width": 42,
+            "position": {
+                "column_min": 58,
+                "row_min": 603,
+                "column_max": 100,
+                "row_max": 618
+            }
+        },
+        {
+            "id": 13,
+            "class": "Compo",
+            "height": 16,
+            "width": 10,
+            "position": {
+                "column_min": 354,
+                "row_min": 649,
+                "column_max": 364,
+                "row_max": 665
+            }
+        },
+        {
+            "id": 14,
+            "class": "Compo",
+            "height": 14,
+            "width": 10,
+            "position": {
+                "column_min": 354,
+                "row_min": 709,
+                "column_max": 364,
+                "row_max": 723
+            }
+        },
+        {
+            "id": 15,
+            "class": "Compo",
+            "height": 26,
+            "width": 27,
+            "position": {
+                "column_min": 15,
+                "row_min": 809,
+                "column_max": 42,
+                "row_max": 835
+            }
+        },
+        {
+            "id": 16,
+            "class": "Text",
+            "height": 17,
+            "width": 77,
+            "position": {
+                "column_min": 8,
+                "row_min": 16,
+                "column_max": 85,
+                "row_max": 33
             },
-            "parent": 1
+            "text_content": "4:14."
+        },
+        {
+            "id": 17,
+            "class": "Text",
+            "height": 19,
+            "width": 69,
+            "position": {
+                "column_min": 339,
+                "row_min": 16,
+                "column_max": 408,
+                "row_max": 35
+            },
+            "text_content": "LTEAA"
+        },
+        {
+            "id": 18,
+            "class": "Text",
+            "height": 16,
+            "width": 105,
+            "position": {
+                "column_min": 62,
+                "row_min": 115,
+                "column_max": 167,
+                "row_max": 131
+            },
+            "text_content": "ADGUARD"
+        },
+        {
+            "id": 19,
+            "class": "Text",
+            "height": 12,
+            "width": 92,
+            "position": {
+                "column_min": 162,
+                "row_min": 118,
+                "column_max": 254,
+                "row_max": 130
+            },
+            "text_content": "v3.3beta 3."
+        },
+        {
+            "id": 20,
+            "class": "Text",
+            "height": 18,
+            "width": 87,
+            "position": {
+                "column_min": 25,
+                "row_min": 167,
+                "column_max": 112,
+                "row_max": 185
+            },
+            "text_content": "Trial license"
+        },
+        {
+            "id": 21,
+            "class": "Text",
+            "height": 18,
+            "width": 162,
+            "position": {
+                "column_min": 24,
+                "row_min": 189,
+                "column_max": 186,
+                "row_max": 207
+            },
+            "text_content": "Until February 24, 2022"
+        },
+        {
+            "id": 22,
+            "class": "Text",
+            "height": 17,
+            "width": 48,
+            "position": {
+                "column_min": 54,
+                "row_min": 243,
+                "column_max": 102,
+                "row_max": 260
+            },
+            "text_content": "Home"
+        },
+        {
+            "id": 23,
+            "class": "Text",
+            "height": 20,
+            "width": 140,
+            "position": {
+                "column_min": 53,
+                "row_min": 293,
+                "column_max": 193,
+                "row_max": 313
+            },
+            "text_content": "Apps Management"
+        },
+        {
+            "id": 24,
+            "class": "Text",
+            "height": 18,
+            "width": 90,
+            "position": {
+                "column_min": 56,
+                "row_min": 345,
+                "column_max": 146,
+                "row_max": 363
+            },
+            "text_content": "Filtering Log"
+        },
+        {
+            "id": 25,
+            "class": "Text",
+            "height": 20,
+            "width": 63,
+            "position": {
+                "column_min": 54,
+                "row_min": 395,
+                "column_max": 117,
+                "row_max": 415
+            },
+            "text_content": "Settings"
+        },
+        {
+            "id": 26,
+            "class": "Text",
+            "height": 20,
+            "width": 77,
+            "position": {
+                "column_min": 38,
+                "row_min": 446,
+                "column_max": 115,
+                "row_max": 466
+            },
+            "text_content": "Support"
+        },
+        {
+            "id": 27,
+            "class": "Text",
+            "height": 13,
+            "width": 102,
+            "position": {
+                "column_min": 57,
+                "row_min": 500,
+                "column_max": 159,
+                "row_max": 513
+            },
+            "text_content": "License Status"
+        },
+        {
+            "id": 28,
+            "class": "Text",
+            "height": 21,
+            "width": 102,
+            "position": {
+                "column_min": 54,
+                "row_min": 548,
+                "column_max": 156,
+                "row_max": 569
+            },
+            "text_content": "Battery Usage"
+        },
+        {
+            "id": 29,
+            "class": "Text",
+            "height": 21,
+            "width": 21,
+            "position": {
+                "column_min": 19,
+                "row_min": 649,
+                "column_max": 40,
+                "row_max": 670
+            },
+            "text_content": "[>"
+        },
+        {
+            "id": 30,
+            "class": "Text",
+            "height": 14,
+            "width": 29,
+            "position": {
+                "column_min": 55,
+                "row_min": 655,
+                "column_max": 84,
+                "row_max": 669
+            },
+            "text_content": "Exit"
+        },
+        {
+            "id": 31,
+            "class": "Text",
+            "height": 14,
+            "width": 37,
+            "position": {
+                "column_min": 328,
+                "row_min": 768,
+                "column_max": 365,
+                "row_max": 782
+            },
+            "text_content": "0 KB"
+        },
+        {
+            "id": 32,
+            "class": "Text",
+            "height": 19,
+            "width": 161,
+            "position": {
+                "column_min": 42,
+                "row_min": 812,
+                "column_max": 203,
+                "row_max": 831
+            },
+            "text_content": "HTTPS Filtering is off"
+        },
+        {
+            "id": 33,
+            "class": "Text",
+            "height": 17,
+            "width": 64,
+            "position": {
+                "column_min": 325,
+                "row_min": 813,
+                "column_max": 389,
+                "row_max": 830
+            },
+            "text_content": "TURN ON"
         }
     ],
     "img_shape": [
         900,
-        1350,
+        415,
         3
     ]
 }

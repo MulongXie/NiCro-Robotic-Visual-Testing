@@ -3,6 +3,7 @@ import json
 import os
 import numpy as np
 from os.path import join as pjoin
+from difflib import SequenceMatcher
 
 from Element import Element
 from sklearn.metrics.pairwise import cosine_similarity
@@ -21,6 +22,8 @@ class GUI:
         self.det_result_data = None         # {'compos':[], 'img_shape'}
 
         self.elements = []                  # list of Element objects for android UI
+        self.ele_compos = []
+        self.ele_texts = []
         self.elements_mapping = {}          # {'id': Element}
         self.has_popup_modal = False        # if the ui has popup modal
         self.screen = None
@@ -126,6 +129,14 @@ class GUI:
             e.get_clip(self.img)
             self.elements.append(e)
             self.elements_mapping[e.id] = e
+        self.group_elements()
+
+    def group_elements(self):
+        for ele in self.elements:
+            if ele.category == 'Compo':
+                self.ele_compos.append(ele)
+            elif ele.category == 'Text':
+                self.ele_texts.append(ele)
 
     def save_element_clips(self):
         clip_dir = pjoin(self.output_dir, 'clip')
@@ -135,46 +146,61 @@ class GUI:
             name = pjoin(clip_dir, element.id + '.jpg')
             cv2.imwrite(name, element.clip)
 
-    def match_elements(self, target_ele_img, resnet_model, matched_shape_thresh=1.5, min_similarity=0.75):
+    def match_elements(self, target_ele_img, resnet_model, target_ele_text=None,
+                       matched_shape_thresh=1.5, min_similarity_img=0.8, min_similarity_text=0.85):
         '''
-        :param min_similarity: minimum similarity for two elements to match
         :param matched_shape_thresh: the maximum ratio for the shape difference of matched pair
         :param resnet_model: resnet model for encoding image
         :param target_ele_img: img clip of target element
+        :param target_ele_text: text content in the target element
         :return: matched Element objects
         '''
         clips = [cv2.resize(target_ele_img, (32, 32))]
-        for ele in self.elements:
+        for ele in self.ele_compos:
             clips.append(cv2.resize(ele.clip, (32, 32)))
         encodings = resnet_model.predict(np.array(clips))
         encodings = encodings.reshape((encodings.shape[0], -1))
         encoding_targe = encodings[0]
         encoding_eles = encodings[1:]
 
-        t_height, t_width = target_ele_img.shape[:2]
-        t_aspect_ratio = round(t_width / t_height, 3)
-        matched_ele = None
-        matched_sim = None
-        for i, ele in enumerate(self.elements):
-            # check the shape of the two elements first
-            if max(ele.height, t_height) / min(ele.height, t_height) > matched_shape_thresh or\
-                    max(ele.width, t_width) / min(ele.width, t_width) > matched_shape_thresh or\
-                    max(t_aspect_ratio, ele.aspect_ratio) / min(t_aspect_ratio, ele.aspect_ratio) > matched_shape_thresh:
-                continue
-            if ele.category == 'Compo':
+        # 1. (optional) match by text content
+        matched_ele_text = None
+        matched_text_len = None
+        if target_ele_text is not None and len(target_ele_text) > 0:
+            # find the longest matched text
+            target_ele_text = sorted(target_ele_text, key=lambda x: len(x), reverse=True)
+            for tar in target_ele_text:
+                for text in self.ele_texts:
+                    sim = SequenceMatcher(None, text.text_content, tar).ratio()
+                    if sim > min_similarity_text:
+                        if matched_ele_text is None or len(text.text_content) > matched_text_len:
+                            matched_ele_text = text
+                            matched_text_len = len(text.text_content)
+                if matched_ele_text is not None:
+                    return matched_ele_text
+
+        # 2. if no matched text element, match by image similarity
+        if not matched_ele_text:
+            t_height, t_width = target_ele_img.shape[:2]
+            t_aspect_ratio = round(t_width / t_height, 3)
+            matched_ele_img = None
+            matched_img_sim = None
+            for i, ele in enumerate(self.ele_compos):
+                # check the shape of the two elements first
+                if max(ele.height, t_height) / min(ele.height, t_height) > matched_shape_thresh or\
+                        max(ele.width, t_width) / min(ele.width, t_width) > matched_shape_thresh or\
+                        max(t_aspect_ratio, ele.aspect_ratio) / min(t_aspect_ratio, ele.aspect_ratio) > matched_shape_thresh:
+                    continue
                 compo_similarity = cosine_similarity([encoding_targe], [encoding_eles[i]])[0][0]
-                if compo_similarity > min_similarity:
-                    if matched_sim is None or compo_similarity > matched_sim:
-                        matched_ele = ele
-                        matched_sim = compo_similarity
-                # print(compo_similarity)
-                # cv2.imshow('ele', ele.clip)
-                # cv2.imshow('target', target_ele_img)
-                # cv2.waitKey()
-        # cv2.destroyAllWindows()
-        if not matched_ele:
-            print('No matched element found')
-        return matched_ele
+                if compo_similarity > min_similarity_img:
+                    if matched_ele_img is None or compo_similarity > matched_img_sim:
+                        matched_ele_img = ele
+                        matched_img_sim = compo_similarity
+            if not matched_ele_img:
+                print('No matched element found')
+            return matched_ele_img
+        print('No matched element found')
+        return None
 
     '''
     *********************
