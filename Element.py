@@ -47,4 +47,4 @@ class Element:
         if show:
             cv2.imshow(self.id, cv2.resize(board, (int(board.shape[1] * (800 / board.shape[0])), 800)))
             cv2.waitKey()
-            cv2.destroyWindow(self.id)
+            cv2.destroyAllWindows()

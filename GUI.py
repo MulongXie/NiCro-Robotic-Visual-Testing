@@ -147,7 +147,7 @@ class GUI:
             cv2.imwrite(name, element.clip)
 
     def match_elements(self, target_ele_img, resnet_model, target_ele_text=None,
-                       matched_shape_thresh=1.5, min_similarity_img=0.8, min_similarity_text=0.85):
+                       matched_shape_thresh=1.5, min_similarity_img=0.8, min_similarity_text=0.85, show=False):
         '''
         :param matched_shape_thresh: the maximum ratio for the shape difference of matched pair
         :param resnet_model: resnet model for encoding image
@@ -155,14 +155,6 @@ class GUI:
         :param target_ele_text: text content in the target element
         :return: matched Element objects
         '''
-        clips = [cv2.resize(target_ele_img, (32, 32))]
-        for ele in self.ele_compos:
-            clips.append(cv2.resize(ele.clip, (32, 32)))
-        encodings = resnet_model.predict(np.array(clips))
-        encodings = encodings.reshape((encodings.shape[0], -1))
-        encoding_targe = encodings[0]
-        encoding_eles = encodings[1:]
-
         # 1. (optional) match by text content
         matched_ele_text = None
         matched_text_len = None
@@ -177,10 +169,24 @@ class GUI:
                             matched_ele_text = text
                             matched_text_len = len(text.text_content)
                 if matched_ele_text is not None:
+                    print('Match by text')
+                    if show:
+                        cv2.imshow('target', target_ele_img)
+                        matched_ele_text.draw_element(self.img, show=True)
                     return matched_ele_text
 
         # 2. if no matched text element, match by image similarity
         if not matched_ele_text:
+            # encode through resnet
+            clips = [cv2.resize(target_ele_img, (32, 32))]
+            for ele in self.ele_compos:
+                clips.append(cv2.resize(ele.clip, (32, 32)))
+            encodings = resnet_model.predict(np.array(clips))
+            encodings = encodings.reshape((encodings.shape[0], -1))
+            encoding_targe = encodings[0]
+            encoding_eles = encodings[1:]
+
+            # match images through encodings
             t_height, t_width = target_ele_img.shape[:2]
             t_aspect_ratio = round(t_width / t_height, 3)
             matched_ele_img = None
@@ -196,9 +202,12 @@ class GUI:
                     if matched_ele_img is None or compo_similarity > matched_img_sim:
                         matched_ele_img = ele
                         matched_img_sim = compo_similarity
-            if not matched_ele_img:
-                print('No matched element found')
-            return matched_ele_img
+            if matched_ele_img:
+                print('Match by image')
+                if show:
+                    cv2.imshow('target', target_ele_img)
+                    matched_ele_img.draw_element(self.img, show=True)
+                return matched_ele_img
         print('No matched element found')
         return None
 
