@@ -10,7 +10,7 @@ from sklearn.metrics.pairwise import cosine_similarity
 
 
 class GUI:
-    def __init__(self, img_path='data/input', output_dir='data/output', detection_resize_height=900):
+    def __init__(self, img_path='data/input', output_dir='data/output', detection_resize_height=800):
         self.img_path = img_path
         self.ui_name = img_path.replace('\\', '/').split('/')[-1].split('.')[0]
         self.output_dir = output_dir
@@ -33,15 +33,15 @@ class GUI:
     *** GUI Operations ***
     **********************
     '''
-    def phone_screen_recognition(self):
+    def recognize_phone_screen(self):
         for e in self.elements:
-            if e.height / self.detection_resize_height > 0.5 and e.width / self.detection_resize_width > 0.5:
+            if e.height / self.detection_resize_height > 0.5:
                 if e.parent is None and e.children is not None:
                     e.is_screen = True
                     self.screen = e
                     return
 
-    def popup_modal_recognition(self, height_thresh=0.15, width_thresh=0.5):
+    def recognize_popup_modal(self, height_thresh=0.15, width_thresh=0.5):
         def is_element_modal(element, area_resize):
             gray = cv2.cvtColor(element.clip, cv2.COLOR_BGR2GRAY)
             area_ele = element.clip.shape[0] * element.clip.shape[1]
@@ -78,7 +78,7 @@ class GUI:
     *** Detect or Load Elements ***
     *******************************
     '''
-    def element_detection(self, is_text=True, is_nontext=True, is_merge=True, paddle_cor=None):
+    def detect_element(self, is_text=True, is_nontext=True, is_merge=True, paddle_cor=None):
         if is_text:
             os.makedirs(pjoin(self.output_dir, 'ocr'), exist_ok=True)
             import detect_text.text_detection as text
@@ -251,10 +251,12 @@ class GUI:
             cv2.waitKey()
             cv2.destroyAllWindows()
 
-    def draw_screen(self):
+    def draw_screen(self, show=True):
+        board = self.img.copy()
         if self.screen is not None:
-            board = self.img.copy()
             self.screen.draw_element(board, color=(255,0,255), line=5, show_id=False)
+        if show:
             cv2.imshow('screen', cv2.resize(board, (self.detection_resize_width, self.detection_resize_height)))
             cv2.waitKey()
             cv2.destroyAllWindows()
+        return board
