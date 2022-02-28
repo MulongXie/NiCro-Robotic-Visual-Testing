@@ -226,7 +226,7 @@ class GUI:
                 print('Match by image')
                 if show:
                     cv2.imshow('target', target_ele_img)
-                    matched_ele_img.draw_element(self.img, show=True)
+                    matched_ele_img.draw_element(self.img.copy(), show=True)
                 return matched_ele_img
         print('No matched element found')
         return None

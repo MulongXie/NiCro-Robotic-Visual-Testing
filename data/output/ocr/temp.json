@@ -1,8 +1,139 @@
 {
     "img_shape": [
-        601,
+        820,
         540,
         3
     ],
-    "texts": []
+    "texts": [
+        {
+            "id": 0,
+            "content": "6:19G",
+            "column_min": 70,
+            "row_min": 52,
+            "column_max": 161,
+            "row_max": 66,
+            "width": 91,
+            "height": 14
+        },
+        {
+            "id": 1,
+            "content": "AdGuard",
+            "column_min": 93,
+            "row_min": 88,
+            "column_max": 163,
+            "row_max": 106,
+            "width": 70,
+            "height": 18
+        },
+        {
+            "id": 2,
+            "content": "Protection is disabled",
+            "column_min": 126,
+            "row_min": 321,
+            "column_max": 288,
+            "row_max": 338,
+            "width": 162,
+            "height": 17
+        },
+        {
+            "id": 3,
+            "content": "Since February 25,202212:00AM",
+            "column_min": 111,
+            "row_min": 463,
+            "column_max": 294,
+            "row_max": 479,
+            "width": 183,
+            "height": 16
+        },
+        {
+            "id": 4,
+            "content": "Ads blocked",
+            "column_min": 61,
+            "row_min": 505,
+            "column_max": 163,
+            "row_max": 521,
+            "width": 102,
+            "height": 16
+        },
+        {
+            "id": 5,
+            "content": "Trackers blocked",
+            "column_min": 84,
+            "row_min": 553,
+            "column_max": 185,
+            "row_max": 566,
+            "width": 101,
+            "height": 13
+        },
+        {
+            "id": 6,
+            "content": "Threats blocked",
+            "column_min": 88,
+            "row_min": 601,
+            "column_max": 180,
+            "row_max": 614,
+            "width": 92,
+            "height": 13
+        },
+        {
+            "id": 7,
+            "content": "C9",
+            "column_min": 59,
+            "row_min": 649,
+            "column_max": 76,
+            "row_max": 661,
+            "width": 17,
+            "height": 12
+        },
+        {
+            "id": 8,
+            "content": "Data saved",
+            "column_min": 88,
+            "row_min": 649,
+            "column_max": 151,
+            "row_max": 663,
+            "width": 63,
+            "height": 14
+        },
+        {
+            "id": 9,
+            "content": "0KB",
+            "column_min": 290,
+            "row_min": 650,
+            "column_max": 322,
+            "row_max": 664,
+            "width": 32,
+            "height": 14
+        },
+        {
+            "id": 10,
+            "content": "TURN ON",
+            "column_min": 293,
+            "row_min": 686,
+            "column_max": 340,
+            "row_max": 701,
+            "width": 47,
+            "height": 15
+        },
+        {
+            "id": 11,
+            "content": "O",
+            "column_min": 194,
+            "row_min": 725,
+            "column_max": 207,
+            "row_max": 737,
+            "width": 13,
+            "height": 12
+        },
+        {
+            "id": 12,
+            "content": "S",
+            "column_min": 285,
+            "row_min": 727,
+            "column_max": 299,
+            "row_max": 739,
+            "width": 14,
+            "height": 12
+        }
+    ]
 }

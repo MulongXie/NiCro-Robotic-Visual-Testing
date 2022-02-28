@@ -1,0 +1,119 @@
+{
+    "img_shape": [
+        725,
+        436,
+        3
+    ],
+    "texts": [
+        {
+            "id": 0,
+            "content": "6:03G",
+            "column_min": 60,
+            "row_min": 52,
+            "column_max": 137,
+            "row_max": 62,
+            "width": 77,
+            "height": 10
+        },
+        {
+            "id": 1,
+            "content": "AdGuard",
+            "column_min": 59,
+            "row_min": 78,
+            "column_max": 140,
+            "row_max": 98,
+            "width": 81,
+            "height": 20
+        },
+        {
+            "id": 2,
+            "content": "Protection is disablec",
+            "column_min": 108,
+            "row_min": 273,
+            "column_max": 240,
+            "row_max": 286,
+            "width": 132,
+            "height": 13
+        },
+        {
+            "id": 3,
+            "content": "Since February 25,202212:00AM",
+            "column_min": 97,
+            "row_min": 387,
+            "column_max": 239,
+            "row_max": 401,
+            "width": 142,
+            "height": 14
+        },
+        {
+            "id": 4,
+            "content": "Ads blocked",
+            "column_min": 55,
+            "row_min": 419,
+            "column_max": 138,
+            "row_max": 438,
+            "width": 83,
+            "height": 19
+        },
+        {
+            "id": 5,
+            "content": "S",
+            "column_min": 56,
+            "row_min": 461,
+            "column_max": 75,
+            "row_max": 473,
+            "width": 19,
+            "height": 12
+        },
+        {
+            "id": 6,
+            "content": "Trackers blocked",
+            "column_min": 70,
+            "row_min": 461,
+            "column_max": 159,
+            "row_max": 474,
+            "width": 89,
+            "height": 13
+        },
+        {
+            "id": 7,
+            "content": "Data savec",
+            "column_min": 79,
+            "row_min": 539,
+            "column_max": 129,
+            "row_max": 549,
+            "width": 50,
+            "height": 10
+        },
+        {
+            "id": 8,
+            "content": "O KE",
+            "column_min": 246,
+            "row_min": 542,
+            "column_max": 267,
+            "row_max": 549,
+            "width": 21,
+            "height": 7
+        },
+        {
+            "id": 9,
+            "content": "TURN ON",
+            "column_min": 241,
+            "row_min": 567,
+            "column_max": 283,
+            "row_max": 581,
+            "width": 42,
+            "height": 14
+        },
+        {
+            "id": 10,
+            "content": "O",
+            "column_min": 165,
+            "row_min": 600,
+            "column_max": 176,
+            "row_max": 610,
+            "width": 11,
+            "height": 10
+        }
+    ]
+}
