@@ -1,39 +1,8 @@
 {
     "img_shape": [
+        601,
         540,
-        960,
         3
     ],
-    "texts": [
-        {
-            "id": 0,
-            "content": "O",
-            "column_min": 409,
-            "row_min": 274,
-            "column_max": 442,
-            "row_max": 296,
-            "width": 33,
-            "height": 22
-        },
-        {
-            "id": 1,
-            "content": "O",
-            "column_min": 472,
-            "row_min": 305,
-            "column_max": 495,
-            "row_max": 330,
-            "width": 23,
-            "height": 25
-        },
-        {
-            "id": 2,
-            "content": "Olti",
-            "column_min": 733,
-            "row_min": 323,
-            "column_max": 912,
-            "row_max": 391,
-            "width": 179,
-            "height": 68
-        }
-    ]
+    "texts": []
 }
