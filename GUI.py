@@ -41,6 +41,20 @@ class GUI:
                     self.screen = e
                     return
 
+    def remove_ele_out_screen(self):
+        if self.screen is None:
+            return 
+        new_elements = []
+        self.ele_compos = []
+        self.ele_texts = []
+        for ele in self.elements:
+            if ele.id in self.screen.children:
+                new_elements.append(ele)
+                if ele.category == 'Compo':
+                    self.ele_compos.append(ele)
+                elif ele.category == 'Text':
+                    self.ele_texts.append(ele)
+
     def recognize_popup_modal(self, height_thresh=0.15, width_thresh=0.5):
         def is_element_modal(element, area_resize):
             gray = cv2.cvtColor(element.clip, cv2.COLOR_BGR2GRAY)
@@ -117,9 +131,8 @@ class GUI:
         Convert detection result to Element objects
         @ det_result_data: {'elements':[], 'img_shape'}
         '''
-        class_map = {'Text': 't', 'Compo': 'c', 'Block': 'b'}
         for i, element in enumerate(self.det_result_data['compos']):
-            e = Element(str(i) + class_map[element['class']], element['class'], element['position'], self.det_result_data['img_shape'])
+            e = Element(str(i), element['class'], element['position'], self.det_result_data['img_shape'])
             if element['class'] == 'Text':
                 e.text_content = element['text_content']
             if 'children' in element:
@@ -132,6 +145,8 @@ class GUI:
         self.group_elements()
 
     def group_elements(self):
+        self.ele_compos = []
+        self.ele_texts = []
         for ele in self.elements:
             if ele.category == 'Compo':
                 self.ele_compos.append(ele)
@@ -251,10 +266,12 @@ class GUI:
             cv2.waitKey()
             cv2.destroyAllWindows()
 
-    def draw_screen(self, show=True):
+    def draw_screen(self, show=True, extract=True):
         board = self.img.copy()
         if self.screen is not None:
             self.screen.draw_element(board, color=(255,0,255), line=5, show_id=False)
+            if extract:
+                board = self.screen.clip
         if show:
             cv2.imshow('screen', cv2.resize(board, (self.detection_resize_width, self.detection_resize_height)))
             cv2.waitKey()
