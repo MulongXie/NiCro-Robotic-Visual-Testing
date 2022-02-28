@@ -29,65 +29,6 @@ class GUI:
         self.screen = None
 
     '''
-    **********************
-    *** GUI Operations ***
-    **********************
-    '''
-    def recognize_phone_screen(self):
-        for e in self.elements:
-            if e.height / self.detection_resize_height > 0.5:
-                if e.parent is None and e.children is not None:
-                    e.is_screen = True
-                    self.screen = e
-                    return
-
-    def remove_ele_out_screen(self):
-        if self.screen is None:
-            return 
-        new_elements = []
-        self.ele_compos = []
-        self.ele_texts = []
-        for ele in self.elements:
-            if ele.id in self.screen.children:
-                new_elements.append(ele)
-                if ele.category == 'Compo':
-                    self.ele_compos.append(ele)
-                elif ele.category == 'Text':
-                    self.ele_texts.append(ele)
-
-    def recognize_popup_modal(self, height_thresh=0.15, width_thresh=0.5):
-        def is_element_modal(element, area_resize):
-            gray = cv2.cvtColor(element.clip, cv2.COLOR_BGR2GRAY)
-            area_ele = element.clip.shape[0] * element.clip.shape[1]
-            # calc the grayscale of the element
-            sum_gray_ele = np.sum(gray)
-            mean_gray_ele = sum_gray_ele / area_ele
-            # calc the grayscale of other region except the element
-            sum_gray_other = sum_gray_a - sum_gray_ele
-            mean_gray_other = sum_gray_other / (area_resize - area_ele)
-            # if the element's brightness is far higher than other regions, it should be a pop-up modal
-            if mean_gray_ele > 180 and mean_gray_other < 80:
-                return True
-            return False
-
-        # calculate the mean pixel value as the brightness
-        img_resized = cv2.resize(self.img, (self.detection_resize_width, self.detection_resize_height))
-        area_resize = img_resized.shape[0] * img_resized.shape[1]
-
-        sum_gray_a = np.sum(cv2.cvtColor(img_resized, cv2.COLOR_BGR2GRAY))
-
-        if sum_gray_a / (img_resized.shape[0] * img_resized.shape[1]) < 100:
-            for ele in self.elements:
-                if ele.category == 'Compo' and \
-                        ele.height / ele.detection_img_size[0] > height_thresh and ele.width / ele.detection_img_size[1] > width_thresh:
-                    ele.get_clip(img_resized)
-                    if is_element_modal(ele, area_resize):
-                        self.has_popup_modal = True
-                        ele.is_popup_modal = True
-        if not self.has_popup_modal:
-            print("No popup modal")
-
-    '''
     *******************************
     *** Detect or Load Elements ***
     *******************************
@@ -161,6 +102,70 @@ class GUI:
             name = pjoin(clip_dir, element.id + '.jpg')
             cv2.imwrite(name, element.clip)
 
+    '''
+    **********************
+    *** GUI Operations ***
+    **********************
+    '''
+    def recognize_popup_modal(self, height_thresh=0.15, width_thresh=0.5):
+        def is_element_modal(element, area_resize):
+            gray = cv2.cvtColor(element.clip, cv2.COLOR_BGR2GRAY)
+            area_ele = element.clip.shape[0] * element.clip.shape[1]
+            # calc the grayscale of the element
+            sum_gray_ele = np.sum(gray)
+            mean_gray_ele = sum_gray_ele / area_ele
+            # calc the grayscale of other region except the element
+            sum_gray_other = sum_gray_a - sum_gray_ele
+            mean_gray_other = sum_gray_other / (area_resize - area_ele)
+            # if the element's brightness is far higher than other regions, it should be a pop-up modal
+            if mean_gray_ele > 180 and mean_gray_other < 80:
+                return True
+            return False
+
+        # calculate the mean pixel value as the brightness
+        img_resized = cv2.resize(self.img, (self.detection_resize_width, self.detection_resize_height))
+        area_resize = img_resized.shape[0] * img_resized.shape[1]
+
+        sum_gray_a = np.sum(cv2.cvtColor(img_resized, cv2.COLOR_BGR2GRAY))
+
+        if sum_gray_a / (img_resized.shape[0] * img_resized.shape[1]) < 100:
+            for ele in self.elements:
+                if ele.category == 'Compo' and \
+                        ele.height / ele.detection_img_size[0] > height_thresh and ele.width / ele.detection_img_size[1] > width_thresh:
+                    ele.get_clip(img_resized)
+                    if is_element_modal(ele, area_resize):
+                        self.has_popup_modal = True
+                        ele.is_popup_modal = True
+        if not self.has_popup_modal:
+            print("No popup modal")
+
+    def recognize_phone_screen(self):
+        for e in self.elements:
+            if e.height / self.detection_resize_height > 0.5:
+                if e.parent is None and e.children is not None:
+                    e.is_screen = True
+                    self.screen = e
+                    return
+
+    def remove_ele_out_screen(self):
+        if self.screen is None:
+            return
+        new_elements = []
+        self.ele_compos = []
+        self.ele_texts = []
+        for ele in self.elements:
+            if ele.id in self.screen.children:
+                new_elements.append(ele)
+                if ele.category == 'Compo':
+                    self.ele_compos.append(ele)
+                elif ele.category == 'Text':
+                    self.ele_texts.append(ele)
+
+    '''
+    *************************
+    *** Elements Matching ***
+    *************************
+    '''
     def match_elements(self, target_ele_img, resnet_model, target_ele_text=None,
                        matched_shape_thresh=1.5, min_similarity_img=0.8, min_similarity_text=0.85, show=False):
         '''
