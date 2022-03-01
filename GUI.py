@@ -26,7 +26,9 @@ class GUI:
         self.ele_texts = []
         self.elements_mapping = {}          # {'id': Element}
         self.has_popup_modal = False        # if the ui has popup modal
-        self.screen = None
+
+        self.screen = None      # Element object
+        self.screen_img = None
 
     '''
     *******************************
@@ -72,8 +74,10 @@ class GUI:
         Convert detection result to Element objects
         @ det_result_data: {'elements':[], 'img_shape'}
         '''
+        self.elements = []
+        self.elements_mapping = {}
         for i, element in enumerate(self.det_result_data['compos']):
-            e = Element(str(i), element['class'], element['position'], self.det_result_data['img_shape'])
+            e = Element(i, element['class'], element['position'], self.det_result_data['img_shape'])
             if element['class'] == 'Text':
                 e.text_content = element['text_content']
             if 'children' in element:
@@ -139,17 +143,21 @@ class GUI:
         if not self.has_popup_modal:
             print("No popup modal")
 
+    '''
+    ********************************
+    *** Adjust Element by Screen ***
+    ********************************
+    '''
     def recognize_phone_screen(self):
         for e in self.elements:
             if e.height / self.detection_resize_height > 0.5:
                 if e.parent is None and e.children is not None:
                     e.is_screen = True
                     self.screen = e
+                    self.screen_img = e.clip
                     return
 
     def remove_ele_out_screen(self):
-        if self.screen is None:
-            return
         new_elements = []
         self.ele_compos = []
         self.ele_texts = []
@@ -160,6 +168,32 @@ class GUI:
                     self.ele_compos.append(ele)
                 elif ele.category == 'Text':
                     self.ele_texts.append(ele)
+        self.elements = new_elements
+
+    def convert_element_relative_pos_by_screen(self):
+        s_left, s_top = self.screen.col_min, self.screen.row_min
+        for ele in self.elements:
+            ele.col_min -= s_left
+            ele.col_max -= s_left
+            ele.row_min -= s_top
+            ele.row_max -= s_top
+
+    def resize_screen_and_elements_by_height(self):
+        w_ratio = self.detection_resize_width / self.screen.width
+        h_ratio = self.detection_resize_height / self.screen.height
+        self.screen.resize_bound(resize_ratio_col=w_ratio, resize_ratio_row=h_ratio)
+        for ele in self.elements:
+            ele.resize_bound(resize_ratio_col=w_ratio, resize_ratio_row=h_ratio)
+        self.screen_img = cv2.resize(self.screen_img, (self.detection_resize_width, self.detection_resize_height))
+
+    def adjust_elements_by_screen(self):
+        self.recognize_phone_screen()
+        if self.screen is None:
+            return
+        self.remove_ele_out_screen()
+        self.convert_element_relative_pos_by_screen()
+        self.resize_screen_and_elements_by_height()
+
 
     '''
     *************************
@@ -279,6 +313,22 @@ class GUI:
                 board = self.screen.clip
         if show:
             cv2.imshow('screen', cv2.resize(board, (self.detection_resize_width, self.detection_resize_height)))
+            cv2.waitKey()
+            cv2.destroyAllWindows()
+        return board
+
+    def draw_element_after_screen_conversion(self, show=True):
+        '''
+        draw all the elements after adjust_elements_by_screen;
+        '''
+        if self.screen is None:
+            print('No screen conversion. Call adjust_elements_by_screen() first')
+            return
+        board = self.screen_img.copy()
+        for ele in self.elements:
+            ele.draw_element(board, show=False, show_id=False)
+        if show:
+            cv2.imshow('Screen elements', board)
             cv2.waitKey()
             cv2.destroyAllWindows()
         return board
