@@ -14,10 +14,12 @@ class GUI:
         self.img_path = img_path
         self.ui_name = img_path.replace('\\', '/').split('/')[-1].split('.')[0]
         self.output_dir = output_dir
-        self.img = cv2.imread(self.img_path)
+        self.img_org = cv2.imread(self.img_path)
 
         self.detection_resize_height = detection_resize_height  # resize the input gui while detecting
-        self.detection_resize_width = int(self.img.shape[1] * (self.detection_resize_height / self.img.shape[0]))
+        self.detection_resize_width = int(self.img_org.shape[1] * (self.detection_resize_height / self.img_org.shape[0]))
+        self.img = cv2.resize(self.img_org, (self.detection_resize_width, self.detection_resize_height))
+
         self.det_result_imgs = {'text': None, 'non-text': None, 'merge': None}  # image visualization for different stages
         self.det_result_data = None         # {'compos':[], 'img_shape'}
 
@@ -127,7 +129,7 @@ class GUI:
             return False
 
         # calculate the mean pixel value as the brightness
-        img_resized = cv2.resize(self.img, (self.detection_resize_width, self.detection_resize_height))
+        img_resized = self.img.copy()
         area_resize = img_resized.shape[0] * img_resized.shape[1]
 
         sum_gray_a = np.sum(cv2.cvtColor(img_resized, cv2.COLOR_BGR2GRAY))
@@ -179,12 +181,11 @@ class GUI:
             ele.row_max -= s_top
 
     def resize_screen_and_elements_by_height(self):
-        w_ratio = self.detection_resize_width / self.screen.width
         h_ratio = self.detection_resize_height / self.screen.height
-        self.screen.resize_bound(resize_ratio_col=w_ratio, resize_ratio_row=h_ratio)
+        self.screen.resize_bound(resize_ratio_col=h_ratio, resize_ratio_row=h_ratio)
         for ele in self.elements:
-            ele.resize_bound(resize_ratio_col=w_ratio, resize_ratio_row=h_ratio)
-        self.screen_img = cv2.resize(self.screen_img, (self.detection_resize_width, self.detection_resize_height))
+            ele.resize_bound(resize_ratio_col=h_ratio, resize_ratio_row=h_ratio)
+        self.screen_img = cv2.resize(self.screen_img, (int(self.screen.width * h_ratio), self.detection_resize_height))
 
     def adjust_elements_by_screen(self):
         self.recognize_phone_screen()
@@ -193,7 +194,6 @@ class GUI:
         self.remove_ele_out_screen()
         self.convert_element_relative_pos_by_screen()
         self.resize_screen_and_elements_by_height()
-
 
     '''
     *************************
@@ -226,7 +226,7 @@ class GUI:
                     print('Match by text')
                     if show:
                         cv2.imshow('target', target_ele_img)
-                        matched_ele_text.draw_element(self.img, show=True)
+                        matched_ele_text.draw_element(self.img.copy(), show=True)
                     return matched_ele_text
 
         # 2. if no matched text element, match by image similarity
@@ -287,10 +287,9 @@ class GUI:
         '''
         color_map = {'Compo': (0,255,0), 'Text': (0,0,255), 'Block':(0,255,255)}
 
-        ratio = self.img.shape[0] / self.det_result_data['img_shape'][0]
         board = self.img.copy()
         for i, element in enumerate(self.elements):
-            element.draw_element(board, ratio, color_map[element.category], show_id=show_id)
+            element.draw_element(board, color_map[element.category], show_id=show_id)
         self.det_result_imgs['merge'] = board.copy()
         return self.det_result_imgs['merge']
 
@@ -301,7 +300,7 @@ class GUI:
                 if ele.is_popup_modal:
                     ele.draw_element(board, color=(0,0,255), line=5, show_id=False)
             cv2.putText(board, 'popup modal', (5, 50), cv2.FONT_HERSHEY_SIMPLEX, 2, (0,0,255), 3)
-            cv2.imshow('modal', cv2.resize(board, (self.detection_resize_width, self.detection_resize_height)))
+            cv2.imshow('modal', board)
             cv2.waitKey()
             cv2.destroyAllWindows()
 
@@ -312,7 +311,7 @@ class GUI:
             if extract:
                 board = self.screen.clip
         if show:
-            cv2.imshow('screen', cv2.resize(board, (self.detection_resize_width, self.detection_resize_height)))
+            cv2.imshow('screen', board)
             cv2.waitKey()
             cv2.destroyAllWindows()
         return board

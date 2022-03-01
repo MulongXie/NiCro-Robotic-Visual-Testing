@@ -12,12 +12,10 @@ class Element:
         self.height = self.row_max - self.row_min
         self.aspect_ratio = round(self.width / self.height, 3)
         self.area = self.width * self.height
+        self.clip = None
 
         self.children = None    # contained elements within it
         self.parent = None      # parent element
-
-        self.detection_img_size = img_size    # the size of the resized image while detection
-        self.clip = None
 
         self.matched_element = None     # the matched Element in another ui
         self.is_popup_modal = False     # if the element is popup modal
@@ -30,20 +28,20 @@ class Element:
         self.area = self.width * self.height
 
     def get_clip(self, org_img):
-        ratio = org_img.shape[0] / self.detection_img_size[0]
-        left, right, top, bottom = int(self.col_min * ratio), int(self.col_max * ratio), int(self.row_min * ratio), int(self.row_max * ratio)
+        left, right, top, bottom = int(self.col_min), int(self.col_max), int(self.row_min), int(self.row_max)
         self.clip = org_img[top: bottom, left: right]
 
     def resize_bound(self, resize_ratio_col, resize_ratio_row):
-        return [int(self.col_min*resize_ratio_col), int(self.row_min*resize_ratio_row), int(self.col_max*resize_ratio_col), int(self.row_max*resize_ratio_row)]
+        self.col_min = int(self.col_min*resize_ratio_col)
+        self.row_min = int(self.row_min*resize_ratio_row)
+        self.col_max = int(self.col_max*resize_ratio_col)
+        self.row_max = int(self.row_max*resize_ratio_row)
 
     def get_bound(self):
         return self.col_min, self.row_min, self.col_max, self.row_max
 
-    def draw_element(self, board, ratio=None, color=(0,255,0), line=2, show_id=True, show=False):
-        if not ratio:
-            ratio = board.shape[0] / self.detection_img_size[0]
-        bound = self.resize_bound(ratio, ratio)
+    def draw_element(self, board, color=(0,255,0), line=2, show_id=True, show=False):
+        bound = self.get_bound()
         cv2.rectangle(board, (bound[0], bound[1]), (bound[2], bound[3]), color, line)
         if show_id:
             cv2.putText(board, str(self.id), (bound[0] + 3, bound[1] - 5), cv2.FONT_HERSHEY_SIMPLEX, 1, (0,0,255), 2)
