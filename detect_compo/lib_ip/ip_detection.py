@@ -341,8 +341,8 @@ def compo_filter(compos, min_area, img_shape):
     for compo in compos:
         if compo.area < min_area:
             continue
-        if compo.height > max_height:
-            continue
+        # if compo.height > max_height:
+        #     continue
         ratio_h = compo.width / compo.height
         ratio_w = compo.height / compo.width
         if ratio_h > 50 or ratio_w > 40 or \
