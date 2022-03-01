@@ -78,7 +78,7 @@ def merge_text_line_to_paragraph(elements, max_line_gap=5):
     return non_texts + texts
 
 
-def refine_elements(compos, texts, intersection_bias=(2, 2), containment_ratio=0.8):
+def refine_elements(compos, texts, intersection_bias=(2, 2), containment_ratio=0.7):
     '''
     1. remove compos contained in text
     2. remove compos containing text area that's too large
