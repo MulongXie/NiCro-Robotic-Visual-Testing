@@ -183,9 +183,10 @@ class GUI:
     def resize_screen_and_elements_by_height(self):
         h_ratio = self.detection_resize_height / self.screen.height
         self.screen.resize_bound(resize_ratio_col=h_ratio, resize_ratio_row=h_ratio)
+        self.screen_img = cv2.resize(self.screen_img, (int(self.screen.width * h_ratio), self.detection_resize_height))
         for ele in self.elements:
             ele.resize_bound(resize_ratio_col=h_ratio, resize_ratio_row=h_ratio)
-        self.screen_img = cv2.resize(self.screen_img, (int(self.screen.width * h_ratio), self.detection_resize_height))
+            ele.get_clip(self.screen_img)
 
     def adjust_elements_by_screen(self):
         self.recognize_phone_screen()
@@ -201,7 +202,7 @@ class GUI:
     *************************
     '''
     def match_elements(self, target_ele_img, resnet_model, target_ele_text=None,
-                       matched_shape_thresh=1.5, min_similarity_img=0.8, min_similarity_text=0.85, show=False):
+                       matched_shape_thresh=1.5, min_similarity_img=0.75, min_similarity_text=0.85, show=False):
         '''
         :param matched_shape_thresh: the maximum ratio for the shape difference of matched pair
         :param resnet_model: resnet model for encoding image
@@ -226,7 +227,8 @@ class GUI:
                     print('Match by text')
                     if show:
                         cv2.imshow('target', target_ele_img)
-                        matched_ele_text.draw_element(self.img.copy(), show=True)
+                        board = self.screen_img.copy() if self.screen_img else self.img.copy()
+                        matched_ele_text.draw_element(board, show=True)
                     return matched_ele_text
 
         # 2. if no matched text element, match by image similarity
@@ -260,7 +262,8 @@ class GUI:
                 print('Match by image')
                 if show:
                     cv2.imshow('target', target_ele_img)
-                    matched_ele_img.draw_element(self.img.copy(), show=True)
+                    board = self.screen_img.copy() if self.screen_img is not None else self.img.copy()
+                    matched_ele_img.draw_element(board, show=True)
                 return matched_ele_img
         print('No matched element found')
         return None

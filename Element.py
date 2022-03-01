@@ -46,6 +46,6 @@ class Element:
         if show_id:
             cv2.putText(board, str(self.id), (bound[0] + 3, bound[1] - 5), cv2.FONT_HERSHEY_SIMPLEX, 1, (0,0,255), 2)
         if show:
-            cv2.imshow(self.id, cv2.resize(board, (int(board.shape[1] * (800 / board.shape[0])), 800)))
+            cv2.imshow(str(self.id), cv2.resize(board, (int(board.shape[1] * (800 / board.shape[0])), 800)))
             cv2.waitKey()
             cv2.destroyAllWindows()
