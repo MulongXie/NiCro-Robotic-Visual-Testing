@@ -8,6 +8,7 @@ class Element:
         self.text_content = text_content
 
         self.col_min, self.row_min, self.col_max, self.row_max = int(position['column_min']), int(position['row_min']), int(position['column_max']), int(position['row_max'])
+        self.center_x, self.center_y = int((self.col_max + self.col_min) / 2), int((self.row_max + self.row_min) / 2)
         self.width = self.col_max - self.col_min
         self.height = self.row_max - self.row_min
         self.aspect_ratio = round(self.width / self.height, 3)
@@ -22,6 +23,7 @@ class Element:
         self.is_screen = False          # if the element is phone screen
 
     def init_bound(self):
+        self.center_x, self.center_y = int((self.col_max + self.col_min) / 2), int((self.row_max + self.row_min) / 2)
         self.width = self.col_max - self.col_min
         self.height = self.row_max - self.row_min
         self.aspect_ratio = round(self.width / self.height)

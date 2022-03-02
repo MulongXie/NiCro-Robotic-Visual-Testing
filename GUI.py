@@ -202,6 +202,8 @@ class GUI:
         element.col_max = int((element.col_max + self.screen.col_min) * h_ratio)
         element.row_min = int((element.row_min + self.screen.row_min) * h_ratio)
         element.row_max = int((element.row_max + self.screen.row_min) * h_ratio)
+        element.init_bound()
+        element.get_clip(self.img)
 
     '''
     *************************
@@ -235,7 +237,7 @@ class GUI:
                     # convert the coordinate back
                     self.convert_element_pos_back(matched_ele_text)
                     if show:
-                        cv2.imshow('target', target_ele_img)
+                        # cv2.imshow('target', target_ele_img)
                         board = self.img.copy()
                         matched_ele_text.draw_element(board, show=True)
                     return matched_ele_text
@@ -272,7 +274,7 @@ class GUI:
                 # convert the coordinate back
                 self.convert_element_pos_back(matched_ele_img)
                 if show:
-                    cv2.imshow('target', target_ele_img)
+                    # cv2.imshow('target', target_ele_img)
                     board = self.img.copy()
                     matched_ele_img.draw_element(board, show=True)
                 return matched_ele_img
