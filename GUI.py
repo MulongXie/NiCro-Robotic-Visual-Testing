@@ -211,7 +211,7 @@ class GUI:
     *************************
     '''
     def match_elements(self, target_ele_img, resnet_model, target_ele_text=None,
-                       matched_shape_thresh=1.5, min_similarity_img=0.75, min_similarity_text=0.85, show=False):
+                       matched_shape_thresh=1.5, min_similarity_img=0.55, min_similarity_text=0.85, show=False):
         '''
         :param matched_shape_thresh: the maximum ratio for the shape difference of matched pair
         :param resnet_model: resnet model for encoding image
