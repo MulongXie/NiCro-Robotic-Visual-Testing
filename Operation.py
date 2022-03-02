@@ -107,10 +107,13 @@ class Operation:
     def get_text_content(self):
         return [t.content for t in self.target_element_text]
 
-    def show_target_ele(self):
+    def show_target_ele(self, show=True):
         board = self.ui_img.copy()
         cv2.rectangle(board, self.target_element_bounds[0], self.target_element_bounds[1], (255,0,0), 2)
-        cv2.imshow('target element', board)
-        cv2.imshow('clip', self.target_element_img)
-        cv2.waitKey()
-        cv2.destroyAllWindows()
+        if show:
+            cv2.imshow('target element', board)
+            # cv2.imshow('clip', self.target_element_img)
+            cv2.waitKey()
+            # cv2.destroyAllWindows()
+            cv2.destroyWindow('target element')
+        return board
