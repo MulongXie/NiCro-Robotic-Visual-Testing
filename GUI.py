@@ -196,6 +196,13 @@ class GUI:
         self.convert_element_relative_pos_by_screen()
         self.resize_screen_and_elements_by_height()
 
+    def convert_element_pos_back(self, element):
+        h_ratio = self.screen.height / self.detection_resize_height
+        element.col_min = int((element.col_min + self.screen.col_min) * h_ratio)
+        element.col_max = int((element.col_max + self.screen.col_min) * h_ratio)
+        element.row_min = int((element.row_min + self.screen.row_min) * h_ratio)
+        element.row_max = int((element.row_max + self.screen.row_min) * h_ratio)
+
     '''
     *************************
     *** Elements Matching ***
@@ -225,9 +232,11 @@ class GUI:
                             matched_text_len = len(text.text_content)
                 if matched_ele_text is not None:
                     print('Match by text')
+                    # convert the coordinate back
+                    self.convert_element_pos_back(matched_ele_text)
                     if show:
                         cv2.imshow('target', target_ele_img)
-                        board = self.screen_img.copy() if self.screen_img else self.img.copy()
+                        board = self.img.copy()
                         matched_ele_text.draw_element(board, show=True)
                     return matched_ele_text
 
@@ -258,11 +267,13 @@ class GUI:
                     if matched_ele_img is None or compo_similarity > matched_img_sim:
                         matched_ele_img = ele
                         matched_img_sim = compo_similarity
-            if matched_ele_img:
+            if matched_ele_img is not None:
                 print('Match by image')
+                # convert the coordinate back
+                self.convert_element_pos_back(matched_ele_img)
                 if show:
                     cv2.imshow('target', target_ele_img)
-                    board = self.screen_img.copy() if self.screen_img is not None else self.img.copy()
+                    board = self.img.copy()
                     matched_ele_img.draw_element(board, show=True)
                 return matched_ele_img
         print('No matched element found')
