@@ -2,7 +2,7 @@ import cv2
 
 
 class Element:
-    def __init__(self, element_id, category, position, img_size, text_content=None):
+    def __init__(self, element_id, category, position, text_content=None):
         self.id = element_id
         self.category = category        # Compo / Text
         self.text_content = text_content

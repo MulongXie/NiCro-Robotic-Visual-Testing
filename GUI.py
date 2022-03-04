@@ -79,7 +79,7 @@ class GUI:
         self.elements = []
         self.elements_mapping = {}
         for i, element in enumerate(self.det_result_data['compos']):
-            e = Element(i, element['class'], element['position'], self.det_result_data['img_shape'])
+            e = Element(i, element['class'], element['position'])
             if element['class'] == 'Text':
                 e.text_content = element['text_content']
             if 'children' in element:
@@ -197,6 +197,8 @@ class GUI:
         self.resize_screen_and_elements_by_height()
 
     def convert_element_pos_back(self, element):
+        if self.screen is None:
+            return
         h_ratio = self.screen.height / self.detection_resize_height
         element.col_min = int((element.col_min + self.screen.col_min) * h_ratio)
         element.col_max = int((element.col_max + self.screen.col_min) * h_ratio)
@@ -280,6 +282,30 @@ class GUI:
                 return matched_ele_img
         print('No matched element found')
         return None
+
+    def match_element_template_matching(self, target_ele_img, show=False):
+        if self.screen_img is not None:
+            img_gray = cv2.cvtColor(self.screen_img, cv2.COLOR_BGR2GRAY)
+        else:
+            img_gray = cv2.cvtColor(self.img, cv2.COLOR_BGR2GRAY)
+        target_img_gray = cv2.cvtColor(target_ele_img, cv2.COLOR_BGR2GRAY)
+        w, h = target_img_gray.shape[::-1]
+
+        # methods = [cv2.TM_CCOEFF, cv2.TM_CCOEFF_NORMED, cv2.TM_CCORR, cv2.TM_CCORR_NORMED, cv2.TM_SQDIFF, cv2.TM_SQDIFF_NORMED]
+        method = cv2.TM_CCOEFF_NORMED
+        res = cv2.matchTemplate(img_gray, target_img_gray, method)
+        min_val, max_val, min_loc, max_loc = cv2.minMaxLoc(res)
+        if method in [cv2.TM_SQDIFF, cv2.TM_SQDIFF_NORMED]:
+            top_left = min_loc
+        else:
+            top_left = max_loc
+        bottom_right = (top_left[0] + w, top_left[1] + h)
+
+        element = Element(element_id=len(self.elements), category='Compo', position={'column_min':top_left[0], 'row_min':top_left[1], 'column_max':bottom_right[0], 'row_max':bottom_right[1]})
+        if show:
+            board = self.img.copy()
+            element.draw_element(board, show=True)
+        return element
 
     '''
     *********************

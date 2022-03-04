@@ -7,143 +7,133 @@
     "texts": [
         {
             "id": 0,
-            "content": "5:57G",
-            "column_min": 134,
-            "row_min": 65,
-            "column_max": 225,
-            "row_max": 78,
+            "content": "6:19G",
+            "column_min": 70,
+            "row_min": 52,
+            "column_max": 161,
+            "row_max": 66,
             "width": 91,
-            "height": 13
+            "height": 14
         },
         {
             "id": 1,
             "content": "AdGuard",
-            "column_min": 158,
-            "row_min": 101,
-            "column_max": 226,
-            "row_max": 117,
-            "width": 68,
-            "height": 16
+            "column_min": 93,
+            "row_min": 88,
+            "column_max": 163,
+            "row_max": 106,
+            "width": 70,
+            "height": 18
         },
         {
             "id": 2,
             "content": "Protection is disabled",
-            "column_min": 197,
-            "row_min": 324,
-            "column_max": 356,
-            "row_max": 342,
-            "width": 159,
-            "height": 18
+            "column_min": 126,
+            "row_min": 321,
+            "column_max": 288,
+            "row_max": 338,
+            "width": 162,
+            "height": 17
         },
         {
             "id": 3,
-            "content": "Since February 27.202212:00AM",
-            "column_min": 188,
-            "row_min": 462,
-            "column_max": 360,
-            "row_max": 480,
-            "width": 172,
-            "height": 18
+            "content": "Since February 25,202212:00AM",
+            "column_min": 111,
+            "row_min": 463,
+            "column_max": 294,
+            "row_max": 479,
+            "width": 183,
+            "height": 16
         },
         {
             "id": 4,
-            "content": "ZiAds blocked",
-            "column_min": 138,
-            "row_min": 507,
-            "column_max": 239,
-            "row_max": 525,
-            "width": 101,
-            "height": 18
+            "content": "Ads blocked",
+            "column_min": 61,
+            "row_min": 505,
+            "column_max": 163,
+            "row_max": 521,
+            "width": 102,
+            "height": 16
         },
         {
             "id": 5,
-            "content": "S",
-            "column_min": 141,
-            "row_min": 556,
-            "column_max": 162,
-            "row_max": 572,
-            "width": 21,
-            "height": 16
+            "content": "Trackers blocked",
+            "column_min": 84,
+            "row_min": 553,
+            "column_max": 185,
+            "row_max": 566,
+            "width": 101,
+            "height": 13
         },
         {
             "id": 6,
-            "content": "Trackersblocked",
-            "column_min": 159,
-            "row_min": 556,
-            "column_max": 264,
-            "row_max": 570,
-            "width": 105,
-            "height": 14
+            "content": "Threats blocked",
+            "column_min": 88,
+            "row_min": 601,
+            "column_max": 180,
+            "row_max": 614,
+            "width": 92,
+            "height": 13
         },
         {
             "id": 7,
-            "content": "Threats blocked",
-            "column_min": 171,
-            "row_min": 599,
-            "column_max": 259,
-            "row_max": 616,
-            "width": 88,
-            "height": 17
+            "content": "C9",
+            "column_min": 59,
+            "row_min": 649,
+            "column_max": 76,
+            "row_max": 661,
+            "width": 17,
+            "height": 12
         },
         {
             "id": 8,
-            "content": "O",
-            "column_min": 391,
-            "row_min": 600,
-            "column_max": 401,
-            "row_max": 608,
-            "width": 10,
-            "height": 8
+            "content": "Data saved",
+            "column_min": 88,
+            "row_min": 649,
+            "column_max": 151,
+            "row_max": 663,
+            "width": 63,
+            "height": 14
         },
         {
             "id": 9,
-            "content": "G",
-            "column_min": 143,
+            "content": "0KB",
+            "column_min": 290,
             "row_min": 650,
-            "column_max": 162,
-            "row_max": 663,
-            "width": 19,
-            "height": 13
+            "column_max": 322,
+            "row_max": 664,
+            "width": 32,
+            "height": 14
         },
         {
             "id": 10,
-            "content": "0KB",
-            "column_min": 368,
-            "row_min": 641,
-            "column_max": 404,
-            "row_max": 662,
-            "width": 36,
-            "height": 21
+            "content": "TURN ON",
+            "column_min": 293,
+            "row_min": 686,
+            "column_max": 340,
+            "row_max": 701,
+            "width": 47,
+            "height": 15
         },
         {
             "id": 11,
-            "content": "Data savec",
-            "column_min": 170,
-            "row_min": 648,
-            "column_max": 233,
-            "row_max": 664,
-            "width": 63,
-            "height": 16
+            "content": "O",
+            "column_min": 194,
+            "row_min": 725,
+            "column_max": 207,
+            "row_max": 737,
+            "width": 13,
+            "height": 12
         },
         {
             "id": 12,
-            "content": "TURN ON",
-            "column_min": 371,
-            "row_min": 678,
-            "column_max": 425,
-            "row_max": 695,
-            "width": 54,
-            "height": 17
-        },
-        {
-            "id": 13,
-            "content": "O",
-            "column_min": 280,
-            "row_min": 721,
-            "column_max": 293,
-            "row_max": 734,
-            "width": 13,
-            "height": 13
+            "content": "S",
+            "column_min": 285,
+            "row_min": 727,
+            "column_max": 299,
+            "row_max": 739,
+            "width": 14,
+            "height": 12
         }
     ]
 }
