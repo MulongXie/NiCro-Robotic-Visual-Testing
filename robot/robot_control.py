@@ -11,8 +11,8 @@ import time
 
 
 class RobotController(object):
-    def __init__(self, speed=1000, press_distance=10):
-        self.swift = SwiftAPI()
+    def __init__(self, port=None, speed=10000, press_distance=10):
+        self.swift = SwiftAPI(port=port)
         self.move_speed = speed
         self.press_distance = press_distance # 按压力度
         # self.swift.set_position(z=60, speed=100, wait=False, timeout=10, cmd='G1')
