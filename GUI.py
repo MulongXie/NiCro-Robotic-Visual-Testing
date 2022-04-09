@@ -267,8 +267,11 @@ class GUI:
         matched_ele_text = None
         matched_text_len = None
         if target_ele_text is not None and len(target_ele_text) > 0:
-            # find the longest matched text
-            target_ele_text = sorted(target_ele_text, key=lambda x: len(x), reverse=True)
+            if target_ele_text is not list:
+                target_ele_text = [target_ele_text]
+            else:
+                # find the longest matched text
+                target_ele_text = sorted(target_ele_text, key=lambda x: len(x), reverse=True)
             for tar in target_ele_text:
                 for text in self.ele_texts:
                     sim = SequenceMatcher(None, text.text_content, tar).ratio()
@@ -300,8 +303,8 @@ class GUI:
             # match images through encodings
             t_height, t_width = target_ele_img.shape[:2]
             t_aspect_ratio = round(t_width / t_height, 3)
-            matched_ele_img = None
-            matched_img_sim = None
+            matched_ele_img = None  # image, the image of the matched element
+            matched_img_sim = None  # float, the similarity with the matched element
             for i, ele in enumerate(self.ele_compos):
                 # check the shape of the two elements first
                 if max(ele.height, t_height) / min(ele.height, t_height) > matched_shape_thresh or\
