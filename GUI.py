@@ -145,10 +145,20 @@ class GUI:
         if not self.has_popup_modal:
             print("No popup modal")
 
+    def get_element_by_coordinate(self, x, y):
+        '''
+        Given a coordinate (x,y), get the leaf element in that position
+        '''
+        for ele in self.elements:
+            if ele.col_min <= x <= ele.col_max and ele.row_min <= y <= ele.row_max:
+                if ele.children is None:
+                    return ele
+        return None
+
     '''
-    ********************************
-    *** Adjust Element by Screen ***
-    ********************************
+    **************************************
+    *** Adjust Element by Phone Screen ***
+    **************************************
     '''
     def recognize_phone_screen(self):
         for e in self.elements:
@@ -189,6 +199,9 @@ class GUI:
             ele.get_clip(self.screen_img)
 
     def adjust_elements_by_screen(self):
+        '''
+        Recognize the phone screen region if any and adjust the element coordinates according to the screen
+        '''
         self.recognize_phone_screen()
         if self.screen is None:
             return
@@ -197,6 +210,9 @@ class GUI:
         self.resize_screen_and_elements_by_height()
 
     def convert_element_pos_back(self, element):
+        '''
+        Convert back the element coordinates from the screen-based to the whole image-based
+        '''
         if self.screen is None:
             return
         h_ratio = self.screen.height / self.detection_resize_height
