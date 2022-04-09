@@ -158,7 +158,7 @@ class GUI:
                     element = ele
         return element
 
-    def get_element_by_click(self):
+    def get_element_by_clicking(self):
         '''
         Get the element by mouse clicking on the image
         '''
