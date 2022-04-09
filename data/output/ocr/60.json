@@ -1,0 +1,239 @@
+{
+    "img_shape": [
+        2280,
+        1080,
+        3
+    ],
+    "texts": [
+        {
+            "id": 0,
+            "content": "11:19",
+            "column_min": 24,
+            "row_min": 50,
+            "column_max": 133,
+            "row_max": 86,
+            "width": 109,
+            "height": 36
+        },
+        {
+            "id": 1,
+            "content": "Booking.com",
+            "column_min": 209,
+            "row_min": 216,
+            "column_max": 548,
+            "row_max": 283,
+            "width": 339,
+            "height": 67
+        },
+        {
+            "id": 2,
+            "content": "Sign in or create account",
+            "column_min": 193,
+            "row_min": 413,
+            "column_max": 622,
+            "row_max": 461,
+            "width": 429,
+            "height": 48
+        },
+        {
+            "id": 3,
+            "content": "C",
+            "column_min": 55,
+            "row_min": 544,
+            "column_max": 118,
+            "row_max": 596,
+            "width": 63,
+            "height": 52
+        },
+        {
+            "id": 4,
+            "content": "Bookings",
+            "column_min": 195,
+            "row_min": 549,
+            "column_max": 364,
+            "row_max": 589,
+            "width": 169,
+            "height": 40
+        },
+        {
+            "id": 5,
+            "content": "Customer Service Help",
+            "column_min": 200,
+            "row_min": 682,
+            "column_max": 593,
+            "row_max": 715,
+            "width": 393,
+            "height": 33
+        },
+        {
+            "id": 6,
+            "content": "Deals",
+            "column_min": 198,
+            "row_min": 812,
+            "column_max": 294,
+            "row_max": 848,
+            "width": 96,
+            "height": 36
+        },
+        {
+            "id": 7,
+            "content": "9",
+            "column_min": 55,
+            "row_min": 938,
+            "column_max": 118,
+            "row_max": 1007,
+            "width": 63,
+            "height": 69
+        },
+        {
+            "id": 8,
+            "content": "Car Rentals",
+            "column_min": 200,
+            "row_min": 940,
+            "column_max": 398,
+            "row_max": 981,
+            "width": 198,
+            "height": 41
+        },
+        {
+            "id": 9,
+            "content": "Wish lists",
+            "column_min": 195,
+            "row_min": 1071,
+            "column_max": 366,
+            "row_max": 1112,
+            "width": 171,
+            "height": 41
+        },
+        {
+            "id": 10,
+            "content": "Book airport taxi",
+            "column_min": 195,
+            "row_min": 1199,
+            "column_max": 492,
+            "row_max": 1242,
+            "width": 297,
+            "height": 43
+        },
+        {
+            "id": 11,
+            "content": "G",
+            "column_min": 55,
+            "row_min": 1320,
+            "column_max": 118,
+            "row_max": 1396,
+            "width": 63,
+            "height": 76
+        },
+        {
+            "id": 12,
+            "content": "Genius Loyalty Program",
+            "column_min": 195,
+            "row_min": 1330,
+            "column_max": 617,
+            "row_max": 1375,
+            "width": 422,
+            "height": 45
+        },
+        {
+            "id": 13,
+            "content": "G",
+            "column_min": 53,
+            "row_min": 1456,
+            "column_max": 118,
+            "row_max": 1527,
+            "width": 65,
+            "height": 71
+        },
+        {
+            "id": 14,
+            "content": "Your contributions",
+            "column_min": 200,
+            "row_min": 1468,
+            "column_max": 518,
+            "row_max": 1501,
+            "width": 318,
+            "height": 33
+        },
+        {
+            "id": 15,
+            "content": "Bn",
+            "column_min": 55,
+            "row_min": 1586,
+            "column_max": 118,
+            "row_max": 1658,
+            "width": 63,
+            "height": 72
+        },
+        {
+            "id": 16,
+            "content": "Travel communities",
+            "column_min": 198,
+            "row_min": 1596,
+            "column_max": 542,
+            "row_max": 1636,
+            "width": 344,
+            "height": 40
+        },
+        {
+            "id": 17,
+            "content": "Travel Articles",
+            "column_min": 200,
+            "row_min": 1729,
+            "column_max": 451,
+            "row_max": 1762,
+            "width": 251,
+            "height": 33
+        },
+        {
+            "id": 18,
+            "content": "Q",
+            "column_min": 58,
+            "row_min": 1852,
+            "column_max": 116,
+            "row_max": 1912,
+            "width": 58,
+            "height": 60
+        },
+        {
+            "id": 19,
+            "content": "List your property",
+            "column_min": 187,
+            "row_min": 1850,
+            "column_max": 504,
+            "row_max": 1908,
+            "width": 317,
+            "height": 58
+        },
+        {
+            "id": 20,
+            "content": "Gift cards",
+            "column_min": 192,
+            "row_min": 1983,
+            "column_max": 372,
+            "row_max": 2031,
+            "width": 180,
+            "height": 48
+        },
+        {
+            "id": 21,
+            "content": "0",
+            "column_min": 947,
+            "row_min": 1981,
+            "column_max": 984,
+            "row_max": 2016,
+            "width": 37,
+            "height": 35
+        },
+        {
+            "id": 22,
+            "content": "E",
+            "column_min": 75,
+            "row_min": 2121,
+            "column_max": 96,
+            "row_max": 2140,
+            "width": 21,
+            "height": 19
+        }
+    ]
+}

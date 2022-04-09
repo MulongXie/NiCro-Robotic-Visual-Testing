@@ -1,0 +1,189 @@
+{
+    "img_shape": [
+        800,
+        480,
+        3
+    ],
+    "texts": [
+        {
+            "id": 0,
+            "content": "11:50",
+            "column_min": 10,
+            "row_min": 7,
+            "column_max": 68,
+            "row_max": 28,
+            "width": 58,
+            "height": 21
+        },
+        {
+            "id": 1,
+            "content": "Booking.com",
+            "column_min": 115,
+            "row_min": 60,
+            "column_max": 298,
+            "row_max": 96,
+            "width": 183,
+            "height": 36
+        },
+        {
+            "id": 2,
+            "content": "D",
+            "column_min": 31,
+            "row_min": 166,
+            "column_max": 66,
+            "row_max": 199,
+            "width": 35,
+            "height": 33
+        },
+        {
+            "id": 3,
+            "content": "Sign in or create account",
+            "column_min": 106,
+            "row_min": 169,
+            "column_max": 344,
+            "row_max": 192,
+            "width": 238,
+            "height": 23
+        },
+        {
+            "id": 4,
+            "content": "O",
+            "column_min": 29,
+            "row_min": 239,
+            "column_max": 65,
+            "row_max": 269,
+            "width": 36,
+            "height": 30
+        },
+        {
+            "id": 5,
+            "content": "Bookings",
+            "column_min": 106,
+            "row_min": 239,
+            "column_max": 197,
+            "row_max": 264,
+            "width": 91,
+            "height": 25
+        },
+        {
+            "id": 6,
+            "content": "Q",
+            "column_min": 31,
+            "row_min": 308,
+            "column_max": 64,
+            "row_max": 342,
+            "width": 33,
+            "height": 34
+        },
+        {
+            "id": 7,
+            "content": "Customer Service Help",
+            "column_min": 107,
+            "row_min": 312,
+            "column_max": 323,
+            "row_max": 333,
+            "width": 216,
+            "height": 21
+        },
+        {
+            "id": 8,
+            "content": "O",
+            "column_min": 31,
+            "row_min": 378,
+            "column_max": 64,
+            "row_max": 413,
+            "width": 33,
+            "height": 35
+        },
+        {
+            "id": 9,
+            "content": "Deals",
+            "column_min": 106,
+            "row_min": 383,
+            "column_max": 161,
+            "row_max": 404,
+            "width": 55,
+            "height": 21
+        },
+        {
+            "id": 10,
+            "content": "Car Rentals",
+            "column_min": 108,
+            "row_min": 456,
+            "column_max": 216,
+            "row_max": 473,
+            "width": 108,
+            "height": 17
+        },
+        {
+            "id": 11,
+            "content": "Q2",
+            "column_min": 33,
+            "row_min": 523,
+            "column_max": 62,
+            "row_max": 548,
+            "width": 29,
+            "height": 25
+        },
+        {
+            "id": 12,
+            "content": "Wish lists",
+            "column_min": 106,
+            "row_min": 524,
+            "column_max": 200,
+            "row_max": 545,
+            "width": 94,
+            "height": 21
+        },
+        {
+            "id": 13,
+            "content": "Book airport taxi",
+            "column_min": 107,
+            "row_min": 597,
+            "column_max": 265,
+            "row_max": 617,
+            "width": 158,
+            "height": 20
+        },
+        {
+            "id": 14,
+            "content": "G",
+            "column_min": 31,
+            "row_min": 660,
+            "column_max": 66,
+            "row_max": 700,
+            "width": 35,
+            "height": 40
+        },
+        {
+            "id": 15,
+            "content": "Genius Loyalty Program",
+            "column_min": 108,
+            "row_min": 668,
+            "column_max": 333,
+            "row_max": 688,
+            "width": 225,
+            "height": 20
+        },
+        {
+            "id": 16,
+            "content": "B",
+            "column_min": 31,
+            "row_min": 734,
+            "column_max": 64,
+            "row_max": 767,
+            "width": 33,
+            "height": 33
+        },
+        {
+            "id": 17,
+            "content": "Your contributions",
+            "column_min": 106,
+            "row_min": 738,
+            "column_max": 285,
+            "row_max": 759,
+            "width": 179,
+            "height": 21
+        }
+    ]
+}

@@ -28,6 +28,7 @@ class GUI:
         self.ele_texts = []
         self.elements_mapping = {}          # {'id': Element}
         self.has_popup_modal = False        # if the ui has popup modal
+        self.selected_element = None        # the selected element by clicking
 
         self.screen = None      # Element object
         self.screen_img = None
@@ -162,8 +163,6 @@ class GUI:
         '''
         Get the element by mouse clicking on the image
         '''
-        x, y = -1, -1
-        clicked_ele = None
 
         def click_event(event, c_x, c_y, flags, params):
             if event == cv2.EVENT_LBUTTONDOWN:
@@ -172,6 +171,7 @@ class GUI:
                 clicked_ele = self.get_element_by_coordinate(x, y)
                 if clicked_ele is not None:
                     cv2.imshow('Clicked element', clicked_ele.clip)
+                    self.selected_element = clicked_ele
                 else:
                     print('No element in the click position')
 
@@ -179,7 +179,7 @@ class GUI:
         cv2.setMouseCallback('detection result', click_event)
         cv2.waitKey()
         cv2.destroyAllWindows()
-        return clicked_ele
+        return self.selected_element
 
     '''
     **************************************
