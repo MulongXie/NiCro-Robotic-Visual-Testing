@@ -149,11 +149,37 @@ class GUI:
         '''
         Given a coordinate (x,y), get the leaf element in that position
         '''
+        element = None
         for ele in self.elements:
             if ele.col_min <= x <= ele.col_max and ele.row_min <= y <= ele.row_max:
                 if ele.children is None:
                     return ele
-        return None
+                else:
+                    element = ele
+        return element
+
+    def get_element_by_click(self):
+        '''
+        Get the element by mouse clicking on the image
+        '''
+        x, y = -1, -1
+        clicked_ele = None
+
+        def click_event(event, c_x, c_y, flags, params):
+            if event == cv2.EVENT_LBUTTONDOWN:
+                x, y = c_x, c_y
+                print('Click (%d, %d)' % (x, y))
+                clicked_ele = self.get_element_by_coordinate(x, y)
+                if clicked_ele is not None:
+                    cv2.imshow('Clicked element', clicked_ele.clip)
+                else:
+                    print('No element in the click position')
+
+        cv2.imshow('detection result', self.det_result_imgs['merge'])
+        cv2.setMouseCallback('detection result', click_event)
+        cv2.waitKey()
+        cv2.destroyAllWindows()
+        return clicked_ele
 
     '''
     **************************************
@@ -339,7 +365,7 @@ class GUI:
         cv2.waitKey()
         cv2.destroyAllWindows()
 
-    def draw_detection_result(self, show_id=True):
+    def draw_detection_result(self, show_id=False):
         '''
         Draw detected elements based on det_result_data
         '''
