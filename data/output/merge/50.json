@@ -7,9 +7,9 @@
             "width": 18,
             "position": {
                 "column_min": 20,
-                "row_min": 48,
+                "row_min": 21,
                 "column_max": 38,
-                "row_max": 66
+                "row_max": 39
             }
         },
         {
@@ -19,21 +19,21 @@
             "width": 16,
             "position": {
                 "column_min": 371,
-                "row_min": 47,
+                "row_min": 21,
                 "column_max": 387,
-                "row_max": 66
+                "row_max": 40
             }
         },
         {
             "id": 2,
             "class": "Compo",
-            "height": 656,
+            "height": 735,
             "width": 360,
             "position": {
                 "column_min": 0,
-                "row_min": 89,
+                "row_min": 63,
                 "column_max": 360,
-                "row_max": 745
+                "row_max": 798
             },
             "children": [
                 3,
@@ -45,10 +45,9 @@
                 9,
                 10,
                 11,
-                13,
-                15,
-                17,
-                18,
+                12,
+                14,
+                16,
                 19,
                 20,
                 21,
@@ -59,7 +58,11 @@
                 26,
                 27,
                 28,
-                29
+                29,
+                30,
+                31,
+                32,
+                33
             ]
         },
         {
@@ -69,9 +72,9 @@
             "width": 24,
             "position": {
                 "column_min": 24,
-                "row_min": 121,
+                "row_min": 94,
                 "column_max": 48,
-                "row_max": 146
+                "row_max": 119
             },
             "parent": 2
         },
@@ -82,9 +85,9 @@
             "width": 22,
             "position": {
                 "column_min": 23,
-                "row_min": 175,
+                "row_min": 149,
                 "column_max": 45,
-                "row_max": 195
+                "row_max": 169
             },
             "parent": 2
         },
@@ -95,22 +98,22 @@
             "width": 22,
             "position": {
                 "column_min": 23,
-                "row_min": 226,
+                "row_min": 200,
                 "column_max": 45,
-                "row_max": 249
+                "row_max": 223
             },
             "parent": 2
         },
         {
             "id": 6,
             "class": "Compo",
-            "height": 23,
-            "width": 22,
+            "height": 24,
+            "width": 24,
             "position": {
-                "column_min": 23,
-                "row_min": 278,
-                "column_max": 45,
-                "row_max": 301
+                "column_min": 22,
+                "row_min": 251,
+                "column_max": 46,
+                "row_max": 275
             },
             "parent": 2
         },
@@ -121,307 +124,364 @@
             "width": 22,
             "position": {
                 "column_min": 23,
-                "row_min": 333,
+                "row_min": 307,
                 "column_max": 45,
-                "row_max": 350
+                "row_max": 324
             },
             "parent": 2
         },
         {
             "id": 8,
             "class": "Compo",
-            "height": 19,
-            "width": 20,
+            "height": 23,
+            "width": 22,
             "position": {
-                "column_min": 24,
-                "row_min": 384,
-                "column_max": 44,
-                "row_max": 403
+                "column_min": 23,
+                "row_min": 356,
+                "column_max": 45,
+                "row_max": 379
             },
             "parent": 2
         },
         {
             "id": 9,
             "class": "Compo",
-            "height": 18,
+            "height": 17,
             "width": 22,
             "position": {
                 "column_min": 23,
-                "row_min": 437,
+                "row_min": 411,
                 "column_max": 45,
-                "row_max": 455
+                "row_max": 428
             },
             "parent": 2
         },
         {
             "id": 10,
             "class": "Compo",
-            "height": 24,
-            "width": 22,
+            "height": 18,
+            "width": 20,
             "position": {
-                "column_min": 23,
-                "row_min": 486,
-                "column_max": 45,
-                "row_max": 510
+                "column_min": 24,
+                "row_min": 462,
+                "column_max": 44,
+                "row_max": 480
             },
             "parent": 2
         },
         {
             "id": 11,
             "class": "Compo",
-            "height": 22,
+            "height": 25,
             "width": 22,
             "position": {
                 "column_min": 23,
-                "row_min": 539,
+                "row_min": 511,
                 "column_max": 45,
-                "row_max": 561
+                "row_max": 536
             },
             "parent": 2
         },
         {
             "id": 12,
             "class": "Compo",
-            "height": 22,
-            "width": 23,
+            "height": 23,
+            "width": 22,
             "position": {
-                "column_min": 409,
-                "row_min": 619,
-                "column_max": 432,
-                "row_max": 641
-            }
+                "column_min": 23,
+                "row_min": 564,
+                "column_max": 45,
+                "row_max": 587
+            },
+            "parent": 2
         },
         {
             "id": 13,
+            "class": "Compo",
+            "height": 23,
+            "width": 23,
+            "position": {
+                "column_min": 409,
+                "row_min": 592,
+                "column_max": 432,
+                "row_max": 615
+            }
+        },
+        {
+            "id": 14,
             "class": "Compo",
             "height": 22,
             "width": 22,
             "position": {
                 "column_min": 23,
-                "row_min": 643,
+                "row_min": 669,
                 "column_max": 45,
-                "row_max": 665
+                "row_max": 691
             },
             "parent": 2
         },
         {
-            "id": 14,
+            "id": 15,
             "class": "Compo",
-            "height": 27,
-            "width": 20,
+            "height": 62,
+            "width": 62,
             "position": {
-                "column_min": 393,
-                "row_min": 677,
-                "column_max": 413,
-                "row_max": 704
-            }
+                "column_min": 372,
+                "row_min": 712,
+                "column_max": 434,
+                "row_max": 774
+            },
+            "children": [
+                17
+            ]
         },
         {
-            "id": 15,
+            "id": 16,
             "class": "Compo",
             "height": 23,
             "width": 22,
             "position": {
                 "column_min": 23,
-                "row_min": 695,
+                "row_min": 721,
                 "column_max": 45,
-                "row_max": 718
+                "row_max": 744
             },
             "parent": 2
         },
         {
-            "id": 16,
-            "class": "Text",
-            "height": 29,
-            "width": 134,
+            "id": 17,
+            "class": "Compo",
+            "height": 26,
+            "width": 20,
             "position": {
-                "column_min": 83,
-                "row_min": 42,
+                "column_min": 393,
+                "row_min": 730,
+                "column_max": 413,
+                "row_max": 756
+            },
+            "parent": 15
+        },
+        {
+            "id": 18,
+            "class": "Text",
+            "height": 27,
+            "width": 133,
+            "position": {
+                "column_min": 84,
+                "row_min": 17,
                 "column_max": 217,
-                "row_max": 71
+                "row_max": 44
             },
             "text_content": "Booking.com"
         },
         {
-            "id": 17,
+            "id": 19,
             "class": "Text",
             "height": 14,
             "width": 167,
             "position": {
                 "column_min": 78,
-                "row_min": 125,
+                "row_min": 99,
                 "column_max": 245,
-                "row_max": 139
+                "row_max": 113
             },
             "text_content": "Sign in or create account",
             "parent": 2
         },
         {
-            "id": 18,
+            "id": 20,
             "class": "Text",
-            "height": 20,
-            "width": 69,
+            "height": 16,
+            "width": 67,
             "position": {
-                "column_min": 76,
-                "row_min": 173,
-                "column_max": 145,
-                "row_max": 193
+                "column_min": 77,
+                "row_min": 149,
+                "column_max": 144,
+                "row_max": 165
             },
             "text_content": "Bookings",
             "parent": 2
         },
         {
-            "id": 19,
+            "id": 21,
             "class": "Text",
-            "height": 19,
+            "height": 20,
             "width": 162,
             "position": {
                 "column_min": 76,
-                "row_min": 226,
+                "row_min": 199,
                 "column_max": 238,
-                "row_max": 245
+                "row_max": 219
             },
             "text_content": "Customer Service Help",
             "parent": 2
         },
         {
-            "id": 20,
-            "class": "Text",
-            "height": 13,
-            "width": 38,
-            "position": {
-                "column_min": 78,
-                "row_min": 281,
-                "column_max": 116,
-                "row_max": 294
-            },
-            "text_content": "Deals",
-            "parent": 2
-        },
-        {
-            "id": 21,
-            "class": "Text",
-            "height": 14,
-            "width": 80,
-            "position": {
-                "column_min": 78,
-                "row_min": 333,
-                "column_max": 158,
-                "row_max": 347
-            },
-            "text_content": "Car Rentals",
-            "parent": 2
-        },
-        {
             "id": 22,
             "class": "Text",
-            "height": 14,
-            "width": 67,
+            "height": 16,
+            "width": 164,
             "position": {
-                "column_min": 78,
-                "row_min": 385,
-                "column_max": 145,
-                "row_max": 399
+                "column_min": 77,
+                "row_min": 254,
+                "column_max": 241,
+                "row_max": 270
             },
-            "text_content": "Wish lists",
+            "text_content": "Safety Resource Center",
             "parent": 2
         },
         {
             "id": 23,
             "class": "Text",
-            "height": 19,
-            "width": 120,
+            "height": 14,
+            "width": 80,
             "position": {
-                "column_min": 76,
-                "row_min": 435,
-                "column_max": 196,
-                "row_max": 454
+                "column_min": 78,
+                "row_min": 306,
+                "column_max": 158,
+                "row_max": 320
             },
-            "text_content": "Book airport taxi",
+            "text_content": "Car Rentals",
             "parent": 2
         },
         {
             "id": 24,
             "class": "Text",
-            "height": 18,
-            "width": 169,
+            "height": 16,
+            "width": 40,
             "position": {
-                "column_min": 76,
-                "row_min": 487,
-                "column_max": 245,
-                "row_max": 505
+                "column_min": 77,
+                "row_min": 358,
+                "column_max": 117,
+                "row_max": 374
             },
-            "text_content": "Genius Loyalty Program",
+            "text_content": "Deals",
             "parent": 2
         },
         {
             "id": 25,
             "class": "Text",
-            "height": 15,
-            "width": 131,
+            "height": 14,
+            "width": 117,
             "position": {
-                "column_min": 77,
-                "row_min": 540,
-                "column_max": 208,
-                "row_max": 555
+                "column_min": 78,
+                "row_min": 411,
+                "column_max": 195,
+                "row_max": 425
             },
-            "text_content": "Your contributions",
+            "text_content": "Book airport taxi",
             "parent": 2
         },
         {
             "id": 26,
             "class": "Text",
-            "height": 26,
-            "width": 25,
+            "height": 15,
+            "width": 67,
             "position": {
-                "column_min": 22,
-                "row_min": 590,
-                "column_max": 47,
-                "row_max": 616
+                "column_min": 78,
+                "row_min": 462,
+                "column_max": 145,
+                "row_max": 477
             },
-            "text_content": "En",
+            "text_content": "Wish lists",
             "parent": 2
         },
         {
             "id": 27,
             "class": "Text",
-            "height": 14,
-            "width": 136,
+            "height": 18,
+            "width": 169,
             "position": {
-                "column_min": 79,
-                "row_min": 593,
-                "column_max": 215,
-                "row_max": 607
+                "column_min": 76,
+                "row_min": 513,
+                "column_max": 245,
+                "row_max": 531
             },
-            "text_content": "Travel communities",
+            "text_content": "Genius Loyalty Program",
             "parent": 2
         },
         {
             "id": 28,
             "class": "Text",
-            "height": 12,
-            "width": 99,
+            "height": 15,
+            "width": 130,
             "position": {
-                "column_min": 80,
-                "row_min": 646,
-                "column_max": 179,
-                "row_max": 658
+                "column_min": 78,
+                "row_min": 566,
+                "column_max": 208,
+                "row_max": 581
             },
-            "text_content": "TravelArticles",
+            "text_content": "Your contributions",
             "parent": 2
         },
         {
             "id": 29,
             "class": "Text",
-            "height": 20,
-            "width": 126,
+            "height": 28,
+            "width": 25,
             "position": {
-                "column_min": 76,
-                "row_min": 695,
+                "column_min": 22,
+                "row_min": 615,
+                "column_max": 47,
+                "row_max": 643
+            },
+            "text_content": "En",
+            "parent": 2
+        },
+        {
+            "id": 30,
+            "class": "Text",
+            "height": 14,
+            "width": 136,
+            "position": {
+                "column_min": 79,
+                "row_min": 619,
+                "column_max": 215,
+                "row_max": 633
+            },
+            "text_content": "Travel communities",
+            "parent": 2
+        },
+        {
+            "id": 31,
+            "class": "Text",
+            "height": 14,
+            "width": 100,
+            "position": {
+                "column_min": 79,
+                "row_min": 671,
+                "column_max": 179,
+                "row_max": 685
+            },
+            "text_content": "Travel Articles",
+            "parent": 2
+        },
+        {
+            "id": 32,
+            "class": "Text",
+            "height": 19,
+            "width": 125,
+            "position": {
+                "column_min": 77,
+                "row_min": 721,
                 "column_max": 202,
-                "row_max": 715
+                "row_max": 740
             },
             "text_content": "List your property",
+            "parent": 2
+        },
+        {
+            "id": 33,
+            "class": "Text",
+            "height": 15,
+            "width": 67,
+            "position": {
+                "column_min": 78,
+                "row_min": 775,
+                "column_max": 145,
+                "row_max": 790
+            },
+            "text_content": "Gift cards",
             "parent": 2
         }
     ],

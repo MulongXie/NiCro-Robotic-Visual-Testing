@@ -203,9 +203,9 @@
             "width": 20,
             "position": {
                 "column_min": 342,
-                "row_min": 572,
+                "row_min": 581,
                 "column_max": 362,
-                "row_max": 592
+                "row_max": 601
             }
         },
         {
@@ -302,14 +302,14 @@
             "id": 21,
             "class": "Text",
             "height": 13,
-            "width": 38,
+            "width": 37,
             "position": {
-                "column_min": 8,
+                "column_min": 9,
                 "row_min": 17,
                 "column_max": 46,
                 "row_max": 30
             },
-            "text_content": "11:19"
+            "text_content": "12:39"
         },
         {
             "id": 22,

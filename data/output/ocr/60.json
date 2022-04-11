@@ -7,12 +7,12 @@
     "texts": [
         {
             "id": 0,
-            "content": "11:19",
-            "column_min": 24,
+            "content": "12:39",
+            "column_min": 27,
             "row_min": 50,
             "column_max": 133,
             "row_max": 86,
-            "width": 109,
+            "width": 106,
             "height": 36
         },
         {
@@ -37,16 +37,6 @@
         },
         {
             "id": 3,
-            "content": "C",
-            "column_min": 55,
-            "row_min": 544,
-            "column_max": 118,
-            "row_max": 596,
-            "width": 63,
-            "height": 52
-        },
-        {
-            "id": 4,
             "content": "Bookings",
             "column_min": 195,
             "row_min": 549,
@@ -56,7 +46,7 @@
             "height": 40
         },
         {
-            "id": 5,
+            "id": 4,
             "content": "Customer Service Help",
             "column_min": 200,
             "row_min": 682,
@@ -66,7 +56,7 @@
             "height": 33
         },
         {
-            "id": 6,
+            "id": 5,
             "content": "Deals",
             "column_min": 198,
             "row_min": 812,
@@ -76,17 +66,7 @@
             "height": 36
         },
         {
-            "id": 7,
-            "content": "9",
-            "column_min": 55,
-            "row_min": 938,
-            "column_max": 118,
-            "row_max": 1007,
-            "width": 63,
-            "height": 69
-        },
-        {
-            "id": 8,
+            "id": 6,
             "content": "Car Rentals",
             "column_min": 200,
             "row_min": 940,
@@ -96,7 +76,7 @@
             "height": 41
         },
         {
-            "id": 9,
+            "id": 7,
             "content": "Wish lists",
             "column_min": 195,
             "row_min": 1071,
@@ -106,7 +86,7 @@
             "height": 41
         },
         {
-            "id": 10,
+            "id": 8,
             "content": "Book airport taxi",
             "column_min": 195,
             "row_min": 1199,
@@ -116,7 +96,7 @@
             "height": 43
         },
         {
-            "id": 11,
+            "id": 9,
             "content": "G",
             "column_min": 55,
             "row_min": 1320,
@@ -126,7 +106,7 @@
             "height": 76
         },
         {
-            "id": 12,
+            "id": 10,
             "content": "Genius Loyalty Program",
             "column_min": 195,
             "row_min": 1330,
@@ -136,7 +116,7 @@
             "height": 45
         },
         {
-            "id": 13,
+            "id": 11,
             "content": "G",
             "column_min": 53,
             "row_min": 1456,
@@ -146,7 +126,7 @@
             "height": 71
         },
         {
-            "id": 14,
+            "id": 12,
             "content": "Your contributions",
             "column_min": 200,
             "row_min": 1468,
@@ -156,7 +136,7 @@
             "height": 33
         },
         {
-            "id": 15,
+            "id": 13,
             "content": "Bn",
             "column_min": 55,
             "row_min": 1586,
@@ -166,7 +146,7 @@
             "height": 72
         },
         {
-            "id": 16,
+            "id": 14,
             "content": "Travel communities",
             "column_min": 198,
             "row_min": 1596,
@@ -176,7 +156,7 @@
             "height": 40
         },
         {
-            "id": 17,
+            "id": 15,
             "content": "Travel Articles",
             "column_min": 200,
             "row_min": 1729,
@@ -186,7 +166,7 @@
             "height": 33
         },
         {
-            "id": 18,
+            "id": 16,
             "content": "Q",
             "column_min": 58,
             "row_min": 1852,
@@ -196,7 +176,7 @@
             "height": 60
         },
         {
-            "id": 19,
+            "id": 17,
             "content": "List your property",
             "column_min": 187,
             "row_min": 1850,
@@ -206,7 +186,7 @@
             "height": 58
         },
         {
-            "id": 20,
+            "id": 18,
             "content": "Gift cards",
             "column_min": 192,
             "row_min": 1983,
@@ -216,17 +196,17 @@
             "height": 48
         },
         {
-            "id": 21,
+            "id": 19,
             "content": "0",
-            "column_min": 947,
-            "row_min": 1981,
-            "column_max": 984,
-            "row_max": 2016,
-            "width": 37,
-            "height": 35
+            "column_min": 933,
+            "row_min": 1964,
+            "column_max": 998,
+            "row_max": 2028,
+            "width": 65,
+            "height": 64
         },
         {
-            "id": 22,
+            "id": 20,
             "content": "E",
             "column_min": 75,
             "row_min": 2121,

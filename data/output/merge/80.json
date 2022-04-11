@@ -457,11 +457,11 @@
         {
             "id": 28,
             "class": "Text",
-            "height": 22,
-            "width": 104,
+            "height": 21,
+            "width": 105,
             "position": {
-                "column_min": 71,
-                "row_min": 36,
+                "column_min": 70,
+                "row_min": 37,
                 "column_max": 175,
                 "row_max": 58
             },
@@ -470,12 +470,12 @@
         {
             "id": 29,
             "class": "Text",
-            "height": 15,
-            "width": 133,
+            "height": 14,
+            "width": 131,
             "position": {
-                "column_min": 57,
-                "row_min": 100,
-                "column_max": 190,
+                "column_min": 58,
+                "row_min": 101,
+                "column_max": 189,
                 "row_max": 115
             },
             "text_content": "Sign in or create account",
@@ -576,7 +576,7 @@
                 "column_max": 149,
                 "row_max": 358
             },
-            "text_content": "Book airport tax",
+            "text_content": "Book airport taxi",
             "parent": 20
         },
         {
