@@ -1,0 +1,149 @@
+{
+    "img_shape": [
+        800,
+        480,
+        3
+    ],
+    "texts": [
+        {
+            "id": 0,
+            "content": "11:54",
+            "column_min": 11,
+            "row_min": 9,
+            "column_max": 67,
+            "row_max": 27,
+            "width": 56,
+            "height": 18
+        },
+        {
+            "id": 1,
+            "content": "Booking.com",
+            "column_min": 115,
+            "row_min": 61,
+            "column_max": 298,
+            "row_max": 95,
+            "width": 183,
+            "height": 34
+        },
+        {
+            "id": 2,
+            "content": "G",
+            "column_min": 32,
+            "row_min": 154,
+            "column_max": 64,
+            "row_max": 189,
+            "width": 32,
+            "height": 35
+        },
+        {
+            "id": 3,
+            "content": "Genius Loyalty Program",
+            "column_min": 107,
+            "row_min": 160,
+            "column_max": 335,
+            "row_max": 182,
+            "width": 228,
+            "height": 22
+        },
+        {
+            "id": 4,
+            "content": "B",
+            "column_min": 31,
+            "row_min": 227,
+            "column_max": 63,
+            "row_max": 261,
+            "width": 32,
+            "height": 34
+        },
+        {
+            "id": 5,
+            "content": "Your contributions",
+            "column_min": 108,
+            "row_min": 232,
+            "column_max": 285,
+            "row_max": 252,
+            "width": 177,
+            "height": 20
+        },
+        {
+            "id": 6,
+            "content": "En",
+            "column_min": 29,
+            "row_min": 296,
+            "column_max": 65,
+            "row_max": 334,
+            "width": 36,
+            "height": 38
+        },
+        {
+            "id": 7,
+            "content": "Travel communities",
+            "column_min": 108,
+            "row_min": 302,
+            "column_max": 294,
+            "row_max": 323,
+            "width": 186,
+            "height": 21
+        },
+        {
+            "id": 8,
+            "content": "Travel Articles",
+            "column_min": 108,
+            "row_min": 374,
+            "column_max": 244,
+            "row_max": 391,
+            "width": 136,
+            "height": 17
+        },
+        {
+            "id": 9,
+            "content": "List your property",
+            "column_min": 105,
+            "row_min": 443,
+            "column_max": 274,
+            "row_max": 468,
+            "width": 169,
+            "height": 25
+        },
+        {
+            "id": 10,
+            "content": "Gift cards",
+            "column_min": 109,
+            "row_min": 516,
+            "column_max": 200,
+            "row_max": 534,
+            "width": 91,
+            "height": 18
+        },
+        {
+            "id": 11,
+            "content": "Share the app",
+            "column_min": 107,
+            "row_min": 584,
+            "column_max": 237,
+            "row_max": 609,
+            "width": 130,
+            "height": 25
+        },
+        {
+            "id": 12,
+            "content": "Settings",
+            "column_min": 21,
+            "row_min": 681,
+            "column_max": 104,
+            "row_max": 706,
+            "width": 83,
+            "height": 25
+        },
+        {
+            "id": 13,
+            "content": "Give AppFeedback",
+            "column_min": 23,
+            "row_min": 753,
+            "column_max": 204,
+            "row_max": 777,
+            "width": 181,
+            "height": 24
+        }
+    ]
+}

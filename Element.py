@@ -42,7 +42,7 @@ class Element:
     def get_bound(self):
         return self.col_min, self.row_min, self.col_max, self.row_max
 
-    def draw_element(self, board, color=(0,255,0), line=2, show_id=False, show=False):
+    def draw_element(self, board, color=(225,255,0), line=2, show_id=False, show=False):
         bound = self.get_bound()
         cv2.rectangle(board, (bound[0], bound[1]), (bound[2], bound[3]), color, line)
         if show_id:
