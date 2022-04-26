@@ -49,7 +49,7 @@
                 24,
                 25,
                 26,
-                27,
+                28,
                 29,
                 30,
                 31,
@@ -67,8 +67,7 @@
                 43,
                 44,
                 45,
-                46,
-                47
+                46
             ]
         },
         {
@@ -82,7 +81,7 @@
                 "column_max": 37,
                 "row_max": 120
             },
-            "parent": 20
+            "parent": 19
         },
         {
             "id": 3,
@@ -95,7 +94,7 @@
                 "column_max": 35,
                 "row_max": 158
             },
-            "parent": 20
+            "parent": 19
         },
         {
             "id": 4,
@@ -121,7 +120,7 @@
                 "column_max": 35,
                 "row_max": 199
             },
-            "parent": 20
+            "parent": 19
         },
         {
             "id": 6,
@@ -134,7 +133,7 @@
                 "column_max": 35,
                 "row_max": 240
             },
-            "parent": 20
+            "parent": 19
         },
         {
             "id": 7,
@@ -147,7 +146,7 @@
                 "column_max": 35,
                 "row_max": 278
             },
-            "parent": 20
+            "parent": 19
         },
         {
             "id": 8,
@@ -160,7 +159,7 @@
                 "column_max": 35,
                 "row_max": 320
             },
-            "parent": 20
+            "parent": 19
         },
         {
             "id": 9,
@@ -173,7 +172,7 @@
                 "column_max": 35,
                 "row_max": 359
             },
-            "parent": 20
+            "parent": 19
         },
         {
             "id": 10,
@@ -186,7 +185,7 @@
                 "column_max": 34,
                 "row_max": 399
             },
-            "parent": 20
+            "parent": 19
         },
         {
             "id": 11,
@@ -199,7 +198,7 @@
                 "column_max": 35,
                 "row_max": 442
             },
-            "parent": 20
+            "parent": 19
         },
         {
             "id": 12,
@@ -212,23 +211,10 @@
                 "column_max": 35,
                 "row_max": 482
             },
-            "parent": 20
+            "parent": 19
         },
         {
             "id": 13,
-            "class": "Compo",
-            "height": 17,
-            "width": 18,
-            "position": {
-                "column_min": 677,
-                "row_min": 486,
-                "column_max": 695,
-                "row_max": 503
-            },
-            "parent": 1
-        },
-        {
-            "id": 14,
             "class": "Compo",
             "height": 17,
             "width": 17,
@@ -238,10 +224,10 @@
                 "column_max": 35,
                 "row_max": 562
             },
-            "parent": 20
+            "parent": 19
         },
         {
-            "id": 15,
+            "id": 14,
             "class": "Compo",
             "height": 18,
             "width": 17,
@@ -251,10 +237,10 @@
                 "column_max": 35,
                 "row_max": 603
             },
-            "parent": 20
+            "parent": 19
         },
         {
-            "id": 16,
+            "id": 15,
             "class": "Compo",
             "height": 12,
             "width": 17,
@@ -264,10 +250,10 @@
                 "column_max": 35,
                 "row_max": 640
             },
-            "parent": 20
+            "parent": 19
         },
         {
-            "id": 17,
+            "id": 16,
             "class": "Compo",
             "height": 18,
             "width": 10,
@@ -277,10 +263,10 @@
                 "column_max": 31,
                 "row_max": 683
             },
-            "parent": 20
+            "parent": 19
         },
         {
-            "id": 18,
+            "id": 17,
             "class": "Compo",
             "height": 47,
             "width": 47,
@@ -291,12 +277,12 @@
                 "row_max": 739
             },
             "children": [
-                19
+                18
             ],
-            "parent": 26
+            "parent": 25
         },
         {
-            "id": 19,
+            "id": 18,
             "class": "Compo",
             "height": 21,
             "width": 15,
@@ -306,10 +292,10 @@
                 "column_max": 680,
                 "row_max": 726
             },
-            "parent": 26
+            "parent": 25
         },
         {
-            "id": 20,
+            "id": 19,
             "class": "Compo",
             "height": 623,
             "width": 278,
@@ -330,31 +316,31 @@
                 10,
                 11,
                 12,
+                13,
                 14,
                 15,
                 16,
-                17,
+                28,
                 29,
-                30,
+                31,
                 32,
                 33,
                 34,
                 35,
                 36,
                 37,
-                38,
+                39,
                 40,
                 41,
                 42,
                 43,
                 44,
-                45,
-                46
+                45
             ],
             "parent": 1
         },
         {
-            "id": 21,
+            "id": 20,
             "class": "Compo",
             "height": 45,
             "width": 428,
@@ -367,7 +353,7 @@
             "parent": 1
         },
         {
-            "id": 22,
+            "id": 21,
             "class": "Compo",
             "height": 41,
             "width": 412,
@@ -380,7 +366,7 @@
             "parent": 1
         },
         {
-            "id": 23,
+            "id": 22,
             "class": "Compo",
             "height": 43,
             "width": 412,
@@ -393,7 +379,7 @@
             "parent": 1
         },
         {
-            "id": 24,
+            "id": 23,
             "class": "Compo",
             "height": 43,
             "width": 412,
@@ -406,7 +392,7 @@
             "parent": 1
         },
         {
-            "id": 25,
+            "id": 24,
             "class": "Compo",
             "height": 42,
             "width": 412,
@@ -417,12 +403,12 @@
                 "row_max": 459
             },
             "children": [
-                39
+                38
             ],
             "parent": 1
         },
         {
-            "id": 26,
+            "id": 25,
             "class": "Compo",
             "height": 228,
             "width": 428,
@@ -433,13 +419,13 @@
                 "row_max": 757
             },
             "children": [
-                18,
-                19
+                17,
+                18
             ],
             "parent": 1
         },
         {
-            "id": 27,
+            "id": 26,
             "class": "Compo",
             "height": 56,
             "width": 278,
@@ -450,39 +436,39 @@
                 "row_max": 757
             },
             "children": [
-                47
+                46
             ],
             "parent": 1
         },
         {
-            "id": 28,
+            "id": 27,
             "class": "Text",
-            "height": 21,
+            "height": 22,
             "width": 105,
             "position": {
                 "column_min": 70,
-                "row_min": 37,
+                "row_min": 36,
                 "column_max": 175,
                 "row_max": 58
             },
             "text_content": "Booking.com"
         },
         {
-            "id": 29,
+            "id": 28,
             "class": "Text",
-            "height": 14,
-            "width": 131,
+            "height": 15,
+            "width": 133,
             "position": {
-                "column_min": 58,
-                "row_min": 101,
-                "column_max": 189,
+                "column_min": 57,
+                "row_min": 100,
+                "column_max": 190,
                 "row_max": 115
             },
             "text_content": "Sign in or create account",
-            "parent": 20
+            "parent": 19
         },
         {
-            "id": 30,
+            "id": 29,
             "class": "Text",
             "height": 17,
             "width": 53,
@@ -493,10 +479,10 @@
                 "row_max": 156
             },
             "text_content": "Bookings",
-            "parent": 20
+            "parent": 19
         },
         {
-            "id": 31,
+            "id": 30,
             "class": "Text",
             "height": 14,
             "width": 45,
@@ -510,7 +496,7 @@
             "parent": 1
         },
         {
-            "id": 32,
+            "id": 31,
             "class": "Text",
             "height": 11,
             "width": 123,
@@ -521,10 +507,10 @@
                 "row_max": 194
             },
             "text_content": "Customer Service Help",
-            "parent": 20
+            "parent": 19
         },
         {
-            "id": 33,
+            "id": 32,
             "class": "Text",
             "height": 14,
             "width": 128,
@@ -535,10 +521,10 @@
                 "row_max": 236
             },
             "text_content": "Safety Resource Center",
-            "parent": 20
+            "parent": 19
         },
         {
-            "id": 34,
+            "id": 33,
             "class": "Text",
             "height": 14,
             "width": 63,
@@ -549,10 +535,10 @@
                 "row_max": 277
             },
             "text_content": "Car Rentals",
-            "parent": 20
+            "parent": 19
         },
         {
-            "id": 35,
+            "id": 34,
             "class": "Text",
             "height": 12,
             "width": 31,
@@ -563,10 +549,10 @@
                 "row_max": 316
             },
             "text_content": "Deals",
-            "parent": 20
+            "parent": 19
         },
         {
-            "id": 36,
+            "id": 35,
             "class": "Text",
             "height": 14,
             "width": 89,
@@ -576,11 +562,11 @@
                 "column_max": 149,
                 "row_max": 358
             },
-            "text_content": "Book airport taxi",
-            "parent": 20
+            "text_content": "Book airport tax",
+            "parent": 19
         },
         {
-            "id": 37,
+            "id": 36,
             "class": "Text",
             "height": 14,
             "width": 52,
@@ -591,10 +577,10 @@
                 "row_max": 397
             },
             "text_content": "Wish lists",
-            "parent": 20
+            "parent": 19
         },
         {
-            "id": 38,
+            "id": 37,
             "class": "Text",
             "height": 12,
             "width": 126,
@@ -605,10 +591,10 @@
                 "row_max": 438
             },
             "text_content": "Genius Loyalty Program",
-            "parent": 20
+            "parent": 19
         },
         {
-            "id": 39,
+            "id": 38,
             "class": "Text",
             "height": 14,
             "width": 45,
@@ -619,10 +605,10 @@
                 "row_max": 446
             },
             "text_content": "Search",
-            "parent": 25
+            "parent": 24
         },
         {
-            "id": 40,
+            "id": 39,
             "class": "Text",
             "height": 12,
             "width": 98,
@@ -633,10 +619,10 @@
                 "row_max": 478
             },
             "text_content": "Your contributions",
-            "parent": 20
+            "parent": 19
         },
         {
-            "id": 41,
+            "id": 40,
             "class": "Text",
             "height": 24,
             "width": 21,
@@ -647,10 +633,10 @@
                 "row_max": 527
             },
             "text_content": "An",
-            "parent": 20
+            "parent": 19
         },
         {
-            "id": 42,
+            "id": 41,
             "class": "Text",
             "height": 12,
             "width": 104,
@@ -661,10 +647,10 @@
                 "row_max": 518
             },
             "text_content": "Travel communities",
-            "parent": 20
+            "parent": 19
         },
         {
-            "id": 43,
+            "id": 42,
             "class": "Text",
             "height": 12,
             "width": 77,
@@ -675,10 +661,10 @@
                 "row_max": 558
             },
             "text_content": "Travel Articles",
-            "parent": 20
+            "parent": 19
         },
         {
-            "id": 44,
+            "id": 43,
             "class": "Text",
             "height": 18,
             "width": 96,
@@ -689,10 +675,10 @@
                 "row_max": 602
             },
             "text_content": "List your property",
-            "parent": 20
+            "parent": 19
         },
         {
-            "id": 45,
+            "id": 44,
             "class": "Text",
             "height": 17,
             "width": 55,
@@ -703,10 +689,10 @@
                 "row_max": 641
             },
             "text_content": "Gift cards",
-            "parent": 20
+            "parent": 19
         },
         {
-            "id": 46,
+            "id": 45,
             "class": "Text",
             "height": 17,
             "width": 77,
@@ -717,10 +703,10 @@
                 "row_max": 681
             },
             "text_content": "Share the app",
-            "parent": 20
+            "parent": 19
         },
         {
-            "id": 47,
+            "id": 46,
             "class": "Text",
             "height": 21,
             "width": 51,
@@ -731,7 +717,7 @@
                 "row_max": 738
             },
             "text_content": "Settings",
-            "parent": 27
+            "parent": 26
         }
     ],
     "img_shape": [

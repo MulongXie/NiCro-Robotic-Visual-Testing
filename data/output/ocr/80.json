@@ -7,33 +7,33 @@
     "texts": [
         {
             "id": 0,
-            "content": "12:39 O ( V '",
-            "column_min": 18,
-            "row_min": 8,
-            "column_max": 377,
-            "row_max": 54,
-            "width": 359,
-            "height": 46
+            "content": "3:02",
+            "column_min": 17,
+            "row_min": 10,
+            "column_max": 222,
+            "row_max": 52,
+            "width": 205,
+            "height": 42
         },
         {
             "id": 1,
             "content": "Booking.com",
             "column_min": 218,
-            "row_min": 116,
+            "row_min": 113,
             "column_max": 543,
             "row_max": 181,
             "width": 325,
-            "height": 65
+            "height": 68
         },
         {
             "id": 2,
             "content": "Sign in or create account",
-            "column_min": 181,
-            "row_min": 315,
-            "column_max": 588,
-            "row_max": 357,
-            "width": 407,
-            "height": 42
+            "column_min": 178,
+            "row_min": 312,
+            "column_max": 591,
+            "row_max": 359,
+            "width": 413,
+            "height": 47
         },
         {
             "id": 3,
@@ -137,7 +137,7 @@
         },
         {
             "id": 13,
-            "content": "Book airport taxi",
+            "content": "Book airport tax",
             "column_min": 186,
             "row_min": 1067,
             "column_max": 463,

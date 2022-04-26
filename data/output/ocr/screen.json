@@ -7,12 +7,12 @@
     "texts": [
         {
             "id": 0,
-            "content": "12:20",
-            "column_min": 10,
-            "row_min": 6,
-            "column_max": 69,
-            "row_max": 30,
-            "width": 59,
+            "content": "3:04",
+            "column_min": 9,
+            "row_min": 5,
+            "column_max": 96,
+            "row_max": 29,
+            "width": 87,
             "height": 24
         },
         {
@@ -137,7 +137,7 @@
         },
         {
             "id": 13,
-            "content": "GiveAppFeedback",
+            "content": "Give AppFeedback",
             "column_min": 23,
             "row_min": 753,
             "column_max": 204,

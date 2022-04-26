@@ -27,54 +27,54 @@
         {
             "id": 2,
             "class": "Compo",
-            "height": 33,
-            "width": 32,
+            "height": 35,
+            "width": 36,
             "position": {
-                "column_min": 31,
-                "row_min": 156,
-                "column_max": 63,
-                "row_max": 189
+                "column_min": 29,
+                "row_min": 165,
+                "column_max": 65,
+                "row_max": 200
             }
         },
         {
             "id": 3,
             "class": "Compo",
-            "height": 31,
+            "height": 27,
             "width": 30,
             "position": {
                 "column_min": 32,
-                "row_min": 228,
+                "row_min": 240,
                 "column_max": 62,
-                "row_max": 259
-            },
-            "children": [
-                4
-            ]
+                "row_max": 267
+            }
         },
         {
             "id": 4,
             "class": "Compo",
-            "height": 10,
-            "width": 18,
-            "position": {
-                "column_min": 39,
-                "row_min": 238,
-                "column_max": 57,
-                "row_max": 248
-            },
-            "parent": 3
-        },
-        {
-            "id": 5,
-            "class": "Compo",
             "height": 31,
             "width": 30,
             "position": {
                 "column_min": 32,
-                "row_min": 370,
+                "row_min": 309,
                 "column_max": 62,
-                "row_max": 401
-            }
+                "row_max": 340
+            },
+            "children": [
+                5
+            ]
+        },
+        {
+            "id": 5,
+            "class": "Compo",
+            "height": 18,
+            "width": 10,
+            "position": {
+                "column_min": 42,
+                "row_min": 316,
+                "column_max": 52,
+                "row_max": 334
+            },
+            "parent": 4
         },
         {
             "id": 6,
@@ -83,165 +83,217 @@
             "width": 30,
             "position": {
                 "column_min": 32,
-                "row_min": 441,
+                "row_min": 380,
                 "column_max": 62,
-                "row_max": 472
+                "row_max": 411
             }
         },
         {
             "id": 7,
             "class": "Compo",
-            "height": 22,
+            "height": 23,
             "width": 30,
             "position": {
                 "column_min": 32,
-                "row_min": 517,
+                "row_min": 455,
                 "column_max": 62,
-                "row_max": 539
+                "row_max": 478
             }
         },
         {
             "id": 8,
-            "class": "Text",
-            "height": 34,
-            "width": 183,
+            "class": "Compo",
+            "height": 24,
+            "width": 30,
             "position": {
-                "column_min": 115,
-                "row_min": 61,
-                "column_max": 298,
-                "row_max": 95
-            },
-            "text_content": "Booking.com"
+                "column_min": 32,
+                "row_min": 597,
+                "column_max": 62,
+                "row_max": 621
+            }
         },
         {
             "id": 9,
-            "class": "Text",
-            "height": 22,
-            "width": 228,
+            "class": "Compo",
+            "height": 33,
+            "width": 32,
             "position": {
-                "column_min": 107,
-                "row_min": 160,
-                "column_max": 335,
-                "row_max": 182
-            },
-            "text_content": "Genius Loyalty Program"
+                "column_min": 31,
+                "row_min": 663,
+                "column_max": 63,
+                "row_max": 696
+            }
         },
         {
             "id": 10,
-            "class": "Text",
-            "height": 20,
-            "width": 177,
+            "class": "Compo",
+            "height": 31,
+            "width": 30,
             "position": {
-                "column_min": 108,
-                "row_min": 232,
-                "column_max": 285,
-                "row_max": 252
+                "column_min": 32,
+                "row_min": 735,
+                "column_max": 62,
+                "row_max": 766
             },
-            "text_content": "Your contributions"
+            "children": [
+                11
+            ]
         },
         {
             "id": 11,
-            "class": "Text",
-            "height": 38,
-            "width": 36,
+            "class": "Compo",
+            "height": 10,
+            "width": 18,
             "position": {
-                "column_min": 29,
-                "row_min": 296,
-                "column_max": 65,
-                "row_max": 334
+                "column_min": 39,
+                "row_min": 745,
+                "column_max": 57,
+                "row_max": 755
             },
-            "text_content": "En"
+            "parent": 10
         },
         {
             "id": 12,
             "class": "Text",
-            "height": 21,
-            "width": 186,
+            "height": 36,
+            "width": 183,
             "position": {
-                "column_min": 108,
-                "row_min": 302,
-                "column_max": 294,
-                "row_max": 323
+                "column_min": 115,
+                "row_min": 60,
+                "column_max": 298,
+                "row_max": 96
             },
-            "text_content": "Travel communities"
+            "text_content": "Booking.com"
         },
         {
             "id": 13,
             "class": "Text",
-            "height": 17,
-            "width": 136,
+            "height": 23,
+            "width": 238,
             "position": {
-                "column_min": 108,
-                "row_min": 374,
-                "column_max": 244,
-                "row_max": 391
+                "column_min": 106,
+                "row_min": 169,
+                "column_max": 344,
+                "row_max": 192
             },
-            "text_content": "Travel Articles"
+            "text_content": "Sign in or create account"
         },
         {
             "id": 14,
             "class": "Text",
             "height": 25,
-            "width": 169,
+            "width": 91,
             "position": {
-                "column_min": 105,
-                "row_min": 443,
-                "column_max": 274,
-                "row_max": 468
+                "column_min": 106,
+                "row_min": 239,
+                "column_max": 197,
+                "row_max": 264
             },
-            "text_content": "List your property"
+            "text_content": "Bookings"
         },
         {
             "id": 15,
             "class": "Text",
-            "height": 18,
-            "width": 91,
+            "height": 21,
+            "width": 216,
             "position": {
-                "column_min": 109,
-                "row_min": 516,
-                "column_max": 200,
-                "row_max": 534
+                "column_min": 107,
+                "row_min": 312,
+                "column_max": 323,
+                "row_max": 333
             },
-            "text_content": "Gift cards"
+            "text_content": "Customer Service Help"
         },
         {
             "id": 16,
             "class": "Text",
-            "height": 25,
-            "width": 130,
+            "height": 21,
+            "width": 55,
             "position": {
-                "column_min": 107,
-                "row_min": 584,
-                "column_max": 237,
-                "row_max": 609
+                "column_min": 106,
+                "row_min": 383,
+                "column_max": 161,
+                "row_max": 404
             },
-            "text_content": "Share the app"
+            "text_content": "Deals"
         },
         {
             "id": 17,
             "class": "Text",
-            "height": 25,
-            "width": 83,
+            "height": 17,
+            "width": 108,
             "position": {
-                "column_min": 21,
-                "row_min": 681,
-                "column_max": 104,
-                "row_max": 706
+                "column_min": 108,
+                "row_min": 456,
+                "column_max": 216,
+                "row_max": 473
             },
-            "text_content": "Settings"
+            "text_content": "Car Rentals"
         },
         {
             "id": 18,
             "class": "Text",
-            "height": 24,
-            "width": 181,
+            "height": 25,
+            "width": 29,
             "position": {
-                "column_min": 23,
-                "row_min": 753,
-                "column_max": 204,
-                "row_max": 777
+                "column_min": 33,
+                "row_min": 523,
+                "column_max": 62,
+                "row_max": 548
             },
-            "text_content": "GiveAppFeedback"
+            "text_content": "Q2"
+        },
+        {
+            "id": 19,
+            "class": "Text",
+            "height": 21,
+            "width": 94,
+            "position": {
+                "column_min": 106,
+                "row_min": 524,
+                "column_max": 200,
+                "row_max": 545
+            },
+            "text_content": "Wish lists"
+        },
+        {
+            "id": 20,
+            "class": "Text",
+            "height": 20,
+            "width": 158,
+            "position": {
+                "column_min": 107,
+                "row_min": 597,
+                "column_max": 265,
+                "row_max": 617
+            },
+            "text_content": "Book airport taxi"
+        },
+        {
+            "id": 21,
+            "class": "Text",
+            "height": 20,
+            "width": 225,
+            "position": {
+                "column_min": 108,
+                "row_min": 668,
+                "column_max": 333,
+                "row_max": 688
+            },
+            "text_content": "Genius Loyalty Program"
+        },
+        {
+            "id": 22,
+            "class": "Text",
+            "height": 21,
+            "width": 179,
+            "position": {
+                "column_min": 106,
+                "row_min": 738,
+                "column_max": 285,
+                "row_max": 759
+            },
+            "text_content": "Your contributions"
         }
     ],
     "img_shape": [
