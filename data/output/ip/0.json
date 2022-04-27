@@ -8,9 +8,9 @@
         {
             "id": 1,
             "class": "Compo",
-            "column_min": 15,
+            "column_min": 7,
             "row_min": 19,
-            "column_max": 41,
+            "column_max": 33,
             "row_max": 30,
             "width": 26,
             "height": 11

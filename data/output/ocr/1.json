@@ -7,26 +7,36 @@
     "texts": [
         {
             "id": 0,
-            "content": "12:30* G M",
-            "column_min": 24,
-            "row_min": 12,
-            "column_max": 351,
-            "row_max": 52,
-            "width": 327,
-            "height": 40
+            "content": "3:29",
+            "column_min": 22,
+            "row_min": 14,
+            "column_max": 173,
+            "row_max": 50,
+            "width": 151,
+            "height": 36
         },
         {
             "id": 1,
-            "content": "A",
-            "column_min": 987,
-            "row_min": 18,
-            "column_max": 1058,
-            "row_max": 46,
-            "width": 71,
+            "content": "M",
+            "column_min": 270,
+            "row_min": 16,
+            "column_max": 336,
+            "row_max": 44,
+            "width": 66,
             "height": 28
         },
         {
             "id": 2,
+            "content": "G",
+            "column_min": 219,
+            "row_min": 15,
+            "column_max": 281,
+            "row_max": 47,
+            "width": 62,
+            "height": 32
+        },
+        {
+            "id": 3,
             "content": "Booking.com",
             "column_min": 200,
             "row_min": 103,
@@ -36,7 +46,7 @@
             "height": 68
         },
         {
-            "id": 3,
+            "id": 4,
             "content": "C",
             "column_min": 52,
             "row_min": 288,
@@ -46,7 +56,7 @@
             "height": 62
         },
         {
-            "id": 4,
+            "id": 5,
             "content": "Sign in or create account",
             "column_min": 189,
             "row_min": 300,
@@ -56,7 +66,7 @@
             "height": 34
         },
         {
-            "id": 5,
+            "id": 6,
             "content": "C",
             "column_min": 52,
             "row_min": 418,
@@ -66,7 +76,7 @@
             "height": 54
         },
         {
-            "id": 6,
+            "id": 7,
             "content": "Bookings",
             "column_min": 184,
             "row_min": 417,
@@ -74,16 +84,6 @@
             "row_max": 465,
             "width": 164,
             "height": 48
-        },
-        {
-            "id": 7,
-            "content": "Q",
-            "column_min": 52,
-            "row_min": 538,
-            "column_max": 115,
-            "row_max": 602,
-            "width": 63,
-            "height": 64
         },
         {
             "id": 8,
@@ -127,6 +127,16 @@
         },
         {
             "id": 12,
+            "content": "O",
+            "column_min": 52,
+            "row_min": 914,
+            "column_max": 115,
+            "row_max": 978,
+            "width": 63,
+            "height": 64
+        },
+        {
+            "id": 13,
             "content": "Deals",
             "column_min": 189,
             "row_min": 926,
@@ -136,7 +146,7 @@
             "height": 30
         },
         {
-            "id": 13,
+            "id": 14,
             "content": "Book airport taxi",
             "column_min": 187,
             "row_min": 1048,
@@ -146,7 +156,7 @@
             "height": 40
         },
         {
-            "id": 14,
+            "id": 15,
             "content": "Wish lists",
             "column_min": 189,
             "row_min": 1174,
@@ -156,7 +166,7 @@
             "height": 34
         },
         {
-            "id": 15,
+            "id": 16,
             "content": "G",
             "column_min": 54,
             "row_min": 1286,
@@ -166,7 +176,7 @@
             "height": 70
         },
         {
-            "id": 16,
+            "id": 17,
             "content": "Genius Loyalty Program",
             "column_min": 187,
             "row_min": 1298,
@@ -176,7 +186,7 @@
             "height": 38
         },
         {
-            "id": 17,
+            "id": 18,
             "content": "G",
             "column_min": 52,
             "row_min": 1416,
@@ -186,7 +196,7 @@
             "height": 64
         },
         {
-            "id": 18,
+            "id": 19,
             "content": "Your contributions",
             "column_min": 189,
             "row_min": 1424,
@@ -196,7 +206,7 @@
             "height": 34
         },
         {
-            "id": 19,
+            "id": 20,
             "content": "En",
             "column_min": 54,
             "row_min": 1538,
@@ -206,7 +216,7 @@
             "height": 64
         },
         {
-            "id": 20,
+            "id": 21,
             "content": "Travel communities",
             "column_min": 188,
             "row_min": 1546,
@@ -216,7 +226,7 @@
             "height": 38
         },
         {
-            "id": 21,
+            "id": 22,
             "content": "E",
             "column_min": 50,
             "row_min": 1660,
@@ -226,7 +236,7 @@
             "height": 66
         },
         {
-            "id": 22,
+            "id": 23,
             "content": "Travel Articles",
             "column_min": 191,
             "row_min": 1674,
