@@ -359,10 +359,10 @@ class GUI:
     '''
     def show_detection_result(self):
         if self.det_result_imgs['merge'] is not None:
-            cv2.imshow('det', cv2.resize(self.det_result_imgs['merge'], (self.detection_resize_width, self.detection_resize_height)))
+            cv2.imshow('det', self.det_result_imgs['merge'])
         elif self.det_result_data is not None:
             self.draw_detection_result()
-            cv2.imshow('det', cv2.resize(self.det_result_imgs['merge'], (self.detection_resize_width, self.detection_resize_height)))
+            cv2.imshow('det', self.det_result_imgs['merge'])
         else:
             print('No detection result, run element_detection() or load_detection_result() first')
         cv2.waitKey()

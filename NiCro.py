@@ -46,10 +46,9 @@ class NiCro:
             device.update_screenshot_and_gui(self.paddle_ocr, is_load, show)
 
     def replay_action_on_all_devices(self):
-        target_ele = None
+        print('Action:', self.action)
         if self.action['type'] == 'click':
-            print(self.action)
-            target_ele = self.source_device.find_element_by_coordinate(self.action['coordinate'][0][0], self.action['coordinate'][0][1], show=True)
+            self.target_element = self.source_device.find_element_by_coordinate(self.action['coordinate'][0][0], self.action['coordinate'][0][1], show=True)
 
         for i, dev in enumerate(self.devices):
             print('****** Replay Devices Number [%d/%d] ******' % (i + 1, len(self.devices)))
@@ -57,27 +56,28 @@ class NiCro:
                 print('Skip the Selected Source Device')
                 continue
             dev.get_devices_info()
-            dev.replay_action(self.action, self.resnet_model, self.paddle_ocr, self.target_element)
+            # dev.replay_action(self.action, self.resnet_model, self.paddle_ocr, self.target_element)
 
     def control_multiple_devices_through_source_device(self, is_replay=False):
         s_dev = self.source_device
-        win_resize_ratio = 3
         win_name = s_dev.device.get_serial_no() + ' screen'
 
         def on_mouse(event, x, y, flags, params):
-            x, y = x * win_resize_ratio, y * win_resize_ratio
-
+            '''
+            :param x, y: in the scale of detection image size (height=800)
+            '''
+            x_app, y_app = int(x / s_dev.detect_resize_ratio), int(y / s_dev.detect_resize_ratio)
             if event == cv2.EVENT_LBUTTONDOWN:
-                self.action['coordinate'][0] = (x, y)
+                self.action['coordinate'][0] = (x_app, y_app)
             elif event == cv2.EVENT_LBUTTONUP:
                 x_start, y_start = self.action['coordinate'][0]
                 # swipe
-                if abs(x_start - x) >= 10 or abs(y_start - y) >= 10:
-                    print('\n*** Scroll from (%d, %d) to (%d, %d) ***' % (x_start, y_start, x, y))
-                    s_dev.device.input_swipe(x_start, y_start, x, y, 500)
+                if abs(x_start - x_app) >= 10 or abs(y_start - y_app) >= 10:
+                    print('\n*** Scroll from (%d, %d) to (%d, %d) ***' % (x_start, y_start, x_app, y_app))
+                    s_dev.device.input_swipe(x_start, y_start, x_app, y_app, 500)
                     # record action
                     self.action['type'] = 'swipe'
-                    self.action['coordinate'][1] = (x, y)
+                    self.action['coordinate'][1] = (x_app, y_app)
                 # click
                 else:
                     print('\n*** Tap (%d, %d) ***' % (x_start, y_start))
@@ -91,11 +91,9 @@ class NiCro:
                 # update the screenshot and GUI of the selected target device
                 print("*** Re-detect Selected Device's screenshot and GUI ***")
                 s_dev.update_screenshot_and_gui(self.paddle_ocr)
-                img = cv2.resize(s_dev.screenshot, (s_dev.screenshot.shape[1] // win_resize_ratio, s_dev.screenshot.shape[0] // win_resize_ratio))
-                cv2.imshow(win_name, img)
+                cv2.imshow(win_name, s_dev.GUI.det_result_imgs['merge'])
 
-        screen = cv2.resize(s_dev.screenshot, (s_dev.screenshot.shape[1] // win_resize_ratio, s_dev.screenshot.shape[0] // win_resize_ratio))
-        cv2.imshow(win_name, screen)
+        cv2.imshow(win_name, s_dev.GUI.det_result_imgs['merge'])
         cv2.setMouseCallback(win_name, on_mouse)
         cv2.waitKey()
         cv2.destroyWindow(win_name)

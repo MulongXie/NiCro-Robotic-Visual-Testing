@@ -9,7 +9,8 @@ class Device:
         self.device = device                        # ppadb device
 
         self.screenshot = self.cap_screenshot()     # cv2.image
-        self.GUI = None                             # GUI object
+        self.GUI = GUI(self.screenshot_path)        # GUI object
+        self.detect_resize_ratio = self.GUI.detection_resize_height / self.screenshot.shape[0]
 
         # the action on the GUI
         # 'type': click, swipe
@@ -41,15 +42,12 @@ class Device:
 
     def find_element_by_coordinate(self, x, y, show=False):
         '''
-        x, y: in scale of device screen size
+        x, y: in the scale of app screen size
         '''
-        org_shape = self.screenshot.shape[:2]
-        detection_shape = (self.GUI.detection_resize_height, self.GUI.detection_resize_width)
-        ratio = detection_shape[0] / org_shape[0]
-        x_resize, y_resize = int(x * ratio), int(y * ratio)
+        x_resize, y_resize = x * self.detect_resize_ratio, y * self.detect_resize_ratio
         ele = self.GUI.get_element_by_coordinate(x_resize, y_resize)
         if ele is None:
-            print('No element found at (%d, %d)' % (x, y))
+            print('No element found at (%d, %d)' % (x_resize, y_resize))
         elif show:
             ele.show_clip()
         return ele
@@ -98,3 +96,13 @@ class Device:
     def replay_action(self, action, resnet_model, paddle_ocr, target_element=None):
         if target_element is not None:
             matched_element = self.match_element(target_element, resnet_model, paddle_ocr)
+            if matched_element is not None:
+                # self.execute_action('click', [(matched_element.center_x, matched_element.center_y)])
+                print('matching')
+
+    def execute_action(self, action_type, coordinates):
+        print(coordinates)
+        if action_type == 'click':
+            self.device.input_tap(coordinates[0][0], coordinates[0][1])
+        elif action_type == 'swipe':
+            self.device.input_swipe(coordinates[0][0], coordinates[0][1], coordinates[1][0], coordinates[1][1], 500)

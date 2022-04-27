@@ -1,139 +1,279 @@
 {
     "img_shape": [
-        2280,
+        1920,
         1080,
         3
     ],
     "texts": [
         {
             "id": 0,
-            "content": "10:24",
-            "column_min": 29,
-            "row_min": 52,
-            "column_max": 140,
-            "row_max": 86,
-            "width": 111,
-            "height": 34
+            "content": "7:05",
+            "column_min": 22,
+            "row_min": 14,
+            "column_max": 167,
+            "row_max": 50,
+            "width": 145,
+            "height": 36
         },
         {
             "id": 1,
-            "content": "Booking.com",
-            "column_min": 207,
-            "row_min": 216,
-            "column_max": 548,
-            "row_max": 283,
-            "width": 341,
-            "height": 67
+            "content": "M",
+            "column_min": 280,
+            "row_min": 18,
+            "column_max": 330,
+            "row_max": 40,
+            "width": 50,
+            "height": 22
         },
         {
             "id": 2,
-            "content": "Save 15% or more",
-            "column_min": 41,
-            "row_min": 729,
-            "column_max": 357,
-            "row_max": 772,
-            "width": 316,
-            "height": 43
+            "content": "Booking.com",
+            "column_min": 204,
+            "row_min": 108,
+            "column_max": 521,
+            "row_max": 164,
+            "width": 317,
+            "height": 56
         },
         {
             "id": 3,
-            "content": "Plan your dream trip with a Getaway",
-            "column_min": 43,
-            "row_min": 796,
-            "column_max": 665,
-            "row_max": 836,
-            "width": 622,
-            "height": 40
+            "content": "Sydney",
+            "column_min": 35,
+            "row_min": 372,
+            "column_max": 167,
+            "row_max": 418,
+            "width": 132,
+            "height": 46
         },
         {
             "id": 4,
-            "content": "Continue your search",
-            "column_min": 41,
-            "row_min": 1002,
-            "column_max": 460,
-            "row_max": 1050,
-            "width": 419,
-            "height": 48
+            "content": "Canberra",
+            "column_min": 480,
+            "row_min": 374,
+            "column_max": 634,
+            "row_max": 414,
+            "width": 154,
+            "height": 40
         },
         {
             "id": 5,
-            "content": "Canberra",
-            "column_min": 503,
-            "row_min": 1379,
-            "column_max": 663,
-            "row_max": 1418,
-            "width": 160,
-            "height": 39
+            "content": "Melbourr",
+            "column_min": 919,
+            "row_min": 374,
+            "column_max": 1074,
+            "row_max": 414,
+            "width": 155,
+            "height": 40
         },
         {
             "id": 6,
-            "content": "Gold Coast",
-            "column_min": 46,
-            "row_min": 1382,
-            "column_max": 239,
-            "row_max": 1416,
-            "width": 193,
-            "height": 34
+            "content": "Australia",
+            "column_min": 38,
+            "row_min": 438,
+            "column_max": 185,
+            "row_max": 476,
+            "width": 147,
+            "height": 38
         },
         {
             "id": 7,
-            "content": "Sydne",
-            "column_min": 964,
-            "row_min": 1380,
-            "column_max": 1073,
-            "row_max": 1425,
-            "width": 109,
-            "height": 45
+            "content": "Australia",
+            "column_min": 482,
+            "row_min": 440,
+            "column_max": 627,
+            "row_max": 474,
+            "width": 145,
+            "height": 34
         },
         {
             "id": 8,
-            "content": "Apr 27 - Apr 28",
-            "column_min": 38,
-            "row_min": 1441,
-            "column_max": 304,
-            "row_max": 1487,
-            "width": 266,
-            "height": 46
+            "content": "Australia",
+            "column_min": 923,
+            "row_min": 440,
+            "column_max": 1068,
+            "row_max": 474,
+            "width": 145,
+            "height": 34
         },
         {
             "id": 9,
-            "content": "Apr 27 - Apr 28",
-            "column_min": 499,
-            "row_min": 1441,
-            "column_max": 764,
-            "row_max": 1487,
-            "width": 265,
-            "height": 46
+            "content": "Connect with other travelers",
+            "column_min": 46,
+            "row_min": 640,
+            "column_max": 568,
+            "row_max": 674,
+            "width": 522,
+            "height": 34
         },
         {
             "id": 10,
-            "content": "Apr 27",
-            "column_min": 959,
-            "row_min": 1441,
-            "column_max": 1076,
-            "row_max": 1490,
-            "width": 117,
-            "height": 49
+            "content": "Travel Talk",
+            "column_min": 486,
+            "row_min": 1000,
+            "column_max": 659,
+            "row_max": 1034,
+            "width": 173,
+            "height": 34
         },
         {
             "id": 11,
-            "content": "Soak up some sun",
-            "column_min": 41,
-            "row_min": 1653,
-            "column_max": 405,
-            "row_max": 1703,
-            "width": 364,
-            "height": 50
+            "content": "Australia",
+            "column_min": 44,
+            "row_min": 1004,
+            "column_max": 187,
+            "row_max": 1032,
+            "width": 143,
+            "height": 28
         },
         {
             "id": 12,
-            "content": "Get your dose of vitamin D in these sunny destinations",
-            "column_min": 43,
-            "row_min": 1724,
-            "column_max": 988,
-            "row_max": 1765,
-            "width": 945,
-            "height": 41
+            "content": "Morecor",
+            "column_min": 923,
+            "row_min": 1002,
+            "column_max": 1072,
+            "row_max": 1034,
+            "width": 149,
+            "height": 32
+        },
+        {
+            "id": 13,
+            "content": "Travel community",
+            "column_min": 42,
+            "row_min": 1062,
+            "column_max": 332,
+            "row_max": 1100,
+            "width": 290,
+            "height": 38
+        },
+        {
+            "id": 14,
+            "content": "Generaldiscussion",
+            "column_min": 486,
+            "row_min": 1066,
+            "column_max": 792,
+            "row_max": 1094,
+            "width": 306,
+            "height": 28
+        },
+        {
+            "id": 15,
+            "content": "View all",
+            "column_min": 923,
+            "row_min": 1062,
+            "column_max": 1056,
+            "row_max": 1096,
+            "width": 133,
+            "height": 34
+        },
+        {
+            "id": 16,
+            "content": "174,747 travelers",
+            "column_min": 40,
+            "row_min": 1116,
+            "column_max": 326,
+            "row_max": 1152,
+            "width": 286,
+            "height": 36
+        },
+        {
+            "id": 17,
+            "content": "559,436 travelers",
+            "column_min": 480,
+            "row_min": 1116,
+            "column_max": 770,
+            "row_max": 1152,
+            "width": 290,
+            "height": 36
+        },
+        {
+            "id": 18,
+            "content": "9.894940",
+            "column_min": 925,
+            "row_min": 1120,
+            "column_max": 1072,
+            "row_max": 1148,
+            "width": 147,
+            "height": 28
+        },
+        {
+            "id": 19,
+            "content": "X",
+            "column_min": 993,
+            "row_min": 1282,
+            "column_max": 1040,
+            "row_max": 1326,
+            "width": 47,
+            "height": 44
+        },
+        {
+            "id": 20,
+            "content": "ySign in to manage your bookings",
+            "column_min": 52,
+            "row_min": 1294,
+            "column_max": 737,
+            "row_max": 1340,
+            "width": 685,
+            "height": 46
+        },
+        {
+            "id": 21,
+            "content": "Sign in now",
+            "column_min": 117,
+            "row_min": 1394,
+            "column_max": 304,
+            "row_max": 1428,
+            "width": 187,
+            "height": 34
+        },
+        {
+            "id": 22,
+            "content": "o",
+            "column_min": 50,
+            "row_min": 1552,
+            "column_max": 101,
+            "row_max": 1596,
+            "width": 51,
+            "height": 44
+        },
+        {
+            "id": 23,
+            "content": "Subscribe to get our Secret Deals",
+            "column_min": 141,
+            "row_min": 1552,
+            "column_max": 776,
+            "row_max": 1592,
+            "width": 635,
+            "height": 40
+        },
+        {
+            "id": 24,
+            "content": "Sign up and we'll send the best deals to you",
+            "column_min": 153,
+            "row_min": 1614,
+            "column_max": 860,
+            "row_max": 1648,
+            "width": 707,
+            "height": 34
+        },
+        {
+            "id": 25,
+            "content": "Subscribe",
+            "column_min": 850,
+            "row_min": 1730,
+            "column_max": 1016,
+            "row_max": 1764,
+            "width": 166,
+            "height": 34
+        },
+        {
+            "id": 26,
+            "content": "Enter email address",
+            "column_min": 153,
+            "row_min": 1740,
+            "column_max": 476,
+            "row_max": 1774,
+            "width": 323,
+            "height": 34
         }
     ]
 }

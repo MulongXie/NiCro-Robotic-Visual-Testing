@@ -3,390 +3,301 @@
         {
             "id": 0,
             "class": "Compo",
-            "height": 19,
-            "width": 16,
+            "height": 13,
+            "width": 18,
             "position": {
-                "column_min": 371,
-                "row_min": 47,
-                "column_max": 387,
-                "row_max": 66
+                "column_min": 17,
+                "row_min": 80,
+                "column_max": 35,
+                "row_max": 93
             }
         },
         {
             "id": 1,
             "class": "Compo",
-            "height": 147,
-            "width": 263,
+            "height": 17,
+            "width": 14,
             "position": {
-                "column_min": 16,
-                "row_min": 191,
-                "column_max": 279,
-                "row_max": 338
+                "column_min": 308,
+                "row_min": 78,
+                "column_max": 322,
+                "row_max": 95
             }
         },
         {
             "id": 2,
             "class": "Compo",
-            "height": 147,
-            "width": 153,
+            "height": 130,
+            "width": 232,
             "position": {
-                "column_min": 296,
-                "row_min": 191,
-                "column_max": 449,
-                "row_max": 338
+                "column_min": 14,
+                "row_min": 149,
+                "column_max": 246,
+                "row_max": 279
             }
         },
         {
             "id": 3,
             "class": "Compo",
-            "height": 96,
-            "width": 167,
+            "height": 85,
+            "width": 147,
             "position": {
-                "column_min": 16,
-                "row_min": 480,
-                "column_max": 183,
-                "row_max": 576
-            },
-            "children": [
-                18,
-                20
-            ]
+                "column_min": 14,
+                "row_min": 421,
+                "column_max": 161,
+                "row_max": 506
+            }
         },
         {
             "id": 4,
             "class": "Compo",
-            "height": 96,
-            "width": 167,
+            "height": 85,
+            "width": 147,
             "position": {
-                "column_min": 200,
-                "row_min": 480,
-                "column_max": 367,
-                "row_max": 576
-            },
-            "children": [
-                19,
-                21
-            ]
+                "column_min": 176,
+                "row_min": 421,
+                "column_max": 323,
+                "row_max": 506
+            }
         },
         {
             "id": 5,
             "class": "Compo",
-            "height": 96,
-            "width": 65,
+            "height": 85,
+            "width": 39,
             "position": {
-                "column_min": 384,
-                "row_min": 480,
-                "column_max": 449,
-                "row_max": 576
+                "column_min": 338,
+                "row_min": 421,
+                "column_max": 377,
+                "row_max": 506
             }
         },
         {
             "id": 6,
             "class": "Compo",
-            "height": 65,
-            "width": 449,
+            "height": 81,
+            "width": 232,
             "position": {
-                "column_min": 0,
-                "row_min": 658,
-                "column_max": 449,
-                "row_max": 723
-            },
-            "children": [
-                7,
-                28
-            ]
+                "column_min": 14,
+                "row_min": 672,
+                "column_max": 246,
+                "row_max": 753
+            }
         },
         {
             "id": 7,
             "class": "Compo",
-            "height": 27,
-            "width": 20,
+            "height": 81,
+            "width": 116,
             "position": {
-                "column_min": 393,
-                "row_min": 677,
-                "column_max": 413,
-                "row_max": 704
+                "column_min": 261,
+                "row_min": 672,
+                "column_max": 377,
+                "row_max": 753
             },
-            "parent": 6
+            "children": [
+                8
+            ]
         },
         {
             "id": 8,
             "class": "Compo",
-            "height": 7,
-            "width": 131,
+            "height": 23,
+            "width": 17,
             "position": {
-                "column_min": 52,
-                "row_min": 739,
-                "column_max": 183,
-                "row_max": 746
-            }
+                "column_min": 328,
+                "row_min": 692,
+                "column_max": 345,
+                "row_max": 715
+            },
+            "parent": 7
         },
         {
             "id": 9,
-            "class": "Compo",
-            "height": 7,
-            "width": 73,
+            "class": "Text",
+            "height": 14,
+            "width": 49,
             "position": {
-                "column_min": 200,
-                "row_min": 739,
-                "column_max": 273,
-                "row_max": 746
-            }
+                "column_min": 7,
+                "row_min": 17,
+                "column_max": 56,
+                "row_max": 31
+            },
+            "text_content": "9:15"
         },
         {
             "id": 10,
-            "class": "Compo",
-            "height": 7,
-            "width": 48,
-            "position": {
-                "column_min": 319,
-                "row_min": 739,
-                "column_max": 367,
-                "row_max": 746
-            }
-        },
-        {
-            "id": 11,
-            "class": "Compo",
-            "height": 7,
-            "width": 46,
-            "position": {
-                "column_min": 403,
-                "row_min": 739,
-                "column_max": 449,
-                "row_max": 746
-            }
-        },
-        {
-            "id": 12,
             "class": "Text",
-            "height": 26,
-            "width": 133,
+            "height": 23,
+            "width": 120,
             "position": {
-                "column_min": 84,
-                "row_min": 43,
-                "column_max": 217,
-                "row_max": 69
+                "column_min": 72,
+                "row_min": 75,
+                "column_max": 192,
+                "row_max": 98
             },
             "text_content": "Booking.com"
         },
         {
+            "id": 11,
+            "class": "Text",
+            "height": 17,
+            "width": 90,
+            "position": {
+                "column_min": 13,
+                "row_min": 115,
+                "column_max": 103,
+                "row_max": 132
+            },
+            "text_content": "Moreforyou"
+        },
+        {
+            "id": 12,
+            "class": "Text",
+            "height": 15,
+            "width": 112,
+            "position": {
+                "column_min": 13,
+                "row_min": 292,
+                "column_max": 125,
+                "row_max": 307
+            },
+            "text_content": "Save 15% or more"
+        },
+        {
             "id": 13,
             "class": "Text",
-            "height": 20,
-            "width": 146,
+            "height": 14,
+            "width": 217,
             "position": {
-                "column_min": 16,
-                "row_min": 127,
-                "column_max": 162,
-                "row_max": 147
+                "column_min": 15,
+                "row_min": 315,
+                "column_max": 232,
+                "row_max": 329
             },
-            "text_content": "Soak up some sun"
+            "text_content": "Plan your dream trip with a Getaway"
         },
         {
             "id": 14,
             "class": "Text",
-            "height": 14,
-            "width": 368,
+            "height": 16,
+            "width": 146,
             "position": {
-                "column_min": 18,
-                "row_min": 156,
-                "column_max": 386,
-                "row_max": 170
+                "column_min": 15,
+                "row_min": 388,
+                "column_max": 161,
+                "row_max": 404
             },
-            "text_content": "Get your dose of vitamin D in these sunny destinations"
+            "text_content": "Continue your search"
         },
         {
             "id": 15,
             "class": "Text",
-            "height": 15,
-            "width": 143,
+            "height": 18,
+            "width": 48,
             "position": {
-                "column_min": 17,
-                "row_min": 354,
-                "column_max": 160,
-                "row_max": 369
+                "column_min": 13,
+                "row_min": 518,
+                "column_max": 61,
+                "row_max": 536
             },
-            "text_content": "Gold Coast.Australia"
+            "text_content": "Sydney"
         },
         {
             "id": 16,
             "class": "Text",
-            "height": 15,
-            "width": 113,
+            "height": 12,
+            "width": 69,
             "position": {
-                "column_min": 297,
-                "row_min": 355,
-                "column_max": 410,
-                "row_max": 370
+                "column_min": 177,
+                "row_min": 521,
+                "column_max": 246,
+                "row_max": 533
             },
-            "text_content": "Cairns,Australia"
+            "text_content": "Gold Coast"
         },
         {
             "id": 17,
             "class": "Text",
-            "height": 14,
-            "width": 162,
+            "height": 15,
+            "width": 40,
             "position": {
-                "column_min": 18,
-                "row_min": 445,
-                "column_max": 180,
-                "row_max": 459
+                "column_min": 337,
+                "row_min": 520,
+                "column_max": 377,
+                "row_max": 535
             },
-            "text_content": "PopularDestinations"
+            "text_content": "Canbe"
         },
         {
             "id": 18,
             "class": "Text",
             "height": 16,
-            "width": 65,
+            "width": 93,
             "position": {
-                "column_min": 115,
-                "row_min": 492,
-                "column_max": 180,
-                "row_max": 508
+                "column_min": 13,
+                "row_min": 542,
+                "column_max": 106,
+                "row_max": 558
             },
-            "text_content": "Deals start",
-            "parent": 3
+            "text_content": "Apr 27 - Apr 28"
         },
         {
             "id": 19,
             "class": "Text",
-            "height": 17,
-            "width": 65,
+            "height": 16,
+            "width": 93,
             "position": {
-                "column_min": 300,
-                "row_min": 491,
-                "column_max": 365,
-                "row_max": 508
+                "column_min": 175,
+                "row_min": 542,
+                "column_max": 268,
+                "row_max": 558
             },
-            "text_content": "Deals start",
-            "parent": 4
+            "text_content": "Apr 27 - Apr 28"
         },
         {
             "id": 20,
             "class": "Text",
-            "height": 17,
-            "width": 58,
+            "height": 18,
+            "width": 40,
             "position": {
-                "column_min": 124,
-                "row_min": 511,
-                "column_max": 182,
-                "row_max": 528
+                "column_min": 337,
+                "row_min": 541,
+                "column_max": 377,
+                "row_max": 559
             },
-            "text_content": "at US$46",
-            "parent": 3
+            "text_content": "Apr 27"
         },
         {
             "id": 21,
             "class": "Text",
-            "height": 15,
-            "width": 65,
+            "height": 18,
+            "width": 128,
             "position": {
-                "column_min": 301,
-                "row_min": 513,
-                "column_max": 366,
-                "row_max": 528
+                "column_min": 14,
+                "row_min": 616,
+                "column_max": 142,
+                "row_max": 634
             },
-            "text_content": "at US$124",
-            "parent": 4
+            "text_content": "Soakup some sun"
         },
         {
             "id": 22,
             "class": "Text",
-            "height": 20,
-            "width": 54,
-            "position": {
-                "column_min": 14,
-                "row_min": 590,
-                "column_max": 68,
-                "row_max": 610
-            },
-            "text_content": "Sydney"
-        },
-        {
-            "id": 23,
-            "class": "Text",
-            "height": 18,
-            "width": 65,
-            "position": {
-                "column_min": 200,
-                "row_min": 591,
-                "column_max": 265,
-                "row_max": 609
-            },
-            "text_content": "Canberra"
-        },
-        {
-            "id": 24,
-            "class": "Text",
-            "height": 14,
-            "width": 65,
-            "position": {
-                "column_min": 382,
-                "row_min": 593,
-                "column_max": 447,
-                "row_max": 607
-            },
-            "text_content": "Melbourr"
-        },
-        {
-            "id": 25,
-            "class": "Text",
             "height": 15,
-            "width": 61,
+            "width": 332,
             "position": {
-                "column_min": 16,
-                "row_min": 619,
-                "column_max": 77,
-                "row_max": 634
+                "column_min": 15,
+                "row_min": 640,
+                "column_max": 347,
+                "row_max": 655
             },
-            "text_content": "Australia"
-        },
-        {
-            "id": 26,
-            "class": "Text",
-            "height": 14,
-            "width": 61,
-            "position": {
-                "column_min": 200,
-                "row_min": 619,
-                "column_max": 261,
-                "row_max": 633
-            },
-            "text_content": "Australia"
-        },
-        {
-            "id": 27,
-            "class": "Text",
-            "height": 15,
-            "width": 62,
-            "position": {
-                "column_min": 383,
-                "row_min": 619,
-                "column_max": 445,
-                "row_max": 634
-            },
-            "text_content": "Australia"
-        },
-        {
-            "id": 28,
-            "class": "Text",
-            "height": 14,
-            "width": 219,
-            "position": {
-                "column_min": 18,
-                "row_min": 704,
-                "column_max": 237,
-                "row_max": 718
-            },
-            "text_content": "Connect with othertravelers",
-            "parent": 6
+            "text_content": "Get your dose of vitamin D in these sunny destinations"
         }
     ],
     "img_shape": [
         800,
-        450,
+        378,
         3
     ]
 }
