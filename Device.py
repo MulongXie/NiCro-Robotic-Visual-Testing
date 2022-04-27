@@ -71,3 +71,9 @@ class Device:
         cv2.setMouseCallback(win_name, on_mouse)
         cv2.waitKey()
         cv2.destroyWindow(win_name)
+
+    def match_element(self, element):
+        pass
+
+    def replay_action(self, action, target_element=None):
+        pass

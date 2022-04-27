@@ -7,26 +7,16 @@
     "texts": [
         {
             "id": 0,
-            "content": "3:29S",
-            "column_min": 24,
+            "content": "4:58",
+            "column_min": 27,
             "row_min": 52,
             "column_max": 171,
             "row_max": 86,
-            "width": 147,
+            "width": 144,
             "height": 34
         },
         {
             "id": 1,
-            "content": "A",
-            "column_min": 986,
-            "row_min": 57,
-            "column_max": 1051,
-            "row_max": 81,
-            "width": 65,
-            "height": 24
-        },
-        {
-            "id": 2,
             "content": "Booking.com",
             "column_min": 207,
             "row_min": 216,
@@ -36,254 +26,84 @@
             "height": 65
         },
         {
+            "id": 2,
+            "content": "Wed, Apr 27 - Thu, Apr 28",
+            "column_min": 133,
+            "row_min": 416,
+            "column_max": 620,
+            "row_max": 456,
+            "width": 487,
+            "height": 40
+        },
+        {
             "id": 3,
-            "content": "Q",
-            "column_min": 875,
-            "row_min": 214,
-            "column_max": 938,
-            "row_max": 278,
-            "width": 63,
-            "height": 64
+            "content": "&1 room 2 adults  0 children",
+            "column_min": 87,
+            "row_min": 558,
+            "column_max": 678,
+            "row_max": 615,
+            "width": 591,
+            "height": 57
         },
         {
             "id": 4,
-            "content": "Australia",
-            "column_min": 36,
-            "row_min": 363,
-            "column_max": 195,
-            "row_max": 404,
-            "width": 159,
-            "height": 41
+            "content": "Search",
+            "column_min": 468,
+            "row_min": 724,
+            "column_max": 610,
+            "row_max": 767,
+            "width": 142,
+            "height": 43
         },
         {
             "id": 5,
-            "content": "Austra",
-            "column_min": 959,
-            "row_min": 358,
-            "column_max": 1078,
-            "row_max": 407,
-            "width": 119,
-            "height": 49
+            "content": "I'm traveling for work",
+            "column_min": 41,
+            "row_min": 902,
+            "column_max": 412,
+            "row_max": 945,
+            "width": 371,
+            "height": 43
         },
         {
             "id": 6,
-            "content": "Australia",
-            "column_min": 501,
-            "row_min": 368,
-            "column_max": 653,
-            "row_max": 401,
-            "width": 152,
-            "height": 33
+            "content": "Moreforyou",
+            "column_min": 41,
+            "row_min": 1106,
+            "column_max": 295,
+            "row_max": 1157,
+            "width": 254,
+            "height": 51
         },
         {
             "id": 7,
-            "content": "Connect with other travelers",
-            "column_min": 46,
-            "row_min": 575,
-            "column_max": 598,
-            "row_max": 615,
-            "width": 552,
-            "height": 40
+            "content": "Save 15% or more",
+            "column_min": 43,
+            "row_min": 1610,
+            "column_max": 355,
+            "row_max": 1653,
+            "width": 312,
+            "height": 43
         },
         {
             "id": 8,
-            "content": "Australia",
-            "column_min": 41,
-            "row_min": 952,
-            "column_max": 198,
-            "row_max": 986,
-            "width": 157,
-            "height": 34
-        },
-        {
-            "id": 9,
-            "content": "Travel Talk",
-            "column_min": 504,
-            "row_min": 948,
-            "column_max": 694,
-            "row_max": 988,
-            "width": 190,
-            "height": 40
-        },
-        {
-            "id": 10,
-            "content": "More",
-            "column_min": 964,
-            "row_min": 952,
-            "column_max": 1068,
-            "row_max": 988,
-            "width": 104,
-            "height": 36
-        },
-        {
-            "id": 11,
-            "content": "Travel community",
+            "content": "Plan your dream trip with a Getaway",
             "column_min": 43,
-            "row_min": 1014,
-            "column_max": 347,
-            "row_max": 1054,
-            "width": 304,
-            "height": 40
-        },
-        {
-            "id": 12,
-            "content": "General discussion",
-            "column_min": 509,
-            "row_min": 1016,
-            "column_max": 829,
-            "row_max": 1050,
-            "width": 320,
-            "height": 34
-        },
-        {
-            "id": 13,
-            "content": "View a",
-            "column_min": 964,
-            "row_min": 1012,
-            "column_max": 1078,
-            "row_max": 1054,
-            "width": 114,
-            "height": 42
-        },
-        {
-            "id": 14,
-            "content": "559,436 travelers",
-            "column_min": 504,
-            "row_min": 1069,
-            "column_max": 808,
-            "row_max": 1109,
-            "width": 304,
-            "height": 40
-        },
-        {
-            "id": 15,
-            "content": "174,747 travelers",
-            "column_min": 46,
-            "row_min": 1074,
-            "column_max": 342,
-            "row_max": 1107,
-            "width": 296,
-            "height": 33
-        },
-        {
-            "id": 16,
-            "content": "9,894",
-            "column_min": 964,
-            "row_min": 1066,
-            "column_max": 1075,
-            "row_max": 1109,
-            "width": 111,
-            "height": 43
-        },
-        {
-            "id": 17,
-            "content": "X",
-            "column_min": 986,
-            "row_min": 1240,
-            "column_max": 1039,
-            "row_max": 1294,
-            "width": 53,
-            "height": 54
-        },
-        {
-            "id": 18,
-            "content": "ySign in to manage your bookings",
-            "column_min": 46,
-            "row_min": 1256,
-            "column_max": 774,
-            "row_max": 1304,
-            "width": 728,
-            "height": 48
-        },
-        {
-            "id": 19,
-            "content": "Sign in now",
-            "column_min": 121,
-            "row_min": 1359,
-            "column_max": 318,
-            "row_max": 1399,
-            "width": 197,
-            "height": 40
-        },
-        {
-            "id": 20,
-            "content": "Subscribe to get our Secret Deals",
-            "column_min": 147,
-            "row_min": 1518,
-            "column_max": 817,
-            "row_max": 1568,
-            "width": 670,
-            "height": 50
-        },
-        {
-            "id": 21,
-            "content": "R",
-            "column_min": 988,
-            "row_min": 1507,
-            "column_max": 1037,
-            "row_max": 1557,
-            "width": 49,
-            "height": 50
-        },
-        {
-            "id": 22,
-            "content": "Sign up and we'll send the best deals to you",
-            "column_min": 159,
-            "row_min": 1586,
-            "column_max": 914,
-            "row_max": 1627,
-            "width": 755,
+            "row_min": 1674,
+            "column_max": 661,
+            "row_max": 1715,
+            "width": 618,
             "height": 41
         },
         {
-            "id": 23,
-            "content": "Enter email address",
-            "column_min": 161,
-            "row_min": 1715,
-            "column_max": 502,
-            "row_max": 1753,
-            "width": 341,
-            "height": 38
-        },
-        {
-            "id": 24,
-            "content": "Subscribe",
-            "column_min": 839,
-            "row_min": 1712,
-            "column_max": 1010,
-            "row_max": 1746,
-            "width": 171,
-            "height": 34
-        },
-        {
-            "id": 25,
-            "content": "List Your Place on Booking.com",
-            "column_min": 140,
-            "row_min": 1895,
-            "column_max": 704,
-            "row_max": 1941,
-            "width": 564,
+            "id": 9,
+            "content": "Continue your search",
+            "column_min": 43,
+            "row_min": 1883,
+            "column_max": 456,
+            "row_max": 1929,
+            "width": 413,
             "height": 46
-        },
-        {
-            "id": 26,
-            "content": "O",
-            "column_min": 943,
-            "row_min": 1976,
-            "column_max": 984,
-            "row_max": 2019,
-            "width": 41,
-            "height": 43
-        },
-        {
-            "id": 27,
-            "content": "Learn more",
-            "column_min": 154,
-            "row_min": 2002,
-            "column_max": 354,
-            "row_max": 2035,
-            "width": 200,
-            "height": 33
         }
     ]
 }
