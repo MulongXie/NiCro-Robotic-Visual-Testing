@@ -6,8 +6,8 @@ class Device:
     def __init__(self, dev_id, device):
         self.id = dev_id
         self.screenshot_path = 'data/screen/' + str(self.id) + '.png'
-
         self.device = device                        # ppadb device
+
         self.screenshot = self.cap_screenshot()     # cv2.image
         self.GUI = None                             # GUI object
 
@@ -36,8 +36,9 @@ class Device:
         if show:
             self.GUI.show_detection_result()
 
-    def get_element_by_clicking_on_image(self):
-        self.GUI.get_element_by_clicking()
+    def update_screenshot_and_gui(self, paddle_ocr, show=False):
+        self.cap_screenshot()
+        self.detect_gui_info(paddle_ocr, show=show)
 
     def control_app_through_screenshot(self):
         '''
@@ -72,8 +73,16 @@ class Device:
         cv2.waitKey()
         cv2.destroyWindow(win_name)
 
-    def match_element(self, element):
-        pass
+    def match_element(self, target_element, resnet_model, paddle_ocr, scroll_search=True):
+        matched_ele = self.GUI.match_elements(target_element.clip, resnet_model, target_element.text_content, min_similarity_img=0.55, show=True)
+        # scroll down if current gui is not matched
+        if matched_ele is None and scroll_search:
+            print('Scroll down and try to match again')
+            self.device.input_swipe(50, (self.device.wm_size().height * 0.9), 50, 20, 500)
+            self.update_screenshot_and_gui(paddle_ocr)
+            self.match_element(target_element, resnet_model, paddle_ocr, scroll_search=False)
+        return matched_ele
 
-    def replay_action(self, action, target_element=None):
-        pass
+    def replay_action(self, action, resnet_model, paddle_ocr, target_element=None):
+        if target_element is not None:
+            matched_element = self.match_element(target_element, resnet_model, paddle_ocr)

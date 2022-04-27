@@ -1,7 +1,14 @@
 import cv2
 from Device import Device
+
 from ppadb.client import Client as AdbClient
 client = AdbClient(host="127.0.0.1", port=5037)
+
+from paddleocr import PaddleOCR
+paddle_ocr = PaddleOCR(use_angle_cls=True, lang='en', show_log=False)
+
+from keras.applications.resnet import ResNet50
+resnet_model = ResNet50(include_top=False, input_shape=(32, 32, 3))
 
 
 class NiCro:
@@ -15,6 +22,9 @@ class NiCro:
         # 'coordinate': action target coordinates, click has one coord, swipe has two [start, end]
         self.action = {'type': 'click', 'coordinate': [(-1, -1), (-1, -1)]}
         self.target_element = None
+
+        self.paddle_ocr = paddle_ocr        # ocr detector for GUI detection
+        self.resnet_model = resnet_model    # resnet encoder for image matching
 
     def load_devices(self):
         self.devices = [Device(i, dev) for i, dev in enumerate(client.devices())]
@@ -30,10 +40,17 @@ class NiCro:
         self.source_device = self.devices[device_id]
         self.get_devices_info()
 
-    def detect_gui_info_for_all_devices(self, paddle_ocr, is_load=False, show=True):
+    def detect_gui_info_for_all_devices(self, is_load=False, show=True):
         for i, device in enumerate(self.devices):
             print('****** Device [%d / %d] ******' % (i + 1, len(self.devices)))
-            device.detect_gui_info(paddle_ocr, is_load, show)
+            device.detect_gui_info(self.paddle_ocr, is_load, show)
+
+    def replay_action_on_all_devices(self):
+        print('*** Replay Action On All Devices ***')
+        for i, dev in enumerate(self.devices):
+            print('Replay Devices Number [%d/%d]' % (i, len(self.devices)))
+            dev.get_devices_info()
+            dev.replay_action(self.action, self.resnet_model, self.paddle_ocr, self.target_element)
 
     def control_multiple_devices_through_source_device(self, is_replay=False):
         s_dev = self.source_device
@@ -62,6 +79,9 @@ class NiCro:
                     # record action
                     self.target_element = s_dev.GUI.get_element_by_coordinate(x_start, y_start)
                     self.action['type'] = 'click'
+
+                if is_replay:
+                    self.replay_action_on_all_devices()
 
             img = s_dev.cap_screenshot()
             img = cv2.resize(img, (img.shape[1] // win_resize_ratio, img.shape[0] // win_resize_ratio))
