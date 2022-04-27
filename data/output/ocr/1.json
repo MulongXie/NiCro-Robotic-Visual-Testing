@@ -7,16 +7,26 @@
     "texts": [
         {
             "id": 0,
-            "content": "9:44",
-            "column_min": 24,
-            "row_min": 18,
-            "column_max": 109,
-            "row_max": 48,
-            "width": 85,
-            "height": 30
+            "content": "10:24",
+            "column_min": 21,
+            "row_min": 12,
+            "column_max": 134,
+            "row_max": 52,
+            "width": 113,
+            "height": 40
         },
         {
             "id": 1,
+            "content": "8",
+            "column_min": 137,
+            "row_min": 20,
+            "column_max": 179,
+            "row_max": 42,
+            "width": 42,
+            "height": 22
+        },
+        {
+            "id": 2,
             "content": "A",
             "column_min": 985,
             "row_min": 18,
@@ -26,7 +36,7 @@
             "height": 28
         },
         {
-            "id": 2,
+            "id": 3,
             "content": "Booking.com",
             "column_min": 202,
             "row_min": 105,
@@ -36,7 +46,7 @@
             "height": 62
         },
         {
-            "id": 3,
+            "id": 4,
             "content": "O",
             "column_min": 891,
             "row_min": 110,
@@ -46,7 +56,7 @@
             "height": 46
         },
         {
-            "id": 4,
+            "id": 5,
             "content": "Soak up some sun",
             "column_min": 39,
             "row_min": 306,
@@ -56,7 +66,7 @@
             "height": 48
         },
         {
-            "id": 5,
+            "id": 6,
             "content": "Get your dose of vitamin D in these sunny destinations",
             "column_min": 44,
             "row_min": 376,
@@ -66,7 +76,7 @@
             "height": 34
         },
         {
-            "id": 6,
+            "id": 7,
             "content": "Gold Coast.Australia",
             "column_min": 42,
             "row_min": 850,
@@ -76,7 +86,7 @@
             "height": 36
         },
         {
-            "id": 7,
+            "id": 8,
             "content": "Cairns,Australia",
             "column_min": 715,
             "row_min": 854,
@@ -86,7 +96,7 @@
             "height": 34
         },
         {
-            "id": 8,
+            "id": 9,
             "content": "PopularDestinations",
             "column_min": 44,
             "row_min": 1068,
@@ -96,8 +106,8 @@
             "height": 34
         },
         {
-            "id": 9,
-            "content": "Deals stari",
+            "id": 10,
+            "content": "Deals start",
             "column_min": 276,
             "row_min": 1182,
             "column_max": 433,
@@ -106,7 +116,7 @@
             "height": 38
         },
         {
-            "id": 10,
+            "id": 11,
             "content": "Deals start",
             "column_min": 720,
             "row_min": 1180,
@@ -116,7 +126,7 @@
             "height": 40
         },
         {
-            "id": 11,
+            "id": 12,
             "content": "at US$46",
             "column_min": 299,
             "row_min": 1228,
@@ -126,7 +136,7 @@
             "height": 40
         },
         {
-            "id": 12,
+            "id": 13,
             "content": "at US$124",
             "column_min": 723,
             "row_min": 1232,
@@ -136,7 +146,7 @@
             "height": 36
         },
         {
-            "id": 13,
+            "id": 14,
             "content": "Sydney",
             "column_min": 35,
             "row_min": 1418,
@@ -146,7 +156,7 @@
             "height": 46
         },
         {
-            "id": 14,
+            "id": 15,
             "content": "Canberra",
             "column_min": 480,
             "row_min": 1420,
@@ -156,7 +166,7 @@
             "height": 42
         },
         {
-            "id": 15,
+            "id": 16,
             "content": "Melbourr",
             "column_min": 919,
             "row_min": 1424,
@@ -166,7 +176,7 @@
             "height": 34
         },
         {
-            "id": 16,
+            "id": 17,
             "content": "Australia",
             "column_min": 40,
             "row_min": 1486,
@@ -176,7 +186,7 @@
             "height": 36
         },
         {
-            "id": 17,
+            "id": 18,
             "content": "Australia",
             "column_min": 480,
             "row_min": 1486,
@@ -186,7 +196,7 @@
             "height": 34
         },
         {
-            "id": 18,
+            "id": 19,
             "content": "Australia",
             "column_min": 921,
             "row_min": 1486,
@@ -196,7 +206,7 @@
             "height": 36
         },
         {
-            "id": 19,
+            "id": 20,
             "content": "0",
             "column_min": 949,
             "row_min": 1634,
@@ -206,7 +216,7 @@
             "height": 34
         },
         {
-            "id": 20,
+            "id": 21,
             "content": "Connect with othertravelers",
             "column_min": 44,
             "row_min": 1690,

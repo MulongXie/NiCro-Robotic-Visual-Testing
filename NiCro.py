@@ -52,13 +52,12 @@ class NiCro:
             target_ele = self.source_device.find_element_by_coordinate(self.action['coordinate'][0][0], self.action['coordinate'][0][1], show=True)
 
         for i, dev in enumerate(self.devices):
-            print('****** Replay Devices Number [%d/%d] ******' % (i, len(self.devices)))
+            print('****** Replay Devices Number [%d/%d] ******' % (i + 1, len(self.devices)))
             if dev.id == self.source_device.id:
                 print('Skip the Selected Source Device')
                 continue
             dev.get_devices_info()
             dev.replay_action(self.action, self.resnet_model, self.paddle_ocr, self.target_element)
-        print('\n')
 
     def control_multiple_devices_through_source_device(self, is_replay=False):
         s_dev = self.source_device
@@ -89,8 +88,8 @@ class NiCro:
 
                 if is_replay:
                     self.replay_action_on_all_devices()
-
-                print('Re-detect screenshot and GUI')
+                # update the screenshot and GUI of the selected target device
+                print("*** Re-detect Selected Device's screenshot and GUI ***")
                 s_dev.update_screenshot_and_gui(self.paddle_ocr)
                 img = cv2.resize(s_dev.screenshot, (s_dev.screenshot.shape[1] // win_resize_ratio, s_dev.screenshot.shape[0] // win_resize_ratio))
                 cv2.imshow(win_name, img)
