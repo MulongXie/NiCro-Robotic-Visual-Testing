@@ -54,11 +54,11 @@ class Device:
                 self.action['coordinate'][0] = (x, y)
             elif event == cv2.EVENT_LBUTTONUP:
                 x_start, y_start = self.action['coordinate'][0]
-                # swipe or scroll
+                # swipe
                 if abs(x_start - x) >= 10 or abs(y_start - y) >= 10:
                     print('Scroll from (%d, %d) to (%d, %d)' % (x_start, y_start, x, y))
                     self.device.input_swipe(x_start, y_start, x, y, 500)
-                # tap
+                # click
                 else:
                     print('Tap (%d, %d)' % (x_start, y_start))
                     self.device.input_tap(x_start, y_start)
