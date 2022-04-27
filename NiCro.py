@@ -13,6 +13,9 @@ class NiCro:
         self.target_element = None
         self.action = None
 
+    def load_devices(self):
+        self.devices = [Device(i, dev) for i, dev in enumerate(client.devices())]
+
     def get_devices_info(self):
         print('Selected Source Device:')
         self.source_device.get_devices_info()
@@ -26,5 +29,9 @@ class NiCro:
 
     def detect_gui_info_for_all_devices(self, paddle_ocr, is_load=False, show=True):
         for i, device in enumerate(self.devices):
-            print('****** Device [%d / %d] ******' % (i, len(self.devices)))
+            print('****** Device [%d / %d] ******' % (i + 1, len(self.devices)))
             device.detect_gui_info(paddle_ocr, is_load, show)
+
+    def show_all_device_detection_results(self):
+        for device in self.devices:
+            device.GUI.show_detection_result()

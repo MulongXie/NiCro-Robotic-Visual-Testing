@@ -139,15 +139,15 @@
         {
             "id": 11,
             "class": "Text",
-            "height": 13,
-            "width": 43,
+            "height": 14,
+            "width": 59,
             "position": {
-                "column_min": 10,
-                "row_min": 18,
-                "column_max": 53,
+                "column_min": 8,
+                "row_min": 17,
+                "column_max": 67,
                 "row_max": 31
             },
-            "text_content": "12:21"
+            "text_content": "12:30"
         },
         {
             "id": 12,

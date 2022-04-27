@@ -22,6 +22,7 @@ class Device:
         return self.screenshot
 
     def detect_gui_info(self, paddle_ocr, is_load=False, show=False):
+        self.cap_screenshot()
         self.GUI = GUI(self.screenshot_path)
         if is_load:
             self.GUI.load_detection_result()
