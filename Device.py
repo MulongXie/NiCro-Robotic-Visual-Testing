@@ -17,7 +17,7 @@ class Device:
         self.action = {'type': None, 'coordinate': [(-1, -1), (-1, -1)]}
 
     def get_devices_info(self):
-        print("%d - Number:%s Resolution:%s" % (self.id, self.device.get_serial_no(), self.device.wm_size()))
+        print("Device ID: %d Name:%s Resolution:%s" % (self.id, self.device.get_serial_no(), self.device.wm_size()))
 
     def cap_screenshot(self):
         screen = self.device.screencap()
@@ -27,7 +27,6 @@ class Device:
         return self.screenshot
 
     def detect_gui_info(self, paddle_ocr, is_load=False, show=False):
-        self.cap_screenshot()
         self.GUI = GUI(self.screenshot_path)
         if is_load:
             self.GUI.load_detection_result()
@@ -36,21 +35,34 @@ class Device:
         if show:
             self.GUI.show_detection_result()
 
-    def update_screenshot_and_gui(self, paddle_ocr, show=False):
+    def update_screenshot_and_gui(self, paddle_ocr, is_load=False, show=False):
         self.cap_screenshot()
-        self.detect_gui_info(paddle_ocr, show=show)
+        self.detect_gui_info(paddle_ocr, is_load=is_load, show=show)
+
+    def find_element_by_coordinate(self, x, y, show=False):
+        '''
+        x, y: in scale of device screen size
+        '''
+        org_shape = self.screenshot.shape[:2]
+        detection_shape = (self.GUI.detection_resize_height, self.GUI.detection_resize_width)
+        ratio = detection_shape[0] / org_shape[0]
+        x_resize, y_resize = int(x * ratio), int(y * ratio)
+        ele = self.GUI.get_element_by_coordinate(x_resize, y_resize)
+        if ele is None:
+            print('No element found at (%d, %d)' % (x, y))
+        elif show:
+            ele.show_clip()
+        return ele
 
     def control_app_through_screenshot(self):
         '''
         Control the app through action on the screenshot
         '''
-
         win_resize_ratio = 3
         win_name = self.device.get_serial_no() + ' screen'
 
         def on_mouse(event, x, y, flags, params):
             x, y = x * win_resize_ratio, y * win_resize_ratio
-
             if event == cv2.EVENT_LBUTTONDOWN:
                 self.action['coordinate'][0] = (x, y)
             elif event == cv2.EVENT_LBUTTONUP:

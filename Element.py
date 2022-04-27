@@ -51,3 +51,8 @@ class Element:
             cv2.imshow(str(self.id), cv2.resize(board, (int(board.shape[1] * (800 / board.shape[0])), 800)))
             cv2.waitKey()
             cv2.destroyAllWindows()
+
+    def show_clip(self):
+        cv2.imshow('clip', self.clip)
+        cv2.waitKey()
+        cv2.destroyWindow('clip')

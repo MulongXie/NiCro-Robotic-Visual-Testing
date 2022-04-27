@@ -43,9 +43,14 @@ class NiCro:
     def detect_gui_info_for_all_devices(self, is_load=False, show=True):
         for i, device in enumerate(self.devices):
             print('****** Device [%d / %d] ******' % (i + 1, len(self.devices)))
-            device.detect_gui_info(self.paddle_ocr, is_load, show)
+            device.update_screenshot_and_gui(self.paddle_ocr, is_load, show)
 
     def replay_action_on_all_devices(self):
+        target_ele = None
+        if self.action['type'] == 'click':
+            print(self.action)
+            target_ele = self.source_device.find_element_by_coordinate(self.action['coordinate'][0][0], self.action['coordinate'][0][1], show=True)
+
         for i, dev in enumerate(self.devices):
             print('****** Replay Devices Number [%d/%d] ******' % (i, len(self.devices)))
             if dev.id == self.source_device.id:
@@ -69,17 +74,18 @@ class NiCro:
                 x_start, y_start = self.action['coordinate'][0]
                 # swipe
                 if abs(x_start - x) >= 10 or abs(y_start - y) >= 10:
-                    print('\n****** Scroll from (%d, %d) to (%d, %d) ******' % (x_start, y_start, x, y))
+                    print('\n*** Scroll from (%d, %d) to (%d, %d) ***' % (x_start, y_start, x, y))
                     s_dev.device.input_swipe(x_start, y_start, x, y, 500)
                     # record action
                     self.action['type'] = 'swipe'
                     self.action['coordinate'][1] = (x, y)
                 # click
                 else:
-                    print('\n****** Tap (%d, %d) ******' % (x_start, y_start))
+                    print('\n*** Tap (%d, %d) ***' % (x_start, y_start))
                     s_dev.device.input_tap(x_start, y_start)
                     # record action
                     self.action['type'] = 'click'
+                    self.action['coordinate'][1] = (-1, -1)
 
                 if is_replay:
                     self.replay_action_on_all_devices()
