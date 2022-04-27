@@ -1,189 +1,289 @@
 {
     "img_shape": [
-        2340,
+        2280,
         1080,
         3
     ],
     "texts": [
         {
             "id": 0,
-            "content": "4:12",
-            "column_min": 21,
-            "row_min": 46,
-            "column_max": 169,
-            "row_max": 88,
-            "width": 148,
-            "height": 42
+            "content": "12:21",
+            "column_min": 29,
+            "row_min": 52,
+            "column_max": 152,
+            "row_max": 90,
+            "width": 123,
+            "height": 38
         },
         {
             "id": 1,
-            "content": "\"O\" LTE _& C",
-            "column_min": 870,
-            "row_min": 44,
-            "column_max": 1066,
-            "row_max": 90,
-            "width": 196,
-            "height": 46
-        },
-        {
-            "id": 2,
-            "content": "AdGuard",
-            "column_min": 139,
-            "row_min": 221,
-            "column_max": 369,
-            "row_max": 278,
-            "width": 230,
-            "height": 57
-        },
-        {
-            "id": 3,
-            "content": "O",
-            "column_min": 988,
-            "row_min": 222,
-            "column_max": 1039,
-            "row_max": 268,
-            "width": 51,
-            "height": 46
-        },
-        {
-            "id": 4,
-            "content": "Protection is disabled",
-            "column_min": 258,
-            "row_min": 943,
-            "column_max": 815,
-            "row_max": 997,
-            "width": 557,
-            "height": 54
-        },
-        {
-            "id": 5,
-            "content": "Since February 14,2022 12:00 AM>",
-            "column_min": 219,
-            "row_min": 1384,
-            "column_max": 844,
-            "row_max": 1419,
-            "width": 625,
-            "height": 35
-        },
-        {
-            "id": 6,
-            "content": "Adsblocked",
-            "column_min": 106,
-            "row_min": 1531,
-            "column_max": 376,
-            "row_max": 1565,
-            "width": 270,
-            "height": 34
-        },
-        {
-            "id": 7,
-            "content": "O",
-            "column_min": 923,
-            "row_min": 1536,
-            "column_max": 947,
-            "row_max": 1558,
-            "width": 24,
-            "height": 22
-        },
-        {
-            "id": 8,
-            "content": "Trackersblocked",
-            "column_min": 149,
-            "row_min": 1684,
-            "column_max": 463,
-            "row_max": 1726,
-            "width": 314,
-            "height": 42
-        },
-        {
-            "id": 9,
-            "content": "0",
-            "column_min": 921,
-            "row_min": 1692,
-            "column_max": 947,
-            "row_max": 1716,
-            "width": 26,
+            "content": "A",
+            "column_min": 986,
+            "row_min": 57,
+            "column_max": 1051,
+            "row_max": 81,
+            "width": 65,
             "height": 24
         },
         {
-            "id": 10,
-            "content": "Threats blocked",
-            "column_min": 145,
-            "row_min": 1840,
-            "column_max": 444,
-            "row_max": 1882,
-            "width": 299,
-            "height": 42
+            "id": 2,
+            "content": "Booking.com",
+            "column_min": 207,
+            "row_min": 216,
+            "column_max": 548,
+            "row_max": 281,
+            "width": 341,
+            "height": 65
         },
         {
-            "id": 11,
-            "content": "O",
-            "column_min": 914,
-            "row_min": 1838,
-            "column_max": 957,
-            "row_max": 1882,
-            "width": 43,
-            "height": 44
+            "id": 3,
+            "content": "Q",
+            "column_min": 875,
+            "row_min": 214,
+            "column_max": 938,
+            "row_max": 278,
+            "width": 63,
+            "height": 64
         },
         {
-            "id": 12,
-            "content": "G",
-            "column_min": 51,
-            "row_min": 1994,
-            "column_max": 104,
-            "row_max": 2038,
-            "width": 53,
-            "height": 44
-        },
-        {
-            "id": 13,
-            "content": "Data saved",
-            "column_min": 145,
-            "row_min": 1999,
-            "column_max": 357,
-            "row_max": 2040,
-            "width": 212,
+            "id": 4,
+            "content": "Australia",
+            "column_min": 36,
+            "row_min": 363,
+            "column_max": 195,
+            "row_max": 404,
+            "width": 159,
             "height": 41
         },
         {
-            "id": 14,
-            "content": "0 KB",
-            "column_min": 849,
-            "row_min": 1999,
-            "column_max": 952,
-            "row_max": 2035,
-            "width": 103,
-            "height": 36
-        },
-        {
-            "id": 15,
-            "content": "?",
-            "column_min": 46,
-            "row_min": 2108,
-            "column_max": 113,
-            "row_max": 2157,
-            "width": 67,
+            "id": 5,
+            "content": "Austra",
+            "column_min": 959,
+            "row_min": 358,
+            "column_max": 1078,
+            "row_max": 407,
+            "width": 119,
             "height": 49
         },
         {
+            "id": 6,
+            "content": "Australia",
+            "column_min": 501,
+            "row_min": 368,
+            "column_max": 653,
+            "row_max": 401,
+            "width": 152,
+            "height": 33
+        },
+        {
+            "id": 7,
+            "content": "Connect with other travelers",
+            "column_min": 46,
+            "row_min": 575,
+            "column_max": 598,
+            "row_max": 615,
+            "width": 552,
+            "height": 40
+        },
+        {
+            "id": 8,
+            "content": "Australia",
+            "column_min": 41,
+            "row_min": 952,
+            "column_max": 198,
+            "row_max": 986,
+            "width": 157,
+            "height": 34
+        },
+        {
+            "id": 9,
+            "content": "Travel Talk",
+            "column_min": 504,
+            "row_min": 948,
+            "column_max": 694,
+            "row_max": 988,
+            "width": 190,
+            "height": 40
+        },
+        {
+            "id": 10,
+            "content": "More",
+            "column_min": 964,
+            "row_min": 952,
+            "column_max": 1068,
+            "row_max": 988,
+            "width": 104,
+            "height": 36
+        },
+        {
+            "id": 11,
+            "content": "Travel community",
+            "column_min": 43,
+            "row_min": 1014,
+            "column_max": 347,
+            "row_max": 1054,
+            "width": 304,
+            "height": 40
+        },
+        {
+            "id": 12,
+            "content": "General discussion",
+            "column_min": 509,
+            "row_min": 1016,
+            "column_max": 829,
+            "row_max": 1050,
+            "width": 320,
+            "height": 34
+        },
+        {
+            "id": 13,
+            "content": "View a",
+            "column_min": 964,
+            "row_min": 1012,
+            "column_max": 1078,
+            "row_max": 1054,
+            "width": 114,
+            "height": 42
+        },
+        {
+            "id": 14,
+            "content": "559,436 travelers",
+            "column_min": 504,
+            "row_min": 1069,
+            "column_max": 808,
+            "row_max": 1109,
+            "width": 304,
+            "height": 40
+        },
+        {
+            "id": 15,
+            "content": "174,747 travelers",
+            "column_min": 46,
+            "row_min": 1074,
+            "column_max": 342,
+            "row_max": 1107,
+            "width": 296,
+            "height": 33
+        },
+        {
             "id": 16,
-            "content": "HTTPS Filtering is off",
-            "column_min": 111,
-            "row_min": 2113,
-            "column_max": 526,
-            "row_max": 2160,
-            "width": 415,
-            "height": 47
+            "content": "9,894",
+            "column_min": 964,
+            "row_min": 1066,
+            "column_max": 1075,
+            "row_max": 1109,
+            "width": 111,
+            "height": 43
         },
         {
             "id": 17,
-            "content": "TURN ON",
-            "column_min": 846,
-            "row_min": 2116,
-            "column_max": 1015,
-            "row_max": 2160,
-            "width": 169,
-            "height": 44
+            "content": "X",
+            "column_min": 986,
+            "row_min": 1240,
+            "column_max": 1039,
+            "row_max": 1294,
+            "width": 53,
+            "height": 54
+        },
+        {
+            "id": 18,
+            "content": "ySign in to manage your bookings",
+            "column_min": 46,
+            "row_min": 1256,
+            "column_max": 774,
+            "row_max": 1304,
+            "width": 728,
+            "height": 48
+        },
+        {
+            "id": 19,
+            "content": "Sign in now",
+            "column_min": 121,
+            "row_min": 1359,
+            "column_max": 318,
+            "row_max": 1399,
+            "width": 197,
+            "height": 40
+        },
+        {
+            "id": 20,
+            "content": "Subscribe to get our Secret Deals",
+            "column_min": 147,
+            "row_min": 1518,
+            "column_max": 817,
+            "row_max": 1568,
+            "width": 670,
+            "height": 50
+        },
+        {
+            "id": 21,
+            "content": "R",
+            "column_min": 988,
+            "row_min": 1507,
+            "column_max": 1037,
+            "row_max": 1557,
+            "width": 49,
+            "height": 50
+        },
+        {
+            "id": 22,
+            "content": "Sign up and we'll send the best deals to you",
+            "column_min": 159,
+            "row_min": 1586,
+            "column_max": 914,
+            "row_max": 1627,
+            "width": 755,
+            "height": 41
+        },
+        {
+            "id": 23,
+            "content": "Enter email address",
+            "column_min": 161,
+            "row_min": 1715,
+            "column_max": 502,
+            "row_max": 1753,
+            "width": 341,
+            "height": 38
+        },
+        {
+            "id": 24,
+            "content": "Subscribe",
+            "column_min": 839,
+            "row_min": 1712,
+            "column_max": 1010,
+            "row_max": 1746,
+            "width": 171,
+            "height": 34
+        },
+        {
+            "id": 25,
+            "content": "List Your Place on Booking.com",
+            "column_min": 140,
+            "row_min": 1895,
+            "column_max": 704,
+            "row_max": 1941,
+            "width": 564,
+            "height": 46
+        },
+        {
+            "id": 26,
+            "content": "O",
+            "column_min": 943,
+            "row_min": 1976,
+            "column_max": 984,
+            "row_max": 2019,
+            "width": 41,
+            "height": 43
+        },
+        {
+            "id": 27,
+            "content": "Learn more",
+            "column_min": 154,
+            "row_min": 2002,
+            "column_max": 354,
+            "row_max": 2035,
+            "width": 200,
+            "height": 33
         }
     ]
 }

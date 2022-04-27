@@ -9,7 +9,7 @@ class NiCro:
         # Device objects, including their screenshots and GUIs
         self.devices = [Device(i, dev) for i, dev in enumerate(client.devices())]
 
-        self.source_device = None       # the selected source device
+        self.source_device = self.devices[0]   # the selected source device
         self.target_element = None
         self.action = None
 
@@ -24,6 +24,7 @@ class NiCro:
         self.source_device = self.devices[device_id]
         self.get_devices_info()
 
-    def detect_gui_info_for_all_devices(self, paddle_ocr, is_load=True):
-        for device in self.devices:
-            device.detect_gui_info(paddle_ocr, is_load)
+    def detect_gui_info_for_all_devices(self, paddle_ocr, is_load=False, show=True):
+        for i, device in enumerate(self.devices):
+            print('****** Device [%d / %d] ******' % (i, len(self.devices)))
+            device.detect_gui_info(paddle_ocr, is_load, show)
