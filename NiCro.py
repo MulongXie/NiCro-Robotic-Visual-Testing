@@ -32,7 +32,7 @@ class NiCro:
     def get_devices_info(self):
         print('Selected Source Device:')
         self.source_device.get_devices_info()
-        print('All Devices:')
+        print('\nAll Devices:')
         for i, dev in enumerate(self.devices):
             dev.get_devices_info()
 
@@ -46,11 +46,14 @@ class NiCro:
             device.detect_gui_info(self.paddle_ocr, is_load, show)
 
     def replay_action_on_all_devices(self):
-        print('*** Replay Action On All Devices ***')
         for i, dev in enumerate(self.devices):
-            print('Replay Devices Number [%d/%d]' % (i, len(self.devices)))
+            print('****** Replay Devices Number [%d/%d] ******' % (i, len(self.devices)))
+            if dev.id == self.source_device.id:
+                print('Skip the Selected Source Device')
+                continue
             dev.get_devices_info()
             dev.replay_action(self.action, self.resnet_model, self.paddle_ocr, self.target_element)
+        print('\n')
 
     def control_multiple_devices_through_source_device(self, is_replay=False):
         s_dev = self.source_device
@@ -66,26 +69,25 @@ class NiCro:
                 x_start, y_start = self.action['coordinate'][0]
                 # swipe
                 if abs(x_start - x) >= 10 or abs(y_start - y) >= 10:
-                    print('Scroll from (%d, %d) to (%d, %d)' % (x_start, y_start, x, y))
+                    print('\n****** Scroll from (%d, %d) to (%d, %d) ******' % (x_start, y_start, x, y))
                     s_dev.device.input_swipe(x_start, y_start, x, y, 500)
                     # record action
-                    self.target_element = None
                     self.action['type'] = 'swipe'
                     self.action['coordinate'][1] = (x, y)
                 # click
                 else:
-                    print('Tap (%d, %d)' % (x_start, y_start))
+                    print('\n****** Tap (%d, %d) ******' % (x_start, y_start))
                     s_dev.device.input_tap(x_start, y_start)
                     # record action
-                    self.target_element = s_dev.GUI.get_element_by_coordinate(x_start, y_start)
                     self.action['type'] = 'click'
 
                 if is_replay:
                     self.replay_action_on_all_devices()
 
-            img = s_dev.cap_screenshot()
-            img = cv2.resize(img, (img.shape[1] // win_resize_ratio, img.shape[0] // win_resize_ratio))
-            cv2.imshow(win_name, img)
+                print('Re-detect screenshot and GUI')
+                s_dev.update_screenshot_and_gui(self.paddle_ocr)
+                img = cv2.resize(s_dev.screenshot, (s_dev.screenshot.shape[1] // win_resize_ratio, s_dev.screenshot.shape[0] // win_resize_ratio))
+                cv2.imshow(win_name, img)
 
         screen = cv2.resize(s_dev.screenshot, (s_dev.screenshot.shape[1] // win_resize_ratio, s_dev.screenshot.shape[0] // win_resize_ratio))
         cv2.imshow(win_name, screen)
