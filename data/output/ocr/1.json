@@ -7,13 +7,13 @@
     "texts": [
         {
             "id": 0,
-            "content": "9:15",
-            "column_min": 22,
-            "row_min": 50,
-            "column_max": 162,
-            "row_max": 90,
-            "width": 140,
-            "height": 40
+            "content": "11:01",
+            "column_min": 24,
+            "row_min": 52,
+            "column_max": 130,
+            "row_max": 86,
+            "width": 106,
+            "height": 34
         },
         {
             "id": 1,
@@ -21,149 +21,109 @@
             "column_min": 207,
             "row_min": 216,
             "column_max": 548,
-            "row_max": 281,
+            "row_max": 283,
             "width": 341,
-            "height": 65
+            "height": 67
         },
         {
             "id": 2,
-            "content": "O",
-            "column_min": 882,
-            "row_min": 223,
-            "column_max": 928,
-            "row_max": 268,
-            "width": 46,
+            "content": "Get the latest COVID-19 travel advice",
+            "column_min": 41,
+            "row_min": 380,
+            "column_max": 781,
+            "row_max": 425,
+            "width": 740,
             "height": 45
         },
         {
             "id": 3,
-            "content": "Moreforyou",
-            "column_min": 38,
-            "row_min": 330,
-            "column_max": 295,
-            "row_max": 378,
-            "width": 257,
-            "height": 48
+            "content": "Stays",
+            "column_min": 246,
+            "row_min": 658,
+            "column_max": 338,
+            "row_max": 701,
+            "width": 92,
+            "height": 43
         },
         {
             "id": 4,
-            "content": "Save 15% or more",
-            "column_min": 38,
-            "row_min": 834,
-            "column_max": 357,
-            "row_max": 876,
-            "width": 319,
-            "height": 42
-        },
-        {
-            "id": 5,
-            "content": "Plan your dream trip with a Getaway",
-            "column_min": 43,
-            "row_min": 900,
-            "column_max": 663,
-            "row_max": 940,
-            "width": 620,
-            "height": 40
-        },
-        {
-            "id": 6,
-            "content": "Continue your search",
-            "column_min": 43,
-            "row_min": 1107,
-            "column_max": 460,
-            "row_max": 1154,
-            "width": 417,
-            "height": 47
-        },
-        {
-            "id": 7,
-            "content": "Sydney",
-            "column_min": 38,
-            "row_min": 1479,
-            "column_max": 174,
-            "row_max": 1528,
-            "width": 136,
-            "height": 49
-        },
-        {
-            "id": 8,
-            "content": "Gold Coast",
-            "column_min": 506,
-            "row_min": 1487,
-            "column_max": 702,
-            "row_max": 1520,
-            "width": 196,
+            "content": "Car rental",
+            "column_min": 718,
+            "row_min": 663,
+            "column_max": 858,
+            "row_max": 696,
+            "width": 140,
             "height": 33
         },
         {
+            "id": 5,
+            "content": "Search",
+            "column_min": 43,
+            "row_min": 796,
+            "column_max": 212,
+            "row_max": 838,
+            "width": 169,
+            "height": 42
+        },
+        {
+            "id": 6,
+            "content": "Hotels, motels, apartments and more..",
+            "column_min": 38,
+            "row_min": 867,
+            "column_max": 796,
+            "row_max": 919,
+            "width": 758,
+            "height": 52
+        },
+        {
+            "id": 7,
+            "content": "QSydney",
+            "column_min": 79,
+            "row_min": 1011,
+            "column_max": 305,
+            "row_max": 1070,
+            "width": 226,
+            "height": 59
+        },
+        {
+            "id": 8,
+            "content": "[=]  Thu, Apr 28 - Fri, Apr 29",
+            "column_min": 79,
+            "row_min": 1161,
+            "column_max": 591,
+            "row_max": 1231,
+            "width": 512,
+            "height": 70
+        },
+        {
             "id": 9,
-            "content": "Canbe",
-            "column_min": 962,
-            "row_min": 1482,
-            "column_max": 1075,
-            "row_max": 1525,
-            "width": 113,
+            "content": "Search",
+            "column_min": 468,
+            "row_min": 1484,
+            "column_max": 610,
+            "row_max": 1527,
+            "width": 142,
             "height": 43
         },
         {
             "id": 10,
-            "content": "Apr 27 - Apr 28",
-            "column_min": 38,
-            "row_min": 1546,
-            "column_max": 304,
-            "row_max": 1591,
-            "width": 266,
-            "height": 45
+            "content": "l'm traveling for work",
+            "column_min": 46,
+            "row_min": 1670,
+            "column_max": 410,
+            "row_max": 1703,
+            "width": 364,
+            "height": 33
         },
         {
             "id": 11,
-            "content": "Apr 27 - Apr 28",
-            "column_min": 501,
-            "row_min": 1546,
-            "column_max": 764,
-            "row_max": 1591,
-            "width": 263,
-            "height": 45
-        },
-        {
-            "id": 12,
-            "content": "Apr 27",
-            "column_min": 961,
-            "row_min": 1543,
-            "column_max": 1076,
-            "row_max": 1594,
-            "width": 115,
-            "height": 51
-        },
-        {
-            "id": 13,
-            "content": "Soakup some sun",
+            "content": "More for you",
             "column_min": 41,
-            "row_min": 1757,
-            "column_max": 405,
-            "row_max": 1808,
-            "width": 364,
+            "row_min": 1866,
+            "column_max": 295,
+            "row_max": 1917,
+            "width": 254,
             "height": 51
-        },
-        {
-            "id": 14,
-            "content": "Get your dose of vitamin D in these sunny destinations",
-            "column_min": 43,
-            "row_min": 1826,
-            "column_max": 991,
-            "row_max": 1867,
-            "width": 948,
-            "height": 41
-        },
-        {
-            "id": 15,
-            "content": "O",
-            "column_min": 930,
-            "row_min": 1964,
-            "column_max": 999,
-            "row_max": 2031,
-            "width": 69,
-            "height": 67
         }
     ]
 }

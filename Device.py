@@ -18,7 +18,7 @@ class Device:
         self.action = {'type': None, 'coordinate': [(-1, -1), (-1, -1)]}
 
     def get_devices_info(self):
-        print("Device ID: %d Name:%s Resolution:%s" % (self.id, self.device.get_serial_no(), self.device.wm_size()))
+        print("Device ID:%d Name:%s Resolution:%s" % (self.id, self.device.get_serial_no(), self.device.wm_size()))
 
     def cap_screenshot(self):
         screen = self.device.screencap()

@@ -51,12 +51,12 @@ class NiCro:
             self.target_element = self.source_device.find_element_by_coordinate(self.action['coordinate'][0][0], self.action['coordinate'][0][1], show=True)
 
         for i, dev in enumerate(self.devices):
-            print('****** Replay Devices Number [%d/%d] ******' % (i + 1, len(self.devices)))
+            print('*** Replay Devices Number [%d/%d] ***' % (i + 1, len(self.devices)))
             if dev.id == self.source_device.id:
                 print('Skip the Selected Source Device')
                 continue
             dev.get_devices_info()
-            # dev.replay_action(self.action, self.resnet_model, self.paddle_ocr, self.target_element)
+            dev.replay_action(self.action, self.resnet_model, self.paddle_ocr, self.target_element)
 
     def control_multiple_devices_through_source_device(self, is_replay=False):
         s_dev = self.source_device
@@ -73,14 +73,14 @@ class NiCro:
                 x_start, y_start = self.action['coordinate'][0]
                 # swipe
                 if abs(x_start - x_app) >= 10 or abs(y_start - y_app) >= 10:
-                    print('\n*** Scroll from (%d, %d) to (%d, %d) ***' % (x_start, y_start, x_app, y_app))
+                    print('\n****** Scroll from (%d, %d) to (%d, %d) ******' % (x_start, y_start, x_app, y_app))
                     s_dev.device.input_swipe(x_start, y_start, x_app, y_app, 500)
                     # record action
                     self.action['type'] = 'swipe'
                     self.action['coordinate'][1] = (x_app, y_app)
                 # click
                 else:
-                    print('\n*** Tap (%d, %d) ***' % (x_start, y_start))
+                    print('\n****** Tap (%d, %d) ******' % (x_start, y_start))
                     s_dev.device.input_tap(x_start, y_start)
                     # record action
                     self.action['type'] = 'click'
@@ -89,7 +89,7 @@ class NiCro:
                 if is_replay:
                     self.replay_action_on_all_devices()
                 # update the screenshot and GUI of the selected target device
-                print("*** Re-detect Selected Device's screenshot and GUI ***")
+                print("****** Re-detect Selected Device's screenshot and GUI ******")
                 s_dev.update_screenshot_and_gui(self.paddle_ocr)
                 cv2.imshow(win_name, s_dev.GUI.det_result_imgs['merge'])
 
