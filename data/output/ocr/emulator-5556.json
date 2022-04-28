@@ -7,13 +7,13 @@
     "texts": [
         {
             "id": 0,
-            "content": "1:38",
-            "column_min": 27,
-            "row_min": 52,
-            "column_max": 118,
-            "row_max": 86,
-            "width": 91,
-            "height": 34
+            "content": "1:43",
+            "column_min": 25,
+            "row_min": 46,
+            "column_max": 115,
+            "row_max": 89,
+            "width": 90,
+            "height": 43
         },
         {
             "id": 1,

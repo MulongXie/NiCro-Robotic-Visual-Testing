@@ -322,15 +322,15 @@
         {
             "id": 21,
             "class": "Text",
-            "height": 12,
+            "height": 15,
             "width": 32,
             "position": {
-                "column_min": 9,
-                "row_min": 18,
-                "column_max": 41,
-                "row_max": 30
+                "column_min": 8,
+                "row_min": 16,
+                "column_max": 40,
+                "row_max": 31
             },
-            "text_content": "1:38"
+            "text_content": "1:43"
         },
         {
             "id": 22,

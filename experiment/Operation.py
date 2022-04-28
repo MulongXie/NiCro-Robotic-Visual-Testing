@@ -1,5 +1,5 @@
-import detect_compo.lib_ip.ip_preprocessing as pre
-import detect_text.text_detection as text
+import element_detection.detect_compo.lib_ip.ip_preprocessing as pre
+import element_detection.detect_text.text_detection as text
 
 import cv2
 import numpy as np

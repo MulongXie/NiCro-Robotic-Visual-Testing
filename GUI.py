@@ -5,7 +5,7 @@ import numpy as np
 from os.path import join as pjoin
 from difflib import SequenceMatcher
 
-from Element import Element
+from element_detection.Element import Element
 from sklearn.metrics.pairwise import cosine_similarity
 
 
@@ -41,17 +41,17 @@ class GUI:
     def detect_element(self, is_text=True, is_nontext=True, is_merge=True, paddle_cor=None):
         if is_text:
             os.makedirs(pjoin(self.output_dir, 'ocr'), exist_ok=True)
-            import detect_text.text_detection as text
+            import element_detection.detect_text.text_detection as text
             self.det_result_imgs['text'], _ = text.text_detection_paddle(self.img_path, pjoin(self.output_dir, 'ocr'), paddle_cor=paddle_cor)
             # self.det_result_imgs['text'], _ = text.text_detection_google(self.img_path, pjoin(self.output_dir, 'ocr'))
         if is_nontext:
             os.makedirs(pjoin(self.output_dir, 'ip'), exist_ok=True)
-            import detect_compo.ip_region_proposal as ip
+            import element_detection.detect_compo.ip_region_proposal as ip
             key_params = {'min-grad': 6, 'ffl-block': 5, 'min-ele-area': 100, 'merge-contained-ele': False}
             self.det_result_imgs['non-text'] = ip.compo_detection(self.img_path, self.output_dir, key_params, resize_by_height=self.detection_resize_height, adaptive_binarization=False)
         if is_merge:
             os.makedirs(pjoin(self.output_dir, 'merge'), exist_ok=True)
-            import detect_merge.merge as merge
+            import element_detection.detect_merge.merge as merge
             compo_path = pjoin(self.output_dir, 'ip', str(self.ui_name) + '.json')
             ocr_path = pjoin(self.output_dir, 'ocr', str(self.ui_name) + '.json')
             self.det_result_imgs['merge'], self.det_result_data = merge.merge(self.img_path, compo_path, ocr_path, pjoin(self.output_dir, 'merge'), is_remove_bar=True, is_paragraph=False)
