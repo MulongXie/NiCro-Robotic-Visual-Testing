@@ -5,7 +5,8 @@ from GUI import GUI
 class Device:
     def __init__(self, dev_id, device):
         self.id = dev_id
-        self.screenshot_path = 'data/screen/' + str(self.id) + '.png'
+        self.name = device.get_serial_no()
+        self.screenshot_path = 'data/screen/' + str(self.name) + '.png'
         self.device = device                        # ppadb device
 
         self.screenshot = self.cap_screenshot()     # cv2.image
@@ -18,7 +19,7 @@ class Device:
         self.action = {'type': None, 'coordinate': [(-1, -1), (-1, -1)]}
 
     def get_devices_info(self):
-        print("Device ID:%d Name:%s Resolution:%s" % (self.id, self.device.get_serial_no(), self.device.wm_size()))
+        print("Device ID:%d Name:%s Resolution:%s" % (self.id, self.name, self.device.wm_size()))
 
     def cap_screenshot(self):
         screen = self.device.screencap()
@@ -57,7 +58,7 @@ class Device:
         Control the app through action on the screenshot
         '''
         win_resize_ratio = 3
-        win_name = self.device.get_serial_no() + ' screen'
+        win_name = self.name + ' screen'
 
         def on_mouse(event, x, y, flags, params):
             x, y = x * win_resize_ratio, y * win_resize_ratio
