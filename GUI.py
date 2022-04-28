@@ -42,10 +42,8 @@ class GUI:
         if is_text:
             os.makedirs(pjoin(self.output_dir, 'ocr'), exist_ok=True)
             import detect_text.text_detection as text
-            if not paddle_cor:
-                from paddleocr import PaddleOCR
-                paddle_cor = PaddleOCR(use_angle_cls=True, lang="ch")
             self.det_result_imgs['text'], _ = text.text_detection_paddle(self.img_path, pjoin(self.output_dir, 'ocr'), paddle_cor=paddle_cor)
+            # self.det_result_imgs['text'], _ = text.text_detection_google(self.img_path, pjoin(self.output_dir, 'ocr'))
         if is_nontext:
             os.makedirs(pjoin(self.output_dir, 'ip'), exist_ok=True)
             import detect_compo.ip_region_proposal as ip
