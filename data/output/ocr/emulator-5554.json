@@ -9,161 +9,131 @@
             "id": 0,
             "content": "7:05",
             "column_min": 22,
-            "row_min": 16,
-            "column_max": 214,
+            "row_min": 14,
+            "column_max": 173,
             "row_max": 50,
-            "width": 192,
-            "height": 34
+            "width": 151,
+            "height": 36
         },
         {
             "id": 1,
             "content": "M",
-            "column_min": 275,
-            "row_min": 13,
-            "column_max": 338,
-            "row_max": 49,
-            "width": 63,
-            "height": 36
+            "column_min": 280,
+            "row_min": 18,
+            "column_max": 330,
+            "row_max": 40,
+            "width": 50,
+            "height": 22
         },
         {
             "id": 2,
             "content": "Booking.com",
             "column_min": 202,
-            "row_min": 108,
+            "row_min": 105,
             "column_max": 521,
-            "row_max": 162,
+            "row_max": 167,
             "width": 319,
-            "height": 54
+            "height": 62
         },
         {
             "id": 3,
-            "content": "Your Notifications",
-            "column_min": 59,
-            "row_min": 248,
-            "column_max": 483,
-            "row_max": 302,
-            "width": 424,
-            "height": 54
+            "content": "S",
+            "column_min": 52,
+            "row_min": 116,
+            "column_max": 93,
+            "row_max": 152,
+            "width": 41,
+            "height": 36
         },
         {
             "id": 4,
-            "content": "You don't have any notifications",
-            "column_min": 58,
-            "row_min": 404,
-            "column_max": 649,
-            "row_max": 446,
-            "width": 591,
-            "height": 42
+            "content": "More for you",
+            "column_min": 37,
+            "row_min": 364,
+            "column_max": 282,
+            "row_max": 410,
+            "width": 245,
+            "height": 46
         },
         {
             "id": 5,
-            "content": "Notifications let you quickly take action on upcoming or",
-            "column_min": 60,
-            "row_min": 460,
-            "column_max": 965,
-            "row_max": 498,
-            "width": 905,
-            "height": 38
+            "content": "Save 15% or more",
+            "column_min": 40,
+            "row_min": 848,
+            "column_max": 336,
+            "row_max": 884,
+            "width": 296,
+            "height": 36
         },
         {
             "id": 6,
-            "content": "current bookings",
-            "column_min": 59,
-            "row_min": 516,
-            "column_max": 344,
-            "row_max": 552,
-            "width": 285,
-            "height": 36
+            "content": "Plan your dream trip with a Getaway",
+            "column_min": 40,
+            "row_min": 910,
+            "column_max": 631,
+            "row_max": 950,
+            "width": 591,
+            "height": 40
         },
         {
             "id": 7,
-            "content": "Search",
-            "column_min": 42,
-            "row_min": 660,
-            "column_max": 208,
-            "row_max": 702,
-            "width": 166,
-            "height": 42
+            "content": "Continue your search",
+            "column_min": 39,
+            "row_min": 1108,
+            "column_max": 437,
+            "row_max": 1156,
+            "width": 398,
+            "height": 48
         },
         {
             "id": 8,
-            "content": "Hotels motels apartments and more.",
-            "column_min": 38,
-            "row_min": 734,
-            "column_max": 756,
-            "row_max": 776,
-            "width": 718,
-            "height": 42
+            "content": "Sydney",
+            "column_min": 37,
+            "row_min": 1470,
+            "column_max": 161,
+            "row_max": 1510,
+            "width": 124,
+            "height": 40
         },
         {
             "id": 9,
-            "content": "O",
-            "column_min": 76,
-            "row_min": 864,
-            "column_max": 139,
-            "row_max": 922,
-            "width": 63,
-            "height": 58
+            "content": "Gold Coast",
+            "column_min": 480,
+            "row_min": 1468,
+            "column_max": 667,
+            "row_max": 1506,
+            "width": 187,
+            "height": 38
         },
         {
             "id": 10,
-            "content": "Sydney",
-            "column_min": 154,
-            "row_min": 876,
+            "content": "Apr 28 - Apr 29",
+            "column_min": 38,
+            "row_min": 1532,
             "column_max": 286,
-            "row_max": 922,
-            "width": 132,
-            "height": 46
+            "row_max": 1572,
+            "width": 248,
+            "height": 40
         },
         {
             "id": 11,
-            "content": "Thu,Apr 28-Fri, Apr 29",
-            "column_min": 159,
-            "row_min": 1024,
-            "column_max": 558,
-            "row_max": 1066,
-            "width": 399,
-            "height": 42
+            "content": "Apr 28 - Apr 29",
+            "column_min": 478,
+            "row_min": 1532,
+            "column_max": 729,
+            "row_max": 1570,
+            "width": 251,
+            "height": 38
         },
         {
             "id": 12,
-            "content": "1room2 adults0 children",
-            "column_min": 131,
-            "row_min": 1176,
-            "column_max": 633,
-            "row_max": 1210,
-            "width": 502,
-            "height": 34
-        },
-        {
-            "id": 13,
-            "content": "Search",
-            "column_min": 474,
-            "row_min": 1324,
-            "column_max": 606,
-            "row_max": 1360,
-            "width": 132,
-            "height": 36
-        },
-        {
-            "id": 14,
-            "content": "l'm traveling for work",
-            "column_min": 42,
-            "row_min": 1496,
-            "column_max": 383,
-            "row_max": 1530,
-            "width": 341,
-            "height": 34
-        },
-        {
-            "id": 15,
-            "content": "More for you",
+            "content": "Soakup some sun",
             "column_min": 37,
-            "row_min": 1688,
-            "column_max": 282,
-            "row_max": 1734,
-            "width": 245,
-            "height": 46
+            "row_min": 1734,
+            "column_max": 389,
+            "row_max": 1782,
+            "width": 352,
+            "height": 48
         }
     ]
 }

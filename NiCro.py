@@ -64,12 +64,23 @@ class NiCro:
 
         def on_mouse(event, x, y, flags, params):
             '''
+            :param params: [board (image), drag (boolean)]
             :param x, y: in the scale of detection image size (height=800)
             '''
             x_app, y_app = int(x / s_dev.detect_resize_ratio), int(y / s_dev.detect_resize_ratio)
+            # Press button
             if event == cv2.EVENT_LBUTTONDOWN:
+                params[1] = True
+                cv2.circle(params[0], (x, y), 10, (255,0,255), 2)
+                cv2.imshow(win_name, params[0])
                 self.action['coordinate'][0] = (x_app, y_app)
+            # Drag
+            elif params[1] and event == cv2.EVENT_MOUSEMOVE:
+                cv2.circle(params[0], (x, y), 10, (255, 0, 255), 2)
+                cv2.imshow(win_name, params[0])
+            # Lift button
             elif event == cv2.EVENT_LBUTTONUP:
+                params[1] = False
                 x_start, y_start = self.action['coordinate'][0]
                 # swipe
                 if abs(x_start - x_app) >= 10 or abs(y_start - y_app) >= 10:
@@ -91,10 +102,12 @@ class NiCro:
                 # update the screenshot and GUI of the selected target device
                 print("****** Re-detect Selected Device's screenshot and GUI ******")
                 s_dev.update_screenshot_and_gui(self.paddle_ocr)
-                cv2.imshow(win_name, s_dev.GUI.det_result_imgs['merge'])
+                params[0] = s_dev.GUI.det_result_imgs['merge'].copy()
+                cv2.imshow(win_name, params[0])
 
-        cv2.imshow(win_name, s_dev.GUI.det_result_imgs['merge'])
-        cv2.setMouseCallback(win_name, on_mouse)
+        board = s_dev.GUI.det_result_imgs['merge'].copy()
+        cv2.imshow(win_name, board)
+        cv2.setMouseCallback(win_name, on_mouse, [board, False])
         cv2.waitKey()
         cv2.destroyWindow(win_name)
 

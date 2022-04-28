@@ -10,9 +10,9 @@
             "class": "Compo",
             "column_min": 15,
             "row_min": 19,
-            "column_max": 39,
+            "column_max": 33,
             "row_max": 30,
-            "width": 24,
+            "width": 18,
             "height": 11
         },
         {
