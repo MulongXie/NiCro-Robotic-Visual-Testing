@@ -1,0 +1,169 @@
+{
+    "img_shape": [
+        1920,
+        1080,
+        3
+    ],
+    "texts": [
+        {
+            "id": 0,
+            "content": "7:05",
+            "column_min": 22,
+            "row_min": 16,
+            "column_max": 214,
+            "row_max": 50,
+            "width": 192,
+            "height": 34
+        },
+        {
+            "id": 1,
+            "content": "M",
+            "column_min": 275,
+            "row_min": 13,
+            "column_max": 338,
+            "row_max": 49,
+            "width": 63,
+            "height": 36
+        },
+        {
+            "id": 2,
+            "content": "Booking.com",
+            "column_min": 202,
+            "row_min": 108,
+            "column_max": 521,
+            "row_max": 162,
+            "width": 319,
+            "height": 54
+        },
+        {
+            "id": 3,
+            "content": "Your Notifications",
+            "column_min": 59,
+            "row_min": 248,
+            "column_max": 483,
+            "row_max": 302,
+            "width": 424,
+            "height": 54
+        },
+        {
+            "id": 4,
+            "content": "You don't have any notifications",
+            "column_min": 58,
+            "row_min": 404,
+            "column_max": 649,
+            "row_max": 446,
+            "width": 591,
+            "height": 42
+        },
+        {
+            "id": 5,
+            "content": "Notifications let you quickly take action on upcoming or",
+            "column_min": 60,
+            "row_min": 460,
+            "column_max": 965,
+            "row_max": 498,
+            "width": 905,
+            "height": 38
+        },
+        {
+            "id": 6,
+            "content": "current bookings",
+            "column_min": 59,
+            "row_min": 516,
+            "column_max": 344,
+            "row_max": 552,
+            "width": 285,
+            "height": 36
+        },
+        {
+            "id": 7,
+            "content": "Search",
+            "column_min": 42,
+            "row_min": 660,
+            "column_max": 208,
+            "row_max": 702,
+            "width": 166,
+            "height": 42
+        },
+        {
+            "id": 8,
+            "content": "Hotels motels apartments and more.",
+            "column_min": 38,
+            "row_min": 734,
+            "column_max": 756,
+            "row_max": 776,
+            "width": 718,
+            "height": 42
+        },
+        {
+            "id": 9,
+            "content": "O",
+            "column_min": 76,
+            "row_min": 864,
+            "column_max": 139,
+            "row_max": 922,
+            "width": 63,
+            "height": 58
+        },
+        {
+            "id": 10,
+            "content": "Sydney",
+            "column_min": 154,
+            "row_min": 876,
+            "column_max": 286,
+            "row_max": 922,
+            "width": 132,
+            "height": 46
+        },
+        {
+            "id": 11,
+            "content": "Thu,Apr 28-Fri, Apr 29",
+            "column_min": 159,
+            "row_min": 1024,
+            "column_max": 558,
+            "row_max": 1066,
+            "width": 399,
+            "height": 42
+        },
+        {
+            "id": 12,
+            "content": "1room2 adults0 children",
+            "column_min": 131,
+            "row_min": 1176,
+            "column_max": 633,
+            "row_max": 1210,
+            "width": 502,
+            "height": 34
+        },
+        {
+            "id": 13,
+            "content": "Search",
+            "column_min": 474,
+            "row_min": 1324,
+            "column_max": 606,
+            "row_max": 1360,
+            "width": 132,
+            "height": 36
+        },
+        {
+            "id": 14,
+            "content": "l'm traveling for work",
+            "column_min": 42,
+            "row_min": 1496,
+            "column_max": 383,
+            "row_max": 1530,
+            "width": 341,
+            "height": 34
+        },
+        {
+            "id": 15,
+            "content": "More for you",
+            "column_min": 37,
+            "row_min": 1688,
+            "column_max": 282,
+            "row_max": 1734,
+            "width": 245,
+            "height": 46
+        }
+    ]
+}

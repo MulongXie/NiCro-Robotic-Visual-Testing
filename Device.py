@@ -98,8 +98,7 @@ class Device:
         if target_element is not None:
             matched_element = self.match_element(target_element, resnet_model, paddle_ocr)
             if matched_element is not None:
-                # self.execute_action('click', [(matched_element.center_x, matched_element.center_y)])
-                print('matching')
+                self.execute_action('click', [(int(matched_element.center_x / self.detect_resize_ratio), int(matched_element.center_y / self.detect_resize_ratio))])
 
     def execute_action(self, action_type, coordinates):
         print(coordinates)
