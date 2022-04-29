@@ -58,23 +58,20 @@ class GUIPair:
         return matched_elements
 
     def match_by_img(self, target_element, compared_elements, hash_check=True):
-        if self.image_similarity_matrix is None:
-            self.calculate_elements_image_similarity_matrix()
         # similarities between the target element and all elements in gui2
-        target_sims = self.image_similarity_matrix[target_element.id]
+        resnet_sims = matching.image_similarity_matrix([target_element.clip], [e.clip for e in compared_elements], method='resnet', resnet_model=self.resnet_model)[0]
         # filter by similarity threshold
-        matched_elements_id = np.where(target_sims > self.min_similarity_img)[0]
-        # select from the input compared_elements
-        matched_elements_id = list(set(matched_elements_id).intersection(set([e.id for e in compared_elements])))
-        matched_elements = np.array(self.gui2.elements)[matched_elements_id]
-        self.show_target_and_matched_elements(target_element, matched_elements, similarities=target_sims[matched_elements_id])
+        matched_elements_id = np.where(resnet_sims > self.min_similarity_img)[0]
+        # select from the compared_elements
+        matched_elements = np.array(compared_elements)[matched_elements_id]
+        self.show_target_and_matched_elements(target_element, matched_elements, similarities=resnet_sims[matched_elements_id])
 
         # double check by dhash
-        if hash_check:
-            dhash_similarity = matching.image_similarity_matrix([target_element.clip], [e.clip for e in matched_elements], method='dhash')[0]
-            matched_elements_id = np.where(dhash_similarity > self.min_similarity_img)[0]
+        if hash_check and len(matched_elements) > 0:
+            dhash_sims= matching.image_similarity_matrix([target_element.clip], [e.clip for e in matched_elements], method='dhash')[0]
+            matched_elements_id = np.where(dhash_sims > self.min_similarity_img)[0]
             matched_elements = matched_elements[matched_elements_id]
-            self.show_target_and_matched_elements(target_element, matched_elements, similarities=dhash_similarity[matched_elements_id])
+            self.show_target_and_matched_elements(target_element, matched_elements, similarities=dhash_sims[matched_elements_id])
         return matched_elements
 
     def match_by_shape(self, target_element, compared_elements):

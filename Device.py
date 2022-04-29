@@ -1,5 +1,6 @@
 import cv2
 from GUI import GUI
+from element_matching.GUI_pair import GUIPair
 
 
 class Device:
