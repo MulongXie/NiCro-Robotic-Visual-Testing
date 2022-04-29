@@ -94,14 +94,18 @@ class Device:
             self.match_element(target_element, resnet_model, paddle_ocr, scroll_search=False)
         return matched_ele
 
-    def replay_action(self, action, resnet_model, paddle_ocr, target_element=None):
-        if target_element is not None:
+    def replay_action(self, action, resnet_model, paddle_ocr, target_element=None, screen_ratio=None):
+        if action['type'] == 'click' and target_element is not None:
             matched_element = self.match_element(target_element, resnet_model, paddle_ocr)
             if matched_element is not None:
                 self.execute_action('click', [(int(matched_element.center_x / self.detect_resize_ratio), int(matched_element.center_y / self.detect_resize_ratio))])
+        elif action['type'] == 'swipe':
+            start_coord = (int(action['coordinate'][0][0] / screen_ratio), action['coordinate'][0][1] / screen_ratio)
+            re_dist = ((action['coordinate'][1][0] - action['coordinate'][0][0]) / screen_ratio, (action['coordinate'][1][1] - action['coordinate'][0][1]) / screen_ratio)
+            end_coord = (int(start_coord[0] + re_dist[0]), int(start_coord[1] + re_dist[1]))
+            self.execute_action('swipe', [start_coord, end_coord])
 
     def execute_action(self, action_type, coordinates):
-        print(coordinates)
         if action_type == 'click':
             self.device.input_tap(coordinates[0][0], coordinates[0][1])
         elif action_type == 'swipe':

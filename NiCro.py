@@ -56,7 +56,8 @@ class NiCro:
                 print('Skip the Selected Source Device')
                 continue
             dev.get_devices_info()
-            dev.replay_action(self.action, self.resnet_model, self.paddle_ocr, self.target_element)
+            screen_ratio = self.source_device.device.wm_size()[1] / dev.device.wm_size()[1]
+            dev.replay_action(self.action, self.resnet_model, self.paddle_ocr, self.target_element, screen_ratio)
 
     def control_multiple_devices_through_source_device(self, is_replay=False):
         s_dev = self.source_device
