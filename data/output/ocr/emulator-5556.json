@@ -1,129 +1,189 @@
 {
     "img_shape": [
-        2280,
+        1920,
         1080,
         3
     ],
     "texts": [
         {
             "id": 0,
-            "content": "1:43",
-            "column_min": 25,
-            "row_min": 46,
-            "column_max": 115,
-            "row_max": 89,
-            "width": 90,
-            "height": 43
+            "content": "11:51",
+            "column_min": 20,
+            "row_min": 14,
+            "column_max": 125,
+            "row_max": 50,
+            "width": 105,
+            "height": 36
         },
         {
             "id": 1,
-            "content": "Booking.com",
-            "column_min": 207,
-            "row_min": 216,
-            "column_max": 548,
-            "row_max": 283,
-            "width": 341,
-            "height": 67
+            "content": "A",
+            "column_min": 987,
+            "row_min": 18,
+            "column_max": 1058,
+            "row_max": 46,
+            "width": 71,
+            "height": 28
         },
         {
             "id": 2,
-            "content": "Get the latest COVID-19 travel advice",
-            "column_min": 41,
-            "row_min": 380,
-            "column_max": 781,
-            "row_max": 425,
-            "width": 740,
-            "height": 45
+            "content": "Booking.com",
+            "column_min": 200,
+            "row_min": 105,
+            "column_max": 523,
+            "row_max": 171,
+            "width": 323,
+            "height": 66
         },
         {
             "id": 3,
-            "content": "Stays",
-            "column_min": 246,
-            "row_min": 658,
-            "column_max": 338,
-            "row_max": 701,
-            "width": 92,
-            "height": 43
+            "content": "C",
+            "column_min": 891,
+            "row_min": 112,
+            "column_max": 936,
+            "row_max": 158,
+            "width": 45,
+            "height": 46
         },
         {
             "id": 4,
-            "content": "Car rental",
-            "column_min": 718,
-            "row_min": 663,
-            "column_max": 858,
-            "row_max": 696,
-            "width": 140,
-            "height": 33
+            "content": "Get the latest COVID-19 travel advice",
+            "column_min": 40,
+            "row_min": 262,
+            "column_max": 741,
+            "row_max": 306,
+            "width": 701,
+            "height": 44
         },
         {
             "id": 5,
-            "content": "Search",
-            "column_min": 43,
-            "row_min": 796,
-            "column_max": 212,
-            "row_max": 838,
-            "width": 169,
-            "height": 42
+            "content": "Stays",
+            "column_min": 247,
+            "row_min": 527,
+            "column_max": 334,
+            "row_max": 573,
+            "width": 87,
+            "height": 46
         },
         {
             "id": 6,
-            "content": "Hotels, motels, apartments and more..",
-            "column_min": 38,
-            "row_min": 867,
-            "column_max": 796,
-            "row_max": 919,
-            "width": 758,
-            "height": 52
+            "content": "Car rental",
+            "column_min": 719,
+            "row_min": 532,
+            "column_max": 858,
+            "row_max": 566,
+            "width": 139,
+            "height": 34
         },
         {
             "id": 7,
-            "content": "QSydney",
-            "column_min": 79,
-            "row_min": 1011,
-            "column_max": 305,
-            "row_max": 1070,
-            "width": 226,
-            "height": 59
+            "content": "Search",
+            "column_min": 40,
+            "row_min": 656,
+            "column_max": 210,
+            "row_max": 704,
+            "width": 170,
+            "height": 48
         },
         {
             "id": 8,
-            "content": "[=]  Thu, Apr 28 - Fri, Apr 29",
-            "column_min": 79,
-            "row_min": 1161,
-            "column_max": 591,
-            "row_max": 1231,
-            "width": 512,
-            "height": 70
+            "content": "Hotels, motels apartments and more.",
+            "column_min": 36,
+            "row_min": 732,
+            "column_max": 756,
+            "row_max": 778,
+            "width": 720,
+            "height": 46
         },
         {
             "id": 9,
-            "content": "Search",
-            "column_min": 468,
-            "row_min": 1484,
-            "column_max": 610,
-            "row_max": 1527,
-            "width": 142,
-            "height": 43
+            "content": "Sydney",
+            "column_min": 158,
+            "row_min": 874,
+            "column_max": 290,
+            "row_max": 922,
+            "width": 132,
+            "height": 48
         },
         {
             "id": 10,
-            "content": "l'm traveling for work",
-            "column_min": 46,
-            "row_min": 1670,
-            "column_max": 410,
-            "row_max": 1703,
-            "width": 364,
-            "height": 33
+            "content": "7",
+            "column_min": 87,
+            "row_min": 1026,
+            "column_max": 129,
+            "row_max": 1058,
+            "width": 42,
+            "height": 32
         },
         {
             "id": 11,
+            "content": " Fri, Apr 29 - Sat, Apr 30",
+            "column_min": 161,
+            "row_min": 1026,
+            "column_max": 550,
+            "row_max": 1066,
+            "width": 389,
+            "height": 40
+        },
+        {
+            "id": 12,
+            "content": "8",
+            "column_min": 83,
+            "row_min": 1164,
+            "column_max": 134,
+            "row_max": 1210,
+            "width": 51,
+            "height": 46
+        },
+        {
+            "id": 13,
+            "content": "1 room 2 adults 0 children",
+            "column_min": 133,
+            "row_min": 1176,
+            "column_max": 635,
+            "row_max": 1210,
+            "width": 502,
+            "height": 34
+        },
+        {
+            "id": 14,
+            "content": "Search",
+            "column_min": 474,
+            "row_min": 1324,
+            "column_max": 606,
+            "row_max": 1360,
+            "width": 132,
+            "height": 36
+        },
+        {
+            "id": 15,
+            "content": "I'm traveling for work",
+            "column_min": 40,
+            "row_min": 1492,
+            "column_max": 385,
+            "row_max": 1530,
+            "width": 345,
+            "height": 38
+        },
+        {
+            "id": 16,
+            "content": "O",
+            "column_min": 947,
+            "row_min": 1634,
+            "column_max": 991,
+            "row_max": 1668,
+            "width": 44,
+            "height": 34
+        },
+        {
+            "id": 17,
             "content": "More for you",
-            "column_min": 41,
-            "row_min": 1866,
-            "column_max": 295,
-            "row_max": 1917,
-            "width": 254,
-            "height": 51
+            "column_min": 35,
+            "row_min": 1688,
+            "column_max": 282,
+            "row_max": 1734,
+            "width": 247,
+            "height": 46
         }
     ]
 }

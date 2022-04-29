@@ -6,7 +6,7 @@ from sklearn.metrics.pairwise import cosine_similarity
 
 
 def dhash(image):
-    image = cv2.resize(image, (9, 8), interpolation=cv2.INTER_CUBIC)
+    image = cv2.resize(image, (9, 8), interpolation=cv2.INTER_AREA)
     if image.ndim == 3:
         gray = cv2.cvtColor(image, cv2.COLOR_RGB2GRAY)
     else:
@@ -21,7 +21,7 @@ def dhash(image):
     return dhash_str
 
 
-def compare_hash(hash1, hash2):
+def calc_similarity_hash(hash1, hash2):
     n = 0
     if len(hash1) != len(hash2):
         return -1
@@ -31,7 +31,7 @@ def compare_hash(hash1, hash2):
     return 1 - n / len(hash1)
 
 
-def compare_sift_or_surf(img1, img2, method, ratio=1.5, draw_match=False):
+def calc_similarity_sift_or_surf(img1, img2, method, ratio=1.5, draw_match=False):
     if method == 'sift':
         sift = cv2.xfeatures2d.SIFT_create()
         # find the keypoints and descriptors with SIFT
@@ -76,7 +76,7 @@ def image_similarity(img1, img2, method='dhash', is_gray=False,
     if method == 'dhash':
         h1 = dhash(img1)
         h2 = dhash(img2)
-        similarity = compare_hash(h1, h2)
+        similarity = calc_similarity_hash(h1, h2)
     elif method == 'ssim':
         multi_channel = True
         if is_gray:
@@ -91,9 +91,9 @@ def image_similarity(img1, img2, method='dhash', is_gray=False,
         else:
             similarity = compare_ssim(img1, img2, multichannel=multi_channel)
     elif method == 'sift':
-        similarity = compare_sift_or_surf(img1, img2, 'sift', match_distance_ratio, draw_match=draw_match)
+        similarity = calc_similarity_sift_or_surf(img1, img2, 'sift', match_distance_ratio, draw_match=draw_match)
     elif method == 'surf':
-        similarity = compare_sift_or_surf(img1, img2, 'surf', match_distance_ratio, draw_match=draw_match)
+        similarity = calc_similarity_sift_or_surf(img1, img2, 'surf', match_distance_ratio, draw_match=draw_match)
     elif method == 'resnet':
         shape = (32, 32)
         img1 = cv2.resize(img1, shape)
@@ -105,6 +105,32 @@ def image_similarity(img1, img2, method='dhash', is_gray=False,
         encodings = encodings.reshape((encodings.shape[0], -1))
         similarity = cosine_similarity([encodings[0]], [encodings[1]])[0][0]
     return similarity
+
+
+def image_similarity_matrix(images1, images2, method='resnet', resnet_model=None):
+    '''
+    :param images1: a list of image
+    :param images2: a list of image
+    :param resnet_model: resnet model for encoding
+    :param method: the way to calculate the similarity between two images
+        opt - dhash, ssim, sift, surf, resnet
+    :return: a similarity matrix in shape of (len(images1), len(images2))
+    '''
+    sim_matrix = []
+    if method == 'resnet':
+        images_resize = [cv2.resize(img, (32, 32), interpolation=cv2.INTER_AREA) for img in images1] + [cv2.resize(img, (32, 32)) for img in images2]
+        encodings = resnet_model.predict(np.array(images_resize))
+        encodings = encodings.reshape((encodings.shape[0], -1))
+        sim_matrix = cosine_similarity(encodings[:len(images1)], encodings[len(images1):])
+    elif method == 'dhash':
+        for img1 in images1:
+            h1 = dhash(img1)
+            sim_row = []
+            for img2 in images2:
+                h2 = dhash(img2)
+                sim_row.append(calc_similarity_hash(h1, h2))
+            sim_matrix.append(sim_row)
+    return sim_matrix
 
 
 def text_similarity(text1, text2):
