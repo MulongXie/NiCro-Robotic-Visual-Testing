@@ -42,11 +42,11 @@ class Element:
     def get_bound(self):
         return self.col_min, self.row_min, self.col_max, self.row_max
 
-    def draw_element(self, board, color=(225,255,0), line=2, show_id=False, show=False):
+    def draw_element(self, board, color=(225,255,0), line=2, put_text=None, show=False):
         bound = self.get_bound()
         cv2.rectangle(board, (bound[0], bound[1]), (bound[2], bound[3]), color, line)
-        if show_id:
-            cv2.putText(board, str(self.id), (bound[0] + 3, bound[1] - 5), cv2.FONT_HERSHEY_SIMPLEX, 1, (0,0,255), 2)
+        if put_text is not None:
+            cv2.putText(board, str(put_text), (bound[0] + 3, bound[1] - 5), cv2.FONT_HERSHEY_SIMPLEX, 1, (0,0,255), 2)
         if show:
             cv2.imshow('Element' + str(self.id), cv2.resize(board, (int(board.shape[1] * (800 / board.shape[0])), 800)))
             cv2.waitKey()

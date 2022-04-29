@@ -286,11 +286,11 @@
         {
             "id": 18,
             "class": "Text",
-            "height": 28,
+            "height": 29,
             "width": 134,
             "position": {
                 "column_min": 83,
-                "row_min": 43,
+                "row_min": 42,
                 "column_max": 217,
                 "row_max": 71
             },

@@ -7,13 +7,13 @@
     "texts": [
         {
             "id": 0,
-            "content": "11:51",
+            "content": "3:58 Y MG",
             "column_min": 20,
-            "row_min": 14,
-            "column_max": 125,
-            "row_max": 50,
-            "width": 105,
-            "height": 36
+            "row_min": 12,
+            "column_max": 286,
+            "row_max": 52,
+            "width": 266,
+            "height": 40
         },
         {
             "id": 1,
@@ -29,24 +29,14 @@
             "id": 2,
             "content": "Booking.com",
             "column_min": 200,
-            "row_min": 105,
+            "row_min": 103,
             "column_max": 523,
             "row_max": 171,
             "width": 323,
-            "height": 66
+            "height": 68
         },
         {
             "id": 3,
-            "content": "C",
-            "column_min": 891,
-            "row_min": 112,
-            "column_max": 936,
-            "row_max": 158,
-            "width": 45,
-            "height": 46
-        },
-        {
-            "id": 4,
             "content": "Get the latest COVID-19 travel advice",
             "column_min": 40,
             "row_min": 262,
@@ -56,7 +46,7 @@
             "height": 44
         },
         {
-            "id": 5,
+            "id": 4,
             "content": "Stays",
             "column_min": 247,
             "row_min": 527,
@@ -66,7 +56,7 @@
             "height": 46
         },
         {
-            "id": 6,
+            "id": 5,
             "content": "Car rental",
             "column_min": 719,
             "row_min": 532,
@@ -76,7 +66,7 @@
             "height": 34
         },
         {
-            "id": 7,
+            "id": 6,
             "content": "Search",
             "column_min": 40,
             "row_min": 656,
@@ -86,7 +76,7 @@
             "height": 48
         },
         {
-            "id": 8,
+            "id": 7,
             "content": "Hotels, motels apartments and more.",
             "column_min": 36,
             "row_min": 732,
@@ -96,7 +86,7 @@
             "height": 46
         },
         {
-            "id": 9,
+            "id": 8,
             "content": "Sydney",
             "column_min": 158,
             "row_min": 874,
@@ -106,17 +96,7 @@
             "height": 48
         },
         {
-            "id": 10,
-            "content": "7",
-            "column_min": 87,
-            "row_min": 1026,
-            "column_max": 129,
-            "row_max": 1058,
-            "width": 42,
-            "height": 32
-        },
-        {
-            "id": 11,
+            "id": 9,
             "content": " Fri, Apr 29 - Sat, Apr 30",
             "column_min": 161,
             "row_min": 1026,
@@ -126,7 +106,7 @@
             "height": 40
         },
         {
-            "id": 12,
+            "id": 10,
             "content": "8",
             "column_min": 83,
             "row_min": 1164,
@@ -136,7 +116,7 @@
             "height": 46
         },
         {
-            "id": 13,
+            "id": 11,
             "content": "1 room 2 adults 0 children",
             "column_min": 133,
             "row_min": 1176,
@@ -146,7 +126,7 @@
             "height": 34
         },
         {
-            "id": 14,
+            "id": 12,
             "content": "Search",
             "column_min": 474,
             "row_min": 1324,
@@ -156,7 +136,7 @@
             "height": 36
         },
         {
-            "id": 15,
+            "id": 13,
             "content": "I'm traveling for work",
             "column_min": 40,
             "row_min": 1492,
@@ -166,17 +146,7 @@
             "height": 38
         },
         {
-            "id": 16,
-            "content": "O",
-            "column_min": 947,
-            "row_min": 1634,
-            "column_max": 991,
-            "row_max": 1668,
-            "width": 44,
-            "height": 34
-        },
-        {
-            "id": 17,
+            "id": 14,
             "content": "More for you",
             "column_min": 35,
             "row_min": 1688,

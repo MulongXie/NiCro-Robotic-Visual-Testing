@@ -20,6 +20,7 @@ class GUIPair:
 
         self.min_similarity_text = 0.85
         self.min_similarity_img = 0.55
+        self.min_shape_difference = 0.8  # min / max
 
         # the similarity matrix of all elements in gui1 and gui2, shape: (len(gui1.all_elements), len(gui2.all_elements)
         self.image_similarity_matrix = None
@@ -64,21 +65,30 @@ class GUIPair:
         # filter by similarity threshold
         matched_elements_id = np.where(target_sims > self.min_similarity_img)[0]
         # select from the input compared_elements
-        matched_elements_id = set(matched_elements_id).intersection(set([e.id for e in compared_elements]))
+        matched_elements_id = list(set(matched_elements_id).intersection(set([e.id for e in compared_elements])))
         matched_elements = np.array(self.gui2.elements)[matched_elements_id]
+        self.show_target_and_matched_elements(target_element, matched_elements, similarities=target_sims)
 
         # double check by dhash
         if hash_check:
-            dhash_similarity = matching.image_similarity_matrix([target_element.clip], [e.clip for e in matched_elements])
+            dhash_similarity = matching.image_similarity_matrix([target_element.clip], [e.clip for e in matched_elements], method='dhash')[0]
             matched_elements_id = np.where(dhash_similarity > self.min_similarity_img)[0]
             matched_elements = np.array(self.gui2.elements)[matched_elements_id]
+            self.show_target_and_matched_elements(target_element, matched_elements, similarities=dhash_similarity)
         return matched_elements
 
     def match_by_shape(self, target_element, compared_elements):
-        return []
+        matched_elements = []
+        for ele in compared_elements:
+            if (min(target_element.aspect_ratio / ele.aspect_ratio) / max(target_element.aspect_ratio, ele.aspect_ratio)) > self.min_shape_difference:
+                matched_elements.append(ele)
+        return matched_elements
 
     def match_by_neighbour(self, target_element, compared_elements):
-        return []
+        matched_elements = []
+        if self.image_similarity_matrix is None:
+            self.calculate_elements_image_similarity_matrix()
+        return matched_elements
 
     def match_target_element(self, target_element):
         if target_element.category == 'Text' or target_element.text_content is not None:
@@ -105,44 +115,23 @@ class GUIPair:
     def show_detection_result(self):
         rest1 = self.gui1.draw_detection_result()
         rest2 = self.gui2.draw_detection_result()
-        cv2.imshow('detection1', cv2.resize(rest1, (self.gui1.detection_resize_width, self.gui1.detection_resize_height)))
-        cv2.imshow('detection2', cv2.resize(rest2, (self.gui2.detection_resize_width, self.gui2.detection_resize_height)))
+        cv2.imshow('detection1', rest1)
+        cv2.imshow('detection2', rest2)
         cv2.waitKey()
-        cv2.destroyAllWindows()
+        cv2.destroyWindow('detection1')
+        cv2.destroyWindow('detection2')
 
-    def visualize_matched_element_pairs(self, line=-1):
+    def show_target_and_matched_elements(self, target, matched_elements, similarities=None):
         board1 = self.gui1.img.copy()
         board2 = self.gui2.img.copy()
-        for pair in self.element_matching_pairs:
-            color = (rint(0,255), rint(0,255), rint(0,255))
-            pair[0].draw_element(board1, color=color, line=line, show_id=False)
-            pair[1].draw_element(board2, color=color, line=line, show_id=False)
-        cv2.imshow('android', cv2.resize(board1, (int(board1.shape[1] * (800 / board1.shape[0])), 800)))
-        cv2.imshow('ios', cv2.resize(board2, (int(board2.shape[1] * (800 / board2.shape[0])), 800)))
+        target.draw_element(board1, show=False)
+        for i, ele in enumerate(matched_elements):
+            text = None
+            if similarities is not None:
+                text = similarities[i]
+            ele.draw_element(board2, put_text=text, show=False)
+        cv2.imshow('Target', board1)
+        cv2.imshow('Matched Elements', board2)
         cv2.waitKey()
-        cv2.destroyAllWindows()
-
-    def save_matched_element_pairs_clips(self, category='Compo', start_file_id=None, rm_exit=False, output_dir='data/output/matched_compos'):
-        '''
-        Save the clips of matched element pairs
-        @category: "Compo" or "Text"
-        @start_file_id: where the saved clip file name start with
-        @rm_exit: if remove all previously saved clips
-        @output_dir: the root directory for saving
-        '''
-        if len(self.element_matching_pairs) == 0:
-            print('No similar compos matched, run match_similar_elements first')
-            return
-        if rm_exit:
-            shutil.rmtree(output_dir)
-        os.makedirs(output_dir, exist_ok=True)
-        if start_file_id is None:
-            files = glob(pjoin(output_dir, '*'))
-            file_ids = [int(f.replace('\\', '/').split('/')[-1].split('_')[0]) for f in files]
-            start_file_id = max(file_ids) + 1 if len(file_ids) > 0 else 0
-
-        for pair in self.element_matching_pairs:
-            if pair[0].category == category:
-                cv2.imwrite(pjoin(output_dir, str(start_file_id) + '_a.jpg'), pair[0].clip)
-                cv2.imwrite(pjoin(output_dir, str(start_file_id) + '_i.jpg'), pair[1].clip)
-                start_file_id += 1
+        cv2.destroyWindow('Target')
+        cv2.destroyWindow('Matched Elements')

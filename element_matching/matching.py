@@ -130,6 +130,7 @@ def image_similarity_matrix(images1, images2, method='resnet', resnet_model=None
                 h2 = dhash(img2)
                 sim_row.append(calc_similarity_hash(h1, h2))
             sim_matrix.append(sim_row)
+        sim_matrix = np.array(sim_matrix)
     return sim_matrix
 
 
