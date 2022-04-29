@@ -19,7 +19,7 @@ class GUIPair:
         self.gui2 = gui2
 
         self.min_similarity_text = 0.85
-        self.min_similarity_img = 0.55
+        self.min_similarity_img = 0.8
         self.min_shape_difference = 0.8  # min / max
 
         # the similarity matrix of all elements in gui1 and gui2, shape: (len(gui1.all_elements), len(gui2.all_elements)
@@ -67,14 +67,14 @@ class GUIPair:
         # select from the input compared_elements
         matched_elements_id = list(set(matched_elements_id).intersection(set([e.id for e in compared_elements])))
         matched_elements = np.array(self.gui2.elements)[matched_elements_id]
-        self.show_target_and_matched_elements(target_element, matched_elements, similarities=target_sims)
+        self.show_target_and_matched_elements(target_element, matched_elements, similarities=target_sims[matched_elements_id])
 
         # double check by dhash
         if hash_check:
             dhash_similarity = matching.image_similarity_matrix([target_element.clip], [e.clip for e in matched_elements], method='dhash')[0]
             matched_elements_id = np.where(dhash_similarity > self.min_similarity_img)[0]
-            matched_elements = np.array(self.gui2.elements)[matched_elements_id]
-            self.show_target_and_matched_elements(target_element, matched_elements, similarities=dhash_similarity)
+            matched_elements = matched_elements[matched_elements_id]
+            self.show_target_and_matched_elements(target_element, matched_elements, similarities=dhash_similarity[matched_elements_id])
         return matched_elements
 
     def match_by_shape(self, target_element, compared_elements):
@@ -133,5 +133,5 @@ class GUIPair:
         cv2.imshow('Target', board1)
         cv2.imshow('Matched Elements', board2)
         cv2.waitKey()
-        cv2.destroyWindow('Target')
-        cv2.destroyWindow('Matched Elements')
+        # cv2.destroyWindow('Target')
+        # cv2.destroyWindow('Matched Elements')
