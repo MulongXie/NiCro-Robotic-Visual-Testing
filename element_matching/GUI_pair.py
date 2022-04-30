@@ -59,7 +59,8 @@ class GUIPair:
                 break
         # sort by similarity
         sorted_id = np.argsort(similarities)[::-1]
-        matched_elements = matched_elements[sorted_id]
+        matched_elements = np.array(matched_elements)[sorted_id]
+        self.show_target_and_matched_elements(target_element, matched_elements, similarities=similarities)
         return matched_elements
 
     def match_by_img(self, target_element, compared_elements, hash_check=False):
@@ -108,10 +109,14 @@ class GUIPair:
             #     matched_elements = self.match_by_neighbour(target_element, matched_elements)
         else:
             matched_elements = self.match_by_shape(target_element, self.gui2.ele_compos)
-            matched_elements = self.match_by_img(target_element, matched_elements)
+            if len(matched_elements) > 1:
+                matched_elements = self.match_by_img(target_element, matched_elements)
             # if len(matched_elements) > 1:
             #     matched_elements = self.match_by_neighbour(target_element, matched_elements)
-        return matched_elements[0]
+        if len(matched_elements) > 0:
+            return matched_elements[0]
+        else:
+            return None
 
     '''
     *********************

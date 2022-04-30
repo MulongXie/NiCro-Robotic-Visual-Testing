@@ -48,9 +48,6 @@ class NiCro:
 
     def replay_action_on_device(self, device):
         print('*** Replay Devices Number [%d/%d] ***' % (device.id + 1, len(self.devices)))
-        if device.id == self.source_device.id:
-            print('Skip the Selected Source Device')
-            return
         device.get_devices_info()
         screen_ratio = self.source_device.device.wm_size()[1] / device.device.wm_size()[1]
 
@@ -67,7 +64,11 @@ class NiCro:
         else:
             self.target_element = None
         for dev in self.devices:
+            if dev.id == self.source_device.id:
+                print('Skip the Selected Source Device')
+                continue
             self.replay_action_on_device(dev)
+            dev.update_screenshot_and_gui(self.paddle_ocr)
 
     def control_multiple_devices_through_source_device(self, is_replay=False):
         s_dev = self.source_device
