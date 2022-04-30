@@ -18,6 +18,7 @@ class Robot(RobotController):
     def cap_frame(self):
         ret, frame = self.camera.read()
         frame = cv2.rotate(frame, cv2.cv2.ROTATE_90_CLOCKWISE)
+        frame = frame[self.camera_clip_range_height[0]: self.camera_clip_range_height[1], self.camera_clip_range_width[0]:self.camera_clip_range_width[1]]
         return frame
 
     def convert_coord_from_camera_to_robot(self, x_cam, y_cam):
@@ -46,6 +47,21 @@ class Robot(RobotController):
                 break
         cv2.destroyAllWindows()
 
+    def control_robot_by_clicking_on_cam_video(self):
+        def click_event(event, x, y, flags, params):
+            if event == cv2.EVENT_LBUTTONDOWN:
+                x_r, y_r = self.convert_coord_from_camera_to_robot(x, y)
+                print('Clicked Point:(%d,%d) Robot:(%d,%d)' % (x, y, x_r, y_r))
+                robot.click((x_r, y_r, 22))
+        while 1:
+            frame = self.cap_frame()
+            # get the click point on the image
+            cv2.imshow('camera', frame)
+            cv2.setMouseCallback('camera', click_event)
+            if cv2.waitKey(1) == ord('q'):
+                break
+        cv2.destroyWindow('camera')
+
 
 robot = Robot(speed=10000)
-robot.adjust_camera_clip_range()
+robot.control_robot_by_clicking_on_cam_video()
