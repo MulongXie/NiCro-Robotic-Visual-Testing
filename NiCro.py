@@ -55,6 +55,13 @@ class NiCro:
         if self.target_element is not None:
             gui_matcher = GUIPair(self.source_device.GUI, device.GUI, self.resnet_model)
             matched_element = gui_matcher.match_target_element(self.target_element)
+            # scroll down and match again
+            # if matched_element is None and scroll_search:
+            #     print('Scroll down and try to match again')
+            #     device.device.input_swipe(50, (device.device.wm_size().height * 0.5), 50, 20, 500)
+            #     device.update_screenshot_and_gui(self.paddle_ocr)
+            #     gui_matcher = GUIPair(self.source_device.GUI, device.GUI, self.resnet_model)
+            #     matched_element = gui_matcher.match_target_element(self.target_element)
         device.replay_action(self.action, matched_element, screen_ratio)
 
     def replay_action_on_all_devices(self):

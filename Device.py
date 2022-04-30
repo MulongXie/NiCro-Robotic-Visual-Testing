@@ -53,16 +53,6 @@ class Device:
             ele.show_clip()
         return ele
 
-    def match_element(self, target_element, resnet_model, paddle_ocr, scroll_search=True):
-        matched_ele = self.GUI.match_elements(target_element.clip, resnet_model, target_element.text_content, min_similarity_img=0.55, show=True)
-        # scroll down if current gui is not matched
-        if matched_ele is None and scroll_search:
-            print('Scroll down and try to match again')
-            self.device.input_swipe(50, (self.device.wm_size().height * 0.9), 50, 20, 500)
-            self.update_screenshot_and_gui(paddle_ocr)
-            self.match_element(target_element, resnet_model, paddle_ocr, scroll_search=False)
-        return matched_ele
-
     def replay_action(self, action, matched_element=None, screen_ratio=None):
         if action['type'] == 'click':
             if matched_element is not None:

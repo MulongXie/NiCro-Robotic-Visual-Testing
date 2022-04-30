@@ -1,5 +1,6 @@
 import cv2
 from robot.robot_control import RobotController
+from GUI import GUI
 
 
 class Robot(RobotController):
@@ -15,10 +16,17 @@ class Robot(RobotController):
         self.x_robot2y_cam = round((298-120)/820, 2)    # x_robot_range : cam.height_range
         self.y_robot2x_cam = round(120/540, 2)          # y_robot_range : cam.width_range
 
+        self.GUI = None
+        self.photo = None   # image
+        self.photo_save_path = 'data/screen/robot_photo.png'
+        self.detect_resize_ratio = None  # self.GUI.detection_resize_height / self.photo.shape[0]
+
     def cap_frame(self):
         ret, frame = self.camera.read()
         frame = cv2.rotate(frame, cv2.cv2.ROTATE_90_CLOCKWISE)
         frame = frame[self.camera_clip_range_height[0]: self.camera_clip_range_height[1], self.camera_clip_range_width[0]:self.camera_clip_range_width[1]]
+        self.photo = frame
+        cv2.imwrite(self.photo_save_path, frame)
         return frame
 
     def convert_coord_from_camera_to_robot(self, x_cam, y_cam):
@@ -52,7 +60,7 @@ class Robot(RobotController):
             if event == cv2.EVENT_LBUTTONDOWN:
                 x_r, y_r = self.convert_coord_from_camera_to_robot(x, y)
                 print('Clicked Point:(%d,%d) Robot:(%d,%d)' % (x, y, x_r, y_r))
-                robot.click((x_r, y_r, 22))
+                self.click((x_r, y_r, 22))
         while 1:
             frame = self.cap_frame()
             # get the click point on the image
@@ -61,6 +69,119 @@ class Robot(RobotController):
             if cv2.waitKey(1) == ord('q'):
                 break
         cv2.destroyWindow('camera')
+
+    def detect_gui_element(self, paddle_ocr, is_load=False, show=False):
+        self.cap_frame()
+        self.GUI = GUI(self.photo_save_path)
+        self.detect_resize_ratio = self.GUI.detection_resize_height / self.photo.shape[0]
+        if is_load:
+            self.GUI.load_detection_result()
+        else:
+            self.GUI.detect_element(True, True, True, paddle_cor=paddle_ocr)
+        if show:
+            self.GUI.show_detection_result()
+
+    '''
+    **************************************
+    *** Adjust Element by Phone Screen ***
+    **************************************
+    '''
+    def recognize_phone_screen(self):
+        gui = self.GUI
+        for e in gui.elements:
+            if e.height / gui.detection_resize_height > 0.5:
+                if e.parent is None and e.children is not None:
+                    e.is_screen = True
+                    gui.screen = e
+                    gui.screen_img = e.clip
+                    return
+
+    def remove_ele_out_screen(self):
+        gui = self.GUI
+        new_elements = []
+        gui.ele_compos = []
+        gui.ele_texts = []
+        for ele in gui.elements:
+            if ele.id in gui.screen.children:
+                new_elements.append(ele)
+                if ele.category == 'Compo':
+                    gui.ele_compos.append(ele)
+                elif ele.category == 'Text':
+                    gui.ele_texts.append(ele)
+        gui.elements = new_elements
+
+    def convert_element_relative_pos_by_screen(self):
+        gui = self.GUI
+        s_left, s_top = gui.screen.col_min, gui.screen.row_min
+        for ele in gui.elements:
+            ele.col_min -= s_left
+            ele.col_max -= s_left
+            ele.row_min -= s_top
+            ele.row_max -= s_top
+
+    def resize_screen_and_elements_by_height(self):
+        gui = self.GUI
+        h_ratio = gui.detection_resize_height / gui.screen.height
+        gui.screen.resize_bound(resize_ratio_col=h_ratio, resize_ratio_row=h_ratio)
+        gui.screen_img = cv2.resize(gui.screen_img, (int(gui.screen.width * h_ratio), gui.detection_resize_height))
+        for ele in gui.elements:
+            ele.resize_bound(resize_ratio_col=h_ratio, resize_ratio_row=h_ratio)
+            ele.get_clip(gui.screen_img)
+
+    def adjust_elements_by_screen(self):
+        '''
+        Recognize the phone screen region if any and adjust the element coordinates according to the screen
+        '''
+        self.recognize_phone_screen()
+        if self.GUI.screen is None:
+            return
+        self.remove_ele_out_screen()
+        self.convert_element_relative_pos_by_screen()
+        self.resize_screen_and_elements_by_height()
+
+    def convert_element_pos_back(self, element):
+        '''
+        Convert back the element coordinates from the phone screen-based to the whole image-based (detection_resize_height)
+        '''
+        gui = self.GUI
+        if gui.screen is None:
+            return
+        h_ratio = gui.screen.height / gui.detection_resize_height
+        element.col_min = int((element.col_min + gui.screen.col_min) * h_ratio)
+        element.col_max = int((element.col_max + gui.screen.col_min) * h_ratio)
+        element.row_min = int((element.row_min + gui.screen.row_min) * h_ratio)
+        element.row_max = int((element.row_max + gui.screen.row_min) * h_ratio)
+        element.init_bound()
+        element.get_clip(gui.img)
+
+    def draw_elements_on_screen(self, show=True):
+        gui = self.GUI
+        board = gui.screen_img.copy()
+        for ele in gui.elements:
+            ele.draw_element(board, show=False, show_id=False)
+        if show:
+            cv2.imshow('Elements on screen', board)
+            cv2.waitKey()
+            cv2.destroyWindow('Elements on screen')
+        return board
+
+    '''
+    *********************
+    *** Action Replay ***
+    *********************
+    '''
+    def replay_action(self, action, matched_element=None, screen_ratio=None):
+        if action['type'] == 'click':
+            if matched_element is not None:
+                self.click((int(matched_element.center_x / self.detect_resize_ratio), int(matched_element.center_y / self.detect_resize_ratio), 22))
+            else:
+                coord = (int(action['coordinate'][0][0] / screen_ratio), action['coordinate'][0][1] / screen_ratio)
+                self.click((coord[0], coord[1], 22))
+        elif action['type'] == 'swipe':
+            start_coord = (int(action['coordinate'][0][0] / screen_ratio), action['coordinate'][0][1] / screen_ratio)
+            re_dist = ((action['coordinate'][1][0] - action['coordinate'][0][0]) / screen_ratio, (action['coordinate'][1][1] - action['coordinate'][0][1]) / screen_ratio)
+            end_coord = (int(start_coord[0] + re_dist[0]), int(start_coord[1] + re_dist[1]))
+            # self.execute_action('swipe', [start_coord, end_coord])
 
 
 robot = Robot(speed=10000)
