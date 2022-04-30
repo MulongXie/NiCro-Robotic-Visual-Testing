@@ -20,7 +20,7 @@ class NiCro:
 
         # the action on the GUI
         # 'type': click, swipe
-        # 'coordinate': action target coordinates, click has one coord, swipe has two [start, end]
+        # 'coordinate': action target coordinates in device screen size: 'click' has one coord, 'swipe' has two [start, end]
         self.action = {'type': 'click', 'coordinate': [(-1, -1), (-1, -1)]}
         self.target_element = None
 
@@ -63,7 +63,7 @@ class NiCro:
     def replay_action_on_all_devices(self):
         print('Action:', self.action)
         if self.action['type'] == 'click':
-            self.target_element = self.source_device.find_element_by_coordinate(self.action['coordinate'][0][0], self.action['coordinate'][0][1], show=True)
+            self.target_element = self.source_device.find_element_by_coordinate(self.action['coordinate'][0][0], self.action['coordinate'][0][1], show=False)
         else:
             self.target_element = None
         for dev in self.devices:

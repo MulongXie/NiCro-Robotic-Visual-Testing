@@ -64,9 +64,12 @@ class Device:
         return matched_ele
 
     def replay_action(self, action, matched_element=None, screen_ratio=None):
-        if action['type'] == 'click' and matched_element is not None:
+        if action['type'] == 'click':
             if matched_element is not None:
                 self.execute_action('click', [(int(matched_element.center_x / self.detect_resize_ratio), int(matched_element.center_y / self.detect_resize_ratio))])
+            else:
+                coord = (int(action['coordinate'][0][0] / screen_ratio), action['coordinate'][0][1] / screen_ratio)
+                self.execute_action('click', [coord])
         elif action['type'] == 'swipe':
             start_coord = (int(action['coordinate'][0][0] / screen_ratio), action['coordinate'][0][1] / screen_ratio)
             re_dist = ((action['coordinate'][1][0] - action['coordinate'][0][0]) / screen_ratio, (action['coordinate'][1][1] - action['coordinate'][0][1]) / screen_ratio)

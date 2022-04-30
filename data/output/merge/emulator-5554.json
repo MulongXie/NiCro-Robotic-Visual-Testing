@@ -322,15 +322,15 @@
         {
             "id": 21,
             "class": "Text",
-            "height": 13,
-            "width": 35,
+            "height": 12,
+            "width": 38,
             "position": {
-                "column_min": 8,
-                "row_min": 17,
-                "column_max": 43,
+                "column_min": 9,
+                "row_min": 18,
+                "column_max": 47,
                 "row_max": 30
             },
-            "text_content": "5:19"
+            "text_content": "10:35"
         },
         {
             "id": 22,
@@ -413,13 +413,13 @@
         {
             "id": 28,
             "class": "Text",
-            "height": 21,
-            "width": 80,
+            "height": 19,
+            "width": 77,
             "position": {
-                "column_min": 27,
-                "row_min": 354,
-                "column_max": 107,
-                "row_max": 375
+                "column_min": 28,
+                "row_min": 355,
+                "column_max": 105,
+                "row_max": 374
             },
             "text_content": "QSydney",
             "parent": 17
@@ -427,15 +427,15 @@
         {
             "id": 29,
             "class": "Text",
-            "height": 23,
-            "width": 177,
+            "height": 24,
+            "width": 189,
             "position": {
                 "column_min": 27,
                 "row_min": 407,
-                "column_max": 204,
-                "row_max": 430
+                "column_max": 216,
+                "row_max": 431
             },
-            "text_content": "[=']   Fri, Apr 29 - Sat, Apr 30",
+            "text_content": "[=]Sat, Apr 30 - Sun, May 01",
             "parent": 18
         },
         {

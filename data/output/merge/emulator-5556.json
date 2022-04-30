@@ -364,11 +364,11 @@
         {
             "id": 24,
             "class": "Text",
-            "height": 20,
+            "height": 19,
             "width": 55,
             "position": {
                 "column_min": 65,
-                "row_min": 364,
+                "row_min": 365,
                 "column_max": 120,
                 "row_max": 384
             },
@@ -379,14 +379,14 @@
             "id": 25,
             "class": "Text",
             "height": 17,
-            "width": 162,
+            "width": 174,
             "position": {
                 "column_min": 67,
                 "row_min": 427,
-                "column_max": 229,
+                "column_max": 241,
                 "row_max": 444
             },
-            "text_content": " Fri, Apr 29 - Sat, Apr 30",
+            "text_content": "Sat, Apr 30- Sun, May 01",
             "parent": 15
         },
         {
