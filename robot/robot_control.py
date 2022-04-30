@@ -38,24 +38,24 @@ class RobotController(object):
 
     def doubleclick(self, coor):
         self.__click_before(coor)
-        self.swift.set_position(x=coor[0], y=coor[1], z=coor[2], speed=self.move_speed, wait=False, timeout=10,
-                                cmd='G0')
+        self.swift.set_position(x=coor[0], y=coor[1], z=coor[2], speed=self.move_speed, wait=False, timeout=10, cmd='G0')
         self.swift.flush_cmd()
         self.__click_before(coor)
-        self.swift.set_position(x=coor[0], y=coor[1], z=coor[2], speed=self.move_speed, wait=False, timeout=10,
-                                cmd='G0')
+        self.swift.set_position(x=coor[0], y=coor[1], z=coor[2], speed=self.move_speed, wait=False, timeout=10, cmd='G0')
         self.swift.flush_cmd()
         self.reset()
 
     def longPress(self, coor):
-        x = coor[0]
-        y = coor[1]
-        z = coor[2]
-        self.swift.set_position(x=x, y=y, z=z, speed=self.move_speed, wait=False, timeout=10, cmd='G0')
+        self.swift.set_position(x=coor[0], y=coor[1], z=coor[2], speed=self.move_speed, wait=False, timeout=10, cmd='G0')
         self.swift.flush_cmd()
         time.sleep(1)
-        self.swift.set_position(z=z + self.press_distance, speed=100, wait=False, timeout=10, cmd='G1')
+        self.swift.set_position(z=coor[2] + self.press_distance, speed=100, wait=False, timeout=10, cmd='G0')
         self.swift.flush_cmd()
+        self.reset()
+
+    def swipe(self, start_coord, end_coord, swipe_speed=2000):
+        self.swift.set_position(x=start_coord[0], y=start_coord[1], z=start_coord[2], speed=self.move_speed, wait=False, timeout=10, cmd='G0')
+        self.swift.set_position(x=end_coord[0], y=end_coord[1], z=end_coord[2], speed=swipe_speed, wait=False, timeout=10, cmd='G0')
         self.reset()
 
     def close_connect(self):
