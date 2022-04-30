@@ -1,6 +1,5 @@
 import cv2
 from GUI import GUI
-from element_matching.GUI_pair import GUIPair
 
 
 class Device:
@@ -54,37 +53,6 @@ class Device:
             ele.show_clip()
         return ele
 
-    def control_app_through_screenshot(self):
-        '''
-        Control the app through action on the screenshot
-        '''
-        win_resize_ratio = 3
-        win_name = self.name + ' screen'
-
-        def on_mouse(event, x, y, flags, params):
-            x, y = x * win_resize_ratio, y * win_resize_ratio
-            if event == cv2.EVENT_LBUTTONDOWN:
-                self.action['coordinate'][0] = (x, y)
-            elif event == cv2.EVENT_LBUTTONUP:
-                x_start, y_start = self.action['coordinate'][0]
-                # swipe
-                if abs(x_start - x) >= 10 or abs(y_start - y) >= 10:
-                    print('Scroll from (%d, %d) to (%d, %d)' % (x_start, y_start, x, y))
-                    self.device.input_swipe(x_start, y_start, x, y, 500)
-                # click
-                else:
-                    print('Tap (%d, %d)' % (x_start, y_start))
-                    self.device.input_tap(x_start, y_start)
-            img = self.cap_screenshot()
-            img = cv2.resize(img, (img.shape[1] // win_resize_ratio, img.shape[0] // win_resize_ratio))
-            cv2.imshow(win_name, img)
-
-        screen = cv2.resize(self.screenshot, (self.screenshot.shape[1] // win_resize_ratio, self.screenshot.shape[0] // win_resize_ratio))
-        cv2.imshow(win_name, screen)
-        cv2.setMouseCallback(win_name, on_mouse)
-        cv2.waitKey()
-        cv2.destroyWindow(win_name)
-
     def match_element(self, target_element, resnet_model, paddle_ocr, scroll_search=True):
         matched_ele = self.GUI.match_elements(target_element.clip, resnet_model, target_element.text_content, min_similarity_img=0.55, show=True)
         # scroll down if current gui is not matched
@@ -95,9 +63,8 @@ class Device:
             self.match_element(target_element, resnet_model, paddle_ocr, scroll_search=False)
         return matched_ele
 
-    def replay_action(self, action, resnet_model, paddle_ocr, target_element=None, screen_ratio=None):
-        if action['type'] == 'click' and target_element is not None:
-            matched_element = self.match_element(target_element, resnet_model, paddle_ocr)
+    def replay_action(self, action, matched_element=None, screen_ratio=None):
+        if action['type'] == 'click' and matched_element is not None:
             if matched_element is not None:
                 self.execute_action('click', [(int(matched_element.center_x / self.detect_resize_ratio), int(matched_element.center_y / self.detect_resize_ratio))])
         elif action['type'] == 'swipe':

@@ -1,5 +1,6 @@
 import cv2
 from Device import Device
+from element_matching.GUI_pair import GUIPair
 
 from ppadb.client import Client as AdbClient
 client = AdbClient(host="127.0.0.1", port=5037)
@@ -45,19 +46,28 @@ class NiCro:
             print('****** Device [%d / %d] ******' % (i + 1, len(self.devices)))
             device.update_screenshot_and_gui(self.paddle_ocr, is_load, show)
 
+    def replay_action_on_device(self, device):
+        print('*** Replay Devices Number [%d/%d] ***' % (device.id + 1, len(self.devices)))
+        if device.id == self.source_device.id:
+            print('Skip the Selected Source Device')
+            return
+        device.get_devices_info()
+        screen_ratio = self.source_device.device.wm_size()[1] / device.device.wm_size()[1]
+
+        matched_element = None
+        if self.target_element is not None:
+            gui_matcher = GUIPair(self.source_device.GUI, device.GUI, self.resnet_model)
+            matched_element = gui_matcher.match_target_element(self.target_element)
+        device.replay_action(self.action, matched_element, screen_ratio)
+
     def replay_action_on_all_devices(self):
         print('Action:', self.action)
         if self.action['type'] == 'click':
             self.target_element = self.source_device.find_element_by_coordinate(self.action['coordinate'][0][0], self.action['coordinate'][0][1], show=True)
-
-        for i, dev in enumerate(self.devices):
-            print('*** Replay Devices Number [%d/%d] ***' % (i + 1, len(self.devices)))
-            if dev.id == self.source_device.id:
-                print('Skip the Selected Source Device')
-                continue
-            dev.get_devices_info()
-            screen_ratio = self.source_device.device.wm_size()[1] / dev.device.wm_size()[1]
-            dev.replay_action(self.action, self.resnet_model, self.paddle_ocr, self.target_element, screen_ratio)
+        else:
+            self.target_element = None
+        for dev in self.devices:
+            self.replay_action_on_device(dev)
 
     def control_multiple_devices_through_source_device(self, is_replay=False):
         s_dev = self.source_device
