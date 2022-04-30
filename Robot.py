@@ -19,6 +19,7 @@ class Robot(RobotController):
         self.GUI = None
         self.photo = None   # image
         self.photo_save_path = 'data/screen/robot_photo.png'
+        self.photo_screen_area = None    # image of screen area
         self.detect_resize_ratio = None  # self.GUI.detection_resize_height / self.photo.shape[0]
 
     def cap_frame(self):
@@ -94,6 +95,7 @@ class Robot(RobotController):
                     e.is_screen = True
                     gui.screen = e
                     gui.screen_img = e.clip
+                    self.photo_screen_area = e.clip
                     return
 
     def remove_ele_out_screen(self):
@@ -128,7 +130,7 @@ class Robot(RobotController):
             ele.resize_bound(resize_ratio_col=h_ratio, resize_ratio_row=h_ratio)
             ele.get_clip(gui.screen_img)
 
-    def adjust_elements_by_screen(self):
+    def adjust_elements_by_screen_area(self, show=False):
         '''
         Recognize the phone screen region if any and adjust the element coordinates according to the screen
         '''
@@ -138,6 +140,8 @@ class Robot(RobotController):
         self.remove_ele_out_screen()
         self.convert_element_relative_pos_by_screen()
         self.resize_screen_and_elements_by_height()
+        if show:
+            self.draw_elements_on_screen(show)
 
     def convert_element_pos_back(self, element):
         '''
@@ -184,5 +188,5 @@ class Robot(RobotController):
             # self.execute_action('swipe', [start_coord, end_coord])
 
 
-robot = Robot(speed=10000)
-robot.control_robot_by_clicking_on_cam_video()
+# robot = Robot(speed=10000)
+# robot.control_robot_by_clicking_on_cam_video()

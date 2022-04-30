@@ -11,7 +11,7 @@ import threading
 from queue import Queue
 import serial
 from serial.threaded import LineReader
-from ..tools.list_ports import select_port
+from ..tool.list_ports import select_port
 from ..utils.log import logger
 from .threaded import ReaderThread
 

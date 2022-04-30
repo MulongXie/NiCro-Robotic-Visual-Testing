@@ -1,6 +1,7 @@
 import cv2
 from Device import Device
 from element_matching.GUI_pair import GUIPair
+from Robot import Robot
 
 from ppadb.client import Client as AdbClient
 client = AdbClient(host="127.0.0.1", port=5037)
@@ -27,15 +28,26 @@ class NiCro:
         self.paddle_ocr = paddle_ocr        # ocr detector for GUI detection
         self.resnet_model = resnet_model    # resnet encoder for image matching
 
+        self.robot = None
+
     def load_devices(self):
         self.devices = [Device(i, dev) for i, dev in enumerate(client.devices())]
+        print('Load %d Device Emulators' % len(self.devices))
+
+    def load_robot(self):
+        self.robot = Robot()
+        print('Load Robot Arm System')
 
     def get_devices_info(self):
         print('Selected Source Device:')
         self.source_device.get_devices_info()
-        print('\nAll Devices:')
+        print('\nDevice Emulators:')
         for i, dev in enumerate(self.devices):
             dev.get_devices_info()
+        if self.robot is not None:
+            print('Robot Arm System Loaded')
+        else:
+            print('No Robot Arm System')
 
     def select_source_device(self, device_id):
         self.source_device = self.devices[device_id]
@@ -45,6 +57,9 @@ class NiCro:
         for i, device in enumerate(self.devices):
             print('****** Device [%d / %d] ******' % (i + 1, len(self.devices)))
             device.update_screenshot_and_gui(self.paddle_ocr, is_load, show)
+        if self.robot is not None:
+            self.robot.detect_gui_element(self.paddle_ocr, is_load, show=False)
+            self.robot.adjust_elements_by_screen_area(show)
 
     def replay_action_on_device(self, device):
         print('*** Replay Devices Number [%d/%d] ***' % (device.id + 1, len(self.devices)))
@@ -64,6 +79,16 @@ class NiCro:
             #     matched_element = gui_matcher.match_target_element(self.target_element)
         device.replay_action(self.action, matched_element, screen_ratio)
 
+    def replay_action_on_robot(self):
+        print('*** Replay on Robot ***')
+        screen_area_actual_height = self.robot.photo_screen_area[0] / self.robot.detect_resize_ratio
+        screen_ratio = self.source_device.device.wm_size()[1] / screen_area_actual_height
+        matched_element = None
+        if self.target_element is not None:
+            gui_matcher = GUIPair(self.source_device.GUI, self.robot.GUI, self.resnet_model)
+            matched_element = gui_matcher.match_target_element(self.target_element)
+        self.robot.replay_action(self.action, matched_element, screen_ratio)
+
     def replay_action_on_all_devices(self):
         print('Action:', self.action)
         if self.action['type'] == 'click':
@@ -76,6 +101,10 @@ class NiCro:
                 continue
             self.replay_action_on_device(dev)
             dev.update_screenshot_and_gui(self.paddle_ocr)
+        if self.robot is not None:
+            self.replay_action_on_robot()
+            self.robot.detect_gui_element(self.paddle_ocr)
+            self.robot.adjust_elements_by_screen_area()
 
     def control_multiple_devices_through_source_device(self, is_replay=False):
         s_dev = self.source_device

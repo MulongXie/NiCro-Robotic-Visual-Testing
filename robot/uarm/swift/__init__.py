@@ -26,7 +26,7 @@ from .pump import Pump
 from .gripper import Gripper
 from .grove import Grove
 from .utils import *
-from ..tools.threads import ThreadManage
+from ..tool.threads import ThreadManage
 
 
 class HandleQueue(Queue):
