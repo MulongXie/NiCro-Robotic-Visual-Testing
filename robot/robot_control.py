@@ -53,7 +53,7 @@ class RobotController(object):
         self.swift.flush_cmd()
         self.reset()
 
-    def swipe(self, start_coord, end_coord, swipe_speed=2000):
+    def swipe(self, start_coord, end_coord, swipe_speed=50000):
         self.swift.set_position(x=start_coord[0], y=start_coord[1], z=start_coord[2], speed=self.move_speed, wait=False, timeout=10, cmd='G0')
         self.swift.set_position(x=end_coord[0], y=end_coord[1], z=end_coord[2], speed=swipe_speed, wait=False, timeout=10, cmd='G0')
         self.reset()

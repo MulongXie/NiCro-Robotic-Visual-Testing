@@ -4,7 +4,7 @@ from GUI import GUI
 
 
 class Robot(RobotController):
-    def __init__(self, speed=100000, press_depth=18):
+    def __init__(self, speed=100000, press_depth=16):
         super().__init__(speed=speed)
         self.press_depth = press_depth
 
@@ -62,15 +62,24 @@ class Robot(RobotController):
 
     def control_robot_by_clicking_on_cam_video(self):
         def click_event(event, x, y, flags, params):
+            x_pre, y_pre = params
             if event == cv2.EVENT_LBUTTONDOWN:
-                x_r, y_r = self.convert_coord_from_camera_to_robot(x, y)
-                print('Clicked Point:(%d,%d) Robot:(%d,%d)' % (x, y, x_r, y_r))
-                self.click((x_r, y_r, self.press_depth))
+                params[0], params[1] = self.convert_coord_from_camera_to_robot(x, y)
+            elif event == cv2.EVENT_LBUTTONUP:
+                x, y = self.convert_coord_from_camera_to_robot(x, y)
+                print(x, y, params)
+                # swipe
+                if abs(x_pre - x) >= 10 or abs(y_pre - y) >= 10:
+                    self.swipe((x_pre, y_pre, self.press_depth), (x, y, self.press_depth))
+                # click
+                else:
+                    self.click((x_pre, y_pre, self.press_depth))
+        button_down_coords = [-1, -1]
         while 1:
             frame = self.cap_frame()
             # get the click point on the image
             cv2.imshow('camera', frame)
-            cv2.setMouseCallback('camera', click_event)
+            cv2.setMouseCallback('camera', click_event, param=button_down_coords)
             if cv2.waitKey(1) == ord('q'):
                 break
         cv2.destroyWindow('camera')
@@ -194,5 +203,5 @@ class Robot(RobotController):
 
 
 if __name__ == '__main__':
-    robot = Robot(speed=10000)
+    robot = Robot(speed=1000000)
     robot.control_robot_by_clicking_on_cam_video()
