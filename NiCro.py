@@ -9,7 +9,7 @@ client = AdbClient(host="127.0.0.1", port=5037)
 from paddleocr import PaddleOCR
 paddle_ocr = PaddleOCR(use_angle_cls=True, lang='en', show_log=False)
 
-from keras.applications.resnet import ResNet50
+from keras.applications.resnet50 import ResNet50
 resnet_model = ResNet50(include_top=False, input_shape=(32, 32, 3))
 
 

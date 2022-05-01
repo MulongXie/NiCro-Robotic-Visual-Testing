@@ -4,8 +4,9 @@ from GUI import GUI
 
 
 class Robot(RobotController):
-    def __init__(self, speed=10000):
+    def __init__(self, speed=100000, press_depth=18):
         super().__init__(speed=speed)
+        self.press_depth = press_depth
 
         self.camera = cv2.VideoCapture(0)  # height/width = 1000/540
         self.camera.set(cv2.CAP_PROP_FRAME_WIDTH, 1000)
@@ -23,6 +24,8 @@ class Robot(RobotController):
         self.detect_resize_ratio = None  # self.GUI.detection_resize_height / self.photo.shape[0]
 
     def cap_frame(self):
+        if not self.camera.read()[0]:
+            self.camera = cv2.VideoCapture(0)
         ret, frame = self.camera.read()
         frame = cv2.rotate(frame, cv2.cv2.ROTATE_90_CLOCKWISE)
         frame = frame[self.camera_clip_range_height[0]: self.camera_clip_range_height[1], self.camera_clip_range_width[0]:self.camera_clip_range_width[1]]
@@ -55,13 +58,14 @@ class Robot(RobotController):
             if cv2.waitKey(1) == ord('q'):
                 break
         cv2.destroyAllWindows()
+        self.camera.release()
 
     def control_robot_by_clicking_on_cam_video(self):
         def click_event(event, x, y, flags, params):
             if event == cv2.EVENT_LBUTTONDOWN:
                 x_r, y_r = self.convert_coord_from_camera_to_robot(x, y)
                 print('Clicked Point:(%d,%d) Robot:(%d,%d)' % (x, y, x_r, y_r))
-                self.click((x_r, y_r, 22))
+                self.click((x_r, y_r, self.press_depth))
         while 1:
             frame = self.cap_frame()
             # get the click point on the image
@@ -70,6 +74,7 @@ class Robot(RobotController):
             if cv2.waitKey(1) == ord('q'):
                 break
         cv2.destroyWindow('camera')
+        self.camera.release()
 
     def detect_gui_element(self, paddle_ocr, is_load=False, show=False):
         self.cap_frame()
@@ -177,7 +182,7 @@ class Robot(RobotController):
     def replay_action(self, action, matched_element=None, screen_ratio=None):
         if action['type'] == 'click':
             if matched_element is not None:
-                self.click((int(matched_element.center_x / self.detect_resize_ratio), int(matched_element.center_y / self.detect_resize_ratio), 22))
+                self.click((int(matched_element.center_x / self.detect_resize_ratio), int(matched_element.center_y / self.detect_resize_ratio), self.press_depth))
             else:
                 coord = (int(action['coordinate'][0][0] / screen_ratio), action['coordinate'][0][1] / screen_ratio)
                 self.click((coord[0], coord[1], 22))
@@ -188,5 +193,6 @@ class Robot(RobotController):
             # self.execute_action('swipe', [start_coord, end_coord])
 
 
-# robot = Robot(speed=10000)
-# robot.control_robot_by_clicking_on_cam_video()
+if __name__ == '__main__':
+    robot = Robot(speed=10000)
+    robot.control_robot_by_clicking_on_cam_video()
