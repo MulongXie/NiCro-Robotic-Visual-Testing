@@ -199,7 +199,7 @@ class Robot(RobotController):
             start_coord = (int(action['coordinate'][0][0] / screen_ratio), action['coordinate'][0][1] / screen_ratio)
             re_dist = ((action['coordinate'][1][0] - action['coordinate'][0][0]) / screen_ratio, (action['coordinate'][1][1] - action['coordinate'][0][1]) / screen_ratio)
             end_coord = (int(start_coord[0] + re_dist[0]), int(start_coord[1] + re_dist[1]))
-            # self.execute_action('swipe', [start_coord, end_coord])
+            self.swipe(start_coord, end_coord)
 
 
 if __name__ == '__main__':
