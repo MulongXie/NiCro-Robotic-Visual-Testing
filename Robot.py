@@ -8,9 +8,7 @@ class Robot(RobotController):
         super().__init__(speed=speed)
         self.press_depth = press_depth
 
-        self.camera = cv2.VideoCapture(0)  # height/width = 1000/540
-        self.camera.set(cv2.CAP_PROP_FRAME_WIDTH, 1000)
-        self.camera.set(cv2.CAP_PROP_FRAME_HEIGHT, 540)
+        self.camera = None  # height/width = 1000/540
         self.camera_clip_range_height = [80, 900]
         self.camera_clip_range_width = [0, 540]
 
@@ -22,10 +20,13 @@ class Robot(RobotController):
         self.photo_save_path = 'data/screen/robot_photo.png'
         self.photo_screen_area = None    # image of screen area
         self.detect_resize_ratio = None  # self.GUI.detection_resize_height / self.photo.shape[0]
+        self.cap_frame()
 
     def cap_frame(self):
-        if not self.camera.read()[0]:
+        if not self.camera or not self.camera.read()[0]:
             self.camera = cv2.VideoCapture(0)
+            self.camera.set(cv2.CAP_PROP_FRAME_WIDTH, 1000)
+            self.camera.set(cv2.CAP_PROP_FRAME_HEIGHT, 540)
         ret, frame = self.camera.read()
         frame = cv2.rotate(frame, cv2.cv2.ROTATE_90_CLOCKWISE)
         frame = frame[self.camera_clip_range_height[0]: self.camera_clip_range_height[1], self.camera_clip_range_width[0]:self.camera_clip_range_width[1]]
@@ -86,7 +87,7 @@ class Robot(RobotController):
         self.camera.release()
 
     def detect_gui_element(self, paddle_ocr, is_load=False, show=False):
-        self.cap_frame()
+        # self.cap_frame()
         self.GUI = GUI(self.photo_save_path)
         self.detect_resize_ratio = self.GUI.detection_resize_height / self.photo.shape[0]
         if is_load:
