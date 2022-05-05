@@ -151,8 +151,8 @@ def text_detection_paddle(input_file='../data/input/30800.jpg', ocr_root='../dat
     name = input_file.replace('\\', '/').split('/')[-1][:-4]
     img = cv2.imread(input_file)
 
-    if paddle_cor is None:
-        paddle_cor = PaddleOCR(use_angle_cls=True, lang="ch")
+    # if paddle_cor is None:
+    #     paddle_cor = PaddleOCR(use_angle_cls=True, lang="ch")
     result = paddle_cor.ocr(input_file, cls=True)
     texts = text_cvt_orc_format_paddle(result)
 

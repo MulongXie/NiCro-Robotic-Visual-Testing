@@ -9,6 +9,8 @@ from ppadb.client import Client as AdbClient
 client = AdbClient(host="127.0.0.1", port=5037)
 
 from paddleocr import PaddleOCR
+paddle_ocr = PaddleOCR(use_angle_cls=True, lang='en', show_log=False)
+
 from keras.applications.resnet import ResNet50
 resnet_model = ResNet50(include_top=False, input_shape=(32, 32, 3))
 
@@ -26,8 +28,8 @@ class NiCro:
         self.target_element = None
 
         self.ocr_opt = ocr_opt             # 'paddle' or 'google'
-        self.paddle_ocr = PaddleOCR(use_angle_cls=True, lang='en', show_log=False) if self.ocr_opt == 'paddle' else None
-        self.resnet_model = resnet_model    # resnet encoder for image matching
+        self.paddle_ocr = paddle_ocr
+        self.resnet_model = resnet_model   # resnet encoder for image matching
 
         self.robot = None
 
@@ -63,8 +65,7 @@ class NiCro:
             device.update_screenshot_and_gui(self.paddle_ocr, is_load, show, ocr_opt=self.ocr_opt)
         if self.robot is not None:
             print('****** Robot Arm [1 / 1] ******')
-            self.robot.detect_gui_element(self.paddle_ocr, is_load, show=False, ocr_opt=self.ocr_opt)
-            self.robot.adjust_elements_by_screen_area(show)
+            self.robot.detect_gui_element(self.paddle_ocr, is_load, show=show, ocr_opt=self.ocr_opt)
 
     def replay_action_on_device(self, device):
         print('*** Replay Devices Number [%d/%d] ***' % (device.id + 1, len(self.devices)))
@@ -109,7 +110,6 @@ class NiCro:
         if self.robot is not None:
             self.replay_action_on_robot()
             self.robot.detect_gui_element(self.paddle_ocr, ocr_opt=self.ocr_opt)
-            self.robot.adjust_elements_by_screen_area()
 
     def control_multiple_devices_through_source_device(self, is_replay=False):
         s_dev = self.source_device
