@@ -191,7 +191,7 @@ class NiCro:
             elif event == cv2.EVENT_LBUTTONUP:
                 print('\n****** Tap (%d, %d) ******' % (self.action['coordinate'][0][0], self.action['coordinate'][0][1]))
                 self.target_element = self.source_device.find_element_by_coordinate(self.action['coordinate'][0][0], self.action['coordinate'][0][1], show=False)
-                methods = ['sift', 'orb', 'resnet', 'template-match', 'text', 'nicro']
+                methods = ['sift', 'resnet', 'template-match', 'text', 'nicro']
                 for method in methods:
                     self.match_widgets_cross_device(method)
                 params[0] = s_dev.GUI.det_result_imgs['merge'].copy()

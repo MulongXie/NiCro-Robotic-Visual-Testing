@@ -145,6 +145,13 @@ def image_similarity_matrix(images1, images2, method='resnet', resnet_model=None
                 sim_row.append(calc_similarity_sift_or_surf_or_orb(img1, img2, method='sift'))
             sim_matrix.append(sim_row)
         sim_matrix = np.array(sim_matrix)
+    elif method == 'surf':
+        for img1 in images1:
+            sim_row = []
+            for img2 in images2:
+                sim_row.append(calc_similarity_sift_or_surf_or_orb(img1, img2, method='surf'))
+            sim_matrix.append(sim_row)
+        sim_matrix = np.array(sim_matrix)
     elif method == 'orb':
         for img1 in images1:
             sim_row = []

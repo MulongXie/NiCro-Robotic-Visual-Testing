@@ -137,6 +137,10 @@ class GUIPair:
             similarities = matching.image_similarity_matrix([target_element.clip], [e.clip for e in compared_elements], method='sift')[0]
             matched_element = compared_elements[np.argmax(similarities)]
             max_sim = [np.max(similarities)]
+        elif method == 'surf':
+            similarities = matching.image_similarity_matrix([target_element.clip], [e.clip for e in compared_elements], method='surf')[0]
+            matched_element = compared_elements[np.argmax(similarities)]
+            max_sim = [np.max(similarities)]
         elif method == 'orb':
             similarities = matching.image_similarity_matrix([target_element.clip], [e.clip for e in compared_elements], method='orb')[0]
             matched_element = compared_elements[np.argmax(similarities)]

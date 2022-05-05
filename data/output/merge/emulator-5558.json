@@ -914,9 +914,9 @@
             "height": 14,
             "width": 44,
             "position": {
-                "column_min": 117,
+                "column_min": 118,
                 "row_min": 186,
-                "column_max": 161,
+                "column_max": 162,
                 "row_max": 200
             },
             "text_content": "Anemo"
@@ -1042,11 +1042,11 @@
             "id": 76,
             "class": "Text",
             "height": 12,
-            "width": 66,
+            "width": 65,
             "position": {
                 "column_min": 106,
                 "row_min": 397,
-                "column_max": 172,
+                "column_max": 171,
                 "row_max": 409
             },
             "text_content": "DuckDuck."
