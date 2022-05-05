@@ -63,6 +63,7 @@ class NiCro:
             print('****** Device [%d / %d] ******' % (i + 1, len(self.devices)))
             device.update_screenshot_and_gui(self.paddle_ocr, is_load, show)
         if self.robot is not None:
+            print('****** Robot Arm [1 / 1] ******')
             self.robot.detect_gui_element(self.paddle_ocr, is_load, show=False)
             self.robot.adjust_elements_by_screen_area(show)
 
@@ -86,7 +87,7 @@ class NiCro:
 
     def replay_action_on_robot(self):
         print('*** Replay on Robot ***')
-        screen_area_actual_height = self.robot.photo_screen_area[0] / self.robot.detect_resize_ratio
+        screen_area_actual_height = self.robot.photo_screen_area.shape[0] / self.robot.detect_resize_ratio
         screen_ratio = self.source_device.device.wm_size()[1] / screen_area_actual_height
         matched_element = None
         if self.target_element is not None:

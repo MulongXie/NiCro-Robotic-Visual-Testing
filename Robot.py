@@ -4,7 +4,7 @@ from GUI import GUI
 
 
 class Robot(RobotController):
-    def __init__(self, speed=100000, press_depth=16):
+    def __init__(self, speed=100000, press_depth=20):
         super().__init__(speed=speed)
         self.press_depth = press_depth
 
@@ -14,7 +14,7 @@ class Robot(RobotController):
         self.camera_clip_range_height = [80, 900]
         self.camera_clip_range_width = [0, 540]
 
-        self.x_robot2y_cam = round((298-120)/820, 2)    # x_robot_range : cam.height_range
+        self.x_robot2y_cam = round((295-120)/820, 2)    # x_robot_range : cam.height_range
         self.y_robot2x_cam = round(120/540, 2)          # y_robot_range : cam.width_range
 
         self.GUI = None
@@ -108,7 +108,7 @@ class Robot(RobotController):
                 if e.parent is None and e.children is not None:
                     e.is_screen = True
                     gui.screen = e
-                    gui.screen_img = e.clip
+                    gui.img = e.clip
                     self.photo_screen_area = e.clip
                     return
 
@@ -139,10 +139,11 @@ class Robot(RobotController):
         gui = self.GUI
         h_ratio = gui.detection_resize_height / gui.screen.height
         gui.screen.resize_bound(resize_ratio_col=h_ratio, resize_ratio_row=h_ratio)
-        gui.screen_img = cv2.resize(gui.screen_img, (int(gui.screen.width * h_ratio), gui.detection_resize_height))
+        gui.img = cv2.resize(gui.img, (int(gui.screen.width * h_ratio), gui.detection_resize_height))
         for ele in gui.elements:
             ele.resize_bound(resize_ratio_col=h_ratio, resize_ratio_row=h_ratio)
-            ele.get_clip(gui.screen_img)
+            ele.get_clip(gui.img)
+        gui.draw_detection_result()
 
     def adjust_elements_by_screen_area(self, show=False):
         '''
@@ -155,7 +156,7 @@ class Robot(RobotController):
         self.convert_element_relative_pos_by_screen()
         self.resize_screen_and_elements_by_height()
         if show:
-            self.draw_elements_on_screen(show)
+            self.GUI.show_detection_result()
 
     def convert_element_pos_back(self, element):
         '''
@@ -176,7 +177,7 @@ class Robot(RobotController):
         gui = self.GUI
         board = gui.screen_img.copy()
         for ele in gui.elements:
-            ele.draw_element(board, show=False, show_id=False)
+            ele.draw_element(board, show=False)
         if show:
             cv2.imshow('Elements on screen', board)
             cv2.waitKey()
@@ -193,12 +194,16 @@ class Robot(RobotController):
             if matched_element is not None:
                 self.click((int(matched_element.center_x / self.detect_resize_ratio), int(matched_element.center_y / self.detect_resize_ratio), self.press_depth))
             else:
-                coord = (int(action['coordinate'][0][0] / screen_ratio), action['coordinate'][0][1] / screen_ratio)
-                self.click((coord[0], coord[1], 22))
+                x_rescreen, y_rescreen = int(action['coordinate'][0][0] / screen_ratio), int(action['coordinate'][0][1] / screen_ratio)
+                x_robot, y_robot = self.convert_coord_from_camera_to_robot(x_rescreen, y_rescreen)
+                print('Screen Coord(%d, %d), Robot Coord(%d, %d)' % (x_rescreen, y_rescreen, x_robot, y_robot))
+                self.click((x_robot, y_robot, self.press_depth))
         elif action['type'] == 'swipe':
-            start_coord = (int(action['coordinate'][0][0] / screen_ratio), action['coordinate'][0][1] / screen_ratio)
-            re_dist = ((action['coordinate'][1][0] - action['coordinate'][0][0]) / screen_ratio, (action['coordinate'][1][1] - action['coordinate'][0][1]) / screen_ratio)
-            end_coord = (int(start_coord[0] + re_dist[0]), int(start_coord[1] + re_dist[1]))
+            x_rescreen, y_rescreen = int(action['coordinate'][0][0] / screen_ratio), int(action['coordinate'][0][1] / screen_ratio)
+            x_robot, y_robot = self.convert_coord_from_camera_to_robot(x_rescreen, y_rescreen)
+            start_coord = (x_robot, y_robot, self.press_depth)
+            re_dist = (int((action['coordinate'][1][1] - action['coordinate'][0][1]) / screen_ratio), int((action['coordinate'][1][0] - action['coordinate'][0][0]) / screen_ratio))
+            end_coord = (int(start_coord[0] - re_dist[0]), int(start_coord[1] + re_dist[1]), self.press_depth)
             self.swipe(start_coord, end_coord)
 
 

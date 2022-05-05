@@ -1,0 +1,39 @@
+{
+    "img_shape": [
+        560,
+        480,
+        3
+    ],
+    "texts": [
+        {
+            "id": 0,
+            "content": "BAO",
+            "column_min": 150,
+            "row_min": 59,
+            "column_max": 258,
+            "row_max": 87,
+            "width": 108,
+            "height": 28
+        },
+        {
+            "id": 1,
+            "content": "Protection is on",
+            "column_min": 133,
+            "row_min": 100,
+            "column_max": 275,
+            "row_max": 119,
+            "width": 142,
+            "height": 19
+        },
+        {
+            "id": 2,
+            "content": "O",
+            "column_min": 284,
+            "row_min": 422,
+            "column_max": 322,
+            "row_max": 439,
+            "width": 38,
+            "height": 17
+        }
+    ]
+}

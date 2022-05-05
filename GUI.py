@@ -215,16 +215,16 @@ class GUI:
     '''
     def show_detection_result(self):
         if self.det_result_imgs['merge'] is not None:
-            cv2.imshow('det', self.det_result_imgs['merge'])
+            cv2.imshow('GUI detection result', self.det_result_imgs['merge'])
         elif self.det_result_data is not None:
             self.draw_detection_result()
-            cv2.imshow('det', self.det_result_imgs['merge'])
+            cv2.imshow('GUI detection result', self.det_result_imgs['merge'])
         else:
             print('No detection result, run element_detection() or load_detection_result() first')
         cv2.waitKey()
-        cv2.destroyAllWindows()
+        cv2.destroyWindow('GUI detection result')
 
-    def draw_detection_result(self, show_id=False):
+    def draw_detection_result(self):
         '''
         Draw detected elements based on det_result_data
         '''
@@ -232,7 +232,7 @@ class GUI:
 
         board = self.img.copy()
         for i, element in enumerate(self.elements):
-            element.draw_element(board, color_map[element.category], show_id=show_id)
+            element.draw_element(board, color_map[element.category])
         self.det_result_imgs['merge'] = board.copy()
         return self.det_result_imgs['merge']
 

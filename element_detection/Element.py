@@ -42,7 +42,9 @@ class Element:
     def get_bound(self):
         return self.col_min, self.row_min, self.col_max, self.row_max
 
-    def draw_element(self, board, color=(225,255,0), line=2, put_text=None, show=False):
+    def draw_element(self, board, color=None, line=2, put_text=None, show=False):
+        if color is None:
+            color = (0, 255, 0) if self.category == 'Compo' else (0, 0, 255)
         bound = self.get_bound()
         cv2.rectangle(board, (bound[0], bound[1]), (bound[2], bound[3]), color, line)
         if put_text is not None:

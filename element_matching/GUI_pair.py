@@ -120,10 +120,12 @@ class GUIPair:
             # if len(matched_elements) > 1:
             #     matched_elements = self.match_by_neighbour(target_element, matched_elements)
         if len(matched_elements) > 0:
+            print('Successfully match element')
             if show:
                 self.show_target_and_matched_elements(target_element, [matched_elements[0]])
             return matched_elements[0]
         else:
+            print('No element matched')
             return None
 
     def match_target_element_test(self, target_element, method='sift', show=False):
