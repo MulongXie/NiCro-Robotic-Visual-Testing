@@ -9,7 +9,7 @@ client = AdbClient(host="127.0.0.1", port=5037)
 from paddleocr import PaddleOCR
 paddle_ocr = PaddleOCR(use_angle_cls=True, lang='en', show_log=False)
 
-from keras.applications.resnet50 import ResNet50
+from keras.applications.resnet import ResNet50
 resnet_model = ResNet50(include_top=False, input_shape=(32, 32, 3))
 
 
@@ -157,6 +157,53 @@ class NiCro:
         cv2.imshow(win_name, board)
         cv2.setMouseCallback(win_name, on_mouse, [board, False])
         cv2.waitKey()
+        cv2.destroyWindow(win_name)
+
+    def match_widgets_cross_device(self, method):
+        '''
+        :param method: 'sift', 'orb', 'resnet', 'template-match', 'text', 'nicro'
+        '''
+        print('*** Matching Method: %s ***' % method)
+        for dev in self.devices:
+            print('Device:', dev.name)
+            gui_matcher = GUIPair(self.source_device.GUI, dev.GUI, self.resnet_model)
+            if method == 'nicro':
+                gui_matcher.match_target_element(self.target_element)
+            else:
+                gui_matcher.match_target_element_test(self.target_element, method=method, show=True)
+
+    def click_to_match_widgets_cross_devices(self):
+        s_dev = self.source_device
+        win_name = s_dev.device.get_serial_no() + ' screen'
+
+        def on_mouse(event, x, y, flags, params):
+            '''
+            :param params: [board (image)]
+            :param x, y: in the scale of detection image size (height=800)
+            '''
+            x_app, y_app = int(x / s_dev.detect_resize_ratio), int(y / s_dev.detect_resize_ratio)
+            # Press button
+            if event == cv2.EVENT_LBUTTONDOWN:
+                cv2.circle(params[0], (x, y), 10, (255,0,255), 2)
+                cv2.imshow(win_name, params[0])
+                self.action['coordinate'][0] = (x_app, y_app)
+            # Lift button
+            elif event == cv2.EVENT_LBUTTONUP:
+                print('\n****** Tap (%d, %d) ******' % (self.action['coordinate'][0][0], self.action['coordinate'][0][1]))
+                self.target_element = self.source_device.find_element_by_coordinate(self.action['coordinate'][0][0], self.action['coordinate'][0][1], show=False)
+                methods = ['sift', 'orb', 'resnet', 'template-match', 'text', 'nicro']
+                for method in methods:
+                    self.match_widgets_cross_device(method)
+                params[0] = s_dev.GUI.det_result_imgs['merge'].copy()
+                cv2.imshow(win_name, params[0])
+
+        board = s_dev.GUI.det_result_imgs['merge'].copy()
+        cv2.imshow(win_name, board)
+        cv2.setMouseCallback(win_name, on_mouse, [board])
+        key = cv2.waitKey()
+        if key == ord('q'):
+            cv2.destroyWindow(win_name)
+            return
         cv2.destroyWindow(win_name)
 
     def show_all_device_detection_results(self):

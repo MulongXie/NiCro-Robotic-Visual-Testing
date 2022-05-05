@@ -3,6 +3,7 @@ import numpy as np
 from difflib import SequenceMatcher
 from skimage.measure import compare_ssim
 from sklearn.metrics.pairwise import cosine_similarity
+from element_detection.Element import Element
 
 
 def dhash(image):
@@ -31,7 +32,7 @@ def calc_similarity_hash(hash1, hash2):
     return 1 - n / len(hash1)
 
 
-def calc_similarity_sift_or_surf(img1, img2, method, ratio=1.5, draw_match=False):
+def calc_similarity_sift_or_surf_or_orb(img1, img2, method, ratio=1.5, draw_match=False):
     if method == 'sift':
         sift = cv2.xfeatures2d.SIFT_create()
         # find the keypoints and descriptors with SIFT
@@ -43,6 +44,12 @@ def calc_similarity_sift_or_surf(img1, img2, method, ratio=1.5, draw_match=False
         # find the keypoints and descriptors with SURF
         kp1, des1 = surf.detectAndCompute(img1, None)
         kp2, des2 = surf.detectAndCompute(img2, None)
+    elif method == 'orb':
+        # Initiate ORB detector
+        orb = cv2.ORB_create()
+        # find the keypoints and descriptors with ORB
+        kp1, des1 = orb.detectAndCompute(img1, None)
+        kp2, des2 = orb.detectAndCompute(img2, None)
     else:
         print('set method as either sift or surf')
         return
@@ -55,7 +62,7 @@ def calc_similarity_sift_or_surf(img1, img2, method, ratio=1.5, draw_match=False
     # If there's a big difference between the best and second-best matches, this to be a quality match.
     valid_matches = []
     for best, second in matches:
-        if second.distance / best.distance > ratio:
+        if second.distance > ratio * best.distance:
             valid_matches.append(best)
 
     if draw_match:
@@ -91,9 +98,9 @@ def image_similarity(img1, img2, method='dhash', is_gray=False,
         else:
             similarity = compare_ssim(img1, img2, multichannel=multi_channel)
     elif method == 'sift':
-        similarity = calc_similarity_sift_or_surf(img1, img2, 'sift', match_distance_ratio, draw_match=draw_match)
+        similarity = calc_similarity_sift_or_surf_or_orb(img1, img2, 'sift', match_distance_ratio, draw_match=draw_match)
     elif method == 'surf':
-        similarity = calc_similarity_sift_or_surf(img1, img2, 'surf', match_distance_ratio, draw_match=draw_match)
+        similarity = calc_similarity_sift_or_surf_or_orb(img1, img2, 'surf', match_distance_ratio, draw_match=draw_match)
     elif method == 'resnet':
         shape = (32, 32)
         img1 = cv2.resize(img1, shape)
@@ -131,8 +138,46 @@ def image_similarity_matrix(images1, images2, method='resnet', resnet_model=None
                 sim_row.append(calc_similarity_hash(h1, h2))
             sim_matrix.append(sim_row)
         sim_matrix = np.array(sim_matrix)
+    elif method == 'sift':
+        for img1 in images1:
+            sim_row = []
+            for img2 in images2:
+                sim_row.append(calc_similarity_sift_or_surf_or_orb(img1, img2, method='sift'))
+            sim_matrix.append(sim_row)
+        sim_matrix = np.array(sim_matrix)
+    elif method == 'orb':
+        for img1 in images1:
+            sim_row = []
+            for img2 in images2:
+                sim_row.append(calc_similarity_sift_or_surf_or_orb(img1, img2, method='orb'))
+            sim_matrix.append(sim_row)
+        sim_matrix = np.array(sim_matrix)
+    elif method == 'template-match':
+        sim_matrix = np.array(sim_matrix)
     return sim_matrix
 
 
 def text_similarity(text1, text2):
     return SequenceMatcher(None, text1, text2).ratio()
+
+
+def match_element_template_matching(gui_img, target_ele_img, show=False):
+    img_gray = cv2.cvtColor(gui_img, cv2.COLOR_BGR2GRAY)
+    target_img_gray = cv2.cvtColor(target_ele_img, cv2.COLOR_BGR2GRAY)
+    w, h = target_img_gray.shape[::-1]
+
+    # methods = [cv2.TM_CCOEFF, cv2.TM_CCOEFF_NORMED, cv2.TM_CCORR, cv2.TM_CCORR_NORMED, cv2.TM_SQDIFF, cv2.TM_SQDIFF_NORMED]
+    method = cv2.TM_CCOEFF_NORMED
+    res = cv2.matchTemplate(img_gray, target_img_gray, method)
+    min_val, max_val, min_loc, max_loc = cv2.minMaxLoc(res)
+    if method in [cv2.TM_SQDIFF, cv2.TM_SQDIFF_NORMED]:
+        top_left = min_loc
+    else:
+        top_left = max_loc
+    bottom_right = (top_left[0] + w, top_left[1] + h)
+
+    element = Element(element_id=100, category='Compo', position={'column_min':top_left[0], 'row_min':top_left[1], 'column_max':bottom_right[0], 'row_max':bottom_right[1]})
+    if show:
+        board = gui_img.copy()
+        element.draw_element(board, show=True)
+    return element

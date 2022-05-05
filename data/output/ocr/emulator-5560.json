@@ -1,0 +1,199 @@
+{
+    "img_shape": [
+        800,
+        480,
+        3
+    ],
+    "texts": [
+        {
+            "id": 0,
+            "content": "2:27 `J (\"'",
+            "column_min": 13,
+            "row_min": 10,
+            "column_max": 122,
+            "row_max": 27,
+            "width": 109,
+            "height": 17
+        },
+        {
+            "id": 1,
+            "content": "SAI",
+            "column_min": 402,
+            "row_min": 5,
+            "column_max": 470,
+            "row_max": 29,
+            "width": 68,
+            "height": 24
+        },
+        {
+            "id": 2,
+            "content": "Q Search apps",
+            "column_min": 157,
+            "row_min": 93,
+            "column_max": 327,
+            "row_max": 124,
+            "width": 170,
+            "height": 31
+        },
+        {
+            "id": 3,
+            "content": "Booking.",
+            "column_min": 250,
+            "row_min": 256,
+            "column_max": 337,
+            "row_max": 280,
+            "width": 87,
+            "height": 24
+        },
+        {
+            "id": 4,
+            "content": "AdGuard",
+            "column_min": 39,
+            "row_min": 259,
+            "column_max": 112,
+            "row_max": 276,
+            "width": 73,
+            "height": 17
+        },
+        {
+            "id": 5,
+            "content": "Anemo",
+            "column_min": 155,
+            "row_min": 260,
+            "column_max": 216,
+            "row_max": 277,
+            "width": 61,
+            "height": 17
+        },
+        {
+            "id": 6,
+            "content": "Calendar",
+            "column_min": 367,
+            "row_min": 258,
+            "column_max": 443,
+            "row_max": 278,
+            "width": 76,
+            "height": 20
+        },
+        {
+            "id": 7,
+            "content": "Camera",
+            "column_min": 42,
+            "row_min": 403,
+            "column_max": 108,
+            "row_max": 423,
+            "width": 66,
+            "height": 20
+        },
+        {
+            "id": 8,
+            "content": "Clock",
+            "column_min": 160,
+            "row_min": 403,
+            "column_max": 208,
+            "row_max": 421,
+            "width": 48,
+            "height": 18
+        },
+        {
+            "id": 9,
+            "content": "Contacts",
+            "column_min": 257,
+            "row_min": 404,
+            "column_max": 332,
+            "row_max": 421,
+            "width": 75,
+            "height": 17
+        },
+        {
+            "id": 10,
+            "content": "Currenci.",
+            "column_min": 364,
+            "row_min": 403,
+            "column_max": 444,
+            "row_max": 421,
+            "width": 80,
+            "height": 18
+        },
+        {
+            "id": 11,
+            "content": "Diaguard",
+            "column_min": 37,
+            "row_min": 545,
+            "column_max": 113,
+            "row_max": 568,
+            "width": 76,
+            "height": 23
+        },
+        {
+            "id": 12,
+            "content": "DuckDu..",
+            "column_min": 146,
+            "row_min": 547,
+            "column_max": 221,
+            "row_max": 564,
+            "width": 75,
+            "height": 17
+        },
+        {
+            "id": 13,
+            "content": "Files",
+            "column_min": 274,
+            "row_min": 547,
+            "column_max": 316,
+            "row_max": 565,
+            "width": 42,
+            "height": 18
+        },
+        {
+            "id": 14,
+            "content": "Gallery",
+            "column_min": 373,
+            "row_min": 544,
+            "column_max": 434,
+            "row_max": 568,
+            "width": 61,
+            "height": 24
+        },
+        {
+            "id": 15,
+            "content": "Gallery",
+            "column_min": 45,
+            "row_min": 688,
+            "column_max": 104,
+            "row_max": 712,
+            "width": 59,
+            "height": 24
+        },
+        {
+            "id": 16,
+            "content": "Keep",
+            "column_min": 272,
+            "row_min": 690,
+            "column_max": 316,
+            "row_max": 712,
+            "width": 44,
+            "height": 22
+        },
+        {
+            "id": 17,
+            "content": "Investing",
+            "column_min": 145,
+            "row_min": 691,
+            "column_max": 224,
+            "row_max": 710,
+            "width": 79,
+            "height": 19
+        },
+        {
+            "id": 18,
+            "content": "Kindle",
+            "column_min": 362,
+            "row_min": 690,
+            "column_max": 445,
+            "row_max": 708,
+            "width": 83,
+            "height": 18
+        }
+    ]
+}

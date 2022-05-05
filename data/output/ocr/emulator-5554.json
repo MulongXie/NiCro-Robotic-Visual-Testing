@@ -1,129 +1,289 @@
 {
     "img_shape": [
-        2280,
-        1080,
+        2480,
+        2200,
         3
     ],
     "texts": [
         {
             "id": 0,
-            "content": "10:38S",
-            "column_min": 27,
-            "row_min": 52,
-            "column_max": 190,
-            "row_max": 86,
-            "width": 163,
-            "height": 34
+            "content": "2:25",
+            "column_min": 12,
+            "row_min": 5,
+            "column_max": 291,
+            "row_max": 65,
+            "width": 279,
+            "height": 60
         },
         {
             "id": 1,
-            "content": "Booking.com",
-            "column_min": 207,
-            "row_min": 216,
-            "column_max": 548,
-            "row_max": 283,
-            "width": 341,
-            "height": 67
+            "content": "QSearch apps",
+            "column_min": 952,
+            "row_min": 162,
+            "column_max": 1251,
+            "row_max": 215,
+            "width": 299,
+            "height": 53
         },
         {
             "id": 2,
-            "content": "Get the latest COVID-19 travel advice",
-            "column_min": 41,
-            "row_min": 380,
-            "column_max": 781,
-            "row_max": 425,
-            "width": 740,
-            "height": 45
+            "content": "O",
+            "column_min": 1884,
+            "row_min": 411,
+            "column_max": 1938,
+            "row_max": 442,
+            "width": 54,
+            "height": 31
         },
         {
             "id": 3,
-            "content": "Stays",
-            "column_min": 246,
-            "row_min": 658,
-            "column_max": 338,
-            "row_max": 701,
-            "width": 92,
-            "height": 43
+            "content": "Booking.com",
+            "column_min": 987,
+            "row_min": 521,
+            "column_max": 1205,
+            "row_max": 574,
+            "width": 218,
+            "height": 53
         },
         {
             "id": 4,
-            "content": "Car rental",
-            "column_min": 718,
-            "row_min": 663,
-            "column_max": 858,
-            "row_max": 696,
-            "width": 140,
-            "height": 33
+            "content": "AdGuard",
+            "column_min": 208,
+            "row_min": 522,
+            "column_max": 357,
+            "row_max": 571,
+            "width": 149,
+            "height": 49
         },
         {
             "id": 5,
-            "content": "Search",
-            "column_min": 43,
-            "row_min": 796,
-            "column_max": 212,
-            "row_max": 838,
-            "width": 169,
-            "height": 42
+            "content": "Anemo",
+            "column_min": 631,
+            "row_min": 530,
+            "column_max": 746,
+            "row_max": 568,
+            "width": 115,
+            "height": 38
         },
         {
             "id": 6,
-            "content": "Hotels, motels, apartments and more..",
-            "column_min": 38,
-            "row_min": 867,
-            "column_max": 796,
-            "row_max": 919,
-            "width": 758,
-            "height": 52
+            "content": "Calendar",
+            "column_min": 1431,
+            "row_min": 524,
+            "column_max": 1576,
+            "row_max": 568,
+            "width": 145,
+            "height": 44
         },
         {
             "id": 7,
-            "content": "QSydney",
-            "column_min": 81,
-            "row_min": 1013,
-            "column_max": 302,
-            "row_max": 1067,
-            "width": 221,
-            "height": 54
+            "content": "Camera",
+            "column_min": 1859,
+            "row_min": 530,
+            "column_max": 1981,
+            "row_max": 568,
+            "width": 122,
+            "height": 38
         },
         {
             "id": 8,
-            "content": "[=]Sat, Apr 30 - Sun, May 01",
-            "column_min": 77,
-            "row_min": 1161,
-            "column_max": 618,
-            "row_max": 1231,
-            "width": 541,
-            "height": 70
+            "content": "Contacts",
+            "column_min": 611,
+            "row_min": 914,
+            "column_max": 762,
+            "row_max": 956,
+            "width": 151,
+            "height": 42
         },
         {
             "id": 9,
-            "content": "Search",
-            "column_min": 470,
-            "row_min": 1484,
-            "column_max": 610,
-            "row_max": 1527,
-            "width": 140,
-            "height": 43
+            "content": "Currencies",
+            "column_min": 1008,
+            "row_min": 914,
+            "column_max": 1187,
+            "row_max": 958,
+            "width": 179,
+            "height": 44
         },
         {
             "id": 10,
-            "content": "l'm traveling for work",
-            "column_min": 46,
-            "row_min": 1670,
-            "column_max": 410,
-            "row_max": 1703,
-            "width": 364,
-            "height": 33
+            "content": "Clock",
+            "column_min": 234,
+            "row_min": 917,
+            "column_max": 328,
+            "row_max": 956,
+            "width": 94,
+            "height": 39
         },
         {
             "id": 11,
-            "content": "More for you",
-            "column_min": 41,
-            "row_min": 1866,
-            "column_max": 295,
-            "row_max": 1917,
-            "width": 254,
-            "height": 51
+            "content": "Diaguard",
+            "column_min": 1431,
+            "row_min": 914,
+            "column_max": 1579,
+            "row_max": 961,
+            "width": 148,
+            "height": 47
+        },
+        {
+            "id": 12,
+            "content": "DuckDuckGo",
+            "column_min": 1813,
+            "row_min": 917,
+            "column_max": 2017,
+            "row_max": 953,
+            "width": 204,
+            "height": 36
+        },
+        {
+            "id": 13,
+            "content": "Gallery",
+            "column_min": 625,
+            "row_min": 1296,
+            "column_max": 747,
+            "row_max": 1352,
+            "width": 122,
+            "height": 56
+        },
+        {
+            "id": 14,
+            "content": "Files",
+            "column_min": 234,
+            "row_min": 1302,
+            "column_max": 323,
+            "row_max": 1348,
+            "width": 89,
+            "height": 46
+        },
+        {
+            "id": 15,
+            "content": "Gallery",
+            "column_min": 1038,
+            "row_min": 1296,
+            "column_max": 1155,
+            "row_max": 1352,
+            "width": 117,
+            "height": 56
+        },
+        {
+            "id": 16,
+            "content": "Investing",
+            "column_min": 1431,
+            "row_min": 1304,
+            "column_max": 1579,
+            "row_max": 1346,
+            "width": 148,
+            "height": 42
+        },
+        {
+            "id": 17,
+            "content": "Keep",
+            "column_min": 1871,
+            "row_min": 1304,
+            "column_max": 1962,
+            "row_max": 1352,
+            "width": 91,
+            "height": 48
+        },
+        {
+            "id": 18,
+            "content": "Kindle",
+            "column_min": 190,
+            "row_min": 1686,
+            "column_max": 367,
+            "row_max": 1739,
+            "width": 177,
+            "height": 53
+        },
+        {
+            "id": 19,
+            "content": "Messaging",
+            "column_min": 1006,
+            "row_min": 1695,
+            "column_max": 1192,
+            "row_max": 1739,
+            "width": 186,
+            "height": 44
+        },
+        {
+            "id": 20,
+            "content": "Maps",
+            "column_min": 639,
+            "row_min": 1697,
+            "column_max": 733,
+            "row_max": 1736,
+            "width": 94,
+            "height": 39
+        },
+        {
+            "id": 21,
+            "content": "Microsoft Bing",
+            "column_min": 1383,
+            "row_min": 1695,
+            "column_max": 1630,
+            "row_max": 1739,
+            "width": 247,
+            "height": 44
+        },
+        {
+            "id": 22,
+            "content": "Music Player",
+            "column_min": 1816,
+            "row_min": 1697,
+            "column_max": 2017,
+            "row_max": 1733,
+            "width": 201,
+            "height": 36
+        },
+        {
+            "id": 23,
+            "content": "Phone",
+            "column_min": 226,
+            "row_min": 2081,
+            "column_max": 334,
+            "row_max": 2127,
+            "width": 108,
+            "height": 46
+        },
+        {
+            "id": 24,
+            "content": "Pocket Paint",
+            "column_min": 588,
+            "row_min": 2085,
+            "column_max": 792,
+            "row_max": 2121,
+            "width": 204,
+            "height": 36
+        },
+        {
+            "id": 25,
+            "content": "Search",
+            "column_min": 1036,
+            "row_min": 2079,
+            "column_max": 1159,
+            "row_max": 2124,
+            "width": 123,
+            "height": 45
+        },
+        {
+            "id": 26,
+            "content": "Settings",
+            "column_min": 1436,
+            "row_min": 2082,
+            "column_max": 1576,
+            "row_max": 2126,
+            "width": 140,
+            "height": 44
+        },
+        {
+            "id": 27,
+            "content": "StreetComplete",
+            "column_min": 1793,
+            "row_min": 2087,
+            "column_max": 2042,
+            "row_max": 2121,
+            "width": 249,
+            "height": 34
         }
     ]
 }

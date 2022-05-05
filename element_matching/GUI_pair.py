@@ -118,6 +118,34 @@ class GUIPair:
         else:
             return None
 
+    def match_target_element_test(self, target_element, method='sift', show=False):
+        if target_element.category == 'Text':
+            compared_elements = self.gui2.ele_texts
+        else:
+            compared_elements = self.gui2.ele_compos
+        matched_element = None
+        similarities = None
+        max_sim = None
+        if method == 'sift':
+            similarities = matching.image_similarity_matrix([target_element.clip], [e.clip for e in compared_elements], method='sift')[0]
+            matched_element = compared_elements[np.argmax(similarities)]
+            max_sim = [np.max(similarities)]
+        elif method == 'orb':
+            similarities = matching.image_similarity_matrix([target_element.clip], [e.clip for e in compared_elements], method='orb')[0]
+            matched_element = compared_elements[np.argmax(similarities)]
+            max_sim = [np.max(similarities)]
+        elif method == 'resnet':
+            similarities = matching.image_similarity_matrix([target_element.clip], [e.clip for e in compared_elements], method='resnet', resnet_model=self.resnet_model)[0]
+            matched_element = compared_elements[np.argmax(similarities)]
+            max_sim = [np.max(similarities)]
+        elif method == 'template-match':
+            matched_element = matching.match_element_template_matching(self.gui2.img, target_element.clip)
+        elif method == 'text':
+            matched_element = self.match_by_text(target_element, compared_elements)
+
+        if show:
+            self.show_target_and_matched_elements(target_element, [matched_element], max_sim)
+
     '''
     *********************
     *** Visualization ***
