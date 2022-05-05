@@ -47,7 +47,7 @@ class GUI:
         if is_nontext:
             os.makedirs(pjoin(self.output_dir, 'ip'), exist_ok=True)
             import element_detection.detect_compo.ip_region_proposal as ip
-            key_params = {'min-grad': 6, 'ffl-block': 5, 'min-ele-area': 100, 'merge-contained-ele': False}
+            key_params = {'min-grad': 6, 'ffl-block': 5, 'min-ele-area': 50, 'merge-contained-ele': False}
             self.det_result_imgs['non-text'] = ip.compo_detection(self.img_path, self.output_dir, key_params, resize_by_height=self.detection_resize_height, adaptive_binarization=False)
         if is_merge:
             os.makedirs(pjoin(self.output_dir, 'merge'), exist_ok=True)

@@ -1,39 +1,189 @@
 {
     "img_shape": [
-        560,
-        480,
+        820,
+        540,
         3
     ],
     "texts": [
         {
             "id": 0,
-            "content": "BAO",
-            "column_min": 150,
-            "row_min": 59,
-            "column_max": 258,
-            "row_max": 87,
-            "width": 108,
-            "height": 28
+            "content": "7:18pm",
+            "column_min": 269,
+            "row_min": 25,
+            "column_max": 318,
+            "row_max": 42,
+            "width": 49,
+            "height": 17
         },
         {
             "id": 1,
-            "content": "Protection is on",
-            "column_min": 133,
-            "row_min": 100,
-            "column_max": 275,
-            "row_max": 119,
-            "width": 142,
-            "height": 19
+            "content": "WIS ON",
+            "column_min": 95,
+            "row_min": 27,
+            "column_max": 153,
+            "row_max": 40,
+            "width": 58,
+            "height": 13
         },
         {
             "id": 2,
-            "content": "O",
-            "column_min": 284,
-            "row_min": 422,
-            "column_max": 322,
-            "row_max": 439,
-            "width": 38,
+            "content": "78%",
+            "column_min": 445,
+            "row_min": 25,
+            "column_max": 476,
+            "row_max": 38,
+            "width": 31,
+            "height": 13
+        },
+        {
+            "id": 3,
+            "content": "ERewards&Wallet",
+            "column_min": 131,
+            "row_min": 169,
+            "column_max": 280,
+            "row_max": 182,
+            "width": 149,
+            "height": 13
+        },
+        {
+            "id": 4,
+            "content": "Q",
+            "column_min": 110,
+            "row_min": 221,
+            "column_max": 136,
+            "row_max": 241,
+            "width": 26,
+            "height": 20
+        },
+        {
+            "id": 5,
+            "content": "Saved",
+            "column_min": 143,
+            "row_min": 225,
+            "column_max": 197,
+            "row_max": 241,
+            "width": 54,
+            "height": 16
+        },
+        {
+            "id": 6,
+            "content": "3",
+            "column_min": 112,
+            "row_min": 283,
+            "column_max": 137,
+            "row_max": 299,
+            "width": 25,
+            "height": 16
+        },
+        {
+            "id": 7,
+            "content": "Gift cards",
+            "column_min": 130,
+            "row_min": 283,
+            "column_max": 222,
+            "row_max": 300,
+            "width": 92,
             "height": 17
+        },
+        {
+            "id": 8,
+            "content": "Reviews",
+            "column_min": 130,
+            "row_min": 340,
+            "column_max": 210,
+            "row_max": 357,
+            "width": 80,
+            "height": 17
+        },
+        {
+            "id": 9,
+            "content": "EO",
+            "column_min": 113,
+            "row_min": 396,
+            "column_max": 134,
+            "row_max": 414,
+            "width": 21,
+            "height": 18
+        },
+        {
+            "id": 10,
+            "content": "Questions to properties",
+            "column_min": 145,
+            "row_min": 397,
+            "column_max": 324,
+            "row_max": 415,
+            "width": 179,
+            "height": 18
+        },
+        {
+            "id": 11,
+            "content": "Help and support",
+            "column_min": 105,
+            "row_min": 452,
+            "column_max": 229,
+            "row_max": 470,
+            "width": 124,
+            "height": 18
+        },
+        {
+            "id": 12,
+            "content": "Safety resourcecentre",
+            "column_min": 131,
+            "row_min": 568,
+            "column_max": 317,
+            "row_max": 581,
+            "width": 186,
+            "height": 13
+        },
+        {
+            "id": 13,
+            "content": "Discover",
+            "column_min": 103,
+            "row_min": 621,
+            "column_max": 168,
+            "row_max": 640,
+            "width": 65,
+            "height": 19
+        },
+        {
+            "id": 14,
+            "content": "2",
+            "column_min": 229,
+            "row_min": 714,
+            "column_max": 256,
+            "row_max": 735,
+            "width": 27,
+            "height": 21
+        },
+        {
+            "id": 15,
+            "content": "c",
+            "column_min": 332,
+            "row_min": 716,
+            "column_max": 358,
+            "row_max": 737,
+            "width": 26,
+            "height": 21
+        },
+        {
+            "id": 16,
+            "content": "seard",
+            "column_min": 125,
+            "row_min": 744,
+            "column_max": 151,
+            "row_max": 755,
+            "width": 26,
+            "height": 11
+        },
+        {
+            "id": 17,
+            "content": "Saved",
+            "column_min": 229,
+            "row_min": 744,
+            "column_max": 257,
+            "row_max": 754,
+            "width": 28,
+            "height": 10
         }
     ]
 }
