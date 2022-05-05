@@ -7,23 +7,23 @@
     "texts": [
         {
             "id": 0,
-            "content": "3:03*MGY",
-            "column_min": 20,
+            "content": "3:33*MGY",
+            "column_min": 18,
             "row_min": 12,
             "column_max": 336,
             "row_max": 52,
-            "width": 316,
+            "width": 318,
             "height": 40
         },
         {
             "id": 1,
             "content": "Anemo",
-            "column_min": 284,
+            "column_min": 283,
             "row_min": 448,
-            "column_max": 389,
-            "row_max": 482,
+            "column_max": 388,
+            "row_max": 480,
             "width": 105,
-            "height": 34
+            "height": 32
         },
         {
             "id": 2,
@@ -78,15 +78,25 @@
         {
             "id": 7,
             "content": "8",
-            "column_min": 524,
-            "row_min": 580,
-            "column_max": 560,
-            "row_max": 616,
-            "width": 36,
-            "height": 36
+            "column_min": 521,
+            "row_min": 577,
+            "column_max": 559,
+            "row_max": 619,
+            "width": 38,
+            "height": 42
         },
         {
             "id": 8,
+            "content": "Chrome",
+            "column_min": 79,
+            "row_min": 700,
+            "column_max": 191,
+            "row_max": 734,
+            "width": 112,
+            "height": 34
+        },
+        {
+            "id": 9,
             "content": "Clock",
             "column_min": 298,
             "row_min": 702,
@@ -96,24 +106,14 @@
             "height": 28
         },
         {
-            "id": 9,
-            "content": "Chrome",
-            "column_min": 81,
-            "row_min": 704,
-            "column_max": 191,
-            "row_max": 732,
-            "width": 110,
-            "height": 28
-        },
-        {
             "id": 10,
             "content": "Contacts",
-            "column_min": 478,
-            "row_min": 706,
-            "column_max": 600,
-            "row_max": 728,
-            "width": 122,
-            "height": 22
+            "column_min": 476,
+            "row_min": 702,
+            "column_max": 602,
+            "row_max": 730,
+            "width": 126,
+            "height": 28
         },
         {
             "id": 11,
@@ -140,9 +140,9 @@
             "content": "DuckDuck.",
             "column_min": 256,
             "row_min": 954,
-            "column_max": 411,
+            "column_max": 413,
             "row_max": 982,
-            "width": 155,
+            "width": 157,
             "height": 28
         },
         {

@@ -1,4 +1,6 @@
 import cv2
+import numpy as np
+
 from Device import Device
 from element_matching.GUI_pair import GUIPair
 from Robot import Robot
@@ -29,6 +31,9 @@ class NiCro:
         self.resnet_model = resnet_model    # resnet encoder for image matching
 
         self.robot = None
+
+        self.widget_matching_acc = {'sift':[], 'resnet':[], 'template-match':[], 'text':[], 'nicro':[]}
+        self.test_round = 0
 
     def load_devices(self):
         self.devices = [Device(i, dev) for i, dev in enumerate(client.devices())]
@@ -159,18 +164,35 @@ class NiCro:
         cv2.waitKey()
         cv2.destroyWindow(win_name)
 
+    '''
+    ****************************
+    *** Test Widget Matching ***
+    ****************************
+    '''
+    def reset_matching_accuracy(self):
+        self.test_round = 0
+        device_num = len(self.devices) + 1 if self.robot is not None else len(self.devices)
+        for method in self.widget_matching_acc:
+            self.widget_matching_acc[method] = np.zeros(device_num)
+
     def match_widgets_cross_device(self, method):
         '''
         :param method: 'sift', 'orb', 'resnet', 'template-match', 'text', 'nicro'
         '''
-        print('*** Matching Method: %s ***' % method)
-        for dev in self.devices:
-            print('Device:', dev.name)
+        print('*** Matching Method: %s in Test Round %d ***' % (method, self.test_round))
+        for i, dev in enumerate(self.devices):
+            if dev.name == self.source_device.name:
+                continue
             gui_matcher = GUIPair(self.source_device.GUI, dev.GUI, self.resnet_model)
             if method == 'nicro':
-                gui_matcher.match_target_element(self.target_element)
+                matched_element = gui_matcher.match_target_element(self.target_element, show=False)
             else:
-                gui_matcher.match_target_element_test(self.target_element, method=method, show=True)
+                matched_element = gui_matcher.match_target_element_test(self.target_element, method=method, show=False)
+            key = gui_matcher.show_target_and_matched_elements(self.target_element, [matched_element])
+            # correct matching
+            if key == ord('a'):
+                self.widget_matching_acc[method][i] += 1
+            print('Device:', dev.name, self.widget_matching_acc[method])
 
     def click_to_match_widgets_cross_devices(self):
         s_dev = self.source_device
@@ -189,11 +211,13 @@ class NiCro:
                 self.action['coordinate'][0] = (x_app, y_app)
             # Lift button
             elif event == cv2.EVENT_LBUTTONUP:
-                print('\n****** Tap (%d, %d) ******' % (self.action['coordinate'][0][0], self.action['coordinate'][0][1]))
+                self.test_round += 1
+                print('\n****** Test Round: %d ******' % self.test_round)
                 self.target_element = self.source_device.find_element_by_coordinate(self.action['coordinate'][0][0], self.action['coordinate'][0][1], show=False)
                 methods = ['sift', 'resnet', 'template-match', 'text', 'nicro']
                 for method in methods:
                     self.match_widgets_cross_device(method)
+                print(self.widget_matching_acc)
                 params[0] = s_dev.GUI.det_result_imgs['merge'].copy()
                 cv2.imshow(win_name, params[0])
 

@@ -18,11 +18,11 @@
         {
             "id": 2,
             "class": "Compo",
-            "column_min": 30,
+            "column_min": 29,
             "row_min": 10,
             "column_max": 52,
             "row_max": 27,
-            "width": 22,
+            "width": 23,
             "height": 17
         },
         {

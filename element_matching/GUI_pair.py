@@ -159,6 +159,7 @@ class GUIPair:
                 self.show_target_and_matched_elements(target_element, [matched_element], max_sim)
             else:
                 self.show_target_and_matched_elements(target_element, [], None)
+        return matched_element
 
     '''
     *********************
@@ -179,12 +180,15 @@ class GUIPair:
         board2 = self.gui2.img.copy()
         target.draw_element(board1, show=False)
         for i, ele in enumerate(matched_elements):
+            if ele is None:
+                continue
             text = None
             if similarities is not None:
                 text = similarities[i]
             ele.draw_element(board2, put_text=text, show=False)
         cv2.imshow('Target', board1)
         cv2.imshow('Matched Elements', board2)
-        cv2.waitKey()
+        key = cv2.waitKey()
         cv2.destroyWindow('Target')
         cv2.destroyWindow('Matched Elements')
+        return key
