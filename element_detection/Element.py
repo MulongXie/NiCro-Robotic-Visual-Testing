@@ -29,8 +29,12 @@ class Element:
         self.aspect_ratio = round(self.width / self.height)
         self.area = self.width * self.height
 
-    def get_clip(self, org_img):
+    def get_clip(self, org_img, bias=3):
         left, right, top, bottom = int(self.col_min), int(self.col_max), int(self.row_min), int(self.row_max)
+        left = max(0, left - bias)
+        right = min(org_img.shape[1], right + bias)
+        top = max(0, top - bias)
+        bottom = min(org_img.shape[0], bottom + bias)
         self.clip = org_img[top: bottom, left: right]
 
     def resize_bound(self, resize_ratio_col, resize_ratio_row):
