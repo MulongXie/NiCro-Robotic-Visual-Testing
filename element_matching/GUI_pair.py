@@ -41,7 +41,7 @@ class GUIPair:
     def match_by_text(self, target_element, compare_elements, show=True):
         target_ele_text = target_element.text_content
         if target_ele_text is None:
-            return None
+            return []
         if target_ele_text is not list:
             target_ele_text = [target_ele_text]
         else:
@@ -155,6 +155,7 @@ class GUIPair:
             matched_element = matching.match_element_template_matching(self.gui2.img, target_element.clip)
         elif method == 'text':
             matched_element = self.match_by_text(target_element, compared_elements)
+            if len(matched_element) == 0: matched_element = None
 
         if show:
             if matched_element is not None:
