@@ -976,19 +976,6 @@
         {
             "id": 71,
             "class": "Text",
-            "height": 14,
-            "width": 47,
-            "position": {
-                "column_min": 32,
-                "row_min": 291,
-                "column_max": 79,
-                "row_max": 305
-            },
-            "text_content": "Chrome"
-        },
-        {
-            "id": 72,
-            "class": "Text",
             "height": 12,
             "width": 33,
             "position": {
@@ -998,6 +985,19 @@
                 "row_max": 304
             },
             "text_content": "Clock"
+        },
+        {
+            "id": 72,
+            "class": "Text",
+            "height": 12,
+            "width": 46,
+            "position": {
+                "column_min": 33,
+                "row_min": 293,
+                "column_max": 79,
+                "row_max": 305
+            },
+            "text_content": "Chrome"
         },
         {
             "id": 73,
@@ -1042,11 +1042,11 @@
             "id": 76,
             "class": "Text",
             "height": 12,
-            "width": 65,
+            "width": 66,
             "position": {
                 "column_min": 106,
                 "row_min": 397,
-                "column_max": 171,
+                "column_max": 172,
                 "row_max": 409
             },
             "text_content": "DuckDuck."

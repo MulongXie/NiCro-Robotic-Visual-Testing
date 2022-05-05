@@ -7,12 +7,12 @@
     "texts": [
         {
             "id": 0,
-            "content": "2:27 & M G Y",
+            "content": "2:44 # M G Y",
             "column_min": 20,
-            "row_min": 10,
-            "column_max": 334,
-            "row_max": 50,
-            "width": 314,
+            "row_min": 12,
+            "column_max": 336,
+            "row_max": 52,
+            "width": 316,
             "height": 40
         },
         {
@@ -77,26 +77,6 @@
         },
         {
             "id": 7,
-            "content": "8",
-            "column_min": 521,
-            "row_min": 577,
-            "column_max": 561,
-            "row_max": 619,
-            "width": 40,
-            "height": 42
-        },
-        {
-            "id": 8,
-            "content": "Chrome",
-            "column_min": 79,
-            "row_min": 700,
-            "column_max": 191,
-            "row_max": 734,
-            "width": 112,
-            "height": 34
-        },
-        {
-            "id": 9,
             "content": "Clock",
             "column_min": 298,
             "row_min": 702,
@@ -106,7 +86,17 @@
             "height": 28
         },
         {
-            "id": 10,
+            "id": 8,
+            "content": "Chrome",
+            "column_min": 81,
+            "row_min": 704,
+            "column_max": 191,
+            "row_max": 732,
+            "width": 110,
+            "height": 28
+        },
+        {
+            "id": 9,
             "content": "Contacts",
             "column_min": 478,
             "row_min": 706,
@@ -116,7 +106,7 @@
             "height": 22
         },
         {
-            "id": 11,
+            "id": 10,
             "content": "Currencies",
             "column_min": 667,
             "row_min": 706,
@@ -126,7 +116,7 @@
             "height": 22
         },
         {
-            "id": 12,
+            "id": 11,
             "content": "Diaguard",
             "column_min": 878,
             "row_min": 702,
@@ -136,17 +126,17 @@
             "height": 34
         },
         {
-            "id": 13,
+            "id": 12,
             "content": "DuckDuck.",
             "column_min": 256,
             "row_min": 954,
-            "column_max": 411,
+            "column_max": 413,
             "row_max": 982,
-            "width": 155,
+            "width": 157,
             "height": 28
         },
         {
-            "id": 14,
+            "id": 13,
             "content": "Files",
             "column_min": 707,
             "row_min": 954,
@@ -156,7 +146,7 @@
             "height": 30
         },
         {
-            "id": 15,
+            "id": 14,
             "content": "Drive",
             "column_min": 101,
             "row_min": 956,
@@ -166,7 +156,7 @@
             "height": 28
         },
         {
-            "id": 16,
+            "id": 15,
             "content": "Dso",
             "column_min": 514,
             "row_min": 958,
@@ -176,7 +166,7 @@
             "height": 26
         },
         {
-            "id": 17,
+            "id": 16,
             "content": "Gallery",
             "column_min": 893,
             "row_min": 951,
@@ -186,7 +176,7 @@
             "height": 38
         },
         {
-            "id": 18,
+            "id": 17,
             "content": "Gmail",
             "column_min": 93,
             "row_min": 1206,
@@ -196,7 +186,7 @@
             "height": 36
         },
         {
-            "id": 19,
+            "id": 18,
             "content": "Google",
             "column_min": 288,
             "row_min": 1208,
@@ -206,7 +196,7 @@
             "height": 32
         },
         {
-            "id": 20,
+            "id": 19,
             "content": "Google TV",
             "column_min": 464,
             "row_min": 1202,
@@ -216,7 +206,7 @@
             "height": 38
         },
         {
-            "id": 21,
+            "id": 20,
             "content": "Investing",
             "column_min": 673,
             "row_min": 1208,
@@ -226,7 +216,7 @@
             "height": 34
         },
         {
-            "id": 22,
+            "id": 21,
             "content": "Keep",
             "column_min": 905,
             "row_min": 1208,
@@ -236,7 +226,7 @@
             "height": 36
         },
         {
-            "id": 23,
+            "id": 22,
             "content": "Kindle",
             "column_min": 60,
             "row_min": 1456,
@@ -246,7 +236,7 @@
             "height": 36
         },
         {
-            "id": 24,
+            "id": 23,
             "content": "Maps",
             "column_min": 293,
             "row_min": 1457,
@@ -256,7 +246,7 @@
             "height": 38
         },
         {
-            "id": 25,
+            "id": 24,
             "content": "Messages",
             "column_min": 464,
             "row_min": 1460,
@@ -266,7 +256,7 @@
             "height": 34
         },
         {
-            "id": 26,
+            "id": 25,
             "content": "Microsoft..",
             "column_min": 661,
             "row_min": 1462,
@@ -276,7 +266,7 @@
             "height": 28
         },
         {
-            "id": 27,
+            "id": 26,
             "content": "Music Pla..",
             "column_min": 862,
             "row_min": 1458,
@@ -286,7 +276,7 @@
             "height": 34
         },
         {
-            "id": 28,
+            "id": 27,
             "content": "Photos",
             "column_min": 281,
             "row_min": 1707,
@@ -296,7 +286,7 @@
             "height": 42
         },
         {
-            "id": 29,
+            "id": 28,
             "content": "Play Store",
             "column_min": 467,
             "row_min": 1712,
@@ -306,7 +296,7 @@
             "height": 34
         },
         {
-            "id": 30,
+            "id": 29,
             "content": "Pocket Pa..",
             "column_min": 657,
             "row_min": 1712,
@@ -316,7 +306,7 @@
             "height": 34
         },
         {
-            "id": 31,
+            "id": 30,
             "content": "Phone",
             "column_min": 87,
             "row_min": 1714,
@@ -326,7 +316,7 @@
             "height": 30
         },
         {
-            "id": 32,
+            "id": 31,
             "content": "Settings",
             "column_min": 881,
             "row_min": 1708,
@@ -336,7 +326,7 @@
             "height": 40
         },
         {
-            "id": 33,
+            "id": 32,
             "content": "O",
             "column_min": 887,
             "row_min": 1825,

@@ -38,8 +38,10 @@ class GUIPair:
         clips2 = [ele.clip for ele in self.gui2.elements]
         self.image_similarity_matrix = matching.image_similarity_matrix(clips1, clips2, method='resnet', resnet_model=self.resnet_model)
 
-    def match_by_text(self, target_element, compare_elements):
+    def match_by_text(self, target_element, compare_elements, show=True):
         target_ele_text = target_element.text_content
+        if target_ele_text is None:
+            return None
         if target_ele_text is not list:
             target_ele_text = [target_ele_text]
         else:
@@ -49,6 +51,8 @@ class GUIPair:
         is_matched = False
         for tar in target_ele_text:
             for text_ele in compare_elements:
+                if text_ele.text_content is None:
+                    continue
                 sim = SequenceMatcher(None, text_ele.text_content, tar).ratio()
                 if sim > self.min_similarity_text:
                     matched_elements.append(text_ele)
@@ -60,10 +64,11 @@ class GUIPair:
         # sort by similarity
         sorted_id = np.argsort(similarities)[::-1]
         matched_elements = np.array(matched_elements)[sorted_id]
-        self.show_target_and_matched_elements(target_element, matched_elements, similarities=similarities)
+        if show:
+            self.show_target_and_matched_elements(target_element, matched_elements, similarities=similarities)
         return matched_elements
 
-    def match_by_img(self, target_element, compared_elements, hash_check=False):
+    def match_by_img(self, target_element, compared_elements, hash_check=False, show=True):
         # similarities between the target element and all elements in gui2
         resnet_sims = matching.image_similarity_matrix([target_element.clip], [e.clip for e in compared_elements], method='resnet', resnet_model=self.resnet_model)[0]
         # filter by similarity threshold
@@ -73,7 +78,8 @@ class GUIPair:
         matched_elements_id = matched_elements_id[sorted_id]
         # select from the compared_elements
         matched_elements = np.array(compared_elements)[matched_elements_id]
-        self.show_target_and_matched_elements(target_element, matched_elements, similarities=resnet_sims[matched_elements_id])
+        if show:
+            self.show_target_and_matched_elements(target_element, matched_elements, similarities=resnet_sims[matched_elements_id])
 
         # double check by dhash
         if hash_check and len(matched_elements) > 0:
@@ -98,9 +104,9 @@ class GUIPair:
             self.calculate_elements_image_similarity_matrix()
         return matched_elements
 
-    def match_target_element(self, target_element):
+    def match_target_element(self, target_element, show=True):
         if target_element.category == 'Text' or target_element.text_content is not None:
-            matched_elements = self.match_by_text(target_element, self.gui2.ele_texts)
+            matched_elements = self.match_by_text(target_element, self.gui2.ele_texts, show=False)
             if len(matched_elements) > 1:
                 matched_elements = self.match_by_shape(target_element, matched_elements)
             if len(matched_elements) > 1:
@@ -110,10 +116,12 @@ class GUIPair:
         else:
             matched_elements = self.match_by_shape(target_element, self.gui2.ele_compos)
             if len(matched_elements) > 1:
-                matched_elements = self.match_by_img(target_element, matched_elements)
+                matched_elements = self.match_by_img(target_element, matched_elements, show=False)
             # if len(matched_elements) > 1:
             #     matched_elements = self.match_by_neighbour(target_element, matched_elements)
         if len(matched_elements) > 0:
+            if show:
+                self.show_target_and_matched_elements(target_element, [matched_elements[0]])
             return matched_elements[0]
         else:
             return None
@@ -124,7 +132,6 @@ class GUIPair:
         else:
             compared_elements = self.gui2.ele_compos
         matched_element = None
-        similarities = None
         max_sim = None
         if method == 'sift':
             similarities = matching.image_similarity_matrix([target_element.clip], [e.clip for e in compared_elements], method='sift')[0]
@@ -144,7 +151,10 @@ class GUIPair:
             matched_element = self.match_by_text(target_element, compared_elements)
 
         if show:
-            self.show_target_and_matched_elements(target_element, [matched_element], max_sim)
+            if matched_element is not None:
+                self.show_target_and_matched_elements(target_element, [matched_element], max_sim)
+            else:
+                self.show_target_and_matched_elements(target_element, [], None)
 
     '''
     *********************

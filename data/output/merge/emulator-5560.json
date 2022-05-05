@@ -582,14 +582,14 @@
             "id": 42,
             "class": "Text",
             "height": 17,
-            "width": 109,
+            "width": 110,
             "position": {
-                "column_min": 13,
+                "column_min": 12,
                 "row_min": 10,
                 "column_max": 122,
                 "row_max": 27
             },
-            "text_content": "2:27 `J (\"'"
+            "text_content": "2:44S"
         },
         {
             "id": 43,

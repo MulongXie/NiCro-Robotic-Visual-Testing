@@ -70,7 +70,7 @@ def calc_similarity_sift_or_surf_or_orb(img1, img2, method, ratio=1.5, draw_matc
         cv2.imshow('sift match', cv2.resize(board, (int(board.shape[1] * (400 / board.shape[0])), 400)))
         cv2.waitKey()
         cv2.destroyWindow('sift match')
-    return len(valid_matches) / len(kp2)
+    return len(valid_matches) / max(len(kp2), len(kp1))
 
 
 def image_similarity(img1, img2, method='dhash', is_gray=False,

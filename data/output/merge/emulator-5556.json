@@ -697,15 +697,15 @@
         {
             "id": 51,
             "class": "Text",
-            "height": 16,
+            "height": 17,
             "width": 71,
             "position": {
                 "column_min": 6,
-                "row_min": 15,
+                "row_min": 14,
                 "column_max": 77,
                 "row_max": 31
             },
-            "text_content": "2:27 S ("
+            "text_content": "2:44 M "
         },
         {
             "id": 52,
