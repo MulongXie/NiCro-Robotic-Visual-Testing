@@ -18,7 +18,7 @@ resnet_model = ResNet50(include_top=False, input_shape=(32, 32, 3))
 class NiCro:
     def __init__(self, ocr_opt='paddle'):
         # Device objects, including their screenshots and GUIs
-        self.devices = [Device(i, dev) for i, dev in enumerate(client.devices())]
+        self.devices = [Device(i, dev) for i, dev in enumerate(sorted(client.devices(), key=lambda x: x.get_serial_no()))]
         self.source_device = self.devices[0]   # the selected source device
 
         # the action on the GUI
@@ -37,7 +37,7 @@ class NiCro:
         self.test_round = 0
 
     def load_devices(self):
-        self.devices = [Device(i, dev) for i, dev in enumerate(client.devices())]
+        self.devices = [Device(i, dev) for i, dev in enumerate(sorted(client.devices(), key=lambda x: x.get_serial_no()))]
         print('Load %d Device Emulators' % len(self.devices))
 
     def load_robot(self):

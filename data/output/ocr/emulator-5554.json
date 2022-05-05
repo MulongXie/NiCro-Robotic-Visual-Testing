@@ -7,133 +7,193 @@
     "texts": [
         {
             "id": 0,
-            "content": "9:11",
-            "column_min": 15,
-            "row_min": 13,
-            "column_max": 99,
-            "row_max": 49,
-            "width": 84,
-            "height": 36
+            "content": "III",
+            "column_min": 141,
+            "row_min": 16,
+            "column_max": 154,
+            "row_max": 24,
+            "width": 13,
+            "height": 8
         },
         {
             "id": 1,
-            "content": "Booking.com",
-            "column_min": 219,
-            "row_min": 116,
-            "column_max": 543,
-            "row_max": 179,
-            "width": 324,
-            "height": 63
+            "content": "9:41",
+            "column_min": 23,
+            "row_min": 17,
+            "column_max": 86,
+            "row_max": 48,
+            "width": 63,
+            "height": 31
         },
         {
             "id": 2,
-            "content": "Get the latest COVID-19 travel advice",
-            "column_min": 41,
-            "row_min": 289,
-            "column_max": 738,
-            "row_max": 323,
-            "width": 697,
-            "height": 34
+            "content": "Booking.com",
+            "column_min": 230,
+            "row_min": 118,
+            "column_max": 521,
+            "row_max": 179,
+            "width": 291,
+            "height": 61
         },
         {
             "id": 3,
-            "content": "Stays",
-            "column_min": 526,
-            "row_min": 547,
-            "column_max": 612,
-            "row_max": 595,
-            "width": 86,
-            "height": 48
+            "content": "Get the latest COVID 19 travel advice",
+            "column_min": 44,
+            "row_min": 284,
+            "column_max": 739,
+            "row_max": 323,
+            "width": 695,
+            "height": 39
         },
         {
             "id": 4,
-            "content": "Car rental",
-            "column_min": 1558,
-            "row_min": 548,
-            "column_max": 1701,
-            "row_max": 592,
-            "width": 143,
-            "height": 44
+            "content": "Stays",
+            "column_min": 534,
+            "row_min": 552,
+            "column_max": 609,
+            "row_max": 587,
+            "width": 75,
+            "height": 35
         },
         {
             "id": 5,
-            "content": "Search",
-            "column_min": 38,
-            "row_min": 679,
-            "column_max": 209,
-            "row_max": 726,
-            "width": 171,
-            "height": 47
+            "content": "Car rental",
+            "column_min": 1562,
+            "row_min": 552,
+            "column_max": 1694,
+            "row_max": 580,
+            "width": 132,
+            "height": 28
         },
         {
             "id": 6,
-            "content": "Hotels motels apartments and more.",
-            "column_min": 36,
-            "row_min": 752,
-            "column_max": 754,
-            "row_max": 798,
-            "width": 718,
-            "height": 46
+            "content": "Search",
+            "column_min": 44,
+            "row_min": 679,
+            "column_max": 205,
+            "row_max": 724,
+            "width": 161,
+            "height": 45
         },
         {
             "id": 7,
-            "content": "Enter your destination",
-            "column_min": 158,
-            "row_min": 894,
-            "column_max": 530,
-            "row_max": 946,
-            "width": 372,
-            "height": 52
+            "content": "Hotels , motels , apartments and more ...",
+            "column_min": 46,
+            "row_min": 756,
+            "column_max": 757,
+            "row_max": 801,
+            "width": 711,
+            "height": 45
         },
         {
             "id": 8,
-            "content": "Search",
-            "column_min": 1034,
-            "row_min": 1343,
-            "column_max": 1169,
-            "row_max": 1380,
-            "width": 135,
-            "height": 37
+            "content": "Enter your destination",
+            "column_min": 172,
+            "row_min": 901,
+            "column_max": 528,
+            "row_max": 941,
+            "width": 356,
+            "height": 40
         },
         {
             "id": 9,
-            "content": "l'm traveling for work",
-            "column_min": 41,
-            "row_min": 1516,
-            "column_max": 384,
-            "row_max": 1553,
-            "width": 343,
-            "height": 37
+            "content": "Thu , May 05",
+            "column_min": 170,
+            "row_min": 1049,
+            "column_max": 369,
+            "row_max": 1088,
+            "width": 199,
+            "height": 39
         },
         {
             "id": 10,
-            "content": "More for you",
-            "column_min": 38,
-            "row_min": 1713,
-            "column_max": 283,
-            "row_max": 1757,
-            "width": 245,
-            "height": 44
+            "content": "Fri , May 06",
+            "column_min": 404,
+            "row_min": 1049,
+            "column_max": 578,
+            "row_max": 1088,
+            "width": 174,
+            "height": 39
         },
         {
             "id": 11,
-            "content": "Save 15% or more",
-            "column_min": 35,
-            "row_min": 2188,
-            "column_max": 336,
-            "row_max": 2235,
-            "width": 301,
-            "height": 47
+            "content": "room :",
+            "column_min": 200,
+            "row_min": 1196,
+            "column_max": 300,
+            "row_max": 1232,
+            "width": 100,
+            "height": 36
         },
         {
             "id": 12,
+            "content": "adults",
+            "column_min": 344,
+            "row_min": 1194,
+            "column_max": 441,
+            "row_max": 1230,
+            "width": 97,
+            "height": 36
+        },
+        {
+            "id": 13,
+            "content": "children",
+            "column_min": 503,
+            "row_min": 1193,
+            "column_max": 631,
+            "row_max": 1229,
+            "width": 128,
+            "height": 36
+        },
+        {
+            "id": 14,
+            "content": "Search",
+            "column_min": 1037,
+            "row_min": 1344,
+            "column_max": 1163,
+            "row_max": 1380,
+            "width": 126,
+            "height": 36
+        },
+        {
+            "id": 15,
+            "content": "I'm traveling for work",
+            "column_min": 43,
+            "row_min": 1514,
+            "column_max": 384,
+            "row_max": 1556,
+            "width": 341,
+            "height": 42
+        },
+        {
+            "id": 16,
+            "content": "More for you",
+            "column_min": 43,
+            "row_min": 1707,
+            "column_max": 279,
+            "row_max": 1757,
+            "width": 236,
+            "height": 50
+        },
+        {
+            "id": 17,
+            "content": "Save 15 % or more",
+            "column_min": 44,
+            "row_min": 2192,
+            "column_max": 335,
+            "row_max": 2228,
+            "width": 291,
+            "height": 36
+        },
+        {
+            "id": 18,
             "content": "Plan your dream trip with a Getaway",
-            "column_min": 36,
-            "row_min": 2250,
-            "column_max": 632,
-            "row_max": 2297,
-            "width": 596,
-            "height": 47
+            "column_min": 45,
+            "row_min": 2255,
+            "column_max": 630,
+            "row_max": 2298,
+            "width": 585,
+            "height": 43
         }
     ]
 }

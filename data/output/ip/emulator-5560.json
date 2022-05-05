@@ -68,12 +68,12 @@
         {
             "id": 7,
             "class": "Compo",
-            "column_min": 373,
-            "row_min": 12,
-            "column_max": 394,
-            "row_max": 24,
-            "width": 21,
-            "height": 12
+            "column_min": 29,
+            "row_min": 11,
+            "column_max": 41,
+            "row_max": 26,
+            "width": 12,
+            "height": 15
         },
         {
             "id": 8,
