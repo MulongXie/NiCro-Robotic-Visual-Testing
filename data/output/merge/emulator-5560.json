@@ -43,9 +43,9 @@
             "width": 36,
             "position": {
                 "column_min": 29,
-                "row_min": 165,
+                "row_min": 128,
                 "column_max": 65,
-                "row_max": 200
+                "row_max": 163
             }
         },
         {
@@ -55,9 +55,9 @@
             "width": 30,
             "position": {
                 "column_min": 32,
-                "row_min": 240,
+                "row_min": 203,
                 "column_max": 62,
-                "row_max": 267
+                "row_max": 230
             }
         },
         {
@@ -67,9 +67,9 @@
             "width": 30,
             "position": {
                 "column_min": 32,
-                "row_min": 309,
+                "row_min": 272,
                 "column_max": 62,
-                "row_max": 340
+                "row_max": 303
             },
             "children": [
                 6
@@ -82,9 +82,9 @@
             "width": 10,
             "position": {
                 "column_min": 42,
-                "row_min": 316,
+                "row_min": 279,
                 "column_max": 52,
-                "row_max": 334
+                "row_max": 297
             },
             "parent": 5
         },
@@ -95,9 +95,9 @@
             "width": 32,
             "position": {
                 "column_min": 31,
-                "row_min": 380,
+                "row_min": 343,
                 "column_max": 63,
-                "row_max": 412
+                "row_max": 375
             }
         },
         {
@@ -107,9 +107,9 @@
             "width": 30,
             "position": {
                 "column_min": 32,
-                "row_min": 455,
+                "row_min": 418,
                 "column_max": 62,
-                "row_max": 478
+                "row_max": 441
             }
         },
         {
@@ -119,9 +119,9 @@
             "width": 30,
             "position": {
                 "column_min": 32,
-                "row_min": 522,
+                "row_min": 485,
                 "column_max": 62,
-                "row_max": 553
+                "row_max": 516
             }
         },
         {
@@ -131,9 +131,9 @@
             "width": 30,
             "position": {
                 "column_min": 32,
-                "row_min": 597,
+                "row_min": 560,
                 "column_max": 62,
-                "row_max": 621
+                "row_max": 584
             }
         },
         {
@@ -143,9 +143,9 @@
             "width": 27,
             "position": {
                 "column_min": 34,
-                "row_min": 667,
+                "row_min": 630,
                 "column_max": 61,
-                "row_max": 692
+                "row_max": 655
             }
         },
         {
@@ -155,34 +155,34 @@
             "width": 32,
             "position": {
                 "column_min": 31,
-                "row_min": 734,
+                "row_min": 697,
                 "column_max": 63,
-                "row_max": 767
+                "row_max": 730
             }
         },
         {
             "id": 13,
             "class": "Text",
-            "height": 34,
-            "width": 183,
+            "height": 36,
+            "width": 164,
             "position": {
-                "column_min": 115,
+                "column_min": 121,
                 "row_min": 61,
-                "column_max": 298,
-                "row_max": 95
+                "column_max": 285,
+                "row_max": 97
             },
             "text_content": "Booking.com"
         },
         {
             "id": 14,
             "class": "Text",
-            "height": 23,
-            "width": 238,
+            "height": 25,
+            "width": 234,
             "position": {
-                "column_min": 106,
-                "row_min": 169,
-                "column_max": 344,
-                "row_max": 192
+                "column_min": 109,
+                "row_min": 131,
+                "column_max": 343,
+                "row_max": 156
             },
             "text_content": "Sign in or create account"
         },
@@ -190,105 +190,118 @@
             "id": 15,
             "class": "Text",
             "height": 25,
-            "width": 91,
+            "width": 86,
             "position": {
-                "column_min": 106,
-                "row_min": 239,
-                "column_max": 197,
-                "row_max": 264
+                "column_min": 109,
+                "row_min": 203,
+                "column_max": 195,
+                "row_max": 228
             },
             "text_content": "Bookings"
         },
         {
             "id": 16,
             "class": "Text",
-            "height": 21,
+            "height": 22,
             "width": 215,
             "position": {
-                "column_min": 108,
-                "row_min": 312,
-                "column_max": 323,
-                "row_max": 333
+                "column_min": 109,
+                "row_min": 275,
+                "column_max": 324,
+                "row_max": 297
             },
             "text_content": "Customer Service Help"
         },
         {
             "id": 17,
             "class": "Text",
-            "height": 22,
-            "width": 224,
+            "height": 23,
+            "width": 220,
             "position": {
-                "column_min": 105,
-                "row_min": 383,
-                "column_max": 329,
-                "row_max": 405
+                "column_min": 108,
+                "row_min": 344,
+                "column_max": 328,
+                "row_max": 367
             },
             "text_content": "Safety Resource Center"
         },
         {
             "id": 18,
             "class": "Text",
-            "height": 17,
-            "width": 108,
+            "height": 22,
+            "width": 106,
             "position": {
-                "column_min": 108,
-                "row_min": 456,
-                "column_max": 216,
-                "row_max": 473
+                "column_min": 109,
+                "row_min": 417,
+                "column_max": 215,
+                "row_max": 439
             },
             "text_content": "Car Rentals"
         },
         {
             "id": 19,
             "class": "Text",
-            "height": 18,
-            "width": 53,
+            "height": 20,
+            "width": 50,
             "position": {
-                "column_min": 107,
-                "row_min": 527,
-                "column_max": 160,
-                "row_max": 545
+                "column_min": 108,
+                "row_min": 487,
+                "column_max": 158,
+                "row_max": 507
             },
             "text_content": "Deals"
         },
         {
             "id": 20,
             "class": "Text",
-            "height": 20,
-            "width": 158,
+            "height": 22,
+            "width": 154,
             "position": {
-                "column_min": 107,
-                "row_min": 597,
-                "column_max": 265,
-                "row_max": 617
+                "column_min": 109,
+                "row_min": 559,
+                "column_max": 263,
+                "row_max": 581
             },
             "text_content": "Book airport taxi"
         },
         {
             "id": 21,
             "class": "Text",
-            "height": 23,
-            "width": 95,
+            "height": 19,
+            "width": 91,
             "position": {
-                "column_min": 106,
-                "row_min": 665,
-                "column_max": 201,
-                "row_max": 688
+                "column_min": 108,
+                "row_min": 630,
+                "column_max": 199,
+                "row_max": 649
             },
             "text_content": "Wish lists"
         },
         {
             "id": 22,
             "class": "Text",
-            "height": 23,
-            "width": 226,
+            "height": 26,
+            "width": 224,
             "position": {
-                "column_min": 108,
-                "row_min": 738,
-                "column_max": 334,
-                "row_max": 761
+                "column_min": 109,
+                "row_min": 699,
+                "column_max": 333,
+                "row_max": 725
             },
             "text_content": "Genius Loyalty Program"
+        },
+        {
+            "id": 23,
+            "class": "Text",
+            "height": 21,
+            "width": 175,
+            "position": {
+                "column_min": 108,
+                "row_min": 771,
+                "column_max": 283,
+                "row_max": 792
+            },
+            "text_content": "Your contributions"
         }
     ],
     "img_shape": [

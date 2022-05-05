@@ -9,14 +9,12 @@ from ppadb.client import Client as AdbClient
 client = AdbClient(host="127.0.0.1", port=5037)
 
 from paddleocr import PaddleOCR
-paddle_ocr = PaddleOCR(use_angle_cls=True, lang='en', show_log=False)
-
 from keras.applications.resnet import ResNet50
 resnet_model = ResNet50(include_top=False, input_shape=(32, 32, 3))
 
 
 class NiCro:
-    def __init__(self):
+    def __init__(self, ocr_opt='paddle'):
         # Device objects, including their screenshots and GUIs
         self.devices = [Device(i, dev) for i, dev in enumerate(client.devices())]
         self.source_device = self.devices[0]   # the selected source device
@@ -27,7 +25,8 @@ class NiCro:
         self.action = {'type': 'click', 'coordinate': [(-1, -1), (-1, -1)]}
         self.target_element = None
 
-        self.paddle_ocr = paddle_ocr        # ocr detector for GUI detection
+        self.ocr_opt = ocr_opt             # 'paddle' or 'google'
+        self.paddle_ocr = PaddleOCR(use_angle_cls=True, lang='en', show_log=False) if self.ocr_opt == 'paddle' else None
         self.resnet_model = resnet_model    # resnet encoder for image matching
 
         self.robot = None
@@ -61,10 +60,10 @@ class NiCro:
     def detect_gui_info_for_all_devices(self, is_load=False, show=True):
         for i, device in enumerate(self.devices):
             print('****** Device [%d / %d] ******' % (i + 1, len(self.devices)))
-            device.update_screenshot_and_gui(self.paddle_ocr, is_load, show)
+            device.update_screenshot_and_gui(self.paddle_ocr, is_load, show, ocr_opt=self.ocr_opt)
         if self.robot is not None:
             print('****** Robot Arm [1 / 1] ******')
-            self.robot.detect_gui_element(self.paddle_ocr, is_load, show=False)
+            self.robot.detect_gui_element(self.paddle_ocr, is_load, show=False, ocr_opt=self.ocr_opt)
             self.robot.adjust_elements_by_screen_area(show)
 
     def replay_action_on_device(self, device):
@@ -106,10 +105,10 @@ class NiCro:
                 print('Skip the Selected Source Device')
                 continue
             self.replay_action_on_device(dev)
-            dev.update_screenshot_and_gui(self.paddle_ocr)
+            dev.update_screenshot_and_gui(self.paddle_ocr, ocr_opt=self.ocr_opt)
         if self.robot is not None:
             self.replay_action_on_robot()
-            self.robot.detect_gui_element(self.paddle_ocr)
+            self.robot.detect_gui_element(self.paddle_ocr, ocr_opt=self.ocr_opt)
             self.robot.adjust_elements_by_screen_area()
 
     def control_multiple_devices_through_source_device(self, is_replay=False):
@@ -155,7 +154,7 @@ class NiCro:
                     self.replay_action_on_all_devices()
                 # update the screenshot and GUI of the selected target device
                 print("****** Re-detect Selected Device's screenshot and GUI ******")
-                s_dev.update_screenshot_and_gui(self.paddle_ocr)
+                s_dev.update_screenshot_and_gui(self.paddle_ocr, ocr_opt=self.ocr_opt)
                 params[0] = s_dev.GUI.det_result_imgs['merge'].copy()
                 cv2.imshow(win_name, params[0])
 

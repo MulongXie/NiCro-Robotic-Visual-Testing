@@ -86,14 +86,14 @@ class Robot(RobotController):
         cv2.destroyWindow('camera')
         self.camera.release()
 
-    def detect_gui_element(self, paddle_ocr, is_load=False, show=False):
+    def detect_gui_element(self, paddle_ocr, is_load=False, show=False, ocr_opt='paddle'):
         # self.cap_frame()
         self.GUI = GUI(self.photo_save_path)
         self.detect_resize_ratio = self.GUI.detection_resize_height / self.photo.shape[0]
         if is_load:
             self.GUI.load_detection_result()
         else:
-            self.GUI.detect_element(True, True, True, paddle_cor=paddle_ocr)
+            self.GUI.detect_element(True, True, True, paddle_cor=paddle_ocr, ocr_opt=ocr_opt)
         if show:
             self.GUI.show_detection_result()
 
