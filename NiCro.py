@@ -180,7 +180,8 @@ class NiCro:
         :param method: 'sift', 'orb', 'resnet', 'template-match', 'text', 'nicro'
         '''
         print('*** Matching Method: %s in Test Round %d ***' % (method, self.test_round))
-        for i, dev in enumerate(self.devices):
+        all_devices = self.devices + [self.robot] if self.robot is not None else self.devices
+        for i, dev in enumerate(all_devices):
             if dev.name == self.source_device.name:
                 continue
             gui_matcher = GUIPair(self.source_device.GUI, dev.GUI, self.resnet_model)

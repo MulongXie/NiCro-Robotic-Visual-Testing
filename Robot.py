@@ -7,6 +7,7 @@ class Robot(RobotController):
     def __init__(self, speed=100000, press_depth=20):
         super().__init__(speed=speed)
         self.press_depth = press_depth
+        self.name = 'robot'
 
         self.camera = None  # height/width = 1000/540
         self.camera_clip_range_height = [80, 900]

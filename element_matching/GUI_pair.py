@@ -156,6 +156,7 @@ class GUIPair:
         elif method == 'text':
             matched_element = self.match_by_text(target_element, compared_elements)
             if len(matched_element) == 0: matched_element = None
+            else: matched_element = matched_element[0]
 
         if show:
             if matched_element is not None:
