@@ -1,209 +1,169 @@
 {
     "img_shape": [
-        2280,
+        1920,
         1080,
         3
     ],
     "texts": [
         {
             "id": 0,
-            "content": "4:51",
-            "column_min": 23,
-            "row_min": 52,
-            "column_max": 90,
-            "row_max": 83,
-            "width": 67,
-            "height": 31
+            "content": "3:08M",
+            "column_min": 20,
+            "row_min": 10,
+            "column_max": 340,
+            "row_max": 52,
+            "width": 320,
+            "height": 42
         },
         {
             "id": 1,
-            "content": "Booking.com",
-            "column_min": 218,
-            "row_min": 216,
-            "column_max": 519,
-            "row_max": 279,
-            "width": 301,
-            "height": 63
+            "content": "A",
+            "column_min": 987,
+            "row_min": 18,
+            "column_max": 1058,
+            "row_max": 46,
+            "width": 71,
+            "height": 28
         },
         {
             "id": 2,
-            "content": "to Stays",
+            "content": "Booking.com",
             "column_min": 200,
-            "row_min": 374,
-            "column_max": 381,
-            "row_max": 451,
-            "width": 181,
-            "height": 77
+            "row_min": 105,
+            "column_max": 523,
+            "row_max": 171,
+            "width": 323,
+            "height": 66
         },
         {
             "id": 3,
-            "content": "A Car rental",
-            "column_min": 659,
-            "row_min": 378,
-            "column_max": 912,
-            "row_max": 432,
-            "width": 253,
-            "height": 54
+            "content": "C",
+            "column_min": 891,
+            "row_min": 112,
+            "column_max": 936,
+            "row_max": 158,
+            "width": 45,
+            "height": 46
         },
         {
             "id": 4,
-            "content": "Coronavirus COVID 19 update",
-            "column_min": 156,
-            "row_min": 541,
-            "column_max": 779,
-            "row_max": 604,
-            "width": 623,
-            "height": 63
-        },
-        {
-            "id": 5,
-            "content": "Your safety matters . If you think Coronavirus may",
-            "column_min": 156,
-            "row_min": 630,
-            "column_max": 1005,
-            "row_max": 675,
-            "width": 849,
-            "height": 45
-        },
-        {
-            "id": 6,
-            "content": "affect your plans , here's what you need to know",
-            "column_min": 156,
-            "row_min": 687,
-            "column_max": 971,
-            "row_max": 731,
-            "width": 815,
+            "content": "Get the latest COVID-19 travel advice",
+            "column_min": 40,
+            "row_min": 262,
+            "column_max": 741,
+            "row_max": 306,
+            "width": 701,
             "height": 44
         },
         {
+            "id": 5,
+            "content": "Stays",
+            "column_min": 247,
+            "row_min": 527,
+            "column_max": 334,
+            "row_max": 573,
+            "width": 87,
+            "height": 46
+        },
+        {
+            "id": 6,
+            "content": "Car rental",
+            "column_min": 719,
+            "row_min": 532,
+            "column_max": 858,
+            "row_max": 566,
+            "width": 139,
+            "height": 34
+        },
+        {
             "id": 7,
-            "content": "about booking with us at this time .",
-            "column_min": 156,
-            "row_min": 742,
-            "column_max": 747,
-            "row_max": 787,
-            "width": 591,
-            "height": 45
+            "content": "Search",
+            "column_min": 40,
+            "row_min": 656,
+            "column_max": 210,
+            "row_max": 704,
+            "width": 170,
+            "height": 48
         },
         {
             "id": 8,
-            "content": "Read more",
-            "column_min": 157,
-            "row_min": 844,
-            "column_max": 341,
-            "row_max": 883,
-            "width": 184,
-            "height": 39
+            "content": "Hotels, motels apartments and more.",
+            "column_min": 36,
+            "row_min": 732,
+            "column_max": 756,
+            "row_max": 778,
+            "width": 720,
+            "height": 46
         },
         {
             "id": 9,
-            "content": "Return to same location",
-            "column_min": 47,
-            "row_min": 1019,
-            "column_max": 454,
-            "row_max": 1054,
-            "width": 407,
-            "height": 35
+            "content": "Sydney",
+            "column_min": 158,
+            "row_min": 876,
+            "column_max": 290,
+            "row_max": 922,
+            "width": 132,
+            "height": 46
         },
         {
             "id": 10,
-            "content": "Yes",
-            "column_min": 813,
-            "row_min": 1022,
-            "column_max": 872,
-            "row_max": 1054,
-            "width": 59,
-            "height": 32
+            "content": "Wed, Jul 27 - Thu, Jul 28",
+            "column_min": 163,
+            "row_min": 1028,
+            "column_max": 572,
+            "row_max": 1062,
+            "width": 409,
+            "height": 34
         },
         {
             "id": 11,
-            "content": "Pickup location",
-            "column_min": 153,
-            "row_min": 1201,
-            "column_max": 411,
-            "row_max": 1246,
-            "width": 258,
-            "height": 45
+            "content": "8",
+            "column_min": 86,
+            "row_min": 1164,
+            "column_max": 133,
+            "row_max": 1207,
+            "width": 47,
+            "height": 43
         },
         {
             "id": 12,
-            "content": "DH",
-            "column_min": 93,
-            "row_min": 1370,
-            "column_max": 120,
-            "row_max": 1384,
-            "width": 27,
-            "height": 14
+            "content": "1 room 2 adults 0 children",
+            "column_min": 133,
+            "row_min": 1176,
+            "column_max": 635,
+            "row_max": 1210,
+            "width": 502,
+            "height": 34
         },
         {
             "id": 13,
-            "content": "Fri , May 06",
-            "column_min": 173,
-            "row_min": 1355,
-            "column_max": 356,
-            "row_max": 1398,
-            "width": 183,
-            "height": 43
+            "content": "Search",
+            "column_min": 474,
+            "row_min": 1324,
+            "column_max": 606,
+            "row_max": 1360,
+            "width": 132,
+            "height": 36
         },
         {
             "id": 14,
-            "content": "10:00 AM",
-            "column_min": 774,
-            "row_min": 1358,
-            "column_max": 933,
-            "row_max": 1391,
-            "width": 159,
-            "height": 33
+            "content": "I'm traveling for work",
+            "column_min": 40,
+            "row_min": 1492,
+            "column_max": 385,
+            "row_max": 1530,
+            "width": 345,
+            "height": 38
         },
         {
             "id": 15,
-            "content": "Mon , May 09",
-            "column_min": 173,
-            "row_min": 1509,
-            "column_max": 389,
-            "row_max": 1549,
-            "width": 216,
-            "height": 40
-        },
-        {
-            "id": 16,
-            "content": "10:00 AM",
-            "column_min": 774,
-            "row_min": 1510,
-            "column_max": 933,
-            "row_max": 1543,
-            "width": 159,
-            "height": 33
-        },
-        {
-            "id": 17,
-            "content": "Driver's age : 30-65",
-            "column_min": 163,
-            "row_min": 1652,
-            "column_max": 491,
-            "row_max": 1704,
-            "width": 328,
-            "height": 52
-        },
-        {
-            "id": 18,
-            "content": "Search",
-            "column_min": 474,
-            "row_min": 1814,
-            "column_max": 605,
-            "row_max": 1853,
-            "width": 131,
-            "height": 39
-        },
-        {
-            "id": 19,
-            "content": "View and manage your car reservation",
-            "column_min": 155,
-            "row_min": 2020,
-            "column_max": 812,
-            "row_max": 2063,
-            "width": 657,
-            "height": 43
+            "content": "More for you",
+            "column_min": 35,
+            "row_min": 1688,
+            "column_max": 282,
+            "row_max": 1734,
+            "width": 247,
+            "height": 46
         }
     ]
 }

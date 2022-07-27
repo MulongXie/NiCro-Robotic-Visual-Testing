@@ -36,6 +36,11 @@ class NiCro:
         self.widget_matching_acc = {'sift':[], 'resnet':[], 'template-match':[], 'text':[], 'nicro':[]}
         self.test_round = 0
 
+    '''
+    *********************************
+    *** Device & Robot Connection ***
+    *********************************
+    '''
     def load_devices(self):
         self.devices = [Device(i, dev) for i, dev in enumerate(sorted(client.devices(), key=lambda x: x.get_serial_no()))]
         print('Load %d Device Emulators' % len(self.devices))
@@ -59,14 +64,19 @@ class NiCro:
         self.source_device = self.devices[device_id]
         self.get_devices_info()
 
-    def detect_gui_info_for_all_devices(self, is_load=False, show=True):
+    def detect_gui_info_for_all_devices(self, load_detection_result=False, show=True):
         for i, device in enumerate(self.devices):
             print('****** Device [%d / %d] ******' % (i + 1, len(self.devices)))
-            device.update_screenshot_and_gui(self.paddle_ocr, is_load, show, ocr_opt=self.ocr_opt)
+            device.update_screenshot_and_gui(self.paddle_ocr, load_detection_result, show, ocr_opt=self.ocr_opt)
         if self.robot is not None:
             print('****** Robot Arm [1 / 1] ******')
-            self.robot.detect_gui_element(self.paddle_ocr, is_load, show=show, ocr_opt=self.ocr_opt)
+            self.robot.detect_gui_element(self.paddle_ocr, load_detection_result, show=show, ocr_opt=self.ocr_opt)
 
+    '''
+    **********************
+    *** Replay Actions ***
+    **********************
+    '''
     def replay_action_on_device(self, device):
         print('*** Replay Devices Number [%d/%d] ***' % (device.id + 1, len(self.devices)))
         device.get_devices_info()
@@ -112,6 +122,10 @@ class NiCro:
             self.robot.detect_gui_element(self.paddle_ocr, ocr_opt=self.ocr_opt)
 
     def control_multiple_devices_through_source_device(self, is_replay=False):
+        '''
+        Use mouse to control the source device and optionally replay the actions on other devices
+        :param is_replay: Boolean, replay the action on other device or not
+        '''
         s_dev = self.source_device
         win_name = s_dev.device.get_serial_no() + ' screen'
 
@@ -234,3 +248,25 @@ class NiCro:
     def show_all_device_detection_results(self):
         for device in self.devices:
             device.GUI.show_detection_result()
+
+
+if __name__ == '__main__':
+    nicro = NiCro()
+    # 1. load virtual devices and select one of them as the source device
+    nicro.load_devices()
+    nicro.select_source_device(0)
+
+    # 2. load robot system
+    # nicro.load_robot()
+    # nicro.robot.control_robot_by_clicking_on_cam_video()  # test the robot system
+
+    # 3. detect GUI components for all the devices for their current GUI
+    nicro.detect_gui_info_for_all_devices(load_detection_result=False, show=True)
+
+    # 4. control the source device by mouse and replay the action on all other devices
+    nicro.control_multiple_devices_through_source_device(is_replay=True)
+
+    # 5. test the widget matching among all devices
+    # nicro.reset_matching_accuracy()
+    # nicro.click_to_match_widgets_cross_devices()
+    # print(nicro.widget_matching_acc)
