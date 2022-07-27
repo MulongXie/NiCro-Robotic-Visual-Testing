@@ -146,14 +146,14 @@ def text_cvt_orc_format_paddle(paddle_result):
     return texts
 
 
-def text_detection_paddle(input_file='../data/input/30800.jpg', ocr_root='../data/output', show=False, paddle_cor=None):
+def text_detection_paddle(input_file='../data/input/30800.jpg', ocr_root='../data/output', show=False, paddle_ocr=None):
     start = time.time()
     name = input_file.replace('\\', '/').split('/')[-1][:-4]
     img = cv2.imread(input_file)
 
-    # if paddle_cor is None:
-    #     paddle_cor = PaddleOCR(use_angle_cls=True, lang="ch")
-    result = paddle_cor.ocr(input_file, cls=True)
+    # if paddle_ocr is None:
+    #     paddle_ocr = PaddleOCR(use_angle_cls=True, lang="ch")
+    result = paddle_ocr.ocr(input_file, cls=True)
     texts = text_cvt_orc_format_paddle(result)
 
     board = visualize_texts(img, texts, shown_resize_height=800, show=show, write_path=pjoin(ocr_root, name+'.png'))
