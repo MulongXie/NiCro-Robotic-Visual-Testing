@@ -88,7 +88,7 @@ def merge_intersected_texts(texts):
     return texts
 
 
-def text_cvt_orc_format(ocr_result):
+def text_cvt_orc_format(ocr_result, img):
     texts = []
     if ocr_result is not None:
         for i, result in enumerate(ocr_result):
@@ -106,7 +106,9 @@ def text_cvt_orc_format(ocr_result):
             if error: continue
             location = {'left': min(x_coordinates), 'top': min(y_coordinates),
                         'right': max(x_coordinates), 'bottom': max(y_coordinates)}
-            texts.append(Text(i, content, location))
+            text = Text(i, content, location)
+            text.get_clip(img)
+            texts.append(text)
     return texts
 
 
@@ -125,24 +127,26 @@ def text_detection_google(input_file='../data/input/30800.jpg', ocr_root='../dat
     img = cv2.imread(input_file)
 
     ocr_result = ocr.ocr_detection_google(input_file)
-    texts = text_cvt_orc_format(ocr_result)
+    texts = text_cvt_orc_format(ocr_result, img)
     texts = merge_intersected_texts(texts)
-    texts = text_filter_noise(texts)
-    texts = text_sentences_recognition(texts)
+    # texts = text_filter_noise(texts)
+    # texts = text_sentences_recognition(texts)
     board = visualize_texts(img, texts, shown_resize_height=800, show=show, write_path=pjoin(ocr_root, name+'.png'))
     save_detection_json(pjoin(ocr_root, name+'.json'), texts, img.shape)
     print("[Text Detection Completed in %.3f s] Input: %s Output: %s" % (time.clock() - start, input_file, pjoin(ocr_root, name+'.json')))
     return board, texts
 
 
-def text_cvt_orc_format_paddle(paddle_result):
+def text_cvt_orc_format_paddle(paddle_result, img):
     texts = []
     for i, line in enumerate(paddle_result):
         points = np.array(line[0])
         location = {'left': int(min(points[:, 0])), 'top': int(min(points[:, 1])), 'right': int(max(points[:, 0])),
                     'bottom': int(max(points[:, 1]))}
         content = line[1][0]
-        texts.append(Text(i, content, location))
+        text = Text(i, content, location)
+        text.get_clip(img)
+        texts.append(text)
     return texts
 
 
@@ -154,7 +158,7 @@ def text_detection_paddle(input_file='../data/input/30800.jpg', ocr_root='../dat
     # if paddle_ocr is None:
     #     paddle_ocr = PaddleOCR(use_angle_cls=True, lang="ch")
     result = paddle_ocr.ocr(input_file, cls=True)
-    texts = text_cvt_orc_format_paddle(result)
+    texts = text_cvt_orc_format_paddle(result, img)
 
     board = visualize_texts(img, texts, shown_resize_height=800, show=show, write_path=pjoin(ocr_root, name+'.png'))
     save_detection_json(pjoin(ocr_root, name+'.json'), texts, img.shape)

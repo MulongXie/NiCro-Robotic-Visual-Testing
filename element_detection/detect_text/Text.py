@@ -12,6 +12,7 @@ class Text:
         self.height = self.location['bottom'] - self.location['top']
         self.area = self.width * self.height
         self.word_width = self.width / len(self.content)
+        self.clip = None
 
     '''
     ********************************
@@ -171,6 +172,10 @@ class Text:
     *** Visualization ***
     *********************
     '''
+    def get_clip(self, img):
+        loc = self.location
+        self.clip = img[loc['top']:loc['bottom'], loc['left']:loc['right']]
+
     def visualize_element(self, img, color=(0, 0, 255), line=1, show=False):
         loc = self.location
         cv2.rectangle(img, (loc['left'], loc['top']), (loc['right'], loc['bottom']), color, line)
