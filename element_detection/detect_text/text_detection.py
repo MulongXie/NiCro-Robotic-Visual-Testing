@@ -77,11 +77,21 @@ def merge_intersected_texts(texts):
         for text_a in texts:
             merged = False
             for text_b in temp_set:
-                if text_a.is_intersected(text_b, bias=2):
-                    text_b.merge_text(text_a)
-                    merged = True
-                    changed = True
-                    break
+                inter, iou, ioa, iob = text_a.calc_intersection_area(text_b, (2, 2))
+                if inter > 0:
+                    # if text_a is contained by others, discard text_a
+                    if ioa >= 0.8:
+                        merged = True
+                        break
+                    # if text_a contains text_b, ignore text_b
+                    elif iob >= 0.8:
+                        continue
+                    # if no containment relationship, merge text_a and text_b
+                    else:
+                        text_b.merge_text(text_a)
+                        merged = True
+                        changed = True
+                        break
             if not merged:
                 temp_set.append(text_a)
         texts = temp_set.copy()

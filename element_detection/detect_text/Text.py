@@ -10,6 +10,7 @@ class Text:
 
         self.width = self.location['right'] - self.location['left']
         self.height = self.location['bottom'] - self.location['top']
+        self.center = ((self.location['right'] + self.location['left']) // 2, (self.location['bottom'] + self.location['top']) // 2)
         self.area = self.width * self.height
         self.word_width = self.width / len(self.content)
         self.clip = None
@@ -70,8 +71,8 @@ class Text:
     def is_intersected(self, text_b, bias):
         l_a = self.location
         l_b = text_b.location
-        left_in = max(l_a['left'], l_b['left']) + bias
-        top_in = max(l_a['top'], l_b['top']) + bias
+        left_in = max(l_a['left'], l_b['left']) - bias
+        top_in = max(l_a['top'], l_b['top']) - bias
         right_in = min(l_a['right'], l_b['right'])
         bottom_in = min(l_a['bottom'], l_b['bottom'])
 
@@ -80,6 +81,26 @@ class Text:
         area_in = w_in * h_in
         if area_in > 0:
             return True
+
+    def calc_intersection_area(self, text_b, bias=(0,0)):
+        '''
+        Calculate the intersection area between the two texts
+        '''
+        l_a = self.location
+        l_b = text_b.location
+
+        col_min_s = max(l_a['left'], l_b['left']) - bias[0]
+        row_min_s = max(l_a['top'], l_b['top']) - bias[1]
+        col_max_s = min(l_a['right'], l_b['right'])
+        row_max_s = min(l_a['bottom'], l_b['bottom'])
+        w = np.maximum(0, col_max_s - col_min_s)
+        h = np.maximum(0, row_max_s - row_min_s)
+        inter = w * h
+
+        iou = inter / (self.area + text_b.area - inter)
+        ioa = inter / self.area
+        iob = inter / text_b.area
+        return inter, iou, ioa, iob
 
     '''
     ***********************
