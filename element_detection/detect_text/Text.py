@@ -1,5 +1,6 @@
 import cv2
 import numpy as np
+import element_detection.detect_compo.lib_ip.ip_preprocessing as pre
 
 
 class Text:
@@ -20,6 +21,14 @@ class Text:
     *** Relation with Other text ***
     ********************************
     '''
+    def reset_location(self, location):
+        self.location = location
+        self.width = self.location['right'] - self.location['left']
+        self.height = self.location['bottom'] - self.location['top']
+        self.center = ((self.location['right'] + self.location['left']) // 2, (self.location['bottom'] + self.location['top']) // 2)
+        self.area = self.width * self.height
+        self.word_width = self.width / len(self.content)
+
     def is_justified(self, ele_b, direction='h', max_bias_justify=4):
         '''
         Check if the element is justified
@@ -187,6 +196,75 @@ class Text:
         self.height = self.location['bottom'] - self.location['top']
         self.area = self.width * self.height
         self.word_width = self.width / len(self.content)
+
+    def split_separate_letters_in_the_word(self, latest_id):
+        '''
+        If the gap between two words is too large, split them as different Text
+        Only use for word rather than sentence
+        :return: list of Text objects
+        '''
+        # get the binary map of the clip
+        binary = pre.binarization(self.clip, 6)
+
+        # check the letters and the gaps between letters
+        gaps = []  # gaps between two letters in pixels
+        letter_lens = []  # length of letters in pixels
+        letter_pos = []  # position of split letters
+        black = True
+        gap = 0
+        letter_len = 0
+        start_pos = 0
+        start = True
+        for i in range(binary.shape[1]):
+            # print(int(np.sum(binary[:, i]) / 255))
+            # if black pixel
+            if int(np.sum(binary[:, i]) / 255) == 0:
+                if start:
+                    continue
+                if not black:
+                    letter_lens.append(letter_len)
+                    letter_len = 0
+                    letter_pos.append((start_pos, i))
+                black = True
+                gap += 1
+            # if white pixel
+            else:
+                if black and not start:
+                    gaps.append(gap)
+                    gap = 0
+                    start_pos = i
+                black = False
+                letter_len += 1
+                start = False
+        if not black:
+            letter_lens.append(letter_len)
+            letter_pos.append((start_pos, binary.shape[1] - 1))
+
+        # split out letters
+        loc = self.location
+        split_texts = []
+        letters_kept = ''
+        left_bound = 0
+        for i in range(len(letter_lens) - 1):
+            letter_len = letter_lens[i]
+            gap = gaps[i]
+            pos = letter_pos[i]
+            letters_kept += self.content[i]
+            if gap > letter_len * 2:
+                # split out letter
+                location = {'top': loc['top'], 'bottom': loc['bottom'],
+                            'left': loc['left'] + pos[0], 'right':loc['left'] + pos[1]}
+                split_texts.append(Text(latest_id, letters_kept, location))
+                left_bound = letter_pos[i + 1][0]
+                letters_kept = ''
+                latest_id += 1
+
+        self.content = letters_kept + self.content[len(letter_lens) - 1:]
+        new_loc = {'top': loc['top'], 'bottom': loc['bottom'],
+                   'left': loc['left'] + left_bound, 'right':loc['left'] + left_bound}
+        self.reset_location(new_loc)
+        split_texts.append(self)
+        return split_texts
 
     '''
     *********************
