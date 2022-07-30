@@ -197,7 +197,7 @@ class Text:
         self.area = self.width * self.height
         self.word_width = self.width / len(self.content)
 
-    def split_separate_letters_in_the_word(self, latest_id):
+    def split_letters_in_the_word(self, latest_id):
         '''
         If the gap between two words is too large, split them as different Text
         Only use for word rather than sentence
@@ -246,11 +246,10 @@ class Text:
         letters_kept = ''
         left_bound = 0
         for i in range(len(letter_lens) - 1):
-            letter_len = letter_lens[i]
             gap = gaps[i]
             pos = letter_pos[i]
             letters_kept += self.content[i]
-            if gap > letter_len * 2:
+            if gap > min(letter_lens[i], letter_lens[i + 1]) * 1.5:
                 # split out letter
                 location = {'top': loc['top'], 'bottom': loc['bottom'],
                             'left': loc['left'] + pos[0], 'right':loc['left'] + pos[1]}
@@ -261,7 +260,7 @@ class Text:
 
         self.content = letters_kept + self.content[len(letter_lens) - 1:]
         new_loc = {'top': loc['top'], 'bottom': loc['bottom'],
-                   'left': loc['left'] + left_bound, 'right':loc['left'] + left_bound}
+                   'left': loc['left'] + left_bound, 'right':loc['right']}
         self.reset_location(new_loc)
         split_texts.append(self)
         return split_texts

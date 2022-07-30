@@ -135,12 +135,14 @@ def text_split_letters(texts, img):
     new_texts = []
     latest_id = len(texts)
     for text in texts:
-        letters = text.split_separate_letters_in_the_word(latest_id)
+        letters = text.split_letters_in_the_word(latest_id)
         if len(letters) > 1:
             latest_id += len(letters) - 1
             for letter in letters:
                 letter.get_clip(img)
             new_texts += letters
+        else:
+            new_texts.append(text)
     return new_texts
 
 
@@ -152,7 +154,7 @@ def text_detection_google(input_file='../data/input/30800.jpg', ocr_root='../dat
     ocr_result = ocr.ocr_detection_google(input_file)
     texts = text_cvt_orc_format(ocr_result, img)
     texts = merge_intersected_texts(texts)
-    # texts = text_split_letters(texts, img)
+    texts = text_split_letters(texts, img)
     # texts = text_filter_noise(texts)
     # texts = text_sentences_recognition(texts)
     board = visualize_texts(img, texts, shown_resize_height=800, show=show, write_path=pjoin(ocr_root, name+'.png'))
