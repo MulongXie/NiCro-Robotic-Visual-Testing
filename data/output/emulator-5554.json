@@ -1,0 +1,289 @@
+{
+    "img_shape": [
+        2280,
+        1080,
+        3
+    ],
+    "texts": [
+        {
+            "id": 0,
+            "content": "5:01",
+            "column_min": 27,
+            "row_min": 52,
+            "column_max": 111,
+            "row_max": 86,
+            "width": 84,
+            "height": 34
+        },
+        {
+            "id": 1,
+            "content": "Booking.com",
+            "column_min": 207,
+            "row_min": 216,
+            "column_max": 545,
+            "row_max": 281,
+            "width": 338,
+            "height": 65
+        },
+        {
+            "id": 2,
+            "content": "Australia",
+            "column_min": 41,
+            "row_min": 325,
+            "column_max": 188,
+            "row_max": 349,
+            "width": 147,
+            "height": 24
+        },
+        {
+            "id": 3,
+            "content": "Australia",
+            "column_min": 509,
+            "row_min": 328,
+            "column_max": 646,
+            "row_max": 344,
+            "width": 137,
+            "height": 16
+        },
+        {
+            "id": 4,
+            "content": "AUSTI",
+            "column_min": 981,
+            "row_min": 328,
+            "column_max": 1053,
+            "row_max": 344,
+            "width": 72,
+            "height": 16
+        },
+        {
+            "id": 5,
+            "content": "Connect with other travelers",
+            "column_min": 46,
+            "row_min": 530,
+            "column_max": 595,
+            "row_max": 563,
+            "width": 549,
+            "height": 33
+        },
+        {
+            "id": 6,
+            "content": "Australia",
+            "column_min": 41,
+            "row_min": 898,
+            "column_max": 200,
+            "row_max": 940,
+            "width": 159,
+            "height": 42
+        },
+        {
+            "id": 7,
+            "content": "Travel Talk",
+            "column_min": 509,
+            "row_min": 900,
+            "column_max": 694,
+            "row_max": 940,
+            "width": 185,
+            "height": 40
+        },
+        {
+            "id": 8,
+            "content": "More",
+            "column_min": 964,
+            "row_min": 902,
+            "column_max": 1068,
+            "row_max": 938,
+            "width": 104,
+            "height": 36
+        },
+        {
+            "id": 9,
+            "content": "Travel community",
+            "column_min": 46,
+            "row_min": 969,
+            "column_max": 347,
+            "row_max": 1002,
+            "width": 301,
+            "height": 33
+        },
+        {
+            "id": 10,
+            "content": "Generaldiscussior",
+            "column_min": 511,
+            "row_min": 969,
+            "column_max": 829,
+            "row_max": 1002,
+            "width": 318,
+            "height": 33
+        },
+        {
+            "id": 11,
+            "content": "Viewa",
+            "column_min": 967,
+            "row_min": 967,
+            "column_max": 1073,
+            "row_max": 1002,
+            "width": 106,
+            "height": 35
+        },
+        {
+            "id": 12,
+            "content": "174,747 travelers",
+            "column_min": 46,
+            "row_min": 1024,
+            "column_max": 345,
+            "row_max": 1057,
+            "width": 299,
+            "height": 33
+        },
+        {
+            "id": 13,
+            "content": "559,436 travelers",
+            "column_min": 509,
+            "row_min": 1024,
+            "column_max": 808,
+            "row_max": 1057,
+            "width": 299,
+            "height": 33
+        },
+        {
+            "id": 14,
+            "content": "9,894",
+            "column_min": 964,
+            "row_min": 1019,
+            "column_max": 1073,
+            "row_max": 1062,
+            "width": 109,
+            "height": 43
+        },
+        {
+            "id": 15,
+            "content": "Subscribe to get our Secret Deals",
+            "column_min": 149,
+            "row_min": 1204,
+            "column_max": 817,
+            "row_max": 1254,
+            "width": 668,
+            "height": 50
+        },
+        {
+            "id": 16,
+            "content": "X",
+            "column_min": 998,
+            "row_min": 1202,
+            "column_max": 1032,
+            "row_max": 1235,
+            "width": 34,
+            "height": 33
+        },
+        {
+            "id": 17,
+            "content": "Sign up and we'll send the best deals to ye",
+            "column_min": 159,
+            "row_min": 1271,
+            "column_max": 880,
+            "row_max": 1311,
+            "width": 721,
+            "height": 40
+        },
+        {
+            "id": 18,
+            "content": "Enter email address",
+            "column_min": 162,
+            "row_min": 1340,
+            "column_max": 448,
+            "row_max": 1370,
+            "width": 286,
+            "height": 30
+        },
+        {
+            "id": 19,
+            "content": "Sub",
+            "column_min": 844,
+            "row_min": 1401,
+            "column_max": 911,
+            "row_max": 1427,
+            "width": 67,
+            "height": 26
+        },
+        {
+            "id": 20,
+            "content": "d",
+            "column_min": 248,
+            "row_min": 1700,
+            "column_max": 350,
+            "row_max": 1743,
+            "width": 102,
+            "height": 43
+        },
+        {
+            "id": 21,
+            "content": "d",
+            "column_min": 521,
+            "row_min": 1712,
+            "column_max": 557,
+            "row_max": 1748,
+            "width": 36,
+            "height": 36
+        },
+        {
+            "id": 22,
+            "content": "b",
+            "column_min": 629,
+            "row_min": 1710,
+            "column_max": 663,
+            "row_max": 1741,
+            "width": 34,
+            "height": 31
+        },
+        {
+            "id": 23,
+            "content": "/",
+            "column_min": 205,
+            "row_min": 1881,
+            "column_max": 229,
+            "row_max": 1907,
+            "width": 24,
+            "height": 26
+        },
+        {
+            "id": 24,
+            "content": "C",
+            "column_min": 407,
+            "row_min": 1869,
+            "column_max": 454,
+            "row_max": 1912,
+            "width": 47,
+            "height": 43
+        },
+        {
+            "id": 25,
+            "content": "m",
+            "column_min": 839,
+            "row_min": 1879,
+            "column_max": 882,
+            "row_max": 1907,
+            "width": 43,
+            "height": 28
+        },
+        {
+            "id": 26,
+            "content": "?123",
+            "column_min": 28,
+            "row_min": 2027,
+            "column_max": 129,
+            "row_max": 2079,
+            "width": 101,
+            "height": 52
+        },
+        {
+            "id": 27,
+            "content": "O",
+            "column_min": 188,
+            "row_min": 2033,
+            "column_max": 246,
+            "row_max": 2088,
+            "width": 58,
+            "height": 55
+        }
+    ]
+}

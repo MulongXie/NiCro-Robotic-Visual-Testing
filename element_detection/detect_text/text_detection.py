@@ -146,6 +146,35 @@ def text_split_letters(texts, img):
     return new_texts
 
 
+def text_recognize_keyboard_letters(texts, img):
+    '''
+    Recognize keyboard letters from texts.
+    If a text and its neighbours are all in the keyboard area, it is recognized as a keyboard letter
+    '''
+    height, width = img.shape[:2]
+    # sort the texts top down
+    texts = sorted(texts, key=lambda x: x.location['top'])
+    for i in range(len(texts) - 1):
+        t_i = texts[i]
+        # if the ti is in keyboard_area, search for its horizontal neighbours
+        if t_i.is_in_keyboard_area(height):
+            for j in range(i, len(texts)):
+                t_j = texts[j]
+                # stop when no horizontal neighbours
+                if t_j.location['top'] - t_i.location['bottom'] > t_i.height:
+                    break
+                # if the neighbour is a keyboard letter or is also in the keyboard area, mark ti as keyboard letter
+                if t_j.keyboard:
+                    t_i.keyboard = True
+                    break
+                else:
+                    if t_j.is_justified(t_i, direction='h') and t_j.is_in_keyboard_area(height):
+                        t_i.keyboard = True
+                        t_j.keyboard = True
+                        break
+    return texts
+
+
 def text_detection_google(input_file='../data/input/30800.jpg', ocr_root='../data/output', show=False):
     start = time.clock()
     name = input_file.split('/')[-1][:-4]
@@ -155,6 +184,7 @@ def text_detection_google(input_file='../data/input/30800.jpg', ocr_root='../dat
     texts = text_cvt_orc_format(ocr_result, img)
     texts = merge_intersected_texts(texts)
     texts = text_split_letters(texts, img)
+    texts = text_recognize_keyboard_letters(texts, img)
     # texts = text_filter_noise(texts)
     # texts = text_sentences_recognition(texts)
     board = visualize_texts(img, texts, shown_resize_height=800, show=show, write_path=pjoin(ocr_root, name+'.png'))
@@ -190,36 +220,3 @@ def text_detection_paddle(input_file='../data/input/30800.jpg', ocr_root='../dat
     save_detection_json(pjoin(ocr_root, name+'.json'), texts, img.shape)
     print("[Text Detection Completed in %.3f s] Input: %s Output: %s" % (time.time() - start, input_file, pjoin(ocr_root, name+'.json')))
     return board, texts
-
-
-def text_detection_longce(input_file='../data/input/A0001.jpg', ocr_root='../data/output/ocr', show=False):
-    post_url = "http://61.177.48.150:5222/ocr/recognition_text"
-    name = input_file.replace('\\', '/').split('/')[-1][:-4]
-    img = cv2.imread(input_file)
-    start = time.clock()
-
-    with open(input_file, "rb") as f:
-        base64_img = base64.b64encode(f.read()).decode('utf8')
-    form_data = json.dumps({
-        "task": "OCR",
-        "image": base64_img,
-        "type": "base64"
-    })
-    # print(input_file)
-    headers = {
-        "Authorization": None,
-        "Content-Type": "application/json"
-    }
-    res_text = list()
-    response = requests.post(url=post_url, headers=headers, data=form_data).text
-    res = json.loads(response)
-    for result in res['data']:
-        if 'words' not in result.keys():
-            continue
-        content = result['words']
-        location = result['location']
-        res_text.append(Text(id = result['index'], content = content, location = location))
-    board = visualize_texts(img, res_text, shown_resize_height=800, show=show, write_path=pjoin(ocr_root, name+'.png'))
-    save_detection_json(pjoin(ocr_root, name+'.json'), res_text, img.shape)
-    print("[Text Detection Completed in %.3f s] Input: %s Output: %s" % (time.clock() - start, input_file, pjoin(ocr_root, name+'.json')))
-    return board

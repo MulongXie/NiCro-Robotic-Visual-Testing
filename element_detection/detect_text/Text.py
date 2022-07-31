@@ -16,6 +16,8 @@ class Text:
         self.word_width = self.width / len(self.content)
         self.clip = None
 
+        self.keyboard = False  # whether the text is a keyboard character
+
     '''
     ********************************
     *** Relation with Other text ***
@@ -110,6 +112,16 @@ class Text:
         ioa = inter / self.area
         iob = inter / text_b.area
         return inter, iou, ioa, iob
+
+    def is_in_keyboard_area(self, gui_height):
+        '''
+        Check if the text is a possible keyboard text
+        :param gui_height: the height of the original GUI
+        :return:
+        '''
+        if self.location['top'] > gui_height / 2 and 0 < len(self.content) <= 2:
+            return True
+        return False
 
     '''
     ***********************
@@ -275,6 +287,8 @@ class Text:
         self.clip = img[loc['top']:loc['bottom'], loc['left']:loc['right']]
 
     def visualize_element(self, img, color=(0, 0, 255), line=1, show=False):
+        if self.keyboard:
+            color = (0, 100, 255)
         loc = self.location
         cv2.rectangle(img, (loc['left'], loc['top']), (loc['right'], loc['bottom']), color, line)
         if show:
