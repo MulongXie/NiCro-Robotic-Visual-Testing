@@ -251,7 +251,7 @@ class NiCro:
 
 
 if __name__ == '__main__':
-    nicro = NiCro()
+    nicro = NiCro(ocr_opt='paddle')
     # 1. load virtual devices and select one of them as the source device
     nicro.load_devices()
     nicro.select_source_device(0)
