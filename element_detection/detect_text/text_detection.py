@@ -14,7 +14,7 @@ def save_detection_json(file_path, texts, img_shape):
     f_out = open(file_path, 'w')
     output = {'img_shape': img_shape, 'texts': []}
     for text in texts:
-        c = {'id': text.id, 'content': text.content}
+        c = {'id': text.id, 'content': text.content, 'keyboard': text.keyboard}
         loc = text.location
         c['column_min'], c['row_min'], c['column_max'], c['row_max'] = loc['left'], loc['top'], loc['right'], loc['bottom']
         c['width'] = text.width

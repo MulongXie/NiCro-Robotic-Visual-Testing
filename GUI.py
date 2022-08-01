@@ -86,6 +86,7 @@ class GUI:
             e = Element(i, element['class'], element['position'])
             if element['class'] == 'Text':
                 e.text_content = element['text_content']
+                e.keyboard = element['keyboard']
             if 'children' in element:
                 e.children = element['children']
             if 'parent' in element:

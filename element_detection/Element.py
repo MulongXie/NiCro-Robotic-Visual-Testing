@@ -6,6 +6,7 @@ class Element:
         self.id = element_id
         self.category = category        # Compo / Text
         self.text_content = text_content
+        self.keyboard = False    # if the text is keyboard letter
 
         self.col_min, self.row_min, self.col_max, self.row_max = int(position['column_min']), int(position['row_min']), int(position['column_max']), int(position['row_max'])
         self.center_x, self.center_y = int((self.col_max + self.col_min) / 2), int((self.row_max + self.row_min) / 2)

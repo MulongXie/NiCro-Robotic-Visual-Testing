@@ -204,7 +204,7 @@ def merge(img_path, compo_path, text_path, merge_root=None, is_paragraph=False, 
         ele_id += 1
     texts = []
     for text in text_json['texts']:
-        element = Element(ele_id, (text['column_min'], text['row_min'], text['column_max'], text['row_max']), 'Text', text_content=text['content'])
+        element = Element(ele_id, (text['column_min'], text['row_min'], text['column_max'], text['row_max']), 'Text', text_content=text['content'], keyboard=text['keyboard'])
         texts.append(element)
         ele_id += 1
     if compo_json['img_shape'] != text_json['img_shape']:

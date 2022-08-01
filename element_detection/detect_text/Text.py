@@ -16,7 +16,7 @@ class Text:
         self.word_width = self.width / len(self.content)
         self.clip = None
 
-        self.keyboard = False  # whether the text is a keyboard character
+        self.keyboard = False  # whether the text is a keyboard letter
 
     '''
     ********************************

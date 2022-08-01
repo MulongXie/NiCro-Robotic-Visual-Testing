@@ -3,7 +3,7 @@ import cv2
 
 
 class Element:
-    def __init__(self, id, corner, category, text_content=None):
+    def __init__(self, id, corner, category, text_content=None, keyboard=False):
         self.id = id
         self.category = category
         self.col_min, self.row_min, self.col_max, self.row_max = corner
@@ -12,6 +12,8 @@ class Element:
         self.area = self.width * self.height
 
         self.text_content = text_content
+        self.keyboard = keyboard  # if the text is keyboard letter
+
         self.parent_id = None
         self.children = []  # list of elements
 
@@ -29,6 +31,7 @@ class Element:
                              'row_max': self.row_max}}
         if self.text_content is not None:
             info['text_content'] = self.text_content
+            info['keyboard'] = self.keyboard
         if len(self.children) > 0:
             info['children'] = []
             for child in self.children:
