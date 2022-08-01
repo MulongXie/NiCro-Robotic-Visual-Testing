@@ -12,7 +12,13 @@ def show_elements(org_img, eles, show=False, win_name='element', wait_key=0, sho
     color_map = {'Text':(0, 0, 255), 'Compo':(0, 255, 0), 'Block':(0, 255, 0), 'Text Content':(255, 0, 255)}
     img = org_img.copy()
     for ele in eles:
-        color = color_map[ele.category]
+        if ele.category == 'Text':
+            if ele.keyboard:
+                color = (0, 166, 255)
+            else:
+                color = (0, 0, 255)
+        else:
+            color = color_map[ele.category]
         ele.visualize_element(img, color, line)
     img_resize = img
     if shown_resize is not None:

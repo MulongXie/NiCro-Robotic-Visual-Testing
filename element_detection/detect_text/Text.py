@@ -292,7 +292,7 @@ class Text:
 
     def visualize_element(self, img, color=(0, 0, 255), line=1, show=False):
         if self.keyboard:
-            color = (0, 100, 255)
+            color = (0, 166, 255)
         loc = self.location
         cv2.rectangle(img, (loc['left'], loc['top']), (loc['right'], loc['bottom']), color, line)
         if show:
