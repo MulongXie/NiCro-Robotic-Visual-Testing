@@ -17,39 +17,6 @@
             "height": 60
         },
         {
-            "id": 1,
-            "content": "AdGuard",
-            "keyboard": false,
-            "column_min": 74,
-            "row_min": 388,
-            "column_max": 195,
-            "row_max": 412,
-            "width": 121,
-            "height": 24
-        },
-        {
-            "id": 2,
-            "content": "Chrome",
-            "keyboard": false,
-            "column_min": 81,
-            "row_min": 641,
-            "column_max": 191,
-            "row_max": 664,
-            "width": 110,
-            "height": 23
-        },
-        {
-            "id": 3,
-            "content": "X",
-            "keyboard": false,
-            "column_min": 142,
-            "row_min": 946,
-            "column_max": 191,
-            "row_max": 981,
-            "width": 49,
-            "height": 35
-        },
-        {
             "id": 4,
             "content": "\u0e08",
             "keyboard": false,
@@ -72,26 +39,59 @@
             "height": 73
         },
         {
-            "id": 6,
-            "content": "Phone",
+            "id": 21,
+            "content": "Booking",
             "keyboard": false,
-            "column_min": 92,
-            "row_min": 1653,
-            "column_max": 180,
-            "row_max": 1676,
-            "width": 88,
+            "column_min": 487,
+            "row_min": 267,
+            "column_max": 589,
+            "row_max": 294,
+            "width": 102,
+            "height": 27
+        },
+        {
+            "id": 26,
+            "content": "1",
+            "keyboard": false,
+            "column_min": 732,
+            "row_min": 271,
+            "column_max": 749,
+            "row_max": 294,
+            "width": 17,
             "height": 23
         },
         {
-            "id": 7,
-            "content": "StrootCo",
+            "id": 1,
+            "content": "AdGuard",
             "keyboard": false,
-            "column_min": 66,
-            "row_min": 1906,
-            "column_max": 186,
-            "row_max": 1923,
-            "width": 120,
-            "height": 17
+            "column_min": 74,
+            "row_min": 388,
+            "column_max": 195,
+            "row_max": 412,
+            "width": 121,
+            "height": 24
+        },
+        {
+            "id": 25,
+            "content": "Calendar",
+            "keyboard": false,
+            "column_min": 679,
+            "row_min": 388,
+            "column_max": 806,
+            "row_max": 411,
+            "width": 127,
+            "height": 23
+        },
+        {
+            "id": 41,
+            "content": "Camera",
+            "keyboard": false,
+            "column_min": 890,
+            "row_min": 388,
+            "column_max": 998,
+            "row_max": 411,
+            "width": 108,
+            "height": 23
         },
         {
             "id": 8,
@@ -105,6 +105,61 @@
             "height": 22
         },
         {
+            "id": 23,
+            "content": "Booking.c",
+            "keyboard": false,
+            "column_min": 460,
+            "row_min": 389,
+            "column_max": 598,
+            "row_max": 417,
+            "width": 138,
+            "height": 28
+        },
+        {
+            "id": 24,
+            "content": "...",
+            "keyboard": false,
+            "column_min": 600,
+            "row_min": 389,
+            "column_max": 622,
+            "row_max": 417,
+            "width": 22,
+            "height": 28
+        },
+        {
+            "id": 27,
+            "content": "O",
+            "keyboard": false,
+            "column_min": 870,
+            "row_min": 472,
+            "column_max": 1014,
+            "row_max": 601,
+            "width": 144,
+            "height": 129
+        },
+        {
+            "id": 28,
+            "content": "Contacts",
+            "keyboard": false,
+            "column_min": 476,
+            "row_min": 640,
+            "column_max": 602,
+            "row_max": 665,
+            "width": 126,
+            "height": 25
+        },
+        {
+            "id": 2,
+            "content": "Chrome",
+            "keyboard": false,
+            "column_min": 81,
+            "row_min": 641,
+            "column_max": 191,
+            "row_max": 664,
+            "width": 110,
+            "height": 23
+        },
+        {
             "id": 9,
             "content": "Clock",
             "keyboard": false,
@@ -114,6 +169,28 @@
             "row_max": 664,
             "width": 79,
             "height": 23
+        },
+        {
+            "id": 29,
+            "content": "Currencies",
+            "keyboard": false,
+            "column_min": 665,
+            "row_min": 641,
+            "column_max": 818,
+            "row_max": 664,
+            "width": 153,
+            "height": 23
+        },
+        {
+            "id": 30,
+            "content": "Diaguard",
+            "keyboard": false,
+            "column_min": 882,
+            "row_min": 642,
+            "column_max": 1006,
+            "row_max": 670,
+            "width": 124,
+            "height": 28
         },
         {
             "id": 10,
@@ -160,37 +237,15 @@
             "height": 47
         },
         {
-            "id": 14,
-            "content": "Kindle",
+            "id": 3,
+            "content": "X",
             "keyboard": false,
-            "column_min": 61,
-            "row_min": 1397,
-            "column_max": 147,
-            "row_max": 1427,
-            "width": 86,
-            "height": 30
-        },
-        {
-            "id": 15,
-            "content": "\u9605\u8bfb",
-            "keyboard": false,
-            "column_min": 149,
-            "row_min": 1397,
-            "column_max": 211,
-            "row_max": 1427,
-            "width": 62,
-            "height": 30
-        },
-        {
-            "id": 16,
-            "content": "Maps",
-            "keyboard": false,
-            "column_min": 299,
-            "row_min": 1402,
-            "column_max": 375,
-            "row_max": 1429,
-            "width": 76,
-            "height": 27
+            "column_min": 142,
+            "row_min": 946,
+            "column_max": 191,
+            "row_max": 981,
+            "width": 49,
+            "height": 35
         },
         {
             "id": 17,
@@ -226,130 +281,20 @@
             "height": 30
         },
         {
-            "id": 20,
-            "content": "Photos",
-            "keyboard": false,
-            "column_min": 288,
-            "row_min": 1654,
-            "column_max": 387,
-            "row_max": 1676,
-            "width": 99,
-            "height": 22
-        },
-        {
-            "id": 21,
-            "content": "Booking",
-            "keyboard": false,
-            "column_min": 487,
-            "row_min": 267,
-            "column_max": 589,
-            "row_max": 294,
-            "width": 102,
-            "height": 27
-        },
-        {
-            "id": 22,
-            "content": "Twitter",
-            "keyboard": false,
-            "column_min": 291,
-            "row_min": 1905,
-            "column_max": 386,
-            "row_max": 1921,
-            "width": 95,
-            "height": 16
-        },
-        {
-            "id": 23,
-            "content": "Booking.c",
-            "keyboard": false,
-            "column_min": 460,
-            "row_min": 389,
-            "column_max": 598,
-            "row_max": 417,
-            "width": 138,
-            "height": 28
-        },
-        {
-            "id": 24,
-            "content": "...",
-            "keyboard": false,
-            "column_min": 600,
-            "row_min": 389,
-            "column_max": 622,
-            "row_max": 417,
-            "width": 22,
-            "height": 28
-        },
-        {
-            "id": 25,
-            "content": "Calendar",
-            "keyboard": false,
-            "column_min": 679,
-            "row_min": 388,
-            "column_max": 806,
-            "row_max": 411,
-            "width": 127,
-            "height": 23
-        },
-        {
-            "id": 26,
-            "content": "1",
-            "keyboard": false,
-            "column_min": 732,
-            "row_min": 271,
-            "column_max": 749,
-            "row_max": 294,
-            "width": 17,
-            "height": 23
-        },
-        {
-            "id": 27,
-            "content": "O",
-            "keyboard": false,
-            "column_min": 870,
-            "row_min": 472,
-            "column_max": 1014,
-            "row_max": 601,
-            "width": 144,
-            "height": 129
-        },
-        {
-            "id": 28,
-            "content": "Contacts",
-            "keyboard": false,
-            "column_min": 476,
-            "row_min": 640,
-            "column_max": 602,
-            "row_max": 665,
-            "width": 126,
-            "height": 25
-        },
-        {
-            "id": 29,
-            "content": "Currencies",
-            "keyboard": false,
-            "column_min": 665,
-            "row_min": 641,
-            "column_max": 818,
-            "row_max": 664,
-            "width": 153,
-            "height": 23
-        },
-        {
-            "id": 30,
-            "content": "Diaguard",
-            "keyboard": false,
-            "column_min": 882,
-            "row_min": 642,
-            "column_max": 1006,
-            "row_max": 670,
-            "width": 124,
-            "height": 28
+            "id": 46,
+            "content": "G",
+            "keyboard": true,
+            "column_min": 898,
+            "row_min": 1244,
+            "column_max": 984,
+            "row_max": 1337,
+            "width": 86,
+            "height": 93
         },
         {
             "id": 31,
             "content": "B",
-            "keyboard": false,
+            "keyboard": true,
             "column_min": 490,
             "row_min": 1266,
             "column_max": 581,
@@ -358,37 +303,26 @@
             "height": 57
         },
         {
-            "id": 32,
-            "content": "Play",
+            "id": 14,
+            "content": "Kindle",
             "keyboard": false,
-            "column_min": 469,
-            "row_min": 1652,
-            "column_max": 529,
-            "row_max": 1683,
-            "width": 60,
-            "height": 31
+            "column_min": 61,
+            "row_min": 1397,
+            "column_max": 147,
+            "row_max": 1427,
+            "width": 86,
+            "height": 30
         },
         {
-            "id": 33,
-            "content": "Store",
-            "keyboard": false,
-            "column_min": 536,
-            "row_min": 1649,
-            "column_max": 610,
-            "row_max": 1681,
-            "width": 74,
-            "height": 32
-        },
-        {
-            "id": 34,
-            "content": "WebView",
-            "keyboard": false,
-            "column_min": 459,
-            "row_min": 1906,
-            "column_max": 585,
-            "row_max": 1919,
-            "width": 126,
-            "height": 13
+            "id": 15,
+            "content": "\u9605\u8bfb",
+            "keyboard": true,
+            "column_min": 149,
+            "row_min": 1397,
+            "column_max": 211,
+            "row_max": 1427,
+            "width": 62,
+            "height": 30
         },
         {
             "id": 35,
@@ -446,15 +380,70 @@
             "height": 22
         },
         {
-            "id": 41,
-            "content": "Camera",
+            "id": 16,
+            "content": "Maps",
             "keyboard": false,
-            "column_min": 890,
-            "row_min": 388,
-            "column_max": 998,
-            "row_max": 411,
-            "width": 108,
+            "column_min": 299,
+            "row_min": 1402,
+            "column_max": 375,
+            "row_max": 1429,
+            "width": 76,
+            "height": 27
+        },
+        {
+            "id": 33,
+            "content": "Store",
+            "keyboard": false,
+            "column_min": 536,
+            "row_min": 1649,
+            "column_max": 610,
+            "row_max": 1681,
+            "width": 74,
+            "height": 32
+        },
+        {
+            "id": 32,
+            "content": "Play",
+            "keyboard": false,
+            "column_min": 469,
+            "row_min": 1652,
+            "column_max": 529,
+            "row_max": 1683,
+            "width": 60,
+            "height": 31
+        },
+        {
+            "id": 47,
+            "content": "Settings",
+            "keyboard": false,
+            "column_min": 886,
+            "row_min": 1652,
+            "column_max": 1001,
+            "row_max": 1682,
+            "width": 115,
+            "height": 30
+        },
+        {
+            "id": 6,
+            "content": "Phone",
+            "keyboard": false,
+            "column_min": 92,
+            "row_min": 1653,
+            "column_max": 180,
+            "row_max": 1676,
+            "width": 88,
             "height": 23
+        },
+        {
+            "id": 20,
+            "content": "Photos",
+            "keyboard": false,
+            "column_min": 288,
+            "row_min": 1654,
+            "column_max": 387,
+            "row_max": 1676,
+            "width": 99,
+            "height": 22
         },
         {
             "id": 42,
@@ -470,7 +459,7 @@
         {
             "id": 43,
             "content": "Pa",
-            "keyboard": false,
+            "keyboard": true,
             "column_min": 767,
             "row_min": 1654,
             "column_max": 802,
@@ -490,6 +479,39 @@
             "height": 21
         },
         {
+            "id": 22,
+            "content": "Twitter",
+            "keyboard": false,
+            "column_min": 291,
+            "row_min": 1905,
+            "column_max": 386,
+            "row_max": 1921,
+            "width": 95,
+            "height": 16
+        },
+        {
+            "id": 7,
+            "content": "StrootCo",
+            "keyboard": false,
+            "column_min": 66,
+            "row_min": 1906,
+            "column_max": 186,
+            "row_max": 1923,
+            "width": 120,
+            "height": 17
+        },
+        {
+            "id": 34,
+            "content": "WebView",
+            "keyboard": false,
+            "column_min": 459,
+            "row_min": 1906,
+            "column_max": 585,
+            "row_max": 1919,
+            "width": 126,
+            "height": 13
+        },
+        {
             "id": 45,
             "content": "YouTubo",
             "keyboard": false,
@@ -501,31 +523,9 @@
             "height": 13
         },
         {
-            "id": 46,
-            "content": "G",
-            "keyboard": false,
-            "column_min": 898,
-            "row_min": 1244,
-            "column_max": 984,
-            "row_max": 1337,
-            "width": 86,
-            "height": 93
-        },
-        {
-            "id": 47,
-            "content": "Settings",
-            "keyboard": false,
-            "column_min": 886,
-            "row_min": 1652,
-            "column_max": 1001,
-            "row_max": 1682,
-            "width": 115,
-            "height": 30
-        },
-        {
             "id": 48,
             "content": "VT",
-            "keyboard": false,
+            "keyboard": true,
             "column_min": 876,
             "row_min": 1907,
             "column_max": 913,

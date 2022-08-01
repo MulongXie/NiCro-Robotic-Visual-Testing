@@ -252,6 +252,10 @@ class Text:
             letter_lens.append(letter_len)
             letter_pos.append((start_pos, binary.shape[1] - 1))
 
+        # no split if the number of split letters is inconsistent with the number of letters in the text content
+        if len(letter_lens) != len(self.content):
+            return []
+
         # split out letters
         loc = self.location
         split_texts = []
