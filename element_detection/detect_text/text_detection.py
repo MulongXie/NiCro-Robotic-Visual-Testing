@@ -159,6 +159,7 @@ def text_recognize_keyboard_letters(texts, img):
     '''
     height, width = img.shape[:2]
     # sort the texts top down
+    no_keyboard_letters = 0
     texts = sorted(texts, key=lambda x: x.location['top'])
     for i in range(len(texts) - 1):
         t_i = texts[i]
@@ -172,12 +173,18 @@ def text_recognize_keyboard_letters(texts, img):
                 # if the neighbour is a keyboard letter or is also in the keyboard area, mark ti as keyboard letter
                 if t_j.keyboard:
                     t_i.keyboard = True
+                    no_keyboard_letters += 1
                     break
                 else:
                     if t_j.is_justified(t_i, direction='h', max_bias_justify=max(t_i.height, t_j.height)) and t_j.is_in_keyboard_area(height):
                         t_i.keyboard = True
                         t_j.keyboard = True
+                        no_keyboard_letters += 1
                         break
+    # Ignore all keyboard letters if the of letters are too few
+    if no_keyboard_letters <= 10:
+        for text in texts:
+            text.keyboard = False
     return texts
 
 
