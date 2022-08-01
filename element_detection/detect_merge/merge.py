@@ -43,8 +43,10 @@ def reassign_ids(elements):
 def refine_texts(texts, img_shape):
     refined_texts = []
     for text in texts:
+        if text.keyboard:
+            refined_texts.append(text)
         # remove potential noise
-        if len(text.text_content) > 1 and text.height / img_shape[0] < 0.075:
+        elif len(text.text_content) > 1 and text.height / img_shape[0] < 0.075:
             refined_texts.append(text)
     return refined_texts
 
@@ -63,8 +65,13 @@ def merge_text_line_to_paragraph(elements, max_line_gap=5):
         changed = False
         temp_set = []
         for text_a in texts:
+            if text_a.keyboard:
+                temp_set.append(text_a)
+                continue
             merged = False
             for text_b in temp_set:
+                if text_b.keyboard:
+                    continue
                 inter_area, _, _, _ = text_a.calc_intersection_area(text_b, bias=(0, max_line_gap))
                 if inter_area > 0:
                     text_b.element_merge(text_a)
@@ -98,8 +105,13 @@ def refine_elements(compos, texts, intersection_bias=(2, 2), containment_ratio=0
                     break
                 text_area += inter
                 # the text is contained in the non-text compo
-                if iob >= containment_ratio and ioa >= 0.5 and compo.category != 'Block':
-                    contained_texts.append(text)
+                if iob >= containment_ratio:
+                    # if the large part of the non-text contains a keyboard letter, ignore it
+                    if text.keyboard:
+                        is_valid = False
+                        break
+                    elif compo.category != 'Block':
+                        contained_texts.append(text)
         if is_valid and text_area / compo.area < containment_ratio:
             # for t in contained_texts:
             #     t.parent_id = compo.id
@@ -108,7 +120,7 @@ def refine_elements(compos, texts, intersection_bias=(2, 2), containment_ratio=0
 
     # elements += texts
     for text in texts:
-        if text not in contained_texts:
+        if text.keyboard or text not in contained_texts:
             elements.append(text)
     return elements
 

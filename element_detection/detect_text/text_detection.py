@@ -50,8 +50,14 @@ def text_sentences_recognition(texts):
         changed = False
         temp_set = []
         for text_a in texts:
+            # ignore keyboard letters
+            if text_a.keyboard:
+                temp_set.append(text_a)
+                continue
             merged = False
             for text_b in temp_set:
+                if text_b.keyboard:
+                    continue
                 if text_a.is_on_same_line(text_b, 'h', bias_justify=0.2 * min(text_a.height, text_b.height), bias_gap=2 * max(text_a.word_width, text_b.word_width)):
                     text_b.merge_text(text_a)
                     merged = True
@@ -158,7 +164,7 @@ def text_recognize_keyboard_letters(texts, img):
         t_i = texts[i]
         # if the ti is in keyboard_area, search for its horizontal neighbours
         if t_i.is_in_keyboard_area(height):
-            for j in range(i, len(texts)):
+            for j in range(i + 1, len(texts)):
                 t_j = texts[j]
                 # stop when no horizontal neighbours
                 if t_j.location['top'] - t_i.location['bottom'] > t_i.height:
@@ -168,7 +174,7 @@ def text_recognize_keyboard_letters(texts, img):
                     t_i.keyboard = True
                     break
                 else:
-                    if t_j.is_justified(t_i, direction='h') and t_j.is_in_keyboard_area(height):
+                    if t_j.is_justified(t_i, direction='h', max_bias_justify=max(t_i.height, t_j.height)) and t_j.is_in_keyboard_area(height):
                         t_i.keyboard = True
                         t_j.keyboard = True
                         break
@@ -186,7 +192,7 @@ def text_detection_google(input_file='../data/input/30800.jpg', ocr_root='../dat
     texts = text_split_letters(texts, img)
     texts = text_recognize_keyboard_letters(texts, img)
     # texts = text_filter_noise(texts)
-    # texts = text_sentences_recognition(texts)
+    texts = text_sentences_recognition(texts)
     board = visualize_texts(img, texts, shown_resize_height=800, show=show, write_path=pjoin(ocr_root, name+'.png'))
     save_detection_json(pjoin(ocr_root, name+'.json'), texts, img.shape)
     print("[Text Detection Completed in %.3f s] Input: %s Output: %s" % (time.clock() - start, input_file, pjoin(ocr_root, name+'.json')))

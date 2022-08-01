@@ -119,7 +119,7 @@ class Text:
         :param gui_height: the height of the original GUI
         :return:
         '''
-        if self.location['top'] > gui_height / 2 and 0 < len(self.content) <= 2:
+        if self.location['top'] > gui_height / 2 and len(self.content) == 1:
             return True
         return False
 
