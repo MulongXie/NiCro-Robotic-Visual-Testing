@@ -128,13 +128,16 @@ class Text:
     *** Revise the Text ***
     ***********************
     '''
-    def check_sting_overlap(self, left_text, right_text):
+    def check_sting_overlap(self, left_text, right_text, lower_case=True):
         '''
         "ghjk" + "jkl" = "ghjkl"
         :return: cur
         '''
         lt_r = left_text[::-1]
         rt_r = right_text[::-1]
+        if lower_case:
+            lt_r = lt_r.lower()
+            rt_r = rt_r.lower()
         # check the duplicated part of the two texts
         cur = 0
         for c in rt_r:
