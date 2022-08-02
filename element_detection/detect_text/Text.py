@@ -142,10 +142,9 @@ class Text:
                 continue
             else:
                 cur += 1
-        print(left_text, right_text, cur)
         return cur
 
-    def merge_text(self, text_b, img):
+    def merge_text(self, text_b, img, concat=False):
         top = min(self.location['top'], text_b.location['top'])
         left = min(self.location['left'], text_b.location['left'])
         right = max(self.location['right'], text_b.location['right'])
@@ -155,15 +154,22 @@ class Text:
         self.get_clip(img)
 
         # merge text content
-        cur = self.check_sting_overlap(self.content, text_b.content)
-        # if any overlap,
-        if cur != 0:
-            self.content = self.content + text_b.content[cur:]
+        if not concat:
+            cur = self.check_sting_overlap(self.content, text_b.content)
+            # if any overlap,
+            if cur != 0:
+                self.content = self.content + text_b.content[cur:]
+            else:
+                # if no overlap, change the sequence of the two texts and check again
+                cur = self.check_sting_overlap(text_b.content, self.content)
+            # if still no overlap, simply concat the two strings
+            if cur == 0:
+                if self.location['left'] < text_b.location['left']:
+                    self.content = self.content + ' ' + text_b.content
+                else:
+                    self.content = text_b.content + ' ' + self.content
+        # directly concat two text strings
         else:
-            # if no overlap, change the sequence of the two texts and check again
-            cur = self.check_sting_overlap(text_b.content, self.content)
-        # if still no overlap, simply concat the two strings
-        if cur == 0:
             if self.location['left'] < text_b.location['left']:
                 self.content = self.content + ' ' + text_b.content
             else:

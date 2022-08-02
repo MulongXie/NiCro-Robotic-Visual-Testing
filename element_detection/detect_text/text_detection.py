@@ -59,7 +59,7 @@ def text_sentences_recognition(texts, img):
                 if text_b.keyboard:
                     continue
                 if text_a.is_on_same_line(text_b, 'h', bias_justify=0.2 * min(text_a.height, text_b.height), bias_gap=2 * max(text_a.word_width, text_b.word_width)):
-                    text_b.merge_text(text_a, img)
+                    text_b.merge_text(text_a, img, concat=True)
                     merged = True
                     changed = True
                     break
@@ -187,9 +187,9 @@ def text_detection_google(input_file='../data/input/30800.jpg', ocr_root='../dat
     ocr_result = ocr.ocr_detection_google(input_file)
     texts = text_cvt_orc_format(ocr_result, img)
     texts = merge_intersected_texts(texts, img)
-    # texts = text_split_letters_with_large_gap(texts, img)
-    # texts = text_recognize_keyboard_letters(texts, img)
-    # texts = text_sentences_recognition(texts)
+    texts = text_split_letters_with_large_gap(texts, img)
+    texts = text_recognize_keyboard_letters(texts, img)
+    texts = text_sentences_recognition(texts, img)
     # texts = text_split_keyboard_letters(texts, img)
     board = visualize_texts(img, texts, shown_resize_height=800, show=show, write_path=pjoin(ocr_root, name+'.png'))
     save_detection_json(pjoin(ocr_root, name+'.json'), texts, img.shape)
