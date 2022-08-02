@@ -72,35 +72,41 @@ def text_sentences_recognition(texts):
     return texts
 
 
-def merge_intersected_texts(texts):
+def merge_intersected_texts(texts, overlap_threshold=0.3):
     '''
     Merge intersected texts (sentences or words)
     '''
     changed = True
     while changed:
         changed = False
-        temp_set = []
+        kept_texts = []
         for text_a in texts:
-            merged = False
-            for text_b in temp_set:
+            keep_a = True
+            removed_b = []
+            for text_b in kept_texts:
                 inter, iou, ioa, iob = text_a.calc_intersection_area(text_b, (2, 2))
                 if inter > 0:
-                    # if text_a is contained by others, discard text_a
-                    if ioa >= 0.8:
-                        merged = True
+                    changed = True
+                    # if text_a doesn't overlap with text_b, merge them with their contents
+                    if ioa < overlap_threshold and iob < overlap_threshold:
+                        text_b.merge_text(text_a, include_content=True)
+                        keep_a = False
                         break
-                    # if text_a contains text_b, ignore text_b
-                    elif iob >= 0.8:
-                        continue
-                    # if no containment relationship, merge text_a and text_b
+                    # else they are overlapping, only keep the larger one's content as it includes the other
                     else:
-                        text_b.merge_text(text_a)
-                        merged = True
-                        changed = True
-                        break
-            if not merged:
-                temp_set.append(text_a)
-        texts = temp_set.copy()
+                        if text_a.area > text_b.area:
+                            text_a.merge_text(text_b, include_content=False)
+                            removed_b.append(text_b)
+                        else:
+                            text_b.merge_text(text_a, include_content=False)
+                            keep_a = False
+                            break
+            # remove merged text
+            for b in removed_b:
+                kept_texts.remove(b)
+            if keep_a:
+                kept_texts.append(text_a)
+        texts = kept_texts.copy()
     return texts
 
 
