@@ -128,22 +128,46 @@ class Text:
     *** Revise the Text ***
     ***********************
     '''
-    def merge_text(self, text_b, include_content=True):
-        text_a = self
-        top = min(text_a.location['top'], text_b.location['top'])
-        left = min(text_a.location['left'], text_b.location['left'])
-        right = max(text_a.location['right'], text_b.location['right'])
-        bottom = max(text_a.location['bottom'], text_b.location['bottom'])
+    def check_sting_overlap(self, left_text, right_text):
+        '''
+        "ghjk" + "jkl" = "ghjkl"
+        :return: cur
+        '''
+        lt_r = left_text[::-1]
+        rt_r = right_text[::-1]
+        # check the duplicated part of the two texts
+        cur = 0
+        for c in rt_r:
+            if c != lt_r[cur]:
+                continue
+            else:
+                cur += 1
+        print(left_text, right_text, cur)
+        return cur
+
+    def merge_text(self, text_b, img):
+        top = min(self.location['top'], text_b.location['top'])
+        left = min(self.location['left'], text_b.location['left'])
+        right = max(self.location['right'], text_b.location['right'])
+        bottom = max(self.location['bottom'], text_b.location['bottom'])
         location = {'left': left, 'top': top, 'right': right, 'bottom': bottom}
         self.reset_location(location)
+        self.get_clip(img)
 
-        if include_content:
-            left_element = text_a
-            right_element = text_b
-            if text_a.location['left'] > text_b.location['left']:
-                left_element = text_b
-                right_element = text_a
-            self.content = left_element.content + ' ' + right_element.content
+        # merge text content
+        cur = self.check_sting_overlap(self.content, text_b.content)
+        # if any overlap,
+        if cur != 0:
+            self.content = self.content + text_b.content[cur:]
+        else:
+            # if no overlap, change the sequence of the two texts and check again
+            cur = self.check_sting_overlap(text_b.content, self.content)
+        # if still no overlap, simply concat the two strings
+        if cur == 0:
+            if self.location['left'] < text_b.location['left']:
+                self.content = self.content + ' ' + text_b.content
+            else:
+                self.content = text_b.content + ' ' + self.content
         self.word_width = self.width / len(self.content)
 
     def shrink_bound(self, binary_map):

@@ -41,7 +41,7 @@ def visualize_texts(org_img, texts, shown_resize_height=None, show=False, write_
     return img
 
 
-def text_sentences_recognition(texts):
+def text_sentences_recognition(texts, img):
     '''
     Merge separate words detected by Google ocr into a sentence
     '''
@@ -59,7 +59,7 @@ def text_sentences_recognition(texts):
                 if text_b.keyboard:
                     continue
                 if text_a.is_on_same_line(text_b, 'h', bias_justify=0.2 * min(text_a.height, text_b.height), bias_gap=2 * max(text_a.word_width, text_b.word_width)):
-                    text_b.merge_text(text_a)
+                    text_b.merge_text(text_a, img)
                     merged = True
                     changed = True
                     break
@@ -72,7 +72,7 @@ def text_sentences_recognition(texts):
     return texts
 
 
-def merge_intersected_texts(texts, overlap_threshold=0.3):
+def merge_intersected_texts(texts, img):
     '''
     Merge intersected texts (sentences or words)
     '''
@@ -82,28 +82,13 @@ def merge_intersected_texts(texts, overlap_threshold=0.3):
         kept_texts = []
         for text_a in texts:
             keep_a = True
-            removed_b = []
             for text_b in kept_texts:
-                inter, iou, ioa, iob = text_a.calc_intersection_area(text_b, (2, 2))
-                if inter > 0:
+                inter, iou, ioa, iob = text_a.calc_intersection_area(text_b, (0, 0))
+                if inter > 0 and max(ioa, iob) > 0.1:
+                    text_b.merge_text(text_a, img)
+                    keep_a = False
                     changed = True
-                    # if text_a doesn't overlap with text_b, merge them with their contents
-                    if ioa < overlap_threshold and iob < overlap_threshold:
-                        text_b.merge_text(text_a, include_content=True)
-                        keep_a = False
-                        break
-                    # else they are overlapping, only keep the larger one's content as it includes the other
-                    else:
-                        if text_a.area > text_b.area:
-                            text_a.merge_text(text_b, include_content=False)
-                            removed_b.append(text_b)
-                        else:
-                            text_b.merge_text(text_a, include_content=False)
-                            keep_a = False
-                            break
-            # remove merged text
-            for b in removed_b:
-                kept_texts.remove(b)
+                    break
             if keep_a:
                 kept_texts.append(text_a)
         texts = kept_texts.copy()
@@ -143,7 +128,7 @@ def text_filter_noise(texts):
     return valid_texts
 
 
-def text_split_letters(texts, img):
+def text_split_letters_with_large_gap(texts, img):
     new_texts = []
     latest_id = len(texts)
     for text in texts:
@@ -201,11 +186,11 @@ def text_detection_google(input_file='../data/input/30800.jpg', ocr_root='../dat
 
     ocr_result = ocr.ocr_detection_google(input_file)
     texts = text_cvt_orc_format(ocr_result, img)
-    texts = merge_intersected_texts(texts)
-    texts = text_split_letters(texts, img)
-    texts = text_recognize_keyboard_letters(texts, img)
-    # texts = text_filter_noise(texts)
-    texts = text_sentences_recognition(texts)
+    texts = merge_intersected_texts(texts, img)
+    # texts = text_split_letters_with_large_gap(texts, img)
+    # texts = text_recognize_keyboard_letters(texts, img)
+    # texts = text_sentences_recognition(texts)
+    # texts = text_split_keyboard_letters(texts, img)
     board = visualize_texts(img, texts, shown_resize_height=800, show=show, write_path=pjoin(ocr_root, name+'.png'))
     save_detection_json(pjoin(ocr_root, name+'.json'), texts, img.shape)
     print("[Text Detection Completed in %.3f s] Input: %s Output: %s" % (time.clock() - start, input_file, pjoin(ocr_root, name+'.json')))
