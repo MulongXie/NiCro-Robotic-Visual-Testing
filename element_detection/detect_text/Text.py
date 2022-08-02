@@ -264,7 +264,7 @@ class Text:
             gap = gaps[i]
             pos = letter_pos[i]
             letters_kept += self.content[i]
-            if gap > min(letter_lens[i], letter_lens[i + 1]) * 1.5:
+            if gap > min(letter_lens[i], letter_lens[i + 1]):
                 # split out letter
                 location = {'top': loc['top'], 'bottom': loc['bottom'],
                             'left': loc['left'] + pos[0], 'right':loc['left'] + pos[1]}
