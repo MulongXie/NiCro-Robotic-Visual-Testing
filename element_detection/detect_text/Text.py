@@ -128,23 +128,22 @@ class Text:
     *** Revise the Text ***
     ***********************
     '''
-    def merge_text(self, text_b):
+    def merge_text(self, text_b, include_content=True):
         text_a = self
         top = min(text_a.location['top'], text_b.location['top'])
         left = min(text_a.location['left'], text_b.location['left'])
         right = max(text_a.location['right'], text_b.location['right'])
         bottom = max(text_a.location['bottom'], text_b.location['bottom'])
-        self.location = {'left': left, 'top': top, 'right': right, 'bottom': bottom}
-        self.width = self.location['right'] - self.location['left']
-        self.height = self.location['bottom'] - self.location['top']
-        self.area = self.width * self.height
+        location = {'left': left, 'top': top, 'right': right, 'bottom': bottom}
+        self.reset_location(location)
 
-        left_element = text_a
-        right_element = text_b
-        if text_a.location['left'] > text_b.location['left']:
-            left_element = text_b
-            right_element = text_a
-        self.content = left_element.content + ' ' + right_element.content
+        if include_content:
+            left_element = text_a
+            right_element = text_b
+            if text_a.location['left'] > text_b.location['left']:
+                left_element = text_b
+                right_element = text_a
+            self.content = left_element.content + ' ' + right_element.content
         self.word_width = self.width / len(self.content)
 
     def shrink_bound(self, binary_map):
