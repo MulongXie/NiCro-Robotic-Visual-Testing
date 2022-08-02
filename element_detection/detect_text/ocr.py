@@ -17,7 +17,10 @@ def Google_OCR_makeImageData(imgpath):
                 'type': 'DOCUMENT_TEXT_DETECTION',
                 # 'type': 'TEXT_DETECTION',
                 'maxResults': 1
-            }]
+            }],
+            "imageContext": {
+                "languageHints": ["en"],
+            }
         }
     return json.dumps({"requests": img_req}).encode()
 
@@ -33,6 +36,8 @@ def ocr_detection_google(imgpath):
                              headers={'Content_Type': 'application/json'})
     # print('*** Text Detection Time Taken:%.3fs ***' % (time.clock() - start))
     print("*** Please replace the Google OCR key at detect_text/ocr.py line 28 with your own (apply in https://cloud.google.com/vision) ***")
+    if 'responses' not in response.json():
+        raise Exception(response.json())
     if response.json()['responses'] == [{}]:
         # No Text
         return None
