@@ -310,6 +310,32 @@ class Text:
         split_texts.append(self)
         return split_texts
 
+    def split_keyboard_letters(self, latest_id):
+        '''
+        Simply check if the text contains multiple keyboard letters, and split equally
+        :param latest_id: the latest id of Text detected, used for encapsulating letters as new Texts
+        :return: list of Text objects
+        '''
+        keyboard_alphabet = 'qwertyuiopasdfghjklzxcvbnm1234567890@#$_&-+()/*"\':;!?'
+        loc = self.location
+        letters = []
+        if self.content in keyboard_alphabet:
+            for i in range(len(self.content) - 1):
+                content = self.content[i]
+                location = {'top': loc['top'], 'bottom': loc['bottom'],
+                            'left': loc['left'] + i * int(self.word_width), 'right': loc['left'] + int((i + 1) * self.word_width)}
+                letter = Text(latest_id, content, location)
+                letter.keyboard = True
+                letters.append(letter)
+            # update itself as the latest letter
+            self.content = self.content[-1]
+            new_loc = {'top': loc['top'], 'bottom': loc['bottom'],
+                       'left': loc['right'] - int(self.word_width), 'right': loc['right']}
+            self.keyboard = True
+            self.reset_location(new_loc)
+            letters.append(self)
+        return letters
+
     '''
     *********************
     *** Visualization ***

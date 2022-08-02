@@ -143,6 +143,21 @@ def text_split_letters_with_large_gap(texts, img):
     return new_texts
 
 
+def text_split_keyboard_letters(texts, img):
+    new_texts = []
+    latest_id = len(texts)
+    for text in texts:
+        letters = text.split_keyboard_letters(latest_id)
+        if len(letters) > 1:
+            latest_id += len(letters) - 1
+            for letter in letters:
+                letter.get_clip(img)
+            new_texts += letters
+        else:
+            new_texts.append(text)
+    return new_texts
+
+
 def text_recognize_keyboard_letters(texts, img):
     '''
     Recognize keyboard letters from texts.
