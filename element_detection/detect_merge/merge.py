@@ -126,8 +126,9 @@ def refine_elements(compos, texts, intersection_bias=(2, 2), containment_ratio=0
 
     # elements += texts
     for text in texts:
-        if text.keyboard or text not in contained_texts:
-            elements.append(text)
+        # if text.keyboard or text not in contained_texts:
+        #     elements.append(text)
+        elements.append(text)
     return elements
 
 
