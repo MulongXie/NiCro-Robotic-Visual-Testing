@@ -147,12 +147,12 @@ class Text:
                 cur += 1
                 i += 1
         for c in rt_r:
+            if cur == len(lt_r):
+                break
             if c != lt_r[cur]:
                 continue
             else:
                 cur += 1
-            if cur == len(lt_r):
-                break
         return cur
 
     def merge_text(self, text_b, img, concat=False):
