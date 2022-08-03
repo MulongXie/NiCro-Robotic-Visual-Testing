@@ -51,7 +51,7 @@ class GUIPair:
         is_matched = False
         for tar in target_ele_text:
             for text_ele in compare_elements:
-                if text_ele.text_content is None:
+                if text_ele.text_content is None or text_ele.keyboard != target_element.keyboard:
                     continue
                 sim = SequenceMatcher(None, text_ele.text_content, tar).ratio()
                 if sim > self.min_similarity_text:
