@@ -143,7 +143,7 @@ class Text:
         # if the last letter in the left text is abnormal, remove it
         if rm_uncommon_letters:
             i = 0
-            while ord(lt_r[i]) > 127 and i < len(lt_r):
+            while i < len(lt_r) and ord(lt_r[i]) > 127:
                 cur += 1
                 i += 1
         for c in rt_r:
