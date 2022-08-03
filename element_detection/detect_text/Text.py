@@ -171,14 +171,14 @@ class Text:
             else:
                 # if no overlap, change the sequence of the two texts and check again
                 cur = self.check_sting_overlap(text_b.content, self.content)
-            if cur != 0:
-                self.content = text_b.content + self.content[cur:]
-            # if still no overlap, simply concat the two strings
-            else:
-                if self.location['left'] < text_b.location['left']:
-                    self.content = self.content + text_b.content
+                if cur != 0:
+                    self.content = text_b.content + self.content[cur:]
+                # if still no overlap, simply concat the two strings
                 else:
-                    self.content = text_b.content + self.content
+                    if self.location['left'] < text_b.location['left']:
+                        self.content = self.content + text_b.content
+                    else:
+                        self.content = text_b.content + self.content
         # directly concat two text strings
         else:
             if self.location['left'] < text_b.location['left']:
