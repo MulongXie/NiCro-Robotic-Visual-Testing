@@ -143,7 +143,7 @@ class Text:
         # if the last letter in the left text is abnormal, remove it
         if rm_uncommon_letters:
             i = 0
-            while ord(lt_r[i]) > 127:
+            while ord(lt_r[i]) > 127 and i < len(lt_r):
                 cur += 1
                 i += 1
         for c in rt_r:
@@ -151,6 +151,8 @@ class Text:
                 continue
             else:
                 cur += 1
+            if cur == len(lt_r):
+                break
         return cur
 
     def merge_text(self, text_b, img, concat=False):

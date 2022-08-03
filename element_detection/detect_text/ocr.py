@@ -34,8 +34,7 @@ def ocr_detection_google(imgpath):
                              data=imgdata,
                              params={'key': api_key},
                              headers={'Content_Type': 'application/json'})
-    # print('*** Text Detection Time Taken:%.3fs ***' % (time.clock() - start))
-    print("*** Please replace the Google OCR key at detect_text/ocr.py line 28 with your own (apply in https://cloud.google.com/vision) ***")
+    # print("*** Please replace the Google OCR key at detect_text/ocr.py line 28 with your own (apply in https://cloud.google.com/vision) ***")
     if 'responses' not in response.json():
         raise Exception(response.json())
     if response.json()['responses'] == [{}]:
