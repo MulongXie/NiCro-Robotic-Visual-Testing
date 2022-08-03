@@ -1,4 +1,5 @@
 import cv2
+import time
 from GUI import GUI
 
 
@@ -53,7 +54,7 @@ class Device:
             ele.show_clip()
         return ele
 
-    def replay_action(self, action, matched_element=None, screen_ratio=None):
+    def replay_action(self, action, matched_element=None, screen_ratio=None, sleep=0.2):
         if action['type'] == 'click':
             if matched_element is not None:
                 self.execute_action('click', [(int(matched_element.center_x / self.detect_resize_ratio), int(matched_element.center_y / self.detect_resize_ratio))])
@@ -65,6 +66,7 @@ class Device:
             re_dist = ((action['coordinate'][1][0] - action['coordinate'][0][0]) / screen_ratio, (action['coordinate'][1][1] - action['coordinate'][0][1]) / screen_ratio)
             end_coord = (int(start_coord[0] + re_dist[0]), int(start_coord[1] + re_dist[1]))
             self.execute_action('swipe', [start_coord, end_coord])
+        time.sleep(sleep)
 
     def execute_action(self, action_type, coordinates):
         if action_type == 'click':
