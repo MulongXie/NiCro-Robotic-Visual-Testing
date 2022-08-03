@@ -113,7 +113,7 @@ class NiCro:
             self.target_element = None
         for dev in self.devices:
             if dev.id == self.source_device.id:
-                print('Skip the Selected Source Device')
+                # print('Skip the Selected Source Device')
                 continue
             self.replay_action_on_device(dev)
             dev.update_screenshot_and_gui(self.paddle_ocr, ocr_opt=self.ocr_opt)
@@ -167,7 +167,7 @@ class NiCro:
                 if is_replay:
                     self.replay_action_on_all_devices()
                 # update the screenshot and GUI of the selected target device
-                print("****** Re-detect Selected Device's screenshot and GUI ******")
+                print("****** Re-detect Source Device's screenshot and GUI ******")
                 s_dev.update_screenshot_and_gui(self.paddle_ocr, ocr_opt=self.ocr_opt)
                 params[0] = s_dev.GUI.det_result_imgs['merge'].copy()
                 cv2.imshow(win_name, params[0])
@@ -209,7 +209,14 @@ class NiCro:
                 self.widget_matching_acc[method][i] += 1
             print('Device:', dev.name, self.widget_matching_acc[method])
 
-    def click_to_match_widgets_cross_devices(self):
+    def click_to_match_widgets_cross_devices(self, method='nicro'):
+        '''
+        Match the clicked elements on the source devices through target devices
+        :param method: the matching method
+            @ 'nicro': the comprehensive matching approach of NiCro
+            @ 'sift', 'resnet', 'template-match', 'text'
+            @ 'all': iterate all methods
+        '''
         s_dev = self.source_device
         win_name = s_dev.device.get_serial_no() + ' screen'
 
@@ -229,16 +236,19 @@ class NiCro:
                 self.test_round += 1
                 print('\n****** Test Round: %d ******' % self.test_round)
                 self.target_element = self.source_device.find_element_by_coordinate(self.action['coordinate'][0][0], self.action['coordinate'][0][1], show=False)
-                methods = ['sift', 'resnet', 'template-match', 'text', 'nicro']
-                for method in methods:
-                    self.match_widgets_cross_device(method)
+                if params[1] == 'all':
+                    methods = ['sift', 'resnet', 'template-match', 'text', 'nicro']
+                else:
+                    methods = [params[1]]
+                for m in methods:
+                    self.match_widgets_cross_device(m)
                 print(self.widget_matching_acc)
                 params[0] = s_dev.GUI.det_result_imgs['merge'].copy()
                 cv2.imshow(win_name, params[0])
 
         board = s_dev.GUI.det_result_imgs['merge'].copy()
         cv2.imshow(win_name, board)
-        cv2.setMouseCallback(win_name, on_mouse, [board])
+        cv2.setMouseCallback(win_name, on_mouse, [board, method])
         key = cv2.waitKey()
         if key == ord('q'):
             cv2.destroyWindow(win_name)
