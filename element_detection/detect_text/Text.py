@@ -128,7 +128,7 @@ class Text:
     *** Revise the Text ***
     ***********************
     '''
-    def check_sting_overlap(self, left_text, right_text, lower_case=True):
+    def check_sting_overlap(self, left_text, right_text, lower_case=True, rm_uncommon_letters=True):
         '''
         "ghjk" + "jkl" = "ghjkl"
         :return: cur
@@ -140,6 +140,12 @@ class Text:
             rt_r = rt_r.lower()
         # check the duplicated part of the two texts
         cur = 0
+        # if the last letter in the left text is abnormal, remove it
+        if rm_uncommon_letters:
+            i = 0
+            while ord(lt_r[i]) > 127:
+                cur += 1
+                i += 1
         for c in rt_r:
             if c != lt_r[cur]:
                 continue
@@ -165,12 +171,14 @@ class Text:
             else:
                 # if no overlap, change the sequence of the two texts and check again
                 cur = self.check_sting_overlap(text_b.content, self.content)
+            if cur != 0:
+                self.content = text_b.content + self.content[cur:]
             # if still no overlap, simply concat the two strings
-            if cur == 0:
+            else:
                 if self.location['left'] < text_b.location['left']:
-                    self.content = self.content + ' ' + text_b.content
+                    self.content = self.content + text_b.content
                 else:
-                    self.content = text_b.content + ' ' + self.content
+                    self.content = text_b.content + self.content
         # directly concat two text strings
         else:
             if self.location['left'] < text_b.location['left']:
