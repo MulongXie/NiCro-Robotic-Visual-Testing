@@ -7,28 +7,17 @@
     "texts": [
         {
             "id": 0,
-            "content": "65",
+            "content": "\u2190",
             "keyboard": false,
-            "column_min": 242,
-            "row_min": 117,
-            "column_max": 279,
-            "row_max": 169,
-            "width": 37,
-            "height": 52
+            "column_min": 71,
+            "row_min": 129,
+            "column_max": 116,
+            "row_max": 164,
+            "width": 45,
+            "height": 35
         },
         {
             "id": 1,
-            "content": "\u2190",
-            "keyboard": false,
-            "column_min": 70,
-            "row_min": 129,
-            "column_max": 116,
-            "row_max": 165,
-            "width": 46,
-            "height": 36
-        },
-        {
-            "id": 2,
             "content": "X",
             "keyboard": false,
             "column_min": 2063,
@@ -39,40 +28,271 @@
             "height": 26
         },
         {
-            "id": 3,
-            "content": "AQ",
+            "id": 2,
+            "content": "qqqqqqa",
             "keyboard": false,
-            "column_min": 1059,
-            "row_min": 1483,
-            "column_max": 1134,
-            "row_max": 1527,
-            "width": 75,
-            "height": 44
+            "column_min": 235,
+            "row_min": 135,
+            "column_max": 382,
+            "row_max": 167,
+            "width": 147,
+            "height": 32
+        },
+        {
+            "id": 3,
+            "content": "qqqqqqqqq",
+            "keyboard": false,
+            "column_min": 210,
+            "row_min": 302,
+            "column_max": 397,
+            "row_max": 328,
+            "width": 187,
+            "height": 26
         },
         {
             "id": 4,
-            "content": "AW",
+            "content": "G\u00fcl , Mardin Ye\u015filli Yolu Pk :47650 , 47100 Artuklu Mardin , Turkey",
             "keyboard": false,
-            "column_min": 1626,
-            "row_min": 1483,
-            "column_max": 1708,
-            "row_max": 1524,
-            "width": 82,
-            "height": 41
+            "column_min": 210,
+            "row_min": 342,
+            "column_max": 1110,
+            "row_max": 372,
+            "width": 900,
+            "height": 30
         },
         {
             "id": 5,
-            "content": "was",
-            "keyboard": false,
-            "column_min": 475,
-            "row_min": 1490,
-            "column_max": 580,
-            "row_max": 1523,
-            "width": 105,
-            "height": 33
+            "content": "/",
+            "keyboard": true,
+            "column_min": 890,
+            "row_min": 342,
+            "column_max": 902,
+            "row_max": 372,
+            "width": 12,
+            "height": 30
         },
         {
             "id": 6,
+            "content": "qqqqqq rumah ihya",
+            "keyboard": false,
+            "column_min": 211,
+            "row_min": 462,
+            "column_max": 524,
+            "row_max": 504,
+            "width": 313,
+            "height": 42
+        },
+        {
+            "id": 7,
+            "content": "Blok D3-01 , Susukan , Kecamatan Bojonggede , Kabupaten Bogor, Jawa Barat 16920 , Indonesia",
+            "keyboard": false,
+            "column_min": 210,
+            "row_min": 512,
+            "column_max": 1534,
+            "row_max": 543,
+            "width": 1324,
+            "height": 31
+        },
+        {
+            "id": 8,
+            "content": "The Q",
+            "keyboard": false,
+            "column_min": 210,
+            "row_min": 635,
+            "column_max": 304,
+            "row_max": 664,
+            "width": 94,
+            "height": 29
+        },
+        {
+            "id": 9,
+            "content": "660 Washington St , Boston , MA 02111 , USA",
+            "keyboard": false,
+            "column_min": 211,
+            "row_min": 685,
+            "column_max": 829,
+            "row_max": 713,
+            "width": 618,
+            "height": 28
+        },
+        {
+            "id": 10,
+            "content": "Suzie Q",
+            "keyboard": false,
+            "column_min": 210,
+            "row_min": 805,
+            "column_max": 333,
+            "row_max": 835,
+            "width": 123,
+            "height": 30
+        },
+        {
+            "id": 11,
+            "content": "139 Effingham St , Rotherham S65 1BL , UK",
+            "keyboard": false,
+            "column_min": 211,
+            "row_min": 855,
+            "column_max": 804,
+            "row_max": 884,
+            "width": 593,
+            "height": 29
+        },
+        {
+            "id": 12,
+            "content": "Q Solutions",
+            "keyboard": false,
+            "column_min": 211,
+            "row_min": 978,
+            "column_max": 396,
+            "row_max": 1006,
+            "width": 185,
+            "height": 28
+        },
+        {
+            "id": 13,
+            "content": "-",
+            "keyboard": true,
+            "column_min": 234,
+            "row_min": 978,
+            "column_max": 244,
+            "row_max": 1006,
+            "width": 10,
+            "height": 28
+        },
+        {
+            "id": 14,
+            "content": "6B 3/4 , 6th Floor , Fakhri Trade Center . Shahrah",
+            "keyboard": false,
+            "column_min": 212,
+            "row_min": 1025,
+            "column_max": 866,
+            "row_max": 1055,
+            "width": 654,
+            "height": 30
+        },
+        {
+            "id": 15,
+            "content": "-",
+            "keyboard": true,
+            "column_min": 868,
+            "row_min": 1025,
+            "column_max": 875,
+            "row_max": 1055,
+            "width": 7,
+            "height": 30
+        },
+        {
+            "id": 16,
+            "content": "e",
+            "keyboard": true,
+            "column_min": 877,
+            "row_min": 1025,
+            "column_max": 892,
+            "row_max": 1055,
+            "width": 15,
+            "height": 30
+        },
+        {
+            "id": 17,
+            "content": "-",
+            "keyboard": true,
+            "column_min": 894,
+            "row_min": 1025,
+            "column_max": 901,
+            "row_max": 1055,
+            "width": 7,
+            "height": 30
+        },
+        {
+            "id": 18,
+            "content": "Liaquat New Chali , Karachi , Karachi City , Sindh 74200 , Pakistan",
+            "keyboard": false,
+            "column_min": 905,
+            "row_min": 1025,
+            "column_max": 1798,
+            "row_max": 1055,
+            "width": 893,
+            "height": 30
+        },
+        {
+            "id": 19,
+            "content": "powered by Google",
+            "keyboard": false,
+            "column_min": 1800,
+            "row_min": 1106,
+            "column_max": 2174,
+            "row_max": 1152,
+            "width": 374,
+            "height": 46
+        },
+        {
+            "id": 20,
+            "content": "a",
+            "keyboard": true,
+            "column_min": 382,
+            "row_min": 1491,
+            "column_max": 410,
+            "row_max": 1528,
+            "width": 28,
+            "height": 37
+        },
+        {
+            "id": 21,
+            "content": "www was",
+            "keyboard": false,
+            "column_min": 424,
+            "row_min": 1491,
+            "column_max": 679,
+            "row_max": 1528,
+            "width": 255,
+            "height": 37
+        },
+        {
+            "id": 22,
+            "content": "www was",
+            "keyboard": false,
+            "column_min": 948,
+            "row_min": 1492,
+            "column_max": 1201,
+            "row_max": 1528,
+            "width": 253,
+            "height": 36
+        },
+        {
+            "id": 23,
+            "content": "a",
+            "keyboard": true,
+            "column_min": 1218,
+            "row_min": 1492,
+            "column_max": 1245,
+            "row_max": 1528,
+            "width": 27,
+            "height": 36
+        },
+        {
+            "id": 24,
+            "content": "www was",
+            "keyboard": false,
+            "column_min": 1519,
+            "row_min": 1493,
+            "column_max": 1815,
+            "row_max": 1524,
+            "width": 296,
+            "height": 31
+        },
+        {
+            "id": 25,
+            "content": "a",
+            "keyboard": true,
+            "column_min": 1668,
+            "row_min": 1493,
+            "column_max": 1692,
+            "row_max": 1522,
+            "width": 24,
+            "height": 29
+        },
+        {
+            "id": 26,
             "content": "1",
             "keyboard": true,
             "column_min": 158,
@@ -83,51 +303,40 @@
             "height": 28
         },
         {
-            "id": 7,
-            "content": "e",
+            "id": 27,
+            "content": "3",
             "keyboard": true,
-            "column_min": 476,
+            "column_min": 552,
             "row_min": 1586,
-            "column_max": 516,
-            "row_max": 1692,
-            "width": 40,
-            "height": 106
-        },
-        {
-            "id": 8,
-            "content": "\u00b3",
-            "keyboard": true,
-            "column_min": 553,
-            "row_min": 1586,
-            "column_max": 577,
-            "row_max": 1692,
-            "width": 24,
-            "height": 106
-        },
-        {
-            "id": 9,
-            "content": "r\u00aat4",
-            "keyboard": false,
-            "column_min": 679,
-            "row_min": 1586,
-            "column_max": 907,
-            "row_max": 1693,
-            "width": 228,
-            "height": 107
-        },
-        {
-            "id": 10,
-            "content": "5",
-            "keyboard": true,
-            "column_min": 947,
-            "row_min": 1586,
-            "column_max": 973,
+            "column_max": 575,
             "row_max": 1615,
-            "width": 26,
+            "width": 23,
             "height": 29
         },
         {
-            "id": 11,
+            "id": 28,
+            "content": "4",
+            "keyboard": true,
+            "column_min": 749,
+            "row_min": 1586,
+            "column_max": 772,
+            "row_max": 1614,
+            "width": 23,
+            "height": 28
+        },
+        {
+            "id": 29,
+            "content": "5",
+            "keyboard": true,
+            "column_min": 949,
+            "row_min": 1586,
+            "column_max": 972,
+            "row_max": 1614,
+            "width": 23,
+            "height": 28
+        },
+        {
+            "id": 30,
             "content": "7",
             "keyboard": true,
             "column_min": 1341,
@@ -138,18 +347,7 @@
             "height": 29
         },
         {
-            "id": 12,
-            "content": "8",
-            "keyboard": true,
-            "column_min": 1541,
-            "row_min": 1586,
-            "column_max": 1567,
-            "row_max": 1614,
-            "width": 26,
-            "height": 28
-        },
-        {
-            "id": 13,
+            "id": 31,
             "content": "0",
             "keyboard": true,
             "column_min": 1938,
@@ -160,117 +358,161 @@
             "height": 29
         },
         {
-            "id": 14,
-            "content": "v",
+            "id": 32,
+            "content": "2",
             "keyboard": true,
-            "column_min": 260,
+            "column_min": 353,
             "row_min": 1587,
-            "column_max": 329,
-            "row_max": 1695,
-            "width": 69,
-            "height": 108
+            "column_max": 379,
+            "row_max": 1614,
+            "width": 26,
+            "height": 27
         },
         {
-            "id": 15,
-            "content": "\u00b2",
-            "keyboard": true,
-            "column_min": 355,
-            "row_min": 1587,
-            "column_max": 385,
-            "row_max": 1695,
-            "width": 30,
-            "height": 108
-        },
-        {
-            "id": 16,
+            "id": 33,
             "content": "6",
             "keyboard": true,
             "column_min": 1147,
             "row_min": 1587,
-            "column_max": 1166,
-            "row_max": 1613,
-            "width": 19,
-            "height": 26
-        },
-        {
-            "id": 17,
-            "content": "9",
-            "keyboard": true,
-            "column_min": 1739,
-            "row_min": 1587,
-            "column_max": 1762,
+            "column_max": 1167,
             "row_max": 1614,
-            "width": 23,
+            "width": 20,
             "height": 27
         },
         {
-            "id": 18,
+            "id": 34,
+            "content": "8",
+            "keyboard": true,
+            "column_min": 1542,
+            "row_min": 1587,
+            "column_max": 1567,
+            "row_max": 1615,
+            "width": 25,
+            "height": 28
+        },
+        {
+            "id": 35,
+            "content": "9",
+            "keyboard": true,
+            "column_min": 1740,
+            "row_min": 1587,
+            "column_max": 1762,
+            "row_max": 1614,
+            "width": 22,
+            "height": 27
+        },
+        {
+            "id": 36,
+            "content": "y",
+            "keyboard": true,
+            "column_min": 1054,
+            "row_min": 1614,
+            "column_max": 1186,
+            "row_max": 1725,
+            "width": 132,
+            "height": 111
+        },
+        {
+            "id": 37,
+            "content": "u",
+            "keyboard": true,
+            "column_min": 1186,
+            "row_min": 1614,
+            "column_max": 1318,
+            "row_max": 1725,
+            "width": 132,
+            "height": 111
+        },
+        {
+            "id": 38,
             "content": "i",
             "keyboard": true,
             "column_min": 1476,
-            "row_min": 1635,
-            "column_max": 1491,
-            "row_max": 1693,
-            "width": 15,
-            "height": 58
+            "row_min": 1636,
+            "column_max": 1493,
+            "row_max": 1692,
+            "width": 17,
+            "height": 56
         },
         {
-            "id": 19,
-            "content": "y",
+            "id": 39,
+            "content": "t",
             "keyboard": true,
-            "column_min": 1061,
-            "row_min": 1649,
-            "column_max": 1117,
-            "row_max": 1715,
-            "width": 56,
-            "height": 66
+            "column_min": 872,
+            "row_min": 1641,
+            "column_max": 907,
+            "row_max": 1695,
+            "width": 35,
+            "height": 54
         },
         {
-            "id": 20,
-            "content": "u",
+            "id": 40,
+            "content": "r",
             "keyboard": true,
-            "column_min": 1267,
-            "row_min": 1649,
-            "column_max": 1311,
+            "column_min": 676,
+            "row_min": 1642,
+            "column_max": 716,
+            "row_max": 1696,
+            "width": 40,
+            "height": 54
+        },
+        {
+            "id": 41,
+            "content": "w",
+            "keyboard": true,
+            "column_min": 263,
+            "row_min": 1643,
+            "column_max": 329,
             "row_max": 1698,
-            "width": 44,
-            "height": 49
+            "width": 66,
+            "height": 55
         },
         {
-            "id": 21,
-            "content": "p",
+            "id": 42,
+            "content": "e",
             "keyboard": true,
-            "column_min": 1857,
-            "row_min": 1649,
-            "column_max": 1903,
-            "row_max": 1711,
-            "width": 46,
-            "height": 62
+            "column_min": 476,
+            "row_min": 1643,
+            "column_max": 524,
+            "row_max": 1698,
+            "width": 48,
+            "height": 55
         },
         {
-            "id": 22,
+            "id": 43,
             "content": "q",
             "keyboard": true,
-            "column_min": 73,
-            "row_min": 1650,
-            "column_max": 124,
-            "row_max": 1713,
-            "width": 51,
-            "height": 63
+            "column_min": 71,
+            "row_min": 1649,
+            "column_max": 127,
+            "row_max": 1714,
+            "width": 56,
+            "height": 65
         },
         {
-            "id": 23,
+            "id": 44,
             "content": "O",
             "keyboard": true,
-            "column_min": 1661,
-            "row_min": 1651,
-            "column_max": 1707,
-            "row_max": 1696,
+            "column_min": 1662,
+            "row_min": 1650,
+            "column_max": 1708,
+            "row_max": 1695,
             "width": 46,
             "height": 45
         },
         {
-            "id": 24,
+            "id": 45,
+            "content": "p",
+            "keyboard": true,
+            "column_min": 1856,
+            "row_min": 1650,
+            "column_max": 1903,
+            "row_max": 1713,
+            "width": 47,
+            "height": 63
+        },
+        {
+            "id": 46,
             "content": "\u00d7",
             "keyboard": true,
             "column_min": 2080,
@@ -281,7 +523,7 @@
             "height": 26
         },
         {
-            "id": 25,
+            "id": 47,
             "content": "a",
             "keyboard": true,
             "column_min": 173,
@@ -292,7 +534,7 @@
             "height": 87
         },
         {
-            "id": 26,
+            "id": 48,
             "content": "s",
             "keyboard": true,
             "column_min": 377,
@@ -303,7 +545,7 @@
             "height": 87
         },
         {
-            "id": 27,
+            "id": 49,
             "content": "d",
             "keyboard": true,
             "column_min": 573,
@@ -314,7 +556,7 @@
             "height": 87
         },
         {
-            "id": 28,
+            "id": 50,
             "content": "f",
             "keyboard": true,
             "column_min": 779,
@@ -325,7 +567,7 @@
             "height": 87
         },
         {
-            "id": 29,
+            "id": 51,
             "content": "g",
             "keyboard": true,
             "column_min": 969,
@@ -336,7 +578,7 @@
             "height": 87
         },
         {
-            "id": 30,
+            "id": 52,
             "content": "h",
             "keyboard": true,
             "column_min": 1170,
@@ -347,7 +589,7 @@
             "height": 87
         },
         {
-            "id": 31,
+            "id": 53,
             "content": "j",
             "keyboard": true,
             "column_min": 1372,
@@ -358,7 +600,7 @@
             "height": 87
         },
         {
-            "id": 32,
+            "id": 54,
             "content": "k",
             "keyboard": true,
             "column_min": 1568,
@@ -369,7 +611,7 @@
             "height": 87
         },
         {
-            "id": 33,
+            "id": 55,
             "content": "I",
             "keyboard": true,
             "column_min": 1759,
@@ -380,7 +622,7 @@
             "height": 64
         },
         {
-            "id": 34,
+            "id": 56,
             "content": "?",
             "keyboard": true,
             "column_min": 1875,
@@ -391,7 +633,7 @@
             "height": 72
         },
         {
-            "id": 35,
+            "id": 57,
             "content": "!",
             "keyboard": true,
             "column_min": 1681,
@@ -402,7 +644,7 @@
             "height": 72
         },
         {
-            "id": 36,
+            "id": 58,
             "content": "n",
             "keyboard": true,
             "column_min": 1285,
@@ -413,7 +655,7 @@
             "height": 73
         },
         {
-            "id": 37,
+            "id": 59,
             "content": "m",
             "keyboard": true,
             "column_min": 1474,
@@ -424,7 +666,7 @@
             "height": 73
         },
         {
-            "id": 38,
+            "id": 60,
             "content": "b",
             "keyboard": true,
             "column_min": 1085,
@@ -435,7 +677,7 @@
             "height": 72
         },
         {
-            "id": 39,
+            "id": 61,
             "content": "C",
             "keyboard": true,
             "column_min": 688,
@@ -446,7 +688,7 @@
             "height": 73
         },
         {
-            "id": 40,
+            "id": 62,
             "content": "V",
             "keyboard": true,
             "column_min": 893,
@@ -457,7 +699,7 @@
             "height": 73
         },
         {
-            "id": 41,
+            "id": 63,
             "content": "X",
             "keyboard": true,
             "column_min": 486,
@@ -468,7 +710,7 @@
             "height": 72
         },
         {
-            "id": 42,
+            "id": 64,
             "content": "Z",
             "keyboard": true,
             "column_min": 296,
@@ -479,7 +721,7 @@
             "height": 72
         },
         {
-            "id": 43,
+            "id": 65,
             "content": "O",
             "keyboard": true,
             "column_min": 2082,
@@ -490,7 +732,7 @@
             "height": 40
         },
         {
-            "id": 44,
+            "id": 66,
             "content": "?",
             "keyboard": true,
             "column_min": 52,
@@ -501,7 +743,7 @@
             "height": 38
         },
         {
-            "id": 45,
+            "id": 67,
             "content": "1",
             "keyboard": true,
             "column_min": 79,
@@ -512,7 +754,7 @@
             "height": 38
         },
         {
-            "id": 46,
+            "id": 68,
             "content": "2",
             "keyboard": true,
             "column_min": 108,
@@ -523,7 +765,7 @@
             "height": 38
         },
         {
-            "id": 47,
+            "id": 69,
             "content": "3",
             "keyboard": true,
             "column_min": 138,

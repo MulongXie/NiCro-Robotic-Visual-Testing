@@ -38,28 +38,32 @@ class GUI:
     *** Detect or Load Elements ***
     *******************************
     '''
-    def detect_element(self, is_text=True, is_nontext=True, is_merge=True, paddle_cor=None, ocr_opt='paddle'):
+    def detect_element(self, is_text=True, is_nontext=True, is_merge=True, paddle_ocr=None, ocr_opt='paddle', verbose=True):
         '''
+        :param is_text: Boolean, True to detect text
+        :param is_nontext: Boolean, True to detect non-text
+        :param is_merge: Boolean, True to merge text and non-text results
         :param ocr_opt: 'google' or 'paddle'
+        :param verbose: Boolean, if output the processing time
         '''
         if is_text:
             os.makedirs(pjoin(self.output_dir, 'ocr'), exist_ok=True)
             import element_detection.detect_text.text_detection as text
             if ocr_opt == 'paddle':
-                self.det_result_imgs['text'], _ = text.text_detection_paddle(self.img_path, pjoin(self.output_dir, 'ocr'), paddle_cor=paddle_cor)
+                self.det_result_imgs['text'], _ = text.text_detection_paddle(self.img_path, pjoin(self.output_dir, 'ocr'), paddle_ocr=paddle_ocr, verbose=verbose)
             elif ocr_opt == 'google':
-                self.det_result_imgs['text'], _ = text.text_detection_google(self.img_path, pjoin(self.output_dir, 'ocr'))
+                self.det_result_imgs['text'], _ = text.text_detection_google(self.img_path, pjoin(self.output_dir, 'ocr'), verbose=verbose)
         if is_nontext:
             os.makedirs(pjoin(self.output_dir, 'ip'), exist_ok=True)
             import element_detection.detect_compo.ip_region_proposal as ip
             key_params = {'min-grad': 6, 'ffl-block': 5, 'min-ele-area': 80, 'merge-contained-ele': False}
-            self.det_result_imgs['non-text'] = ip.compo_detection(self.img_path, self.output_dir, key_params, resize_by_height=self.detection_resize_height, adaptive_binarization=False)
+            self.det_result_imgs['non-text'] = ip.compo_detection(self.img_path, self.output_dir, key_params, resize_by_height=self.detection_resize_height, adaptive_binarization=False, verbose=verbose)
         if is_merge:
             os.makedirs(pjoin(self.output_dir, 'merge'), exist_ok=True)
             import element_detection.detect_merge.merge as merge
             compo_path = pjoin(self.output_dir, 'ip', str(self.ui_name) + '.json')
             ocr_path = pjoin(self.output_dir, 'ocr', str(self.ui_name) + '.json')
-            self.det_result_imgs['merge'], self.det_result_data = merge.merge(self.img_path, compo_path, ocr_path, pjoin(self.output_dir, 'merge'), is_remove_bar=True, is_paragraph=False)
+            self.det_result_imgs['merge'], self.det_result_data = merge.merge(self.img_path, compo_path, ocr_path, pjoin(self.output_dir, 'merge'), is_remove_bar=True, is_paragraph=False, verbose=verbose)
             # convert elements as Element objects
             self.cvt_elements()
 

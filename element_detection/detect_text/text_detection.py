@@ -194,7 +194,7 @@ def text_recognize_keyboard_letters(texts, img):
     return texts
 
 
-def text_detection_google(input_file='../data/input/30800.jpg', ocr_root='../data/output', show=False):
+def text_detection_google(input_file='../data/input/30800.jpg', ocr_root='../data/output', show=False, verbose=True):
     start = time.clock()
     name = input_file.split('/')[-1][:-4]
     img = cv2.imread(input_file)
@@ -208,7 +208,8 @@ def text_detection_google(input_file='../data/input/30800.jpg', ocr_root='../dat
     texts = text_sentences_recognition(texts, img)
     board = visualize_texts(img, texts, shown_resize_height=800, show=show, write_path=pjoin(ocr_root, name+'.png'))
     save_detection_json(pjoin(ocr_root, name+'.json'), texts, img.shape)
-    print("[Text Detection Completed in %.3f s] Input: %s Output: %s" % (time.clock() - start, input_file, pjoin(ocr_root, name+'.json')))
+    if verbose:
+        print("[Text Detection Completed in %.3f s] Input: %s Output: %s" % (time.clock() - start, input_file, pjoin(ocr_root, name+'.json')))
     return board, texts
 
 
@@ -225,7 +226,7 @@ def text_cvt_orc_format_paddle(paddle_result, img):
     return texts
 
 
-def text_detection_paddle(input_file='../data/input/30800.jpg', ocr_root='../data/output', show=False, paddle_ocr=None):
+def text_detection_paddle(input_file='../data/input/30800.jpg', ocr_root='../data/output', show=False, paddle_ocr=None, verbose=True):
     start = time.time()
     name = input_file.replace('\\', '/').split('/')[-1][:-4]
     img = cv2.imread(input_file)
@@ -237,5 +238,6 @@ def text_detection_paddle(input_file='../data/input/30800.jpg', ocr_root='../dat
 
     board = visualize_texts(img, texts, shown_resize_height=800, show=show, write_path=pjoin(ocr_root, name+'.png'))
     save_detection_json(pjoin(ocr_root, name+'.json'), texts, img.shape)
-    print("[Text Detection Completed in %.3f s] Input: %s Output: %s" % (time.time() - start, input_file, pjoin(ocr_root, name+'.json')))
+    if verbose:
+        print("[Text Detection Completed in %.3f s] Input: %s Output: %s" % (time.time() - start, input_file, pjoin(ocr_root, name+'.json')))
     return board, texts

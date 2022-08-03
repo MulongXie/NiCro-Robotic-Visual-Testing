@@ -64,20 +64,20 @@ class NiCro:
         self.source_device = self.devices[device_id]
         self.get_devices_info()
 
-    def detect_gui_info_for_all_devices(self, load_detection_result=False, show=True):
+    def detect_gui_info_for_all_devices(self, load_detection_result=False, show=True, verbose=True):
         for i, device in enumerate(self.devices):
             print('****** Device [%d / %d] ******' % (i + 1, len(self.devices)))
-            device.update_screenshot_and_gui(self.paddle_ocr, load_detection_result, show, ocr_opt=self.ocr_opt)
+            device.update_screenshot_and_gui(self.paddle_ocr, load_detection_result, show, ocr_opt=self.ocr_opt, verbose=verbose)
         if self.robot is not None:
             print('****** Robot Arm [1 / 1] ******')
-            self.robot.detect_gui_element(self.paddle_ocr, load_detection_result, show=show, ocr_opt=self.ocr_opt)
+            self.robot.detect_gui_element(self.paddle_ocr, load_detection_result, show=show, ocr_opt=self.ocr_opt, verbose=verbose)
 
     '''
     **********************
     *** Replay Actions ***
     **********************
     '''
-    def replay_action_on_device(self, device):
+    def replay_action_on_device(self, device, detection_verbose=True):
         print('*** Replay Devices Number [%d/%d] ***' % (device.id + 1, len(self.devices)))
         device.get_devices_info()
         screen_ratio = self.source_device.device.wm_size()[1] / device.device.wm_size()[1]
@@ -105,7 +105,7 @@ class NiCro:
             matched_element = gui_matcher.match_target_element(self.target_element)
         self.robot.replay_action(self.action, matched_element, screen_ratio)
 
-    def replay_action_on_all_devices(self):
+    def replay_action_on_all_devices(self, detection_verbose=True):
         print('Action:', self.action)
         if self.action['type'] == 'click':
             self.target_element = self.source_device.find_element_by_coordinate(self.action['coordinate'][0][0], self.action['coordinate'][0][1], show=False)
@@ -116,15 +116,16 @@ class NiCro:
                 # print('Skip the Selected Source Device')
                 continue
             self.replay_action_on_device(dev)
-            dev.update_screenshot_and_gui(self.paddle_ocr, ocr_opt=self.ocr_opt)
+            dev.update_screenshot_and_gui(self.paddle_ocr, ocr_opt=self.ocr_opt, verbose=detection_verbose)
         if self.robot is not None:
             self.replay_action_on_robot()
-            self.robot.detect_gui_element(self.paddle_ocr, ocr_opt=self.ocr_opt)
+            self.robot.detect_gui_element(self.paddle_ocr, ocr_opt=self.ocr_opt, verbose=detection_verbose)
 
-    def control_multiple_devices_through_source_device(self, is_replay=False):
+    def control_multiple_devices_through_source_device(self, is_replay=False, detection_verbose=False):
         '''
         Use mouse to control the source device and optionally replay the actions on other devices
         :param is_replay: Boolean, replay the action on other device or not
+        :param detection_verbose: Boolean, true to print detection processing time
         '''
         s_dev = self.source_device
         win_name = s_dev.device.get_serial_no() + ' screen'
@@ -165,10 +166,10 @@ class NiCro:
                     self.action['coordinate'][1] = (-1, -1)
 
                 if is_replay:
-                    self.replay_action_on_all_devices()
+                    self.replay_action_on_all_devices(detection_verbose=detection_verbose)
                 # update the screenshot and GUI of the selected target device
                 print("****** Re-detect Source Device's screenshot and GUI ******")
-                s_dev.update_screenshot_and_gui(self.paddle_ocr, ocr_opt=self.ocr_opt)
+                s_dev.update_screenshot_and_gui(self.paddle_ocr, ocr_opt=self.ocr_opt, verbose=detection_verbose)
                 params[0] = s_dev.GUI.det_result_imgs['merge'].copy()
                 cv2.imshow(win_name, params[0])
 

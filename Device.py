@@ -28,18 +28,18 @@ class Device:
         self.screenshot = cv2.imread(self.screenshot_path)
         return self.screenshot
 
-    def detect_gui_info(self, paddle_ocr, is_load=False, show=False, ocr_opt='paddle'):
+    def detect_gui_info(self, paddle_ocr, is_load=False, show=False, ocr_opt='paddle', verbose=True):
         self.GUI = GUI(self.screenshot_path)
         if is_load:
             self.GUI.load_detection_result()
         else:
-            self.GUI.detect_element(True, True, True, paddle_cor=paddle_ocr, ocr_opt=ocr_opt)
+            self.GUI.detect_element(True, True, True, paddle_ocr=paddle_ocr, ocr_opt=ocr_opt, verbose=verbose)
         if show:
             self.GUI.show_detection_result()
 
-    def update_screenshot_and_gui(self, paddle_ocr, is_load=False, show=False, ocr_opt='paddle'):
+    def update_screenshot_and_gui(self, paddle_ocr, is_load=False, show=False, ocr_opt='paddle', verbose=True):
         self.cap_screenshot()
-        self.detect_gui_info(paddle_ocr, is_load=is_load, show=show, ocr_opt=ocr_opt)
+        self.detect_gui_info(paddle_ocr, is_load=is_load, show=show, ocr_opt=ocr_opt, verbose=verbose)
 
     def find_element_by_coordinate(self, x, y, show=False):
         '''

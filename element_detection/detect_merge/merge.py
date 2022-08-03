@@ -210,7 +210,8 @@ def compos_clip_and_fill(clip_root, org, compos):
     cv2.imwrite(pjoin(clip_root, 'bkg.png'), bkg)
 
 
-def merge(img_path, compo_path, text_path, merge_root=None, is_paragraph=False, is_remove_bar=True, show=False, wait_key=0):
+def merge(img_path, compo_path, text_path,
+          merge_root=None, is_paragraph=False, is_remove_bar=True, show=False, wait_key=0, verbose=True):
     compo_json = json.load(open(compo_path, 'r'))
     text_json = json.load(open(text_path, 'r'))
 
@@ -252,5 +253,6 @@ def merge(img_path, compo_path, text_path, merge_root=None, is_paragraph=False, 
     name = img_path.replace('\\', '/').split('/')[-1][:-4]
     components = save_elements(pjoin(merge_root, name + '.json'), elements, img_resize.shape)
     cv2.imwrite(pjoin(merge_root, name + '.jpg'), board)
-    print('[Merge Completed] Input: %s Output: %s' % (img_path, pjoin(merge_root, name + '.jpg')))
+    if verbose:
+        print('[Merge Completed] Input: %s Output: %s' % (img_path, pjoin(merge_root, name + '.jpg')))
     return board, components

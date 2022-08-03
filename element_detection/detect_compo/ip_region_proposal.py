@@ -36,7 +36,7 @@ def nesting_inspection(org, grey, compos, ffl_block):
 
 
 def compo_detection(input_img_path, output_root, uied_params,
-                    adaptive_binarization=False, resize_by_height=800, classifier=None, show=False, wai_key=0):
+                    adaptive_binarization=False, resize_by_height=800, classifier=None, show=False, wai_key=0, verbose=True):
 
     start = time.time()
     name = input_img_path.replace('\\', '/').split('/')[-1][:-4]
@@ -90,5 +90,6 @@ def compo_detection(input_img_path, output_root, uied_params,
     # *** Step 7 *** save detection result
     Compo.compos_update(uicompos, org.shape)
     file.save_corners_json(pjoin(ip_root, name + '.json'), uicompos)
-    print("[Compo Detection Completed in %.3f s] Input: %s Output: %s" % (time.time() - start, input_img_path, pjoin(ip_root, name + '.json')))
+    if verbose:
+        print("[Compo Detection Completed in %.3f s] Input: %s Output: %s" % (time.time() - start, input_img_path, pjoin(ip_root, name + '.json')))
     return board
