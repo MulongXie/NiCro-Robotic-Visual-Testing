@@ -1,5 +1,7 @@
 import cv2
 import numpy as np
+import os
+from os.path import join as pjoin
 
 from Device import Device
 from element_matching.GUI_pair import GUIPair
@@ -254,6 +256,71 @@ class NiCro:
         if key == ord('q'):
             cv2.destroyWindow(win_name)
             return
+        cv2.destroyWindow(win_name)
+
+    '''
+    **********************
+    *** Replay Actions ***
+    **********************
+    '''
+    def record_actions(self, output_root, app_name, testcase_id):
+        s_dev = self.source_device
+        win_name = s_dev.device.get_serial_no() + ' screen'
+        step = 0
+
+        def on_mouse(event, x, y, flags, params):
+            '''
+            :param params: [board (image), drag (boolean)]
+            :param x, y: in the scale of detection image size (height=800)
+            '''
+            x_app, y_app = int(x / s_dev.detect_resize_ratio), int(y / s_dev.detect_resize_ratio)
+            # Press button
+            if event == cv2.EVENT_LBUTTONDOWN:
+                params[1] = True
+                cv2.circle(params[0], (x, y), 10, (255, 0, 255), 2)
+                cv2.imshow(win_name, params[0])
+                self.action['coordinate'][0] = (x_app, y_app)
+
+                # save original GUI image and operations on detection result
+                testcase_dir = pjoin(output_root, app_name, testcase_id)
+                step_id = str(params[2])
+                os.makedirs(testcase_dir, exist_ok=True)
+                cv2.imwrite(pjoin(testcase_dir, step_id + '_org.jpg'), s_dev.GUI.img)  # original GUI screenshot
+                cv2.imwrite(pjoin(testcase_dir, step_id + '_act.jpg'), params[0])      # actions drawn on detection result
+            # Drag
+            elif params[1] and event == cv2.EVENT_MOUSEMOVE:
+                cv2.circle(params[0], (x, y), 10, (255, 0, 255), 2)
+                cv2.imshow(win_name, params[0])
+            # Lift button
+            elif event == cv2.EVENT_LBUTTONUP:
+                params[1] = False
+                x_start, y_start = self.action['coordinate'][0]
+                # swipe
+                if abs(x_start - x_app) >= 10 or abs(y_start - y_app) >= 10:
+                    print('\n****** Scroll from (%d, %d) to (%d, %d) ******' % (x_start, y_start, x_app, y_app))
+                    s_dev.device.input_swipe(x_start, y_start, x_app, y_app, 500)
+                    # record action
+                    self.action['type'] = 'swipe'
+                    self.action['coordinate'][1] = (x_app, y_app)
+                # click
+                else:
+                    print('\n****** Tap (%d, %d) ******' % (x_start, y_start))
+                    s_dev.device.input_tap(x_start, y_start)
+                    # record action
+                    self.action['type'] = 'click'
+                    self.action['coordinate'][1] = (-1, -1)
+
+                # update the screenshot and GUI of the selected target device
+                print("****** Re-detect Source Device's screenshot and GUI ******")
+                s_dev.update_screenshot_and_gui(self.paddle_ocr, ocr_opt=self.ocr_opt, verbose=False)
+                params[0] = s_dev.GUI.det_result_imgs['merge'].copy()
+                cv2.imshow(win_name, params[0])
+                params[2] += 1
+
+        board = s_dev.GUI.det_result_imgs['merge'].copy()
+        cv2.imshow(win_name, board)
+        cv2.setMouseCallback(win_name, on_mouse, [board, False, step])
+        cv2.waitKey()
         cv2.destroyWindow(win_name)
 
     def show_all_device_detection_results(self):

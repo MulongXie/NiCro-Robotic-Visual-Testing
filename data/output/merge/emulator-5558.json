@@ -12,25 +12,11 @@
                 "row_max": 71
             },
             "children": [
-                1,
-                12
+                8
             ]
         },
         {
             "id": 1,
-            "class": "Compo",
-            "height": 19,
-            "width": 19,
-            "position": {
-                "column_min": 660,
-                "row_min": 37,
-                "column_max": 679,
-                "row_max": 56
-            },
-            "parent": 0
-        },
-        {
-            "id": 2,
             "class": "Compo",
             "height": 14,
             "width": 15,
@@ -42,63 +28,19 @@
             }
         },
         {
+            "id": 2,
+            "class": "Compo",
+            "height": 17,
+            "width": 18,
+            "position": {
+                "column_min": 12,
+                "row_min": 89,
+                "column_max": 30,
+                "row_max": 106
+            }
+        },
+        {
             "id": 3,
-            "class": "Compo",
-            "height": 41,
-            "width": 41,
-            "position": {
-                "column_min": 12,
-                "row_min": 85,
-                "column_max": 53,
-                "row_max": 126
-            },
-            "children": [
-                4
-            ]
-        },
-        {
-            "id": 4,
-            "class": "Compo",
-            "height": 21,
-            "width": 18,
-            "position": {
-                "column_min": 24,
-                "row_min": 95,
-                "column_max": 42,
-                "row_max": 116
-            },
-            "parent": 3
-        },
-        {
-            "id": 5,
-            "class": "Compo",
-            "height": 40,
-            "width": 41,
-            "position": {
-                "column_min": 12,
-                "row_min": 141,
-                "column_max": 53,
-                "row_max": 181
-            },
-            "children": [
-                6
-            ]
-        },
-        {
-            "id": 6,
-            "class": "Compo",
-            "height": 20,
-            "width": 18,
-            "position": {
-                "column_min": 24,
-                "row_min": 151,
-                "column_max": 42,
-                "row_max": 171
-            },
-            "parent": 5
-        },
-        {
-            "id": 7,
             "class": "Compo",
             "height": 16,
             "width": 12,
@@ -110,7 +52,7 @@
             }
         },
         {
-            "id": 8,
+            "id": 4,
             "class": "Compo",
             "height": 30,
             "width": 31,
@@ -122,7 +64,7 @@
             }
         },
         {
-            "id": 9,
+            "id": 5,
             "class": "Compo",
             "height": 16,
             "width": 20,
@@ -134,7 +76,7 @@
             }
         },
         {
-            "id": 10,
+            "id": 6,
             "class": "Compo",
             "height": 16,
             "width": 20,
@@ -146,7 +88,7 @@
             }
         },
         {
-            "id": 11,
+            "id": 7,
             "class": "Compo",
             "height": 20,
             "width": 440,
@@ -158,266 +100,36 @@
             }
         },
         {
-            "id": 12,
+            "id": 8,
             "class": "Text",
-            "height": 9,
-            "width": 60,
+            "height": 11,
+            "width": 89,
             "position": {
                 "column_min": 76,
-                "row_min": 43,
-                "column_max": 136,
-                "row_max": 52
+                "row_min": 40,
+                "column_max": 165,
+                "row_max": 51
             },
-            "text_content": "qqqqqqaqg",
+            "text_content": "Enter destination",
             "keyboard": false,
             "parent": 0
         },
         {
-            "id": 13,
+            "id": 9,
             "class": "Text",
-            "height": 8,
-            "width": 60,
+            "height": 9,
+            "width": 125,
             "position": {
-                "column_min": 67,
-                "row_min": 97,
-                "column_max": 127,
-                "row_max": 105
+                "column_min": 40,
+                "row_min": 92,
+                "column_max": 165,
+                "row_max": 101
             },
-            "text_content": "qqqqqqqqq",
+            "text_content": "Around current location",
             "keyboard": false
         },
         {
-            "id": 14,
-            "class": "Text",
-            "height": 10,
-            "width": 291,
-            "position": {
-                "column_min": 67,
-                "row_min": 110,
-                "column_max": 358,
-                "row_max": 120
-            },
-            "text_content": "G\u00fcl , Mardin Ye\u015filli Yolu Pk :47650 , 47100 Artuklu Mardin , Turkey",
-            "keyboard": false,
-            "children": [
-                15
-            ]
-        },
-        {
-            "id": 15,
-            "class": "Text",
-            "height": 10,
-            "width": 3,
-            "position": {
-                "column_min": 287,
-                "row_min": 110,
-                "column_max": 290,
-                "row_max": 120
-            },
-            "text_content": "/",
-            "keyboard": true,
-            "parent": 14
-        },
-        {
-            "id": 16,
-            "class": "Text",
-            "height": 10,
-            "width": 59,
-            "position": {
-                "column_min": 68,
-                "row_min": 149,
-                "column_max": 127,
-                "row_max": 159
-            },
-            "text_content": "Q Solutions",
-            "keyboard": false,
-            "children": [
-                17
-            ]
-        },
-        {
-            "id": 17,
-            "class": "Text",
-            "height": 9,
-            "width": 3,
-            "position": {
-                "column_min": 75,
-                "row_min": 149,
-                "column_max": 78,
-                "row_max": 158
-            },
-            "text_content": "-",
-            "keyboard": true,
-            "parent": 16
-        },
-        {
-            "id": 18,
-            "class": "Text",
-            "height": 9,
-            "width": 211,
-            "position": {
-                "column_min": 68,
-                "row_min": 165,
-                "column_max": 279,
-                "row_max": 174
-            },
-            "text_content": "6B 3/4 , 6th Floor , Fakhri Trade Center . Shahrah",
-            "keyboard": false
-        },
-        {
-            "id": 19,
-            "class": "Text",
-            "height": 9,
-            "width": 2,
-            "position": {
-                "column_min": 280,
-                "row_min": 165,
-                "column_max": 282,
-                "row_max": 174
-            },
-            "text_content": "-",
-            "keyboard": true,
-            "parent": 20
-        },
-        {
-            "id": 20,
-            "class": "Text",
-            "height": 9,
-            "width": 5,
-            "position": {
-                "column_min": 282,
-                "row_min": 165,
-                "column_max": 287,
-                "row_max": 174
-            },
-            "text_content": "e",
-            "keyboard": true,
-            "children": [
-                19
-            ]
-        },
-        {
-            "id": 21,
-            "class": "Text",
-            "height": 9,
-            "width": 2,
-            "position": {
-                "column_min": 288,
-                "row_min": 165,
-                "column_max": 290,
-                "row_max": 174
-            },
-            "text_content": "-",
-            "keyboard": true
-        },
-        {
-            "id": 22,
-            "class": "Text",
-            "height": 9,
-            "width": 288,
-            "position": {
-                "column_min": 291,
-                "row_min": 165,
-                "column_max": 579,
-                "row_max": 174
-            },
-            "text_content": "Liaquat New Chali , Karachi , Karachi City, Sindh 74200 , Pakistan",
-            "keyboard": false
-        },
-        {
-            "id": 23,
-            "class": "Text",
-            "height": 14,
-            "width": 121,
-            "position": {
-                "column_min": 580,
-                "row_min": 191,
-                "column_max": 701,
-                "row_max": 205
-            },
-            "text_content": "powered by Google",
-            "keyboard": false
-        },
-        {
-            "id": 24,
-            "class": "Text",
-            "height": 17,
-            "width": 105,
-            "position": {
-                "column_min": 118,
-                "row_min": 478,
-                "column_max": 223,
-                "row_max": 495
-            },
-            "text_content": "sqq was at",
-            "keyboard": false,
-            "children": [
-                25
-            ]
-        },
-        {
-            "id": 25,
-            "class": "Text",
-            "height": 13,
-            "width": 8,
-            "position": {
-                "column_min": 192,
-                "row_min": 479,
-                "column_max": 200,
-                "row_max": 492
-            },
-            "text_content": "a",
-            "keyboard": true,
-            "parent": 24
-        },
-        {
-            "id": 26,
-            "class": "Text",
-            "height": 16,
-            "width": 121,
-            "position": {
-                "column_min": 477,
-                "row_min": 479,
-                "column_max": 598,
-                "row_max": 495
-            },
-            "text_content": "www was way",
-            "keyboard": false
-        },
-        {
-            "id": 27,
-            "class": "Text",
-            "height": 12,
-            "width": 117,
-            "position": {
-                "column_min": 295,
-                "row_min": 480,
-                "column_max": 412,
-                "row_max": 492
-            },
-            "text_content": "www was at",
-            "keyboard": false,
-            "children": [
-                28
-            ]
-        },
-        {
-            "id": 28,
-            "class": "Text",
-            "height": 12,
-            "width": 9,
-            "position": {
-                "column_min": 382,
-                "row_min": 480,
-                "column_max": 391,
-                "row_max": 492
-            },
-            "text_content": "a",
-            "keyboard": true,
-            "parent": 27
-        },
-        {
-            "id": 29,
+            "id": 10,
             "class": "Text",
             "height": 9,
             "width": 6,
@@ -431,49 +143,91 @@
             "keyboard": true
         },
         {
-            "id": 30,
+            "id": 11,
             "class": "Text",
-            "height": 10,
-            "width": 7,
+            "height": 42,
+            "width": 14,
+            "position": {
+                "column_min": 152,
+                "row_min": 511,
+                "column_max": 166,
+                "row_max": 553
+            },
+            "text_content": "e",
+            "keyboard": true
+        },
+        {
+            "id": 12,
+            "class": "Text",
+            "height": 42,
+            "width": 10,
             "position": {
                 "column_min": 178,
                 "row_min": 511,
-                "column_max": 185,
-                "row_max": 521
+                "column_max": 188,
+                "row_max": 553
             },
-            "text_content": "3",
+            "text_content": "\u00b3",
             "keyboard": true
         },
         {
-            "id": 31,
+            "id": 13,
             "class": "Text",
-            "height": 9,
+            "height": 41,
             "width": 9,
             "position": {
-                "column_min": 241,
+                "column_min": 219,
                 "row_min": 511,
-                "column_max": 250,
-                "row_max": 520
+                "column_max": 228,
+                "row_max": 552
             },
-            "text_content": "4",
+            "text_content": "r",
             "keyboard": true
         },
         {
-            "id": 32,
+            "id": 14,
             "class": "Text",
-            "height": 9,
-            "width": 8,
+            "height": 41,
+            "width": 9,
             "position": {
-                "column_min": 305,
+                "column_min": 242,
                 "row_min": 511,
-                "column_max": 313,
-                "row_max": 520
+                "column_max": 251,
+                "row_max": 552
             },
-            "text_content": "5",
+            "text_content": "\u00b9",
             "keyboard": true
         },
         {
-            "id": 33,
+            "id": 15,
+            "class": "Text",
+            "height": 41,
+            "width": 10,
+            "position": {
+                "column_min": 281,
+                "row_min": 511,
+                "column_max": 291,
+                "row_max": 552
+            },
+            "text_content": "t",
+            "keyboard": true
+        },
+        {
+            "id": 16,
+            "class": "Text",
+            "height": 41,
+            "width": 10,
+            "position": {
+                "column_min": 306,
+                "row_min": 511,
+                "column_max": 316,
+                "row_max": 552
+            },
+            "text_content": "\u00ba",
+            "keyboard": true
+        },
+        {
+            "id": 17,
             "class": "Text",
             "height": 9,
             "width": 9,
@@ -487,7 +241,7 @@
             "keyboard": true
         },
         {
-            "id": 34,
+            "id": 18,
             "class": "Text",
             "height": 9,
             "width": 7,
@@ -501,35 +255,35 @@
             "keyboard": true
         },
         {
-            "id": 35,
+            "id": 19,
             "class": "Text",
-            "height": 9,
+            "height": 43,
+            "width": 23,
+            "position": {
+                "column_min": 83,
+                "row_min": 511,
+                "column_max": 106,
+                "row_max": 554
+            },
+            "text_content": "w",
+            "keyboard": true
+        },
+        {
+            "id": 20,
+            "class": "Text",
+            "height": 43,
             "width": 9,
             "position": {
-                "column_min": 113,
+                "column_min": 114,
                 "row_min": 511,
-                "column_max": 122,
-                "row_max": 520
+                "column_max": 123,
+                "row_max": 554
             },
-            "text_content": "2",
+            "text_content": "\u00b2",
             "keyboard": true
         },
         {
-            "id": 36,
-            "class": "Text",
-            "height": 9,
-            "width": 6,
-            "position": {
-                "column_min": 370,
-                "row_min": 511,
-                "column_max": 376,
-                "row_max": 520
-            },
-            "text_content": "6",
-            "keyboard": true
-        },
-        {
-            "id": 37,
+            "id": 21,
             "class": "Text",
             "height": 9,
             "width": 8,
@@ -543,7 +297,7 @@
             "keyboard": true
         },
         {
-            "id": 38,
+            "id": 22,
             "class": "Text",
             "height": 9,
             "width": 7,
@@ -557,97 +311,97 @@
             "keyboard": true
         },
         {
-            "id": 39,
+            "id": 23,
+            "class": "Text",
+            "height": 38,
+            "width": 15,
+            "position": {
+                "column_min": 342,
+                "row_min": 513,
+                "column_max": 357,
+                "row_max": 551
+            },
+            "text_content": "y",
+            "keyboard": true
+        },
+        {
+            "id": 24,
+            "class": "Text",
+            "height": 38,
+            "width": 7,
+            "position": {
+                "column_min": 370,
+                "row_min": 513,
+                "column_max": 377,
+                "row_max": 551
+            },
+            "text_content": "\u00ba",
+            "keyboard": true
+        },
+        {
+            "id": 25,
+            "class": "Text",
+            "height": 38,
+            "width": 14,
+            "position": {
+                "column_min": 409,
+                "row_min": 513,
+                "column_max": 423,
+                "row_max": 551
+            },
+            "text_content": "u",
+            "keyboard": true
+        },
+        {
+            "id": 26,
             "class": "Text",
             "height": 19,
-            "width": 5,
+            "width": 8,
             "position": {
-                "column_min": 476,
+                "column_min": 474,
                 "row_min": 527,
-                "column_max": 481,
+                "column_max": 482,
                 "row_max": 546
             },
             "text_content": "i",
             "keyboard": true
         },
         {
-            "id": 40,
+            "id": 27,
             "class": "Text",
-            "height": 20,
-            "width": 22,
-            "position": {
-                "column_min": 84,
-                "row_min": 528,
-                "column_max": 106,
-                "row_max": 548
-            },
-            "text_content": "w",
-            "keyboard": true
-        },
-        {
-            "id": 41,
-            "class": "Text",
-            "height": 20,
-            "width": 13,
-            "position": {
-                "column_min": 153,
-                "row_min": 528,
-                "column_max": 166,
-                "row_max": 548
-            },
-            "text_content": "e",
-            "keyboard": true
-        },
-        {
-            "id": 42,
-            "class": "Text",
-            "height": 20,
-            "width": 8,
-            "position": {
-                "column_min": 220,
-                "row_min": 528,
-                "column_max": 228,
-                "row_max": 548
-            },
-            "text_content": "r",
-            "keyboard": true
-        },
-        {
-            "id": 43,
-            "class": "Text",
-            "height": 20,
-            "width": 12,
-            "position": {
-                "column_min": 282,
-                "row_min": 528,
-                "column_max": 294,
-                "row_max": 548
-            },
-            "text_content": "t",
-            "keyboard": true
-        },
-        {
-            "id": 44,
-            "class": "Text",
-            "height": 21,
+            "height": 16,
             "width": 16,
             "position": {
-                "column_min": 598,
+                "column_min": 535,
                 "row_min": 531,
-                "column_max": 614,
-                "row_max": 552
+                "column_max": 551,
+                "row_max": 547
+            },
+            "text_content": "O",
+            "keyboard": true
+        },
+        {
+            "id": 28,
+            "class": "Text",
+            "height": 20,
+            "width": 14,
+            "position": {
+                "column_min": 599,
+                "row_min": 531,
+                "column_max": 613,
+                "row_max": 551
             },
             "text_content": "p",
             "keyboard": true
         },
         {
-            "id": 45,
+            "id": 29,
             "class": "Text",
-            "height": 21,
-            "width": 18,
+            "height": 20,
+            "width": 17,
             "position": {
-                "column_min": 22,
-                "row_min": 531,
+                "column_min": 23,
+                "row_min": 532,
                 "column_max": 40,
                 "row_max": 552
             },
@@ -655,49 +409,7 @@
             "keyboard": true
         },
         {
-            "id": 46,
-            "class": "Text",
-            "height": 21,
-            "width": 18,
-            "position": {
-                "column_min": 342,
-                "row_min": 531,
-                "column_max": 360,
-                "row_max": 552
-            },
-            "text_content": "y",
-            "keyboard": true
-        },
-        {
-            "id": 47,
-            "class": "Text",
-            "height": 17,
-            "width": 14,
-            "position": {
-                "column_min": 408,
-                "row_min": 531,
-                "column_max": 422,
-                "row_max": 548
-            },
-            "text_content": "u",
-            "keyboard": true
-        },
-        {
-            "id": 48,
-            "class": "Text",
-            "height": 14,
-            "width": 14,
-            "position": {
-                "column_min": 536,
-                "row_min": 532,
-                "column_max": 550,
-                "row_max": 546
-            },
-            "text_content": "O",
-            "keyboard": true
-        },
-        {
-            "id": 49,
+            "id": 30,
             "class": "Text",
             "height": 9,
             "width": 10,
@@ -711,7 +423,7 @@
             "keyboard": true
         },
         {
-            "id": 50,
+            "id": 31,
             "class": "Text",
             "height": 28,
             "width": 15,
@@ -725,7 +437,7 @@
             "keyboard": true
         },
         {
-            "id": 51,
+            "id": 32,
             "class": "Text",
             "height": 28,
             "width": 12,
@@ -739,7 +451,7 @@
             "keyboard": true
         },
         {
-            "id": 52,
+            "id": 33,
             "class": "Text",
             "height": 28,
             "width": 13,
@@ -753,7 +465,7 @@
             "keyboard": true
         },
         {
-            "id": 53,
+            "id": 34,
             "class": "Text",
             "height": 28,
             "width": 9,
@@ -767,7 +479,7 @@
             "keyboard": true
         },
         {
-            "id": 54,
+            "id": 35,
             "class": "Text",
             "height": 28,
             "width": 13,
@@ -781,7 +493,7 @@
             "keyboard": true
         },
         {
-            "id": 55,
+            "id": 36,
             "class": "Text",
             "height": 28,
             "width": 12,
@@ -795,7 +507,7 @@
             "keyboard": true
         },
         {
-            "id": 56,
+            "id": 37,
             "class": "Text",
             "height": 28,
             "width": 6,
@@ -809,7 +521,7 @@
             "keyboard": true
         },
         {
-            "id": 57,
+            "id": 38,
             "class": "Text",
             "height": 28,
             "width": 19,
@@ -823,7 +535,7 @@
             "keyboard": true
         },
         {
-            "id": 58,
+            "id": 39,
             "class": "Text",
             "height": 20,
             "width": 12,
@@ -837,7 +549,7 @@
             "keyboard": true
         },
         {
-            "id": 59,
+            "id": 40,
             "class": "Text",
             "height": 24,
             "width": 17,
@@ -851,7 +563,7 @@
             "keyboard": true
         },
         {
-            "id": 60,
+            "id": 41,
             "class": "Text",
             "height": 23,
             "width": 16,
@@ -865,7 +577,7 @@
             "keyboard": true
         },
         {
-            "id": 61,
+            "id": 42,
             "class": "Text",
             "height": 24,
             "width": 14,
@@ -879,7 +591,7 @@
             "keyboard": true
         },
         {
-            "id": 62,
+            "id": 43,
             "class": "Text",
             "height": 24,
             "width": 23,
@@ -893,7 +605,7 @@
             "keyboard": true
         },
         {
-            "id": 63,
+            "id": 44,
             "class": "Text",
             "height": 23,
             "width": 16,
@@ -907,7 +619,7 @@
             "keyboard": true
         },
         {
-            "id": 64,
+            "id": 45,
             "class": "Text",
             "height": 24,
             "width": 16,
@@ -921,7 +633,7 @@
             "keyboard": true
         },
         {
-            "id": 65,
+            "id": 46,
             "class": "Text",
             "height": 24,
             "width": 15,
@@ -935,7 +647,7 @@
             "keyboard": true
         },
         {
-            "id": 66,
+            "id": 47,
             "class": "Text",
             "height": 23,
             "width": 20,
@@ -949,7 +661,7 @@
             "keyboard": true
         },
         {
-            "id": 67,
+            "id": 48,
             "class": "Text",
             "height": 23,
             "width": 17,
@@ -963,7 +675,7 @@
             "keyboard": true
         },
         {
-            "id": 68,
+            "id": 49,
             "class": "Text",
             "height": 13,
             "width": 12,
@@ -977,7 +689,7 @@
             "keyboard": true
         },
         {
-            "id": 69,
+            "id": 50,
             "class": "Text",
             "height": 13,
             "width": 8,
@@ -991,7 +703,7 @@
             "keyboard": true
         },
         {
-            "id": 70,
+            "id": 51,
             "class": "Text",
             "height": 13,
             "width": 9,
@@ -1005,7 +717,7 @@
             "keyboard": true
         },
         {
-            "id": 71,
+            "id": 52,
             "class": "Text",
             "height": 13,
             "width": 10,
@@ -1019,7 +731,7 @@
             "keyboard": true
         },
         {
-            "id": 72,
+            "id": 53,
             "class": "Text",
             "height": 13,
             "width": 9,
