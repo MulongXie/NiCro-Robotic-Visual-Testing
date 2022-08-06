@@ -1,3 +1,5 @@
+import time
+
 import cv2
 import numpy as np
 import os
@@ -263,7 +265,7 @@ class NiCro:
     *** Replay Actions ***
     **********************
     '''
-    def record_actions(self, output_root, app_name, testcase_id):
+    def record_actions(self, output_root, app_name, testcase_id, wait_fresh_time=0.5):
         s_dev = self.source_device
         win_name = s_dev.device.get_serial_no() + ' screen'
         step = 0
@@ -280,13 +282,6 @@ class NiCro:
                 cv2.circle(params[0], (x, y), 10, (255, 0, 255), 2)
                 cv2.imshow(win_name, params[0])
                 self.action['coordinate'][0] = (x_app, y_app)
-
-                # save original GUI image and operations on detection result
-                testcase_dir = pjoin(output_root, app_name, testcase_id)
-                step_id = str(params[2])
-                os.makedirs(testcase_dir, exist_ok=True)
-                cv2.imwrite(pjoin(testcase_dir, step_id + '_org.jpg'), s_dev.GUI.img)  # original GUI screenshot
-                cv2.imwrite(pjoin(testcase_dir, step_id + '_act.jpg'), params[0])      # actions drawn on detection result
             # Drag
             elif params[1] and event == cv2.EVENT_MOUSEMOVE:
                 cv2.circle(params[0], (x, y), 10, (255, 0, 255), 2)
@@ -306,9 +301,18 @@ class NiCro:
                 else:
                     print('\n****** Tap (%d, %d) ******' % (x_start, y_start))
                     s_dev.device.input_tap(x_start, y_start)
+                    time.sleep(wait_fresh_time)
                     # record action
                     self.action['type'] = 'click'
                     self.action['coordinate'][1] = (-1, -1)
+
+                # save original GUI image and operations on detection result
+                testcase_dir = pjoin(output_root, app_name, testcase_id)
+                step_id = str(params[2])
+                print('Record action %s to %s' % (step_id, testcase_dir))
+                os.makedirs(testcase_dir, exist_ok=True)
+                cv2.imwrite(pjoin(testcase_dir, step_id + '_org.jpg'), s_dev.GUI.img)  # original GUI screenshot
+                cv2.imwrite(pjoin(testcase_dir, step_id + '_act.jpg'), params[0])      # actions drawn on detection result
 
                 # update the screenshot and GUI of the selected target device
                 print("****** Re-detect Source Device's screenshot and GUI ******")
