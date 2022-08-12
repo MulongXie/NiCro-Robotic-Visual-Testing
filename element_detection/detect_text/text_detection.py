@@ -96,6 +96,7 @@ def merge_intersected_texts(texts, img):
 
 
 def text_cvt_orc_format(ocr_result, img):
+    img_h, img_w = img.shape[:2]
     texts = []
     if ocr_result is not None:
         for i, result in enumerate(ocr_result):
@@ -110,9 +111,10 @@ def text_cvt_orc_format(ocr_result, img):
                     break
                 x_coordinates.append(loc['x'])
                 y_coordinates.append(loc['y'])
-            if error: continue
-            location = {'left': min(x_coordinates), 'top': min(y_coordinates),
-                        'right': max(x_coordinates), 'bottom': max(y_coordinates)}
+            if error or min(x_coordinates) == max(x_coordinates) or min(y_coordinates) == max(y_coordinates):
+                continue
+            location = {'left': max(min(x_coordinates), 0), 'top': max(min(y_coordinates), 0),
+                        'right': min(max(x_coordinates), img_w), 'bottom': min(max(y_coordinates), img_h)}
             text = Text(i, content, location)
             text.get_clip(img)
             texts.append(text)
