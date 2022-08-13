@@ -242,7 +242,7 @@ def merge(img_path, compo_path, text_path,
     elements = refine_elements(compos, texts)
     if is_remove_bar:
         elements = remove_top_bar(elements, img_height=compo_json['img_shape'][0])
-        elements = remove_bottom_bar(elements, img_height=compo_json['img_shape'][0])
+        # elements = remove_bottom_bar(elements, img_height=compo_json['img_shape'][0])
     if is_paragraph:
         elements = merge_text_line_to_paragraph(elements, max_line_gap=7)
     reassign_ids(elements)
