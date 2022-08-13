@@ -128,7 +128,7 @@ class Text:
     *** Revise the Text ***
     ***********************
     '''
-    def check_sting_overlap(self, left_text, right_text, lower_case=True, rm_uncommon_letters=True):
+    def check_string_overlap(self, left_text, right_text, lower_case=True, rm_uncommon_letters=True):
         '''
         "ghjk" + "jkl" = "ghjkl"
         :return: cur
@@ -166,13 +166,13 @@ class Text:
 
         # merge text content
         if not concat:
-            cur = self.check_sting_overlap(self.content, text_b.content)
+            cur = self.check_string_overlap(self.content, text_b.content)
             # if any overlap,
             if cur != 0:
                 self.content = self.content + text_b.content[cur:]
             else:
                 # if no overlap, change the sequence of the two texts and check again
-                cur = self.check_sting_overlap(text_b.content, self.content)
+                cur = self.check_string_overlap(text_b.content, self.content)
                 if cur != 0:
                     self.content = text_b.content + self.content[cur:]
                 # if still no overlap, simply concat the two strings
@@ -332,7 +332,7 @@ class Text:
         keyboard_alphabet = 'qwertyuiopasdfghjklzxcvbnm1234567890@#$_&-+()/*"\':;!?'
         loc = self.location
         letters = []
-        if self.content in keyboard_alphabet:
+        if self.content.replace(' ', '').lower() in keyboard_alphabet:
             for i in range(len(self.content) - 1):
                 content = self.content[i]
                 location = {'top': loc['top'], 'bottom': loc['bottom'],

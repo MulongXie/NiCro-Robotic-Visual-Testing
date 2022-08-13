@@ -6,7 +6,7 @@
     ],
     "texts": [
         {
-            "id": 5,
+            "id": 6,
             "content": "My Day",
             "keyboard": false,
             "column_min": 173,
@@ -28,7 +28,7 @@
             "height": 42
         },
         {
-            "id": 6,
+            "id": 7,
             "content": "Saturday, August 13",
             "keyboard": false,
             "column_min": 171,
@@ -40,17 +40,28 @@
         },
         {
             "id": 1,
-            "content": "O Add",
-            "keyboard": false,
+            "content": "O",
+            "keyboard": true,
             "column_min": 65,
             "row_min": 1225,
-            "column_max": 246,
-            "row_max": 1282,
-            "width": 181,
-            "height": 57
+            "column_max": 130,
+            "row_max": 1281,
+            "width": 65,
+            "height": 56
         },
         {
             "id": 2,
+            "content": "Add",
+            "keyboard": false,
+            "column_min": 161,
+            "row_min": 1226,
+            "column_max": 246,
+            "row_max": 1282,
+            "width": 85,
+            "height": 56
+        },
+        {
+            "id": 3,
             "content": "a",
             "keyboard": true,
             "column_min": 255,
@@ -61,7 +72,7 @@
             "height": 55
         },
         {
-            "id": 3,
+            "id": 4,
             "content": "task",
             "keyboard": false,
             "column_min": 285,
@@ -72,7 +83,7 @@
             "height": 57
         },
         {
-            "id": 19,
+            "id": 20,
             "content": "\u2191",
             "keyboard": true,
             "column_min": 964,
@@ -83,7 +94,7 @@
             "height": 32
         },
         {
-            "id": 14,
+            "id": 15,
             "content": "Set due date",
             "keyboard": false,
             "column_min": 420,
@@ -94,7 +105,7 @@
             "height": 33
         },
         {
-            "id": 15,
+            "id": 16,
             "content": "Remind me",
             "keyboard": false,
             "column_min": 782,
@@ -105,7 +116,7 @@
             "height": 33
         },
         {
-            "id": 11,
+            "id": 12,
             "content": "Tasks",
             "keyboard": false,
             "column_min": 154,
@@ -116,7 +127,7 @@
             "height": 29
         },
         {
-            "id": 17,
+            "id": 18,
             "content": "\u2022",
             "keyboard": true,
             "column_min": 666,
@@ -127,7 +138,7 @@
             "height": 11
         },
         {
-            "id": 4,
+            "id": 5,
             "content": "<",
             "keyboard": true,
             "column_min": 56,
@@ -138,7 +149,7 @@
             "height": 29
         },
         {
-            "id": 12,
+            "id": 13,
             "content": "\u2192",
             "keyboard": true,
             "column_min": 346,
@@ -149,7 +160,7 @@
             "height": 28
         },
         {
-            "id": 16,
+            "id": 17,
             "content": "GIF",
             "keyboard": false,
             "column_min": 487,
@@ -160,7 +171,7 @@
             "height": 27
         },
         {
-            "id": 18,
+            "id": 19,
             "content": "III",
             "keyboard": false,
             "column_min": 666,
@@ -171,7 +182,7 @@
             "height": 20
         },
         {
-            "id": 20,
+            "id": 21,
             "content": "8",
             "keyboard": true,
             "column_min": 831,
@@ -182,29 +193,128 @@
             "height": 18
         },
         {
-            "id": 21,
-            "content": "QWERTYUI O'P",
-            "keyboard": false,
+            "id": 22,
+            "content": "Q",
+            "keyboard": true,
             "column_min": 36,
             "row_min": 1618,
-            "column_max": 1043,
+            "column_max": 134,
             "row_max": 1689,
-            "width": 1007,
+            "width": 98,
             "height": 71
         },
         {
-            "id": 22,
-            "content": "A S",
+            "id": 23,
+            "content": "W",
+            "keyboard": true,
+            "column_min": 134,
+            "row_min": 1618,
+            "column_max": 232,
+            "row_max": 1689,
+            "width": 98,
+            "height": 71
+        },
+        {
+            "id": 24,
+            "content": "E",
+            "keyboard": true,
+            "column_min": 232,
+            "row_min": 1618,
+            "column_max": 330,
+            "row_max": 1689,
+            "width": 98,
+            "height": 71
+        },
+        {
+            "id": 25,
+            "content": "R",
+            "keyboard": true,
+            "column_min": 330,
+            "row_min": 1618,
+            "column_max": 428,
+            "row_max": 1689,
+            "width": 98,
+            "height": 71
+        },
+        {
+            "id": 26,
+            "content": "T",
+            "keyboard": true,
+            "column_min": 428,
+            "row_min": 1618,
+            "column_max": 526,
+            "row_max": 1689,
+            "width": 98,
+            "height": 71
+        },
+        {
+            "id": 27,
+            "content": "Y",
+            "keyboard": true,
+            "column_min": 526,
+            "row_min": 1618,
+            "column_max": 624,
+            "row_max": 1689,
+            "width": 98,
+            "height": 71
+        },
+        {
+            "id": 28,
+            "content": "U",
+            "keyboard": true,
+            "column_min": 624,
+            "row_min": 1618,
+            "column_max": 722,
+            "row_max": 1689,
+            "width": 98,
+            "height": 71
+        },
+        {
+            "id": 29,
+            "content": "I",
+            "keyboard": true,
+            "column_min": 722,
+            "row_min": 1618,
+            "column_max": 820,
+            "row_max": 1689,
+            "width": 98,
+            "height": 71
+        },
+        {
+            "id": 30,
+            "content": "O'P",
             "keyboard": false,
+            "column_min": 885,
+            "row_min": 1618,
+            "column_max": 1043,
+            "row_max": 1689,
+            "width": 158,
+            "height": 71
+        },
+        {
+            "id": 31,
+            "content": "A",
+            "keyboard": true,
             "column_min": 86,
             "row_min": 1762,
-            "column_max": 243,
+            "column_max": 144,
             "row_max": 1828,
-            "width": 157,
+            "width": 58,
             "height": 66
         },
         {
-            "id": 23,
+            "id": 32,
+            "content": "S",
+            "keyboard": true,
+            "column_min": 196,
+            "row_min": 1762,
+            "column_max": 243,
+            "row_max": 1828,
+            "width": 47,
+            "height": 66
+        },
+        {
+            "id": 33,
             "content": "D",
             "keyboard": true,
             "column_min": 298,
@@ -215,7 +325,7 @@
             "height": 66
         },
         {
-            "id": 24,
+            "id": 34,
             "content": "F",
             "keyboard": true,
             "column_min": 409,
@@ -226,7 +336,7 @@
             "height": 66
         },
         {
-            "id": 25,
+            "id": 35,
             "content": "G",
             "keyboard": true,
             "column_min": 513,
@@ -237,7 +347,7 @@
             "height": 66
         },
         {
-            "id": 26,
+            "id": 36,
             "content": "H",
             "keyboard": true,
             "column_min": 619,
@@ -248,29 +358,62 @@
             "height": 66
         },
         {
-            "id": 27,
-            "content": "J K L",
-            "keyboard": false,
+            "id": 37,
+            "content": "J",
+            "keyboard": true,
             "column_min": 730,
             "row_min": 1762,
-            "column_max": 994,
+            "column_max": 780,
             "row_max": 1828,
-            "width": 264,
+            "width": 50,
             "height": 66
         },
         {
-            "id": 28,
-            "content": "Z X",
-            "keyboard": false,
+            "id": 38,
+            "content": "K",
+            "keyboard": true,
+            "column_min": 826,
+            "row_min": 1762,
+            "column_max": 892,
+            "row_max": 1828,
+            "width": 66,
+            "height": 66
+        },
+        {
+            "id": 39,
+            "content": "L",
+            "keyboard": true,
+            "column_min": 944,
+            "row_min": 1762,
+            "column_max": 994,
+            "row_max": 1828,
+            "width": 50,
+            "height": 66
+        },
+        {
+            "id": 40,
+            "content": "Z",
+            "keyboard": true,
             "column_min": 196,
             "row_min": 1908,
-            "column_max": 351,
+            "column_max": 244,
             "row_max": 1964,
-            "width": 155,
+            "width": 48,
             "height": 56
         },
         {
-            "id": 29,
+            "id": 41,
+            "content": "X",
+            "keyboard": true,
+            "column_min": 297,
+            "row_min": 1908,
+            "column_max": 351,
+            "row_max": 1964,
+            "width": 54,
+            "height": 56
+        },
+        {
+            "id": 42,
             "content": "C",
             "keyboard": true,
             "column_min": 407,
@@ -281,7 +424,7 @@
             "height": 56
         },
         {
-            "id": 30,
+            "id": 43,
             "content": "V",
             "keyboard": true,
             "column_min": 512,
@@ -292,7 +435,7 @@
             "height": 56
         },
         {
-            "id": 31,
+            "id": 44,
             "content": "B",
             "keyboard": true,
             "column_min": 624,
@@ -303,18 +446,29 @@
             "height": 56
         },
         {
-            "id": 32,
-            "content": "N M",
-            "keyboard": false,
+            "id": 45,
+            "content": "N",
+            "keyboard": true,
             "column_min": 729,
             "row_min": 1908,
-            "column_max": 884,
+            "column_max": 779,
             "row_max": 1964,
-            "width": 155,
+            "width": 50,
             "height": 56
         },
         {
-            "id": 34,
+            "id": 46,
+            "content": "M",
+            "keyboard": true,
+            "column_min": 828,
+            "row_min": 1908,
+            "column_max": 884,
+            "row_max": 1964,
+            "width": 56,
+            "height": 56
+        },
+        {
+            "id": 48,
             "content": "X",
             "keyboard": true,
             "column_min": 982,
@@ -325,7 +479,7 @@
             "height": 24
         },
         {
-            "id": 33,
+            "id": 47,
             "content": ".",
             "keyboard": true,
             "column_min": 823,
@@ -336,7 +490,7 @@
             "height": 75
         },
         {
-            "id": 35,
+            "id": 49,
             "content": "\u2713",
             "keyboard": true,
             "column_min": 964,
@@ -347,7 +501,7 @@
             "height": 35
         },
         {
-            "id": 7,
+            "id": 8,
             "content": "?",
             "keyboard": true,
             "column_min": 41,
@@ -358,7 +512,7 @@
             "height": 29
         },
         {
-            "id": 8,
+            "id": 9,
             "content": "1",
             "keyboard": true,
             "column_min": 63,
@@ -369,7 +523,7 @@
             "height": 29
         },
         {
-            "id": 9,
+            "id": 10,
             "content": "2",
             "keyboard": true,
             "column_min": 85,
@@ -380,7 +534,7 @@
             "height": 29
         },
         {
-            "id": 10,
+            "id": 11,
             "content": "3",
             "keyboard": true,
             "column_min": 107,
@@ -391,9 +545,9 @@
             "height": 29
         },
         {
-            "id": 13,
+            "id": 14,
             "content": "J",
-            "keyboard": false,
+            "keyboard": true,
             "column_min": 213,
             "row_min": 2094,
             "column_max": 227,
