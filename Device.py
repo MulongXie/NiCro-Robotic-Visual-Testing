@@ -38,7 +38,8 @@ class Device:
         if show:
             self.GUI.show_detection_result()
 
-    def update_screenshot_and_gui(self, paddle_ocr, is_load=False, show=False, ocr_opt='paddle', verbose=True):
+    def update_screenshot_and_gui(self, paddle_ocr, is_load=False, show=False, ocr_opt='paddle', verbose=True, wait_time=0.2):
+        time.sleep(wait_time)
         self.cap_screenshot()
         self.detect_gui_info(paddle_ocr, is_load=is_load, show=show, ocr_opt=ocr_opt, verbose=verbose)
 
