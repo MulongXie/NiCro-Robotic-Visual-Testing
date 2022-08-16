@@ -149,7 +149,7 @@ def text_split_keyboard_letters(texts, img):
     new_texts = []
     latest_id = len(texts)
     for text in texts:
-        letters = text.split_keyboard_letters(latest_id)
+        letters = text.split_keyboard_letters(latest_id, img.shape[0])
         if len(letters) > 1:
             latest_id += len(letters) - 1
             for letter in letters:
@@ -172,22 +172,22 @@ def text_recognize_keyboard_letters(texts, img):
     for i in range(len(texts) - 1):
         t_i = texts[i]
         # if the ti is in keyboard_area, search for its horizontal neighbours
-        if t_i.is_in_keyboard_area(height):
+        if len(t_i.content) == 1 and t_i.is_in_keyboard_area(height):
             for j in range(i + 1, len(texts)):
                 t_j = texts[j]
                 # stop when no horizontal neighbours
                 if t_j.location['top'] - t_i.location['bottom'] > t_i.height:
                     break
                 # if the neighbour is a keyboard letter or is also in the keyboard area, mark ti as keyboard letter
-                if t_j.keyboard:
-                    t_i.keyboard = True
-                    no_keyboard_letters += 1
-                    break
-                else:
-                    if t_j.is_justified(t_i, direction='h', max_bias_justify=max(t_i.height, t_j.height)) and t_j.is_in_keyboard_area(height):
+                if t_j.is_justified(t_i, direction='h', max_bias_justify=max(t_i.height, t_j.height)):
+                    if t_j.keyboard:
+                        t_i.keyboard = True
+                        no_keyboard_letters += 1
+                        break
+                    if len(t_j.content) == 1 and t_j.is_in_keyboard_area(height):
                         t_i.keyboard = True
                         t_j.keyboard = True
-                        no_keyboard_letters += 1
+                        no_keyboard_letters += 2
                         break
     # Ignore all keyboard letters if the of letters are too few
     if no_keyboard_letters <= 10:

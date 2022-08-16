@@ -119,7 +119,7 @@ class Text:
         :param gui_height: the height of the original GUI
         :return:
         '''
-        if self.location['top'] > gui_height / 2 and len(self.content) == 1:
+        if self.location['top'] > gui_height / 2:
             return True
         return False
 
@@ -323,16 +323,18 @@ class Text:
         split_texts.append(self)
         return split_texts
 
-    def split_keyboard_letters(self, latest_id):
+    def split_keyboard_letters(self, latest_id, gui_height):
         '''
         Simply check if the text contains multiple keyboard letters, and split equally
+        :param gui_height: the height of the gui screen, used to check if the text is in keyboard area
         :param latest_id: the latest id of Text detected, used for encapsulating letters as new Texts
         :return: list of Text objects
         '''
         keyboard_alphabet = 'qwertyuiopasdfghjklzxcvbnm1234567890@#$_&-+()/*"\':;!?'
         loc = self.location
         letters = []
-        if self.content.replace(' ', '').lower() in keyboard_alphabet:
+        if self.is_in_keyboard_area(gui_height) and self.content.replace(' ', '').lower() in keyboard_alphabet:
+            # split each letter in the content as a Text object
             for i in range(len(self.content) - 1):
                 content = self.content[i]
                 location = {'top': loc['top'], 'bottom': loc['bottom'],
