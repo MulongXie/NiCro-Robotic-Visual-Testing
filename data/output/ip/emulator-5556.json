@@ -30,9 +30,9 @@
             "class": "Compo",
             "column_min": 6,
             "row_min": 6,
-            "column_max": 27,
+            "column_max": 29,
             "row_max": 15,
-            "width": 21,
+            "width": 23,
             "height": 9
         },
         {

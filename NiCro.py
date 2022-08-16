@@ -294,8 +294,6 @@ class NiCro:
                 cv2.imshow(win_name, params[0])
             # Lift button
             elif event == cv2.EVENT_LBUTTONUP:
-                print(time.time() - params[3])
-                print(time.time() - params[4])
                 params[2] = False
                 x_start, y_start = self.action['coordinate'][0]
                 # swipe
@@ -310,7 +308,7 @@ class NiCro:
                     print('\n****** Long Press (%d, %d) ******' % (x_start, y_start))
                     self.action['type'] = 'long press'
                     self.action['coordinate'][1] = (-1, -1)
-                    cv2.circle(params[0], (x, y), 10, (166, 166, 255), 2)
+                    cv2.circle(params[0], (x, y), 10, (255, 0, 255), -1)
                     cv2.imshow(win_name, params[0])
                 # click
                 else:

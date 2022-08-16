@@ -18,13 +18,13 @@
         },
         {
             "id": 0,
-            "content": "9:01",
+            "content": "9:35",
             "keyboard": false,
-            "column_min": 22,
+            "column_min": 21,
             "row_min": 18,
-            "column_max": 90,
+            "column_max": 94,
             "row_max": 45,
-            "width": 68,
+            "width": 73,
             "height": 27
         },
         {
@@ -53,11 +53,11 @@
             "id": 13,
             "content": ":",
             "keyboard": false,
-            "column_min": 1484,
-            "row_min": 402,
-            "column_max": 1534,
-            "row_max": 449,
-            "width": 50,
+            "column_min": 1483,
+            "row_min": 401,
+            "column_max": 1535,
+            "row_max": 448,
+            "width": 52,
             "height": 47
         },
         {
