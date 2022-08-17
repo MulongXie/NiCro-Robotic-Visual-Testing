@@ -314,7 +314,6 @@ class NiCro:
                 else:
                     print('\n****** Click (%d, %d) ******' % (x_start, y_start))
                     s_dev.device.input_tap(x_start, y_start)
-                    time.sleep(wait_fresh_time)
                     # record action
                     self.action['type'] = 'click'
                     self.action['coordinate'][1] = (-1, -1)
@@ -329,7 +328,7 @@ class NiCro:
 
                 # update the screenshot and GUI of the selected target device
                 print("****** Re-detect Source Device's screenshot and GUI ******")
-                s_dev.update_screenshot_and_gui(self.paddle_ocr, ocr_opt=self.ocr_opt, verbose=False)
+                s_dev.update_screenshot_and_gui(self.paddle_ocr, ocr_opt=self.ocr_opt, verbose=False, wait_time=wait_fresh_time)
                 params[0] = s_dev.GUI.det_result_imgs['merge'].copy()
                 cv2.imshow(win_name, params[0])
                 params[1] += 1
