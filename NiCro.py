@@ -306,6 +306,7 @@ class NiCro:
                 # long press
                 elif time.time() - params[3] >= 1:
                     print('\n****** Long Press (%d, %d) ******' % (x_start, y_start))
+                    s_dev.device.input_swipe(x_start, y_start, x_start, y_start, 1000)
                     self.action['type'] = 'long press'
                     self.action['coordinate'][1] = (-1, -1)
                     cv2.circle(params[0], (x, y), 10, (255, 0, 255), -1)
