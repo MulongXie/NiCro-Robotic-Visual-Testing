@@ -331,7 +331,7 @@ class Text:
         :return: list of Text objects
         '''
         keyboard_alphabet = 'qwertyuiopasdfghjklzxcvbnm1234567890@#$_&-+()/*"\':;!?'
-        keyboard_alphabet += 'q¹w²e³' + 'q¹w²e²'
+        keyboard_alphabet += 'q¹w²e³' + 'q¹w²e²' + '¡º'
         loc = self.location
         letters = []
         if self.is_in_keyboard_area(gui_height) and self.content.replace(' ', '').lower() in keyboard_alphabet:
