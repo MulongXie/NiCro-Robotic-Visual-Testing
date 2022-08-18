@@ -12,8 +12,8 @@ from Robot import Robot
 from ppadb.client import Client as AdbClient
 client = AdbClient(host="127.0.0.1", port=5037)
 
-from paddleocr import PaddleOCR
-paddle_ocr = PaddleOCR(use_angle_cls=True, lang='en', show_log=False)
+# from paddleocr import PaddleOCR
+# paddle_ocr = PaddleOCR(use_angle_cls=True, lang='en', show_log=False)
 
 from keras.applications.resnet import ResNet50
 resnet_model = ResNet50(include_top=False, input_shape=(32, 32, 3))
@@ -32,7 +32,8 @@ class NiCro:
         self.target_element = None
 
         self.ocr_opt = ocr_opt             # 'paddle' or 'google'
-        self.paddle_ocr = paddle_ocr
+        # self.paddle_ocr = paddle_ocr
+        self.paddle_ocr = None
         self.resnet_model = resnet_model   # resnet encoder for image matching
 
         self.robot = None
@@ -75,6 +76,90 @@ class NiCro:
         if self.robot is not None:
             print('****** Robot Arm [1 / 1] ******')
             self.robot.detect_gui_element(self.paddle_ocr, load_detection_result, show=show, ocr_opt=self.ocr_opt, verbose=verbose)
+
+    def show_all_device_detection_results(self):
+        for device in self.devices:
+            device.GUI.show_detection_result()
+
+    '''
+    **********************
+    *** Record Actions ***
+    **********************
+    '''
+    def record_actions(self, output_root, app_name, testcase_id, wait_fresh_time=0.5):
+        s_dev = self.source_device
+        win_name = s_dev.device.get_serial_no() + ' screen'
+        # parameters sent to on_mouse
+        board = s_dev.GUI.det_result_imgs['merge'].copy()
+        step = 0  # step number of the action in a test case
+        press_time = time.time()  # record the time of pressing down, for checking long press action
+
+        def on_mouse(event, x, y, flags, params):
+            '''
+            :param params: [board (image), step number (int), is pressing (boolean), press time (float)]
+            :param x, y: in the scale of detection image size (height=800)
+            '''
+            x_app, y_app = int(x / s_dev.detect_resize_ratio), int(y / s_dev.detect_resize_ratio)
+            # Press button
+            if event == cv2.EVENT_LBUTTONDOWN:
+                params[2] = True
+                # draw the press location
+                cv2.circle(params[0], (x, y), 10, (255, 0, 255), 2)
+                cv2.imshow(win_name, params[0])
+                self.action['coordinate'][0] = (x_app, y_app)
+                # reset press_time
+                params[3] = time.time()
+            # Drag
+            elif params[2] and event == cv2.EVENT_MOUSEMOVE:
+                cv2.circle(params[0], (x, y), 10, (255, 0, 255), 2)
+                cv2.imshow(win_name, params[0])
+            # Lift button
+            elif event == cv2.EVENT_LBUTTONUP:
+                params[2] = False
+                x_start, y_start = self.action['coordinate'][0]
+                # swipe
+                if abs(x_start - x_app) >= 10 or abs(y_start - y_app) >= 10:
+                    print('\n****** Scroll from (%d, %d) to (%d, %d) ******' % (x_start, y_start, x_app, y_app))
+                    s_dev.device.input_swipe(x_start, y_start, x_app, y_app, 500)
+                    # record action
+                    self.action['type'] = 'swipe'
+                    self.action['coordinate'][1] = (x_app, y_app)
+                # long press
+                elif time.time() - params[3] >= 1:
+                    print('\n****** Long Press (%d, %d) ******' % (x_start, y_start))
+                    s_dev.device.input_swipe(x_start, y_start, x_start, y_start, 1000)
+                    self.action['type'] = 'long press'
+                    self.action['coordinate'][1] = (-1, -1)
+                    cv2.circle(params[0], (x, y), 10, (255, 0, 255), -1)
+                    cv2.imshow(win_name, params[0])
+                # click
+                else:
+                    print('\n****** Click (%d, %d) ******' % (x_start, y_start))
+                    s_dev.device.input_tap(x_start, y_start)
+                    # record action
+                    self.action['type'] = 'click'
+                    self.action['coordinate'][1] = (-1, -1)
+
+                # save original GUI image and operations on detection result
+                testcase_dir = pjoin(output_root, app_name, testcase_id)
+                step_id = str(params[1])
+                print('Record action %s to %s' % (step_id, testcase_dir))
+                os.makedirs(testcase_dir, exist_ok=True)
+                cv2.imwrite(pjoin(testcase_dir, step_id + '_org.jpg'), s_dev.GUI.img)  # original GUI screenshot
+                cv2.imwrite(pjoin(testcase_dir, step_id + '_act.jpg'), params[0])      # actions drawn on detection result
+
+                # update the screenshot and GUI of the selected target device
+                print("****** Re-detect Source Device's screenshot and GUI ******")
+                s_dev.update_screenshot_and_gui(self.paddle_ocr, ocr_opt=self.ocr_opt, verbose=False, wait_time=wait_fresh_time)
+                params[0] = s_dev.GUI.det_result_imgs['merge'].copy()
+                cv2.imshow(win_name, params[0])
+                params[1] += 1
+
+        # params: [board (image), step number (int), is pressing (boolean), press time (float)]
+        cv2.imshow(win_name, board)
+        cv2.setMouseCallback(win_name, on_mouse, [board, step, False, press_time])
+        cv2.waitKey()
+        cv2.destroyWindow(win_name)
 
     '''
     **********************
@@ -260,90 +345,6 @@ class NiCro:
             cv2.destroyWindow(win_name)
             return
         cv2.destroyWindow(win_name)
-
-    '''
-    **********************
-    *** Replay Actions ***
-    **********************
-    '''
-    def record_actions(self, output_root, app_name, testcase_id, wait_fresh_time=0.5):
-        s_dev = self.source_device
-        win_name = s_dev.device.get_serial_no() + ' screen'
-        # parameters sent to on_mouse
-        board = s_dev.GUI.det_result_imgs['merge'].copy()
-        step = 0  # step number of the action in a test case
-        press_time = time.time()  # record the time of pressing down, for checking long press action
-
-        def on_mouse(event, x, y, flags, params):
-            '''
-            :param params: [board (image), step number (int), is pressing (boolean), press time (float)]
-            :param x, y: in the scale of detection image size (height=800)
-            '''
-            x_app, y_app = int(x / s_dev.detect_resize_ratio), int(y / s_dev.detect_resize_ratio)
-            # Press button
-            if event == cv2.EVENT_LBUTTONDOWN:
-                params[2] = True
-                # draw the press location
-                cv2.circle(params[0], (x, y), 10, (255, 0, 255), 2)
-                cv2.imshow(win_name, params[0])
-                self.action['coordinate'][0] = (x_app, y_app)
-                # reset press_time
-                params[3] = time.time()
-            # Drag
-            elif params[2] and event == cv2.EVENT_MOUSEMOVE:
-                cv2.circle(params[0], (x, y), 10, (255, 0, 255), 2)
-                cv2.imshow(win_name, params[0])
-            # Lift button
-            elif event == cv2.EVENT_LBUTTONUP:
-                params[2] = False
-                x_start, y_start = self.action['coordinate'][0]
-                # swipe
-                if abs(x_start - x_app) >= 10 or abs(y_start - y_app) >= 10:
-                    print('\n****** Scroll from (%d, %d) to (%d, %d) ******' % (x_start, y_start, x_app, y_app))
-                    s_dev.device.input_swipe(x_start, y_start, x_app, y_app, 500)
-                    # record action
-                    self.action['type'] = 'swipe'
-                    self.action['coordinate'][1] = (x_app, y_app)
-                # long press
-                elif time.time() - params[3] >= 1:
-                    print('\n****** Long Press (%d, %d) ******' % (x_start, y_start))
-                    s_dev.device.input_swipe(x_start, y_start, x_start, y_start, 1000)
-                    self.action['type'] = 'long press'
-                    self.action['coordinate'][1] = (-1, -1)
-                    cv2.circle(params[0], (x, y), 10, (255, 0, 255), -1)
-                    cv2.imshow(win_name, params[0])
-                # click
-                else:
-                    print('\n****** Click (%d, %d) ******' % (x_start, y_start))
-                    s_dev.device.input_tap(x_start, y_start)
-                    # record action
-                    self.action['type'] = 'click'
-                    self.action['coordinate'][1] = (-1, -1)
-
-                # save original GUI image and operations on detection result
-                testcase_dir = pjoin(output_root, app_name, testcase_id)
-                step_id = str(params[1])
-                print('Record action %s to %s' % (step_id, testcase_dir))
-                os.makedirs(testcase_dir, exist_ok=True)
-                cv2.imwrite(pjoin(testcase_dir, step_id + '_org.jpg'), s_dev.GUI.img)  # original GUI screenshot
-                cv2.imwrite(pjoin(testcase_dir, step_id + '_act.jpg'), params[0])      # actions drawn on detection result
-
-                # update the screenshot and GUI of the selected target device
-                print("****** Re-detect Source Device's screenshot and GUI ******")
-                s_dev.update_screenshot_and_gui(self.paddle_ocr, ocr_opt=self.ocr_opt, verbose=False, wait_time=wait_fresh_time)
-                params[0] = s_dev.GUI.det_result_imgs['merge'].copy()
-                cv2.imshow(win_name, params[0])
-                params[1] += 1
-
-        # params: [board (image), step number (int), is pressing (boolean), press time (float)]
-        cv2.imshow(win_name, board)
-        cv2.setMouseCallback(win_name, on_mouse, [board, step, False, press_time])
-        cv2.waitKey()
-        cv2.destroyWindow(win_name)
-
-    def show_all_device_detection_results(self):
-        for device in self.devices:
-            device.GUI.show_detection_result()
 
 
 if __name__ == '__main__':
