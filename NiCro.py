@@ -81,7 +81,7 @@ class NiCro:
     *** Replay Actions ***
     **********************
     '''
-    def replay_action_on_device(self, device, detection_verbose=True):
+    def replay_action_on_device(self, device):
         print('*** Replay Devices Number [%d/%d] ***' % (device.id + 1, len(self.devices)))
         device.get_devices_info()
         screen_ratio = self.source_device.device.wm_size()[1] / device.device.wm_size()[1]
@@ -111,13 +111,14 @@ class NiCro:
 
     def replay_action_on_all_devices(self, detection_verbose=True):
         print('Action:', self.action)
+        # check if its widget dependent or independent
         if self.action['type'] == 'click':
             self.target_element = self.source_device.find_element_by_coordinate(self.action['coordinate'][0][0], self.action['coordinate'][0][1], show=False)
         else:
             self.target_element = None
         for dev in self.devices:
+            # skip the Selected Source Device
             if dev.id == self.source_device.id:
-                # print('Skip the Selected Source Device')
                 continue
             self.replay_action_on_device(dev)
             dev.update_screenshot_and_gui(self.paddle_ocr, ocr_opt=self.ocr_opt, verbose=detection_verbose)
