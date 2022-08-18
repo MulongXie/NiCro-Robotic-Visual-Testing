@@ -56,12 +56,25 @@ class Device:
         return ele
 
     def replay_action(self, action, matched_element=None, screen_ratio=None, sleep=0.2):
+        # click
         if action['type'] == 'click':
             if matched_element is not None:
-                self.execute_action('click', [(int(matched_element.center_x / self.detect_resize_ratio), int(matched_element.center_y / self.detect_resize_ratio))])
+                x = int(matched_element.center_x / self.detect_resize_ratio)
+                y = int(matched_element.center_y / self.detect_resize_ratio)
+                self.execute_action('click', [(x, y)])
             else:
                 coord = (int(action['coordinate'][0][0] / screen_ratio), int(action['coordinate'][0][1] / screen_ratio))
                 self.execute_action('click', [coord])
+        # long press
+        elif action['type'] == 'long press':
+            if matched_element is not None:
+                x = int(matched_element.center_x / self.detect_resize_ratio)
+                y = int(matched_element.center_y / self.detect_resize_ratio)
+                self.execute_action('swipe', [(x, y), (x, y)])
+            else:
+                coord = (int(action['coordinate'][0][0] / screen_ratio), int(action['coordinate'][0][1] / screen_ratio))
+                self.execute_action('swipe', [coord, coord])
+        # swipe
         elif action['type'] == 'swipe':
             start_coord = (int(action['coordinate'][0][0] / screen_ratio), action['coordinate'][0][1] / screen_ratio)
             re_dist = ((action['coordinate'][1][0] - action['coordinate'][0][0]) / screen_ratio, (action['coordinate'][1][1] - action['coordinate'][0][1]) / screen_ratio)
@@ -73,4 +86,4 @@ class Device:
         if action_type == 'click':
             self.device.input_tap(coordinates[0][0], coordinates[0][1])
         elif action_type == 'swipe':
-            self.device.input_swipe(coordinates[0][0], coordinates[0][1], coordinates[1][0], coordinates[1][1], 500)
+            self.device.input_swipe(coordinates[0][0], coordinates[0][1], coordinates[1][0], coordinates[1][1], 1000)

@@ -71,10 +71,10 @@ class NiCro:
 
     def detect_gui_info_for_all_devices(self, load_detection_result=False, show=True, verbose=True):
         for i, device in enumerate(self.devices):
-            print('****** Device [%d / %d] ******' % (i + 1, len(self.devices)))
+            print('****** GUI Component Detection Device [%d / %d] ******' % (i + 1, len(self.devices)))
             device.update_screenshot_and_gui(self.paddle_ocr, load_detection_result, show, ocr_opt=self.ocr_opt, verbose=verbose)
         if self.robot is not None:
-            print('****** Robot Arm [1 / 1] ******')
+            print('****** GUI Component Detection Robot Arm [1 / 1] ******')
             self.robot.detect_gui_element(self.paddle_ocr, load_detection_result, show=show, ocr_opt=self.ocr_opt, verbose=verbose)
 
     def show_all_device_detection_results(self):
@@ -82,9 +82,9 @@ class NiCro:
             device.GUI.show_detection_result()
 
     '''
-    **********************
-    *** Record Actions ***
-    **********************
+    *************************
+    *** Cross Dev Actions ***
+    *************************
     '''
     def record_and_replay_actions(self, output_root, app_name, testcase_id, wait_fresh_time=0.5,
                                   is_record=True, is_replay=False, detection_verbose=False):
@@ -213,7 +213,7 @@ class NiCro:
     def replay_action_on_all_devices(self, detection_verbose=True):
         print('Action:', self.action)
         # check if its widget dependent or independent
-        if self.action['type'] == 'click':
+        if self.action['type'] in ('click', 'long press'):
             self.target_element = self.source_device.find_element_by_coordinate(self.action['coordinate'][0][0], self.action['coordinate'][0][1], show=False)
         else:
             self.target_element = None
