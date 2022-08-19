@@ -213,10 +213,7 @@ class NiCro:
     def replay_action_on_all_devices(self, detection_verbose=True):
         print('Action:', self.action)
         # check if its widget dependent or independent
-        if self.action['type'] in ('click', 'long press'):
-            self.target_element = self.source_device.find_element_by_coordinate(self.action['coordinate'][0][0], self.action['coordinate'][0][1], show=False)
-        else:
-            self.target_element = None
+        self.target_element = self.source_device.find_element_by_coordinate(self.action['coordinate'][0][0], self.action['coordinate'][0][1], show=False)
         for dev in self.devices:
             # skip the Selected Source Device
             if dev.id == self.source_device.id:

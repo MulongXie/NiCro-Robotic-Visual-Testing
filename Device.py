@@ -22,12 +22,13 @@ class Device:
     def get_devices_info(self):
         print("Device ID:%d Name:%s Resolution:%s" % (self.id, self.name, self.device.wm_size()))
 
-    def cap_screenshot(self):
+    def cap_screenshot(self, recur_time=0):
         screen = self.device.screencap()
         with open(self.screenshot_path, "wb") as fp:
             fp.write(screen)
-        time.sleep(0.3)
         self.screenshot = cv2.imread(self.screenshot_path)
+        if recur_time < 3 and self.screenshot is None:
+            self.cap_screenshot(recur_time+1)
         return self.screenshot
 
     def detect_gui_info(self, paddle_ocr, is_load=False, show=False, ocr_opt='paddle', verbose=True):
