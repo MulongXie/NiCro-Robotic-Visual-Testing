@@ -58,29 +58,29 @@ class Device:
         return ele
 
     def replay_action(self, action, matched_element=None, screen_ratio=None, sleep=0.2):
+        if matched_element is not None:
+            coord = (int(matched_element.center_x / self.detect_resize_ratio), int(matched_element.center_y / self.detect_resize_ratio))
+        else:
+            coord = (int(action['coordinate'][0][0] / screen_ratio), int(action['coordinate'][0][1] / screen_ratio))
+
         # click
         if action['type'] == 'click':
-            if matched_element is not None:
-                x = int(matched_element.center_x / self.detect_resize_ratio)
-                y = int(matched_element.center_y / self.detect_resize_ratio)
-                self.execute_action('click', [(x, y)])
-            else:
-                coord = (int(action['coordinate'][0][0] / screen_ratio), int(action['coordinate'][0][1] / screen_ratio))
-                self.execute_action('click', [coord])
+            self.execute_action('click', [coord])
         # long press
         elif action['type'] == 'long press':
-            if matched_element is not None:
-                x = int(matched_element.center_x / self.detect_resize_ratio)
-                y = int(matched_element.center_y / self.detect_resize_ratio)
-                self.execute_action('swipe', [(x, y), (x, y)])
-            else:
-                coord = (int(action['coordinate'][0][0] / screen_ratio), int(action['coordinate'][0][1] / screen_ratio))
-                self.execute_action('swipe', [coord, coord])
+            self.execute_action('swipe', [coord, coord])
         # swipe
         elif action['type'] == 'swipe':
-            start_coord = (int(action['coordinate'][0][0] / screen_ratio), action['coordinate'][0][1] / screen_ratio)
-            re_dist = ((action['coordinate'][1][0] - action['coordinate'][0][0]) / screen_ratio, (action['coordinate'][1][1] - action['coordinate'][0][1]) / screen_ratio)
-            end_coord = (int(start_coord[0] + re_dist[0]), int(start_coord[1] + re_dist[1]))
+            x1_resize = int(action['coordinate'][0][0] / screen_ratio)
+            y1_resize = int(action['coordinate'][0][1] / screen_ratio)
+            x2_resize = int(action['coordinate'][1][0] / screen_ratio)
+            y2_resize = int(action['coordinate'][1][1] / screen_ratio)
+            x_dist = x2_resize - x1_resize
+            y_dist = y2_resize - y1_resize
+            x_bias = x1_resize - coord[0]
+            y_bias = y1_resize - coord[1]
+            start_coord = (x1_resize - x_bias, y1_resize - y_bias)
+            end_coord = (start_coord[0] + x_dist, start_coord[1] + y_dist)
             self.execute_action('swipe', [start_coord, end_coord])
         time.sleep(sleep)
 
