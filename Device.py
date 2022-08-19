@@ -88,7 +88,6 @@ class Device:
             else:
                 dev_x1 = int(action['coordinate'][0][0] * dev_ratio_x)
                 dev_y1 = int(action['coordinate'][0][1] * dev_ratio_y)
-            print(action['coordinate'], [(dev_x1, dev_y1), (dev_x1 + dist_x, dev_y1 + dist_y)], dist_x, dist_y, dev_ratio_x, dev_ratio_y)
             self.execute_action('swipe', [(dev_x1, dev_y1), (dev_x1 + dist_x, dev_y1 + dist_y)])
 
     def execute_action(self, action_type, coordinates):
