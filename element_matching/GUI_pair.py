@@ -190,9 +190,9 @@ class GUIPair:
             if similarities is not None:
                 text = similarities[i]
             ele.draw_element(board2, put_text=text, show=False)
-        cv2.imshow('Target', board1)
+        # cv2.imshow('Target', board1)
         cv2.imshow('Matched Elements', board2)
         key = cv2.waitKey()
-        cv2.destroyWindow('Target')
+        # cv2.destroyWindow('Target')
         cv2.destroyWindow('Matched Elements')
         return key
