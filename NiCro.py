@@ -86,13 +86,12 @@ class NiCro:
     *** Cross Dev Actions ***
     *************************
     '''
-    def record_and_replay_actions(self, output_root, app_name, testcase_id, wait_fresh_time=0.5,
+    def record_and_replay_actions(self, output_root, app_name, testcase_id,
                                   is_record=True, is_replay=False, detection_verbose=False):
         '''
         :param output_root: The root directory to store record actions
         :param app_name: The name of the app under test
         :param testcase_id: The id of the current testcase for the app
-        :param wait_fresh_time: Time to wait for a new page to load before detection
         :param is_record: Boolean, indicate if the recorded actions are stored
         :param is_replay: Boolean, indicate if the actions are replayed in all devices
         :param detection_verbose: Boolean, True to print out the verbose log of detection
@@ -158,7 +157,7 @@ class NiCro:
 
                 # update the screenshot and GUI of the selected target device
                 print("****** Re-detect Source Device's screenshot and GUI ******")
-                s_dev.update_screenshot_and_gui(self.paddle_ocr, ocr_opt=self.ocr_opt, verbose=False, wait_time=wait_fresh_time)
+                s_dev.update_screenshot_and_gui(self.paddle_ocr, ocr_opt=self.ocr_opt, verbose=False)
                 params[0] = s_dev.GUI.det_result_imgs['merge'].copy()
                 cv2.imshow(win_name, params[0])
                 params[1] += 1
@@ -182,7 +181,7 @@ class NiCro:
     *** Replay Actions ***
     **********************
     '''
-    def replay_action_on_device(self, device):
+    def replay_action_on_device(self, device, detection_verbose=True):
         print('*** Replay Devices Number [%d/%d] ***' % (device.id + 1, len(self.devices)))
         device.get_devices_info()
         matched_element = None
@@ -190,12 +189,12 @@ class NiCro:
             gui_matcher = GUIPair(self.source_device.GUI, device.GUI, self.resnet_model)
             matched_element = gui_matcher.match_target_element(self.target_element)
             # scroll down and match again
-            # if matched_element is None and scroll_search:
-            #     print('Scroll down and try to match again')
-            #     device.device.input_swipe(50, (device.device.wm_size().height * 0.5), 50, 20, 500)
-            #     device.update_screenshot_and_gui(self.paddle_ocr)
-            #     gui_matcher = GUIPair(self.source_device.GUI, device.GUI, self.resnet_model)
-            #     matched_element = gui_matcher.match_target_element(self.target_element)
+            if matched_element is None:
+                print('Scroll down and try to match again')
+                device.device.input_swipe(50, device.device.wm_size().height * 0.5, 50, 20, 500)
+                device.update_screenshot_and_gui(self.paddle_ocr, ocr_opt=self.ocr_opt, verbose=detection_verbose)
+                gui_matcher = GUIPair(self.source_device.GUI, device.GUI, self.resnet_model)
+                matched_element = gui_matcher.match_target_element(self.target_element)
         device.replay_action(self.action, self.source_device.device.wm_size(), matched_element)
 
     def replay_action_on_robot(self):
@@ -216,7 +215,7 @@ class NiCro:
             # skip the Selected Source Device
             if dev.id == self.source_device.id:
                 continue
-            self.replay_action_on_device(dev)
+            self.replay_action_on_device(dev, detection_verbose)
             dev.update_screenshot_and_gui(self.paddle_ocr, ocr_opt=self.ocr_opt, verbose=detection_verbose)
         if self.robot is not None:
             self.replay_action_on_robot()
