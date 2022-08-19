@@ -26,7 +26,7 @@ class Device:
         screen = self.device.screencap()
         with open(self.screenshot_path, "wb") as fp:
             fp.write(screen)
-        time.sleep(0.1)
+        time.sleep(0.3)
         self.screenshot = cv2.imread(self.screenshot_path)
         return self.screenshot
 
