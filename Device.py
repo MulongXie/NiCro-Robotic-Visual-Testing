@@ -57,11 +57,20 @@ class Device:
             ele.show_clip()
         return ele
 
-    def replay_action(self, action, matched_element=None, screen_ratio=None, sleep=0.2):
+    def replay_action(self, action, source_dev_size, matched_element=None):
+        '''
+        :param action: {'type': 'click', 'coordinate': [(-1, -1), (-1, -1)]}
+        :param source_dev_size: (screen width, screen height)
+        :param matched_element: Element object, element matched in the target device
+        '''
+        dev_size = self.device.wm_size()
+        dev_ratio_x = dev_size[0] / source_dev_size[0]
+        dev_ratio_y = dev_size[1] / source_dev_size[1]
+
         if matched_element is not None:
             coord = (int(matched_element.center_x / self.detect_resize_ratio), int(matched_element.center_y / self.detect_resize_ratio))
         else:
-            coord = (int(action['coordinate'][0][0] / screen_ratio), int(action['coordinate'][0][1] / screen_ratio))
+            coord = (int(action['coordinate'][0][0] * dev_ratio_x), int(action['coordinate'][0][1] * dev_ratio_y))
 
         # click
         if action['type'] == 'click':
@@ -71,18 +80,16 @@ class Device:
             self.execute_action('swipe', [coord, coord])
         # swipe
         elif action['type'] == 'swipe':
-            x1_resize = int(action['coordinate'][0][0] / screen_ratio)
-            y1_resize = int(action['coordinate'][0][1] / screen_ratio)
-            x2_resize = int(action['coordinate'][1][0] / screen_ratio)
-            y2_resize = int(action['coordinate'][1][1] / screen_ratio)
-            x_dist = x2_resize - x1_resize
-            y_dist = y2_resize - y1_resize
-            x_bias = x1_resize - coord[0]
-            y_bias = y1_resize - coord[1]
-            start_coord = (x1_resize - x_bias, y1_resize - y_bias)
-            end_coord = (start_coord[0] + x_dist, start_coord[1] + y_dist)
-            self.execute_action('swipe', [start_coord, end_coord])
-        time.sleep(sleep)
+            dist_x = action['coordinate'][1][0] - action['coordinate'][0][0]
+            dist_y = int((action['coordinate'][1][1] - action['coordinate'][0][1]) * dev_ratio_y)
+            if matched_element is not None:
+                dev_x1 = coord[0]
+                dev_y1 = coord[1]
+            else:
+                dev_x1 = int(action['coordinate'][0][0] * dev_ratio_x)
+                dev_y1 = int(action['coordinate'][0][1] * dev_ratio_y)
+            print(action['coordinate'], [(dev_x1, dev_y1), (dev_x1 + dist_x, dev_y1 + dist_y)], dist_x, dist_y, dev_ratio_x, dev_ratio_y)
+            self.execute_action('swipe', [(dev_x1, dev_y1), (dev_x1 + dist_x, dev_y1 + dist_y)])
 
     def execute_action(self, action_type, coordinates):
         if action_type == 'click':

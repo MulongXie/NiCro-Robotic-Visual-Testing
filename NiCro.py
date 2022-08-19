@@ -185,8 +185,6 @@ class NiCro:
     def replay_action_on_device(self, device):
         print('*** Replay Devices Number [%d/%d] ***' % (device.id + 1, len(self.devices)))
         device.get_devices_info()
-        screen_ratio = self.source_device.device.wm_size()[1] / device.device.wm_size()[1]
-
         matched_element = None
         if self.target_element is not None:
             gui_matcher = GUIPair(self.source_device.GUI, device.GUI, self.resnet_model)
@@ -198,7 +196,7 @@ class NiCro:
             #     device.update_screenshot_and_gui(self.paddle_ocr)
             #     gui_matcher = GUIPair(self.source_device.GUI, device.GUI, self.resnet_model)
             #     matched_element = gui_matcher.match_target_element(self.target_element)
-        device.replay_action(self.action, matched_element, screen_ratio)
+        device.replay_action(self.action, self.source_device.device.wm_size(), matched_element)
 
     def replay_action_on_robot(self):
         print('*** Replay on Robot ***')
