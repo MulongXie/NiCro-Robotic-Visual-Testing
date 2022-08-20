@@ -179,7 +179,7 @@ class GUIPair:
         cv2.destroyWindow('detection1')
         cv2.destroyWindow('detection2')
 
-    def show_target_and_matched_elements(self, target, matched_elements, similarities=None):
+    def show_target_and_matched_elements(self, target, matched_elements, match_result_save_path=None, similarities=None):
         board1 = self.gui1.det_result_imgs['merge'].copy()
         board2 = self.gui2.det_result_imgs['merge'].copy()
         target.draw_element(board1, show=False)
@@ -196,4 +196,6 @@ class GUIPair:
         key = cv2.waitKey()
         # cv2.destroyWindow('Target')
         cv2.destroyWindow('Matched Elements')
+        if match_result_save_path is not None:
+            cv2.imwrite(match_result_save_path, board2)
         return key
