@@ -6,9 +6,9 @@
             "height": 13,
             "width": 12,
             "position": {
-                "column_min": 60,
+                "column_min": 68,
                 "row_min": 19,
-                "column_max": 72,
+                "column_max": 80,
                 "row_max": 32
             }
         },
@@ -27,144 +27,197 @@
         {
             "id": 2,
             "class": "Compo",
-            "height": 207,
-            "width": 368,
+            "height": 12,
+            "width": 14,
             "position": {
-                "column_min": 0,
-                "row_min": 49,
-                "column_max": 368,
-                "row_max": 256
-            },
-            "children": [
-                3,
-                4,
-                5,
-                6,
-                14,
-                15,
-                16,
-                17,
-                18,
-                19
-            ]
+                "column_min": 301,
+                "row_min": 20,
+                "column_max": 315,
+                "row_max": 32
+            }
         },
         {
             "id": 3,
             "class": "Compo",
-            "height": 24,
-            "width": 13,
+            "height": 12,
+            "width": 12,
             "position": {
-                "column_min": 0,
-                "row_min": 94,
-                "column_max": 13,
-                "row_max": 118
-            },
-            "parent": 2
+                "column_min": 316,
+                "row_min": 20,
+                "column_max": 328,
+                "row_max": 32
+            }
         },
         {
             "id": 4,
             "class": "Compo",
-            "height": 22,
-            "width": 22,
+            "height": 13,
+            "width": 8,
             "position": {
-                "column_min": 42,
-                "row_min": 116,
-                "column_max": 64,
-                "row_max": 138
-            },
-            "parent": 2
+                "column_min": 334,
+                "row_min": 19,
+                "column_max": 342,
+                "row_max": 32
+            }
         },
         {
             "id": 5,
             "class": "Compo",
-            "height": 26,
-            "width": 14,
+            "height": 17,
+            "width": 17,
             "position": {
-                "column_min": 76,
-                "row_min": 139,
-                "column_max": 90,
-                "row_max": 165
-            },
-            "parent": 2
+                "column_min": 339,
+                "row_min": 71,
+                "column_max": 356,
+                "row_max": 88
+            }
         },
         {
             "id": 6,
             "class": "Compo",
-            "height": 7,
-            "width": 25,
+            "height": 8,
+            "width": 8,
             "position": {
-                "column_min": 105,
-                "row_min": 227,
-                "column_max": 130,
-                "row_max": 234
-            },
-            "parent": 2
+                "column_min": 14,
+                "row_min": 134,
+                "column_max": 22,
+                "row_max": 142
+            }
         },
         {
             "id": 7,
             "class": "Compo",
-            "height": 16,
-            "width": 339,
+            "height": 11,
+            "width": 11,
             "position": {
                 "column_min": 14,
-                "row_min": 376,
-                "column_max": 353,
-                "row_max": 392
+                "row_min": 155,
+                "column_max": 25,
+                "row_max": 166
             }
         },
         {
             "id": 8,
             "class": "Compo",
-            "height": 15,
-            "width": 12,
+            "height": 12,
+            "width": 7,
             "position": {
-                "column_min": 215,
-                "row_min": 509,
-                "column_max": 227,
-                "row_max": 524
+                "column_min": 15,
+                "row_min": 207,
+                "column_max": 22,
+                "row_max": 219
             }
         },
         {
             "id": 9,
             "class": "Compo",
-            "height": 15,
-            "width": 12,
+            "height": 10,
+            "width": 11,
             "position": {
-                "column_min": 328,
-                "row_min": 509,
-                "column_max": 340,
-                "row_max": 524
+                "column_min": 14,
+                "row_min": 232,
+                "column_max": 25,
+                "row_max": 242
             }
         },
         {
             "id": 10,
             "class": "Compo",
-            "height": 15,
-            "width": 15,
+            "height": 9,
+            "width": 8,
             "position": {
-                "column_min": 29,
-                "row_min": 618,
-                "column_max": 44,
-                "row_max": 633
+                "column_min": 14,
+                "row_min": 286,
+                "column_max": 22,
+                "row_max": 295
             }
         },
         {
             "id": 11,
             "class": "Compo",
-            "height": 45,
-            "width": 339,
+            "height": 10,
+            "width": 11,
             "position": {
                 "column_min": 14,
-                "row_min": 695,
-                "column_max": 353,
-                "row_max": 740
-            },
-            "children": [
-                35
-            ]
+                "row_min": 308,
+                "column_max": 25,
+                "row_max": 318
+            }
         },
         {
             "id": 12,
+            "class": "Compo",
+            "height": 22,
+            "width": 23,
+            "position": {
+                "column_min": 34,
+                "row_min": 709,
+                "column_max": 57,
+                "row_max": 731
+            }
+        },
+        {
+            "id": 13,
+            "class": "Compo",
+            "height": 20,
+            "width": 23,
+            "position": {
+                "column_min": 126,
+                "row_min": 710,
+                "column_max": 149,
+                "row_max": 730
+            }
+        },
+        {
+            "id": 14,
+            "class": "Compo",
+            "height": 20,
+            "width": 23,
+            "position": {
+                "column_min": 218,
+                "row_min": 710,
+                "column_max": 241,
+                "row_max": 730
+            }
+        },
+        {
+            "id": 15,
+            "class": "Compo",
+            "height": 22,
+            "width": 23,
+            "position": {
+                "column_min": 310,
+                "row_min": 709,
+                "column_max": 333,
+                "row_max": 731
+            }
+        },
+        {
+            "id": 16,
+            "class": "Compo",
+            "height": 15,
+            "width": 14,
+            "position": {
+                "column_min": 79,
+                "row_min": 770,
+                "column_max": 93,
+                "row_max": 785
+            }
+        },
+        {
+            "id": 17,
+            "class": "Compo",
+            "height": 15,
+            "width": 15,
+            "position": {
+                "column_min": 176,
+                "row_min": 770,
+                "column_max": 191,
+                "row_max": 785
+            }
+        },
+        {
+            "id": 18,
             "class": "Compo",
             "height": 15,
             "width": 15,
@@ -176,333 +229,158 @@
             }
         },
         {
-            "id": 13,
-            "class": "Text",
-            "height": 9,
-            "width": 26,
-            "position": {
-                "column_min": 24,
-                "row_min": 21,
-                "column_max": 50,
-                "row_max": 30
-            },
-            "text_content": "8:25",
-            "keyboard": false
-        },
-        {
-            "id": 14,
-            "class": "Text",
-            "height": 18,
-            "width": 71,
-            "position": {
-                "column_min": 149,
-                "row_min": 94,
-                "column_max": 220,
-                "row_max": 112
-            },
-            "text_content": "Genius",
-            "keyboard": false,
-            "parent": 2
-        },
-        {
-            "id": 15,
-            "class": "Text",
-            "height": 12,
-            "width": 152,
-            "position": {
-                "column_min": 108,
-                "row_min": 124,
-                "column_max": 260,
-                "row_max": 136
-            },
-            "text_content": "Booking.com's loyalty program",
-            "keyboard": false,
-            "parent": 2
-        },
-        {
-            "id": 16,
-            "class": "Text",
-            "height": 13,
-            "width": 310,
-            "position": {
-                "column_min": 30,
-                "row_min": 164,
-                "column_max": 340,
-                "row_max": 177
-            },
-            "text_content": "Every stay counts with our loyalty program , making it",
-            "keyboard": false,
-            "parent": 2
-        },
-        {
-            "id": 17,
-            "class": "Text",
-            "height": 12,
-            "width": 310,
-            "position": {
-                "column_min": 29,
-                "row_min": 183,
-                "column_max": 339,
-                "row_max": 195
-            },
-            "text_content": "easier for you to unlock free lifetime access to travel",
-            "keyboard": false,
-            "parent": 2
-        },
-        {
-            "id": 18,
-            "class": "Text",
-            "height": 10,
-            "width": 50,
-            "position": {
-                "column_min": 159,
-                "row_min": 202,
-                "column_max": 209,
-                "row_max": 212
-            },
-            "text_content": "rewards .",
-            "keyboard": false,
-            "parent": 2
-        },
-        {
             "id": 19,
             "class": "Text",
-            "height": 18,
-            "width": 71,
+            "height": 10,
+            "width": 25,
             "position": {
-                "column_min": 165,
-                "row_min": 229,
-                "column_max": 236,
-                "row_max": 247
+                "column_min": 32,
+                "row_min": 20,
+                "column_max": 57,
+                "row_max": 30
             },
-            "text_content": "Ainas",
-            "keyboard": false,
-            "parent": 2
+            "text_content": "11 :22",
+            "keyboard": false
         },
         {
             "id": 20,
             "class": "Text",
-            "height": 14,
-            "width": 266,
+            "height": 12,
+            "width": 40,
             "position": {
-                "column_min": 14,
-                "row_min": 290,
-                "column_max": 280,
-                "row_max": 304
+                "column_min": 22,
+                "row_min": 73,
+                "column_max": 62,
+                "row_max": 85
             },
-            "text_content": "You're a l m ost at Genius Level 2",
+            "text_content": "Saved",
             "keyboard": false
         },
         {
             "id": 21,
             "class": "Text",
             "height": 12,
-            "width": 318,
+            "width": 70,
             "position": {
-                "column_min": 15,
-                "row_min": 328,
-                "column_max": 333,
-                "row_max": 340
+                "column_min": 34,
+                "row_min": 155,
+                "column_max": 104,
+                "row_max": 167
             },
-            "text_content": "Complete 1 more stays \\ before May 4 , 2024 to unlock",
+            "text_content": "0 properties",
             "keyboard": false
         },
         {
             "id": 22,
             "class": "Text",
-            "height": 10,
-            "width": 177,
+            "height": 12,
+            "width": 70,
             "position": {
-                "column_min": 15,
-                "row_min": 347,
-                "column_max": 192,
-                "row_max": 357
+                "column_min": 34,
+                "row_min": 232,
+                "column_max": 104,
+                "row_max": 244
             },
-            "text_content": "Genius Level 2 travel rewards .",
+            "text_content": "0 properties",
             "keyboard": false
         },
         {
             "id": 23,
             "class": "Text",
-            "height": 10,
-            "width": 48,
+            "height": 12,
+            "width": 70,
             "position": {
-                "column_min": 160,
-                "row_min": 403,
-                "column_max": 208,
-                "row_max": 413
+                "column_min": 34,
+                "row_min": 308,
+                "column_max": 104,
+                "row_max": 320
             },
-            "text_content": "4/5 stays",
+            "text_content": "0 properties",
             "keyboard": false
         },
         {
             "id": 24,
             "class": "Text",
-            "height": 16,
-            "width": 272,
+            "height": 14,
+            "width": 79,
             "position": {
-                "column_min": 14,
-                "row_min": 459,
-                "column_max": 286,
-                "row_max": 475
+                "column_min": 15,
+                "row_min": 358,
+                "column_max": 94,
+                "row_max": 372
             },
-            "text_content": "Wherever you go , there's Genius",
+            "text_content": "My next trip",
             "keyboard": false
         },
         {
             "id": 25,
             "class": "Text",
-            "height": 12,
-            "width": 33,
+            "height": 13,
+            "width": 91,
             "position": {
-                "column_min": 150,
-                "row_min": 510,
-                "column_max": 183,
-                "row_max": 522
+                "column_min": 14,
+                "row_min": 384,
+                "column_max": 105,
+                "row_max": 397
             },
-            "text_content": "Level",
+            "text_content": "\u2665 0 properties",
             "keyboard": false
         },
         {
             "id": 26,
             "class": "Text",
-            "height": 11,
-            "width": 36,
+            "height": 7,
+            "width": 27,
             "position": {
-                "column_min": 45,
-                "row_min": 511,
-                "column_max": 81,
-                "row_max": 522
+                "column_min": 309,
+                "row_min": 737,
+                "column_max": 336,
+                "row_max": 744
             },
-            "text_content": "Level",
+            "text_content": "Profile",
             "keyboard": false
         },
         {
             "id": 27,
             "class": "Text",
-            "height": 11,
-            "width": 34,
+            "height": 9,
+            "width": 40,
             "position": {
-                "column_min": 263,
-                "row_min": 511,
-                "column_max": 297,
-                "row_max": 522
+                "column_min": 210,
+                "row_min": 737,
+                "column_max": 250,
+                "row_max": 746
             },
-            "text_content": "Level",
+            "text_content": "Bookings",
             "keyboard": false
         },
         {
             "id": 28,
             "class": "Text",
-            "height": 12,
-            "width": 314,
+            "height": 6,
+            "width": 29,
             "position": {
-                "column_min": 15,
-                "row_min": 560,
-                "column_max": 329,
-                "row_max": 572
+                "column_min": 31,
+                "row_min": 738,
+                "column_max": 60,
+                "row_max": 744
             },
-            "text_content": "Sign in to unlock free lifetime access to Genius",
+            "text_content": "Search",
             "keyboard": false
         },
         {
             "id": 29,
             "class": "Text",
-            "height": 15,
-            "width": 34,
+            "height": 7,
+            "width": 25,
             "position": {
-                "column_min": 15,
-                "row_min": 580,
-                "column_max": 49,
-                "row_max": 595
+                "column_min": 125,
+                "row_min": 738,
+                "column_max": 150,
+                "row_max": 745
             },
-            "text_content": "Level",
+            "text_content": "Saved",
             "keyboard": false
-        },
-        {
-            "id": 30,
-            "class": "Text",
-            "height": 17,
-            "width": 248,
-            "position": {
-                "column_min": 65,
-                "row_min": 580,
-                "column_max": 313,
-                "row_max": 597
-            },
-            "text_content": "discounts at participating properties .",
-            "keyboard": false
-        },
-        {
-            "id": 31,
-            "class": "Text",
-            "height": 11,
-            "width": 90,
-            "position": {
-                "column_min": 52,
-                "row_min": 619,
-                "column_max": 142,
-                "row_max": 630
-            },
-            "text_content": "10 % discount",
-            "keyboard": false
-        },
-        {
-            "id": 32,
-            "class": "Text",
-            "height": 13,
-            "width": 45,
-            "position": {
-                "column_min": 52,
-                "row_min": 645,
-                "column_max": 97,
-                "row_max": 658
-            },
-            "text_content": "You get",
-            "keyboard": false
-        },
-        {
-            "id": 33,
-            "class": "Text",
-            "height": 13,
-            "width": 225,
-            "position": {
-                "column_min": 112,
-                "row_min": 646,
-                "column_max": 337,
-                "row_max": 659
-            },
-            "text_content": "10 % discount on the price of your stay",
-            "keyboard": false
-        },
-        {
-            "id": 34,
-            "class": "Text",
-            "height": 13,
-            "width": 196,
-            "position": {
-                "column_min": 52,
-                "row_min": 664,
-                "column_max": 248,
-                "row_max": 677
-            },
-            "text_content": "before taxes and fees are applied",
-            "keyboard": false
-        },
-        {
-            "id": 35,
-            "class": "Text",
-            "height": 15,
-            "width": 127,
-            "position": {
-                "column_min": 121,
-                "row_min": 711,
-                "column_max": 248,
-                "row_max": 726
-            },
-            "text_content": "Find your next stay",
-            "keyboard": false,
-            "parent": 11
         }
     ],
     "img_shape": [
