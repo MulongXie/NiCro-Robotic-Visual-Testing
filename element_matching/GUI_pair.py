@@ -180,16 +180,17 @@ class GUIPair:
         cv2.destroyWindow('detection2')
 
     def show_target_and_matched_elements(self, target, matched_elements, similarities=None):
-        board1 = self.gui1.img.copy()
-        board2 = self.gui2.img.copy()
+        board1 = self.gui1.det_result_imgs['merge'].copy()
+        board2 = self.gui2.det_result_imgs['merge'].copy()
         target.draw_element(board1, show=False)
         for i, ele in enumerate(matched_elements):
             if ele is None:
                 continue
-            text = None
             if similarities is not None:
                 text = similarities[i]
-            ele.draw_element(board2, put_text=text, show=False)
+                cv2.putText(board2, text, (ele.col_min[0] + 3, ele.row_min[1] - 5), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255), 2)
+            cv2.circle(board2, (ele.col_max, ele.row_max), 10, (255, 0, 255), 2)
+            # ele.draw_element(board2, put_text=text, show=False)
         # cv2.imshow('Target', board1)
         cv2.imshow('Matched Elements', board2)
         key = cv2.waitKey()
