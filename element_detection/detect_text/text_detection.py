@@ -145,11 +145,11 @@ def text_split_letters_with_large_gap(texts, img):
     return new_texts
 
 
-def text_split_keyboard_letters(texts, img):
+def text_split_connected_keyboard_letters(texts, img):
     new_texts = []
     latest_id = len(texts)
     for text in texts:
-        letters = text.split_keyboard_letters(latest_id, img.shape[0])
+        letters = text.split_connected_keyboard_letters(latest_id, img.shape[0])
         if len(letters) > 1:
             latest_id += len(letters) - 1
             for letter in letters:
@@ -205,7 +205,7 @@ def text_detection_google(input_file='../data/input/30800.jpg', ocr_root='../dat
     texts = text_cvt_orc_format(ocr_result, img)
     texts = merge_intersected_texts(texts, img)
     texts = text_split_letters_with_large_gap(texts, img)
-    texts = text_split_keyboard_letters(texts, img)
+    texts = text_split_connected_keyboard_letters(texts, img)
     texts = text_sentences_recognition(texts, img)
     texts = text_recognize_keyboard_letters(texts, img)
     board = visualize_texts(img, texts, shown_resize_height=800, show=show, write_path=pjoin(ocr_root, name+'.png'))

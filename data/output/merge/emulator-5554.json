@@ -63,137 +63,187 @@
         {
             "id": 5,
             "class": "Compo",
-            "height": 17,
-            "width": 17,
+            "height": 14,
+            "width": 14,
             "position": {
-                "column_min": 339,
-                "row_min": 71,
-                "column_max": 356,
-                "row_max": 88
+                "column_min": 18,
+                "row_min": 69,
+                "column_max": 32,
+                "row_max": 83
             }
         },
         {
             "id": 6,
             "class": "Compo",
-            "height": 8,
-            "width": 8,
+            "height": 36,
+            "width": 341,
             "position": {
-                "column_min": 14,
-                "row_min": 134,
-                "column_max": 22,
-                "row_max": 142
-            }
+                "column_min": 13,
+                "row_min": 497,
+                "column_max": 354,
+                "row_max": 533
+            },
+            "children": [
+                7,
+                32
+            ]
         },
         {
             "id": 7,
             "class": "Compo",
-            "height": 11,
-            "width": 11,
+            "height": 13,
+            "width": 12,
             "position": {
-                "column_min": 14,
-                "row_min": 155,
-                "column_max": 25,
-                "row_max": 166
-            }
+                "column_min": 28,
+                "row_min": 509,
+                "column_max": 40,
+                "row_max": 522
+            },
+            "parent": 6
         },
         {
             "id": 8,
             "class": "Compo",
-            "height": 12,
-            "width": 7,
+            "height": 36,
+            "width": 341,
             "position": {
-                "column_min": 15,
-                "row_min": 207,
-                "column_max": 22,
-                "row_max": 219
-            }
+                "column_min": 13,
+                "row_min": 540,
+                "column_max": 354,
+                "row_max": 576
+            },
+            "children": [
+                33
+            ]
         },
         {
             "id": 9,
             "class": "Compo",
-            "height": 10,
-            "width": 11,
+            "height": 36,
+            "width": 341,
             "position": {
-                "column_min": 14,
-                "row_min": 232,
-                "column_max": 25,
-                "row_max": 242
-            }
+                "column_min": 13,
+                "row_min": 582,
+                "column_max": 354,
+                "row_max": 618
+            },
+            "children": [
+                10,
+                34
+            ]
         },
         {
             "id": 10,
             "class": "Compo",
-            "height": 9,
-            "width": 8,
+            "height": 14,
+            "width": 14,
             "position": {
-                "column_min": 14,
-                "row_min": 286,
-                "column_max": 22,
-                "row_max": 295
-            }
+                "column_min": 26,
+                "row_min": 593,
+                "column_max": 40,
+                "row_max": 607
+            },
+            "parent": 9
         },
         {
             "id": 11,
             "class": "Compo",
-            "height": 10,
-            "width": 11,
+            "height": 36,
+            "width": 341,
             "position": {
-                "column_min": 14,
-                "row_min": 308,
-                "column_max": 25,
-                "row_max": 318
-            }
+                "column_min": 13,
+                "row_min": 624,
+                "column_max": 354,
+                "row_max": 660
+            },
+            "children": [
+                12,
+                35,
+                36
+            ]
         },
         {
             "id": 12,
             "class": "Compo",
-            "height": 22,
-            "width": 23,
+            "height": 16,
+            "width": 16,
             "position": {
-                "column_min": 34,
-                "row_min": 709,
-                "column_max": 57,
-                "row_max": 731
-            }
+                "column_min": 26,
+                "row_min": 634,
+                "column_max": 42,
+                "row_max": 650
+            },
+            "parent": 11
         },
         {
             "id": 13,
             "class": "Compo",
-            "height": 20,
-            "width": 23,
+            "height": 9,
+            "width": 11,
             "position": {
-                "column_min": 126,
-                "row_min": 710,
-                "column_max": 149,
-                "row_max": 730
+                "column_min": 165,
+                "row_min": 679,
+                "column_max": 176,
+                "row_max": 688
             }
         },
         {
             "id": 14,
             "class": "Compo",
-            "height": 20,
-            "width": 23,
+            "height": 21,
+            "width": 35,
             "position": {
-                "column_min": 218,
-                "row_min": 710,
-                "column_max": 241,
-                "row_max": 730
+                "column_min": 47,
+                "row_min": 695,
+                "column_max": 82,
+                "row_max": 716
             }
         },
         {
             "id": 15,
             "class": "Compo",
-            "height": 22,
-            "width": 23,
+            "height": 24,
+            "width": 341,
             "position": {
-                "column_min": 310,
-                "row_min": 709,
-                "column_max": 333,
-                "row_max": 731
-            }
+                "column_min": 13,
+                "row_min": 730,
+                "column_max": 354,
+                "row_max": 754
+            },
+            "children": [
+                16,
+                17,
+                41
+            ]
         },
         {
             "id": 16,
+            "class": "Compo",
+            "height": 16,
+            "width": 22,
+            "position": {
+                "column_min": 96,
+                "row_min": 738,
+                "column_max": 118,
+                "row_max": 754
+            },
+            "parent": 15
+        },
+        {
+            "id": 17,
+            "class": "Compo",
+            "height": 13,
+            "width": 14,
+            "position": {
+                "column_min": 27,
+                "row_min": 741,
+                "column_max": 41,
+                "row_max": 754
+            },
+            "parent": 15
+        },
+        {
+            "id": 18,
             "class": "Compo",
             "height": 15,
             "width": 14,
@@ -205,7 +255,7 @@
             }
         },
         {
-            "id": 17,
+            "id": 19,
             "class": "Compo",
             "height": 15,
             "width": 15,
@@ -217,7 +267,7 @@
             }
         },
         {
-            "id": 18,
+            "id": 20,
             "class": "Compo",
             "height": 15,
             "width": 15,
@@ -229,158 +279,304 @@
             }
         },
         {
-            "id": 19,
+            "id": 21,
             "class": "Text",
-            "height": 10,
-            "width": 25,
+            "height": 9,
+            "width": 33,
             "position": {
-                "column_min": 32,
-                "row_min": 20,
+                "column_min": 24,
+                "row_min": 21,
                 "column_max": 57,
                 "row_max": 30
             },
-            "text_content": "11 :22",
-            "keyboard": false
-        },
-        {
-            "id": 20,
-            "class": "Text",
-            "height": 12,
-            "width": 40,
-            "position": {
-                "column_min": 22,
-                "row_min": 73,
-                "column_max": 62,
-                "row_max": 85
-            },
-            "text_content": "Saved",
-            "keyboard": false
-        },
-        {
-            "id": 21,
-            "class": "Text",
-            "height": 12,
-            "width": 70,
-            "position": {
-                "column_min": 34,
-                "row_min": 155,
-                "column_max": 104,
-                "row_max": 167
-            },
-            "text_content": "0 properties",
+            "text_content": "12:03",
             "keyboard": false
         },
         {
             "id": 22,
             "class": "Text",
-            "height": 12,
-            "width": 70,
+            "height": 15,
+            "width": 128,
             "position": {
-                "column_min": 34,
-                "row_min": 232,
-                "column_max": 104,
-                "row_max": 244
+                "column_min": 68,
+                "row_min": 69,
+                "column_max": 196,
+                "row_max": 84
             },
-            "text_content": "0 properties",
+            "text_content": "COVID - 19 FAQs",
             "keyboard": false
         },
         {
             "id": 23,
             "class": "Text",
-            "height": 12,
-            "width": 70,
+            "height": 22,
+            "width": 143,
             "position": {
-                "column_min": 34,
-                "row_min": 308,
-                "column_max": 104,
-                "row_max": 320
+                "column_min": 14,
+                "row_min": 140,
+                "column_max": 157,
+                "row_max": 162
             },
-            "text_content": "0 properties",
+            "text_content": "Booking.com",
             "keyboard": false
         },
         {
             "id": 24,
             "class": "Text",
-            "height": 14,
-            "width": 79,
+            "height": 30,
+            "width": 242,
             "position": {
-                "column_min": 15,
-                "row_min": 358,
-                "column_max": 94,
-                "row_max": 372
+                "column_min": 14,
+                "row_min": 182,
+                "column_max": 256,
+                "row_max": 212
             },
-            "text_content": "My next trip",
+            "text_content": "We're here to help",
             "keyboard": false
         },
         {
             "id": 25,
             "class": "Text",
-            "height": 13,
-            "width": 91,
+            "height": 14,
+            "width": 326,
             "position": {
                 "column_min": 14,
-                "row_min": 384,
-                "column_max": 105,
-                "row_max": 397
+                "row_min": 232,
+                "column_max": 340,
+                "row_max": 246
             },
-            "text_content": "\u2665 0 properties",
+            "text_content": "Your safety matters . If you think the coronavirus",
             "keyboard": false
         },
         {
             "id": 26,
             "class": "Text",
-            "height": 7,
-            "width": 27,
+            "height": 15,
+            "width": 323,
             "position": {
-                "column_min": 309,
-                "row_min": 737,
-                "column_max": 336,
-                "row_max": 744
+                "column_min": 16,
+                "row_min": 254,
+                "column_max": 339,
+                "row_max": 269
             },
-            "text_content": "Profile",
+            "text_content": "( COVID - 19 ) may affect your plans , visit our Help",
             "keyboard": false
         },
         {
             "id": 27,
             "class": "Text",
-            "height": 9,
-            "width": 40,
+            "height": 13,
+            "width": 281,
             "position": {
-                "column_min": 210,
-                "row_min": 737,
-                "column_max": 250,
-                "row_max": 746
+                "column_min": 15,
+                "row_min": 277,
+                "column_max": 296,
+                "row_max": 290
             },
-            "text_content": "Bookings",
+            "text_content": "Center or read more important info on the",
             "keyboard": false
         },
         {
             "id": 28,
             "class": "Text",
-            "height": 6,
-            "width": 29,
+            "height": 11,
+            "width": 117,
             "position": {
-                "column_min": 31,
-                "row_min": 738,
-                "column_max": 60,
-                "row_max": 744
+                "column_min": 15,
+                "row_min": 300,
+                "column_max": 132,
+                "row_max": 311
             },
-            "text_content": "Search",
+            "text_content": "coronavirus h ere .",
             "keyboard": false
         },
         {
             "id": 29,
             "class": "Text",
-            "height": 7,
-            "width": 25,
+            "height": 24,
+            "width": 305,
             "position": {
-                "column_min": 125,
-                "row_min": 738,
-                "column_max": 150,
-                "row_max": 745
+                "column_min": 15,
+                "row_min": 388,
+                "column_max": 320,
+                "row_max": 412
             },
-            "text_content": "Saved",
+            "text_content": "Restrictions and requirements",
             "keyboard": false
+        },
+        {
+            "id": 30,
+            "class": "Text",
+            "height": 13,
+            "width": 333,
+            "position": {
+                "column_min": 15,
+                "row_min": 418,
+                "column_max": 348,
+                "row_max": 431
+            },
+            "text_content": "Find out if there are any special requirements you need to",
+            "keyboard": false
+        },
+        {
+            "id": 31,
+            "class": "Text",
+            "height": 12,
+            "width": 168,
+            "position": {
+                "column_min": 15,
+                "row_min": 437,
+                "column_max": 183,
+                "row_max": 449
+            },
+            "text_content": "know about before you travel",
+            "keyboard": false
+        },
+        {
+            "id": 32,
+            "class": "Text",
+            "height": 15,
+            "width": 87,
+            "position": {
+                "column_min": 50,
+                "row_min": 507,
+                "column_max": 137,
+                "row_max": 522
+            },
+            "text_content": "Passport AUS",
+            "keyboard": false,
+            "parent": 6
+        },
+        {
+            "id": 33,
+            "class": "Text",
+            "height": 12,
+            "width": 113,
+            "position": {
+                "column_min": 28,
+                "row_min": 551,
+                "column_max": 141,
+                "row_max": 563
+            },
+            "text_content": "\u25c6 From Australia",
+            "keyboard": false,
+            "parent": 8
+        },
+        {
+            "id": 34,
+            "class": "Text",
+            "height": 11,
+            "width": 117,
+            "position": {
+                "column_min": 50,
+                "row_min": 593,
+                "column_max": 167,
+                "row_max": 604
+            },
+            "text_content": "Search destination",
+            "keyboard": false,
+            "parent": 9
+        },
+        {
+            "id": 35,
+            "class": "Text",
+            "height": 13,
+            "width": 80,
+            "position": {
+                "column_min": 80,
+                "row_min": 634,
+                "column_max": 160,
+                "row_max": 647
+            },
+            "text_content": "International",
+            "keyboard": false,
+            "parent": 11
+        },
+        {
+            "id": 36,
+            "class": "Text",
+            "height": 13,
+            "width": 23,
+            "position": {
+                "column_min": 51,
+                "row_min": 635,
+                "column_max": 74,
+                "row_max": 648
+            },
+            "text_content": "Trip",
+            "keyboard": false,
+            "parent": 11
+        },
+        {
+            "id": 37,
+            "class": "Text",
+            "height": 10,
+            "width": 40,
+            "position": {
+                "column_min": 20,
+                "row_min": 677,
+                "column_max": 60,
+                "row_max": 687
+            },
+            "text_content": "COVID",
+            "keyboard": false
+        },
+        {
+            "id": 38,
+            "class": "Text",
+            "height": 10,
+            "width": 83,
+            "position": {
+                "column_min": 68,
+                "row_min": 677,
+                "column_max": 151,
+                "row_max": 687
+            },
+            "text_content": "19 vaccinated",
+            "keyboard": false
+        },
+        {
+            "id": 39,
+            "class": "Text",
+            "height": 10,
+            "width": 21,
+            "position": {
+                "column_min": 92,
+                "row_min": 700,
+                "column_max": 113,
+                "row_max": 710
+            },
+            "text_content": "Yes",
+            "keyboard": false
+        },
+        {
+            "id": 40,
+            "class": "Text",
+            "height": 9,
+            "width": 17,
+            "position": {
+                "column_min": 20,
+                "row_min": 701,
+                "column_max": 37,
+                "row_max": 710
+            },
+            "text_content": "No",
+            "keyboard": false
+        },
+        {
+            "id": 41,
+            "class": "Text",
+            "height": 10,
+            "width": 39,
+            "position": {
+                "column_min": 50,
+                "row_min": 742,
+                "column_max": 89,
+                "row_max": 752
+            },
+            "text_content": "Filters",
+            "keyboard": false,
+            "parent": 15
         }
     ],
     "img_shape": [

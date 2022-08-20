@@ -323,7 +323,7 @@ class Text:
         split_texts.append(self)
         return split_texts
 
-    def split_keyboard_letters(self, latest_id, gui_height):
+    def split_connected_keyboard_letters(self, latest_id, gui_height):
         '''
         Simply check if the text contains multiple keyboard letters, and split equally
         :param gui_height: the height of the gui screen, used to check if the text is in keyboard area
@@ -334,7 +334,8 @@ class Text:
         keyboard_alphabet += 'q¹w²e³' + 'q¹w²e²' + '¡º'
         loc = self.location
         letters = []
-        if self.is_in_keyboard_area(gui_height) and self.content.replace(' ', '').lower() in keyboard_alphabet:
+        if len(self.content) > 1 and self.is_in_keyboard_area(gui_height) and self.content.replace(' ', '').lower() in keyboard_alphabet:
+            print(self.content)
             # split each letter in the content as a Text object
             for i in range(len(self.content) - 1):
                 content = self.content[i]
