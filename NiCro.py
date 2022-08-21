@@ -145,9 +145,9 @@ class NiCro:
                     self.action['type'] = 'click'
                     self.action['coordinate'][1] = (-1, -1)
 
+                step_id = str(params[1])
                 # save original GUI image and operations on detection result
                 if is_record:
-                    step_id = str(params[1])
                     print('Record action %s to %s' % (step_id, testcase_dir))
                     cv2.imwrite(pjoin(testcase_dir, step_id + '_org.jpg'), s_dev.GUI.img)  # original GUI screenshot
                     cv2.imwrite(pjoin(testcase_dir, step_id + '_act.jpg'), params[0])      # actions drawn on detection result
@@ -184,6 +184,7 @@ class NiCro:
     def replay_action_on_device(self, device, detection_verbose=True):
         print('*** Replay Devices Number [%d/%d] ***' % (device.id + 1, len(self.devices)))
         device.get_devices_info()
+        # if widget-independent, match target widget first
         matched_element = None
         if self.target_element is not None:
             gui_matcher = GUIPair(self.source_device.GUI, device.GUI, self.resnet_model)
@@ -195,6 +196,7 @@ class NiCro:
                 device.update_screenshot_and_gui(self.paddle_ocr, ocr_opt=self.ocr_opt, verbose=detection_verbose)
                 gui_matcher = GUIPair(self.source_device.GUI, device.GUI, self.resnet_model)
                 matched_element = gui_matcher.match_target_element(self.target_element)
+        # replay action on device
         device.replay_action(self.action, self.source_device.device.wm_size(), matched_element)
 
     def replay_action_on_robot(self):
