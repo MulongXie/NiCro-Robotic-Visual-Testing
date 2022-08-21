@@ -104,7 +104,7 @@ class GUIPair:
             self.calculate_elements_image_similarity_matrix()
         return matched_elements
 
-    def match_target_element(self, target_element, show=True):
+    def match_target_element(self, target_element, show=False):
         if target_element.category == 'Text' or target_element.text_content is not None:
             matched_elements = self.match_by_text(target_element, self.gui2.ele_texts, show=False)
             if len(matched_elements) > 1:

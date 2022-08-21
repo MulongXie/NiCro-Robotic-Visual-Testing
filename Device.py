@@ -74,10 +74,10 @@ class Device:
 
         # click
         if action['type'] == 'click':
-            self.execute_action('click', [coord], save_action_execution_path)
+            self.execute_action('click', [coord, (-1, -1)], save_action_execution_path)
         # long press
         elif action['type'] == 'long press':
-            self.execute_action('long press', [coord], save_action_execution_path)
+            self.execute_action('long press', [coord, coord], save_action_execution_path)
         # swipe
         elif action['type'] == 'swipe':
             dist_x = action['coordinate'][1][0] - action['coordinate'][0][0]
@@ -101,13 +101,14 @@ class Device:
             self.save_action_execution(action_type, coordinates, save_action_execution_path)
 
     def save_action_execution(self, action_type, coordinates, save_path, num_dots=5, show=True):
-        coordinates = [[int(coordinates[0][0] * self.detect_resize_ratio), int(coordinates[0][1] * self.detect_resize_ratio)],
-                       [int(coordinates[1][0] * self.detect_resize_ratio), int(coordinates[1][1] * self.detect_resize_ratio)]]
+        coordinates = ((int(coordinates[0][0] * self.detect_resize_ratio), int(coordinates[0][1] * self.detect_resize_ratio)),
+                       (int(coordinates[1][0] * self.detect_resize_ratio), int(coordinates[1][1] * self.detect_resize_ratio)))
         board = self.GUI.det_result_imgs['merge'].copy()
         coord1, coord2 = coordinates
         if action_type == 'click':
             cv2.circle(board, coord1, 10, (255, 0, 255), 2)
         elif action_type == 'long press':
+            print('long press')
             cv2.circle(board, coord1, 10, (255, 0, 255), -1)
         elif action_type == 'swipe':
             x_gap = (coord2[0] - coord1[0]) // num_dots
