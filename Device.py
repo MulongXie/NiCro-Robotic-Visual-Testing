@@ -77,7 +77,7 @@ class Device:
             self.execute_action('click', [coord], save_action_execution_path)
         # long press
         elif action['type'] == 'long press':
-            self.execute_action('swipe', [coord, coord], save_action_execution_path)
+            self.execute_action('long press', [coord], save_action_execution_path)
         # swipe
         elif action['type'] == 'swipe':
             dist_x = action['coordinate'][1][0] - action['coordinate'][0][0]
@@ -93,22 +93,29 @@ class Device:
     def execute_action(self, action_type, coordinates, save_action_execution_path=None):
         if action_type == 'click':
             self.device.input_tap(coordinates[0][0], coordinates[0][1])
+        elif action_type == 'long press':
+            self.device.input_swipe(coordinates[0][0], coordinates[0][1], coordinates[0][0], coordinates[0][1], 1000)
         elif action_type == 'swipe':
-            self.device.input_swipe(coordinates[0][0], coordinates[0][1], coordinates[1][0], coordinates[1][1], 1000)
+            self.device.input_swipe(coordinates[0][0], coordinates[0][1], coordinates[1][0], coordinates[1][1], 300)
         if save_action_execution_path is not None:
-            self.save_action_execution(coordinates, save_action_execution_path)
+            self.save_action_execution(action_type, coordinates, save_action_execution_path)
 
-    def save_action_execution(self, coordinates, save_path, num_dots=5, show=True):
+    def save_action_execution(self, action_type, coordinates, save_path, num_dots=5, show=True):
+        coordinates = [[int(coordinates[0][0] * self.detect_resize_ratio), int(coordinates[0][1] * self.detect_resize_ratio)],
+                       [int(coordinates[1][0] * self.detect_resize_ratio), int(coordinates[1][1] * self.detect_resize_ratio)]]
         board = self.GUI.det_result_imgs['merge'].copy()
         coord1, coord2 = coordinates
-        if coord2 == (-1, -1):
+        if action_type == 'click':
             cv2.circle(board, coord1, 10, (255, 0, 255), 2)
-        else:
-            x_gap = coord2[0] - coord1[0] // num_dots
-            y_gap = coord2[1] - coord1[1] // num_dots
+        elif action_type == 'long press':
+            cv2.circle(board, coord1, 10, (255, 0, 255), -1)
+        elif action_type == 'swipe':
+            x_gap = (coord2[0] - coord1[0]) // num_dots
+            y_gap = (coord2[1] - coord1[1]) // num_dots
             for i in range(num_dots):
                 cv2.circle(board, (coord1[0] + i * x_gap, coord1[1] + i * y_gap), 10, (255, 0, 255), 2)
         cv2.imwrite(save_path, board)
         if show:
             cv2.imshow('action', board)
+            cv2.waitKey()
             cv2.destroyWindow('action')
