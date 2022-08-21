@@ -153,7 +153,10 @@ class NiCro:
                     cv2.imwrite(pjoin(testcase_dir, step_id + '_act.jpg'), params[0])      # actions drawn on detection result
                 # replay the action on all devices
                 if is_replay:
-                    self.replay_action_on_all_devices(detection_verbose=detection_verbose)
+                    save_action_execution_dir = pjoin(testcase_dir, step_id)
+                    os.makedirs(save_action_execution_dir, exist_ok=True)
+                    cv2.imwrite(pjoin(save_action_execution_dir, str(s_dev.id) + '.jpg'), params[0])      # actions drawn on detection result
+                    self.replay_action_on_all_devices(detection_verbose, save_action_execution_dir)
 
                 # update the screenshot and GUI of the selected target device
                 print("****** Re-detect Source Device's screenshot and GUI ******")
@@ -181,23 +184,21 @@ class NiCro:
     *** Replay Actions ***
     **********************
     '''
-    def replay_action_on_device(self, device, detection_verbose=True):
+    def replay_action_on_device(self, device, detection_verbose=True, save_action_execution_path=None):
         print('*** Replay Devices Number [%d/%d] ***' % (device.id + 1, len(self.devices)))
         device.get_devices_info()
         # if widget-independent, match target widget first
         matched_element = None
         if self.target_element is not None:
-            gui_matcher = GUIPair(self.source_device.GUI, device.GUI, self.resnet_model)
-            matched_element = gui_matcher.match_target_element(self.target_element)
+            matched_element = GUIPair(self.source_device.GUI, device.GUI, self.resnet_model).match_target_element(self.target_element)
             # scroll down and match again
             if matched_element is None:
                 print('Scroll down and try to match again')
                 device.device.input_swipe(50, device.device.wm_size().height * 0.5, 50, 20, 500)
                 device.update_screenshot_and_gui(self.paddle_ocr, ocr_opt=self.ocr_opt, verbose=detection_verbose)
-                gui_matcher = GUIPair(self.source_device.GUI, device.GUI, self.resnet_model)
-                matched_element = gui_matcher.match_target_element(self.target_element)
+                matched_element = GUIPair(self.source_device.GUI, device.GUI, self.resnet_model).match_target_element(self.target_element)
         # replay action on device
-        device.replay_action(self.action, self.source_device.device.wm_size(), matched_element)
+        device.replay_action(self.action, self.source_device.device.wm_size(), matched_element, save_action_execution_path)
 
     def replay_action_on_robot(self):
         print('*** Replay on Robot ***')
@@ -209,15 +210,15 @@ class NiCro:
             matched_element = gui_matcher.match_target_element(self.target_element)
         self.robot.replay_action(self.action, matched_element, screen_ratio)
 
-    def replay_action_on_all_devices(self, detection_verbose=True):
+    def replay_action_on_all_devices(self, detection_verbose=True, save_action_execution_dir=None):
         print('Action:', self.action)
         # check if its widget dependent or independent
         self.target_element = self.source_device.find_element_by_coordinate(self.action['coordinate'][0][0], self.action['coordinate'][0][1], show=False)
         for dev in self.devices:
+            save_action_execution_path = pjoin(save_action_execution_dir, str(dev.id) + '.jpg')
             # skip the Selected Source Device
-            if dev.id == self.source_device.id:
-                continue
-            self.replay_action_on_device(dev, detection_verbose)
+            if dev.id != self.source_device.id:
+                self.replay_action_on_device(dev, detection_verbose, save_action_execution_path)
             dev.update_screenshot_and_gui(self.paddle_ocr, ocr_opt=self.ocr_opt, verbose=detection_verbose)
         if self.robot is not None:
             self.replay_action_on_robot()

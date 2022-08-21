@@ -56,16 +56,17 @@ class Device:
             ele.show_clip()
         return ele
 
-    def replay_action(self, action, source_dev_size, matched_element=None):
+    def replay_action(self, action, source_dev_size, matched_element=None, save_action_execution_path=None):
         '''
         :param action: {'type': 'click', 'coordinate': [(-1, -1), (-1, -1)]}
         :param source_dev_size: (screen width, screen height)
         :param matched_element: Element object, element matched in the target device
+        :param save_action_execution_path: The path to save the visualized action execution
         '''
         dev_size = self.device.wm_size()
         dev_ratio_x = dev_size[0] / source_dev_size[0]
         dev_ratio_y = dev_size[1] / source_dev_size[1]
-
+        # get the target action coordinates on the device
         if matched_element is not None:
             coord = (int(matched_element.center_x / self.detect_resize_ratio), int(matched_element.center_y / self.detect_resize_ratio))
         else:
@@ -73,10 +74,10 @@ class Device:
 
         # click
         if action['type'] == 'click':
-            self.execute_action('click', [coord])
+            self.execute_action('click', [coord], save_action_execution_path)
         # long press
         elif action['type'] == 'long press':
-            self.execute_action('swipe', [coord, coord])
+            self.execute_action('swipe', [coord, coord], save_action_execution_path)
         # swipe
         elif action['type'] == 'swipe':
             dist_x = action['coordinate'][1][0] - action['coordinate'][0][0]
@@ -87,10 +88,27 @@ class Device:
             else:
                 dev_x1 = int(action['coordinate'][0][0] * dev_ratio_x)
                 dev_y1 = int(action['coordinate'][0][1] * dev_ratio_y)
-            self.execute_action('swipe', [(dev_x1, dev_y1), (dev_x1 + dist_x, dev_y1 + dist_y)])
+            self.execute_action('swipe', [(dev_x1, dev_y1), (dev_x1 + dist_x, dev_y1 + dist_y)], save_action_execution_path)
 
-    def execute_action(self, action_type, coordinates):
+    def execute_action(self, action_type, coordinates, save_action_execution_path=None):
         if action_type == 'click':
             self.device.input_tap(coordinates[0][0], coordinates[0][1])
         elif action_type == 'swipe':
             self.device.input_swipe(coordinates[0][0], coordinates[0][1], coordinates[1][0], coordinates[1][1], 1000)
+        if save_action_execution_path is not None:
+            self.save_action_execution(coordinates, save_action_execution_path)
+
+    def save_action_execution(self, coordinates, save_path, num_dots=5, show=True):
+        board = self.GUI.det_result_imgs['merge'].copy()
+        coord1, coord2 = coordinates
+        if coord2 == (-1, -1):
+            cv2.circle(board, coord1, 10, (255, 0, 255), 2)
+        else:
+            x_gap = coord2[0] - coord1[0] // num_dots
+            y_gap = coord2[1] - coord1[1] // num_dots
+            for i in range(num_dots):
+                cv2.circle(board, (coord1[0] + i * x_gap, coord1[1] + i * y_gap), 10, (255, 0, 255), 2)
+        cv2.imwrite(save_path, board)
+        if show:
+            cv2.imshow('action', board)
+            cv2.destroyWindow('action')
