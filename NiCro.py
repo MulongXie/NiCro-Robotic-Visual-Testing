@@ -77,10 +77,10 @@ class NiCro:
         :param verbose: True to print out the detailed log of detection
         '''
         for i, device in enumerate(self.devices):
-            print('****** GUI Component Detection Device [%d / %d] ******' % (i + 1, len(self.devices)))
+            print('\n****** GUI Component Detection Device [%d / %d] ******' % (i + 1, len(self.devices)))
             device.update_screenshot_and_gui(self.paddle_ocr, load_detection_result, show, ocr_opt=self.ocr_opt, verbose=verbose)
         if self.robot is not None:
-            print('****** GUI Component Detection Robot Arm [1 / 1] ******')
+            print('\n****** GUI Component Detection Robot Arm [1 / 1] ******')
             self.robot.detect_gui_element(self.paddle_ocr, load_detection_result, show=show, ocr_opt=self.ocr_opt, verbose=verbose)
 
     def show_all_device_detection_results(self):
@@ -103,7 +103,7 @@ class NiCro:
         :param is_replay: Boolean, True to replay and store the actions on all devices
         '''
         s_dev = self.source_device
-        win_name = s_dev.device.get_serial_no() + ' screen'
+        win_name = s_dev.device.get_serial_no() + ' screen (Press "q" to exit)'
 
         def on_mouse(event, x, y, flags, params):
             '''

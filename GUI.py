@@ -225,14 +225,14 @@ class GUI:
     '''
     def show_detection_result(self):
         if self.det_result_imgs['merge'] is not None:
-            cv2.imshow('GUI detection result', self.det_result_imgs['merge'])
+            cv2.imshow('GUI detection result (Press any key to exit)', self.det_result_imgs['merge'])
         elif self.det_result_data is not None:
             self.draw_detection_result()
-            cv2.imshow('GUI detection result', self.det_result_imgs['merge'])
+            cv2.imshow('GUI detection result (Press any key to exit)', self.det_result_imgs['merge'])
         else:
             print('No detection result, run element_detection() or load_detection_result() first')
         cv2.waitKey()
-        cv2.destroyWindow('GUI detection result')
+        cv2.destroyWindow('GUI detection result (Press any key to exit)')
 
     def draw_detection_result(self):
         '''

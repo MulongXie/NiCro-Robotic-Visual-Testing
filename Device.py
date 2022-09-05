@@ -117,6 +117,6 @@ class Device:
                 cv2.circle(board, (coord1[0] + i * x_gap, coord1[1] + i * y_gap), 10, (255, 0, 255), 2)
         cv2.imwrite(save_path, board)
         if show:
-            cv2.imshow('action', board)
+            cv2.imshow('action (Press any key to exit)', board)
             cv2.waitKey()
-            cv2.destroyWindow('action')
+            cv2.destroyWindow('action (Press any key to exit)')
