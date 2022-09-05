@@ -27,7 +27,7 @@ Therefore, we propose the automated UI testing system ***NiCro*** to automatical
 1. **Virtual Device Farm**: It supports various Android device emulators with differnet Android versions and screen sizes, which can be easily added or removed.
 2. **Robotic System**: It contains one or multiple robot arms and cameras to interact with any type of physical devices.
 3. **Host Computer**: It collects the GUI images (e.g., screenshot or photo) from the above two parts and run the core visual approach:
-    1. Detect the UI widgets using an accurate computer vision based detector UIED.
+    1. Detect the UI widgets using an accurate computer vision based detector [UIED](https://github.com/MulongXie/UIED).
     2. Find the widget on the replaying device that is matched to the target widget on the recording device.
     3. Match the widget-independent actions (scroll or swipe) from the recording device to the replaying devices.
     4. Output the converted action to the Virtual Device Farm and Robotic System to replay it on diverse devices.
