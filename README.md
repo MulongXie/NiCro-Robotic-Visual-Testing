@@ -1,7 +1,11 @@
 # NiCro: Non-intrusive Cross-device and Cross-platform UI Action Record & Replay
 ## What is it?
 
-Due to the huge diversity of the hardware and software environment of the end-device, a mobile is necessited to be tested on diverse devices to ensure the compatibility and user experience.
+Due to the huge diversity of the hardware and software environment of the end-device, an APP is necessited to be tested on diverse devices to ensure the compatibility and user experience.
+
+<p align="center">
+    <img src="data/demo/devices.png" alt="The app running on various devices" width="80%">
+</p>
 
 This cross-device and cross-platform testing is highly laborious and involves plenty of repetitive work to run and revise the test script on differnet devices. 
 
