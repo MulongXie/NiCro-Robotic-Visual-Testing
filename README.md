@@ -48,9 +48,11 @@ The Virtual Device Farm is supported through **Android Studio**. The applied ver
 
 #### Robotic System (Optional)
 The Robotic System contains a Robot Arm and a camera. We use a *UArm Swift Pro Robot Arm* and a *4K Logitech BRIO Webcam* in our current experimental setting, but the two can be replaced by any similar alternatives.
+
 <p align="center">
     <img src="data/demo/roboticsystem.png" alt="The app running on various devices" width="50%">
 </p>
+
 1. Connect the robot arm.
 2. Check `Robot.py` and `robot/` folder to update your robot control script.
 3. Run the functions `nicro.load_robot()` and `nicro.robot.control_robot_by_clicking_on_cam_video()` in `NiCro.py` to test it the system connects successfully.
