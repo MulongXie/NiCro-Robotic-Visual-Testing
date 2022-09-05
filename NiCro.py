@@ -20,7 +20,7 @@ resnet_model = ResNet50(include_top=False, input_shape=(32, 32, 3))
 
 
 class NiCro:
-    def __init__(self, ocr_opt='paddle'):
+    def __init__(self, ocr_opt='google'):
         # Device objects, including their screenshots and GUIs
         self.devices = [Device(i, dev) for i, dev in enumerate(sorted(client.devices(), key=lambda x: x.get_serial_no()))]
         self.source_device = self.devices[0]   # the selected source device
@@ -70,6 +70,12 @@ class NiCro:
         self.get_devices_info()
 
     def detect_gui_info_for_all_devices(self, load_detection_result=False, show=True, verbose=True):
+        '''
+        Detect GUI elements from the GUI images of all devices
+        :param load_detection_result: True to load previous detection result if any
+        :param show: True to visualize the detection results
+        :param verbose: True to print out the detailed log of detection
+        '''
         for i, device in enumerate(self.devices):
             print('****** GUI Component Detection Device [%d / %d] ******' % (i + 1, len(self.devices)))
             device.update_screenshot_and_gui(self.paddle_ocr, load_detection_result, show, ocr_opt=self.ocr_opt, verbose=verbose)
@@ -87,14 +93,14 @@ class NiCro:
     *************************
     '''
     def record_and_replay_actions(self, output_root, app_name, testcase_id,
-                                  is_record=True, is_replay=False, detection_verbose=False):
+                                  is_record=True, is_replay=False):
         '''
-        :param output_root: The root directory to store record actions
+        Perform cross-device record or replay
+        :param output_root: The root directory to store actions
         :param app_name: The name of the app under test
         :param testcase_id: The id of the current testcase for the app
-        :param is_record: Boolean, indicate if the recorded actions are stored
-        :param is_replay: Boolean, indicate if the actions are replayed in all devices
-        :param detection_verbose: Boolean, True to print out the verbose log of detection
+        :param is_record: Boolean, True to store the actions on the recording device
+        :param is_replay: Boolean, True to replay and store the actions on all devices
         '''
         s_dev = self.source_device
         win_name = s_dev.device.get_serial_no() + ' screen'
@@ -156,7 +162,7 @@ class NiCro:
                     save_action_execution_dir = pjoin(testcase_dir, step_id)
                     os.makedirs(save_action_execution_dir, exist_ok=True)
                     cv2.imwrite(pjoin(save_action_execution_dir, str(s_dev.id) + '.jpg'), params[0])      # actions drawn on detection result
-                    self.replay_action_on_all_devices(detection_verbose, save_action_execution_dir)
+                    self.replay_action_on_all_devices(detection_verbose=False, save_action_execution_dir=save_action_execution_dir)
 
                 # update the screenshot and GUI of the selected target device
                 print("****** Re-detect Source Device's screenshot and GUI ******")
@@ -237,6 +243,8 @@ class NiCro:
 
     def match_widgets_cross_device(self, method):
         '''
+        Match the target widget on all devices using the given method
+        Press "a" if the match is correct
         :param method: 'sift', 'orb', 'resnet', 'template-match', 'text', 'nicro'
         '''
         print('*** Matching Method: %s in Test Round %d ***' % (method, self.test_round))
@@ -303,20 +311,26 @@ class NiCro:
 
 
 if __name__ == '__main__':
-    nicro = NiCro(ocr_opt='paddle')
+    # 0. initiate NiCro with ocr option (paddle or google)
+    nicro = NiCro(ocr_opt='google')
+
     # 1. load virtual devices and select one of them as the source device
     nicro.load_devices()
     nicro.select_source_device(0)
 
     # 2. load robot system
     # nicro.load_robot()
-    # nicro.robot.control_robot_by_clicking_on_cam_video()  # test the robot system
+    # nicro.robot.control_robot_by_clicking_on_cam_video()   # test the robot system
+    # nicro.robot.detect_gui_element(nicro.paddle_ocr, show=True, ocr_opt=nicro.ocr_opt)   # detect GUI elements from photo (screen region)
+    # nicro.robot.GUI.screen.show_clip()    # show the screen region
 
     # 3. detect GUI components for all the devices for their current GUI
-    # nicro.detect_gui_info_for_all_devices(load_detection_result=False, show=True)
+    nicro.detect_gui_info_for_all_devices(verbose=False, show=True)
 
     # 4. control the source device by mouse and replay the action on all other devices
-    # nicro.control_multiple_devices_through_source_device(is_replay=True)
+    nicro.record_and_replay_actions(output_root='/home/ml/Data/visual testing/testcase', app_name='Desktop', testcase_id='1',
+                                    is_record=True,     # record or replay
+                                    is_replay=False)
 
     # 5. test the widget matching among all devices
     # nicro.reset_matching_accuracy()
