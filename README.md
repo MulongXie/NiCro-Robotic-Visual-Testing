@@ -7,6 +7,8 @@ Due to the huge diversity of the hardware and software environment of the end-de
     <img src="data/demo/devices.png" alt="The app running on various devices" width="80%">
 </p>
 
+>An app displayed on various devices. “P“ and “V“ indicate if the device is “Physical“ or “Virtual“; “A“ and “I“ represent “Android“ and “iOS“ platforms; the last number shows the screen size in inches.
+
 This cross-device and cross-platform testing is highly laborious and involves plenty of repetitive work to run and revise the test script on differnet devices. 
 
 Therefore, we propose the automated UI testing system ***NiCro*** to automatically replay the actions on various devices with different hardware (e.g., screen size) and software (e.g., operating system) environments.
@@ -14,8 +16,13 @@ Therefore, we propose the automated UI testing system ***NiCro*** to automatical
 ***NiCro*** is a purely non-intrusive system. Its approach only requires GUI images (e.g., screenshot or photo) as the input without any need of the app metadata. This enables it to be highly easy to use and generalize to any types of devices, as it does not demand any specific APIs to hack into the underlying system. 
 
 
+![NiCro workflow](data/demo/workflow2.png)
+>The summarized workflow of NiCro
+
 ## How does it work?
 ***NiCro*** contains three parts
+
+![NiCro components](data/demo/architecture.png)
 
 1. **Virtual Device Farm**: It supports various Android device emulators with differnet Android versions and screen sizes, which can be easily added or removed.
 2. **Robotic System**: It contains one or multiple robot arms and cameras to interact with any type of physical devices.
@@ -41,6 +48,9 @@ The Virtual Device Farm is supported through **Android Studio**. The applied ver
 
 #### Robotic System (Optional)
 The Robotic System contains a Robot Arm and a camera. We use a *UArm Swift Pro Robot Arm* and a *4K Logitech BRIO Webcam* in our current experimental setting, but the two can be replaced by any similar alternatives.
+<p align="center">
+    <img src="data/demo/roboticsystem.png" alt="The app running on various devices" width="50%">
+</p>
 1. Connect the robot arm.
 2. Check `Robot.py` and `robot/` folder to update your robot control script.
 3. Run the functions `nicro.load_robot()` and `nicro.robot.control_robot_by_clicking_on_cam_video()` in `NiCro.py` to test it the system connects successfully.
