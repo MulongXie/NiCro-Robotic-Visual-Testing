@@ -1,5 +1,6 @@
 import os
 import sys
+import random
 
 root = '/'.join(__file__.split('/')[:-1])
 sys.path.append(root)
@@ -66,3 +67,29 @@ class RobotController(object):
 
     def reconnect(self):
         self.swift.connect()
+
+    '''
+    ***************************
+    *** Disable Stimulation ***
+    ***************************
+    '''
+    def shake(self, coor, hor_extent=2, ver_step=20, move_speed=20000):
+        '''
+        stimulate the shaking hand horizontally
+        :param coor: the target coordinate
+        :param hor_extent: the extent of shaking horizontally
+        :param ver_step: take how many step to approach the screen vertically
+        :param move_speed: the speed of the robot moving
+        '''
+        # 1. get to a close position before approaching the screen
+        self.swift.set_position(x=coor[0], y=coor[1], z=60, speed=move_speed, wait=False, timeout=10, cmd='G0')
+        self.swift.flush_cmd()
+
+        rate = (60 - coor[2]) // ver_step
+        for i in range(ver_step):
+            z_i = 60 - i * rate
+            self.swift.set_position(x=coor[0] + random.randint(-hor_extent, hor_extent), y=coor[1] + random.randint(-hor_extent, hor_extent), z=z_i, speed=move_speed, wait=False, timeout=10, cmd='G0')
+            self.swift.flush_cmd()
+        self.swift.set_position(x=coor[0] + random.randint(-hor_extent, hor_extent), y=coor[1] + random.randint(-hor_extent, hor_extent), z=coor[2], speed=move_speed, wait=False, timeout=10, cmd='G0')
+        self.swift.flush_cmd()
+        self.reset()
