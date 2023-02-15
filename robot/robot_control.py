@@ -12,13 +12,12 @@ import time
 
 
 class RobotController(object):
-    def __init__(self, port=None, speed=10000, press_distance=10):
+    def __init__(self, port=None, speed=10000):
         try:
             self.swift = SwiftAPI(port=port)
         except Exception as e:
             self.swift = None
         self.move_speed = speed
-        self.press_distance = press_distance # 按压力度
         # self.swift.set_position(z=60, speed=100, wait=False, timeout=10, cmd='G1')
 
     def reset(self):
@@ -49,12 +48,10 @@ class RobotController(object):
         self.swift.flush_cmd()
         self.reset()
 
-    def longPress(self, coor):
+    def longPress(self, coor, press_time=1.0):
         self.swift.set_position(x=coor[0], y=coor[1], z=coor[2], speed=self.move_speed, wait=False, timeout=10, cmd='G0')
         self.swift.flush_cmd()
-        time.sleep(1)
-        self.swift.set_position(z=coor[2] + self.press_distance, speed=100, wait=False, timeout=10, cmd='G0')
-        self.swift.flush_cmd()
+        time.sleep(press_time)
         self.reset()
 
     def swipe(self, start_coord, end_coord, swipe_speed=50000):
@@ -81,15 +78,28 @@ class RobotController(object):
         :param ver_step: take how many step to approach the screen vertically
         :param move_speed: the speed of the robot moving
         '''
+        start_z = 60
         # 1. get to a close position before approaching the screen
-        self.swift.set_position(x=coor[0], y=coor[1], z=60, speed=move_speed, wait=False, timeout=10, cmd='G0')
+        self.swift.set_position(x=coor[0], y=coor[1], z=start_z, speed=move_speed, wait=False, timeout=10, cmd='G0')
         self.swift.flush_cmd()
 
-        rate = (60 - coor[2]) // ver_step
+        rate = (start_z - coor[2]) // ver_step
         for i in range(ver_step):
-            z_i = 60 - i * rate
+            z_i = start_z - i * rate
             self.swift.set_position(x=coor[0] + random.randint(-hor_extent, hor_extent), y=coor[1] + random.randint(-hor_extent, hor_extent), z=z_i, speed=move_speed, wait=False, timeout=10, cmd='G0')
             self.swift.flush_cmd()
         self.swift.set_position(x=coor[0] + random.randint(-hor_extent, hor_extent), y=coor[1] + random.randint(-hor_extent, hor_extent), z=coor[2], speed=move_speed, wait=False, timeout=10, cmd='G0')
+        self.swift.flush_cmd()
+        self.reset()
+
+    def push(self, coor, min_strength=0, max_strength=5):
+        '''
+        stimulate the pushing figure with random strength
+        '''
+        press_strength = random.randint(min_strength, max_strength)
+        print("Press strength:", press_strength)
+        self.swift.set_position(x=coor[0], y=coor[1], z=coor[2], speed=self.move_speed, wait=False, timeout=10, cmd='G0')
+        self.swift.flush_cmd()
+        self.swift.set_position(z=coor[2] - press_strength, speed=100, wait=False, timeout=10, cmd='G0')
         self.swift.flush_cmd()
         self.reset()
